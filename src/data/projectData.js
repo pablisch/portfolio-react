@@ -3,7 +3,9 @@ export const projectData = [
     // LUPO
     id: 1,
     name: 'The London Underground Phony Orchestra',
-    shortName: 'LUPO',
+    navName: 'LUPO',
+    panelName: 'LUPO',
+    img: 'lupo-screen-small.png',
     url: 'https://lupo.onrender.com/',
     repo: 'https://github.com/pablisch/lupo',
     note: 'Click on the <span class="bold">TO TRAINS</span> icon to go to the main page, then <span class="bold">tap in</span> to start your journey.',
@@ -21,7 +23,8 @@ export const projectData = [
     // Gallery
     id: 2,
     name: 'Gallery App',
-    shortName: 'Gallery App',
+    // navName: 'Gallery App',
+    img: 'gallery-app-thumb.png',
     url: 'https://gallery-58b4.onrender.com/',
     repo: 'https://github.com/pablisch/gallery',
     note: "As this is hosted on a free tier of <span class='bold'>Render</span>, the backend may take up to 60 seconds to spin up. The app will not work until the backend is running. Please be patient",
@@ -37,8 +40,10 @@ export const projectData = [
   {
     // FarceBook
     id: 3,
-    name: 'Farce Book',
-    shortName: 'Farce Book',
+    name: 'FarceBook',
+    navName: 'Farce Book',
+    panelName: 'FarceBook',
+    img: 'farcebook.png',
     url: 'https://farcebook-9uwa.onrender.com/',
     repo: 'https://github.com/pablisch/farce-book',
     note: "As this is hosted on a free tier of <span class='bold'>Render</span>, the backend may take up to 60 seconds to spin up. The app will not work until the backend is running. Please be patient",
@@ -55,7 +60,8 @@ export const projectData = [
     // Knot Very Useful
     id: 4,
     name: 'Knot Very Useful',
-    shortName: 'Knot Very Useful',
+    // navName: 'Knot Very Useful',
+    img: 'knot-very-useful-small.png',
     url: 'https://pablisch.github.io/knot-very-useful/',
     repo: 'https://github.com/pablisch/knot-very-useful',
     note: 'Hover over a knot panel of navbar link to see details. Click on either to see a video of that knot or hitch.',
@@ -72,7 +78,8 @@ export const projectData = [
     // Picture Pad
     id: 5,
     name: 'Picture Pad',
-    shortName: 'Picture Pad',
+    // navName: 'Picture Pad',
+    img: 'picture-pad-small.png',
     url: 'https://pablisch.github.io/picture-pad-flex-morph/',
     repo: 'https://github.com/pablisch/picture-pad-flex-morph',
     note: 'Click on compressed image panels to expand them',
@@ -89,7 +96,8 @@ export const projectData = [
     // Eclipse
     id: 6,
     name: 'Eclipse Layout',
-    shortName: 'Eclipse Layout',
+    // navName: 'Eclipse Layout',
+    img: 'eclipse-layout-image.png',
     url: 'https://eclipse-generator.onrender.com/',
     repo: 'https://github.com/pablisch/eclipse-layout-react',
     note: "Select or deselect names from the player form and click the <span class='bold'>GENERATE</span> button to generate the starting game layout.",
@@ -107,7 +115,8 @@ export const projectData = [
     // Alternative Routes
     id: 7,
     name: 'Alternative Routes',
-    shortName: 'Alter Native Routes',
+    navName: 'Alter Native Routes',
+    img: 'alternativeRoutes-small.png',
     repo: 'https://github.com/pablisch/eclipse-layout-react',
     note: "Select or deselect names from the player form and click the <span class='bold'>GENERATE</span> button to generate the starting game layout.",
     url: 'https://eclipse-generator.onrender.com/',
@@ -125,7 +134,6 @@ export const projectData = [
   //   // Lair BnB
   //   id: 7,
   //   name: 'Lair BnB',
-  //   shortName: 'Lair BnB',
   //   url: 'https://pablisch.github.io/lair-bnb/',
   //   repo: 'https://github.com/pablisch/lair-bnb',
   //   note:

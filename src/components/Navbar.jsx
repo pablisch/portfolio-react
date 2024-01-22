@@ -15,7 +15,7 @@ function Navbar() {
         </div>
         <div className="navlist">
           {projectData.map((project) => (
-            <NavLink key={project.id}>{project.shortName}</NavLink>
+            <NavLink key={project.id}>{project.navName || project.name}</NavLink>
           ))}
           <a href="https://pablisch.github.io/cv-about-links/" className="nav-btn external-nav-link">More About Me</a>
           <a href="https://github.com/pablisch" className="nav-btn github-link-btn" target="_blank" rel="noreferrer">
