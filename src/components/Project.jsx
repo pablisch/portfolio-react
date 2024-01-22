@@ -1,8 +1,8 @@
 // import React from 'react'
 
-function Project() {
+function Project({project}) {
   return (
-    <div>Project</div>
+    <div>{project.name}</div>
   )
 }
 
