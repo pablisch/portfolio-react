@@ -11,12 +11,12 @@ const projects = [
     shortName: 'Farce Book',
     description: 'Farce Book blah blah blah',
   },
-  {
-    id: 3,
-    name: 'Lair BnB',
-    shortName: 'Lair BnB',
-    description: 'Lair BnB blah blah blah',
-  },
+  // {
+  //   id: 3,
+  //   name: 'Lair BnB',
+  //   shortName: 'Lair BnB',
+  //   description: 'Lair BnB blah blah blah',
+  // },
   {
     id: 4,
     name: 'Knot Very Useful',
@@ -41,18 +41,18 @@ const projects = [
     shortName: 'Alter Native Routes',  
     description: 'Alternative Routes blah blah blah',
   },
-  {
-    id: 8,
-    name: 'More About Me',
-    shortName: 'More About Me',
-    description: 'Me blah blah blah',
-  },
-  {
-    id: 9,
-    name: 'GitHub',
-    shortName: 'GitHub',
-    description: '',
-  },
+  // {
+  //   id: 8,
+  //   name: 'More About Me',
+  //   shortName: 'More About Me',
+  //   description: 'Me blah blah blah',
+  // },
+  // {
+  //   id: 9,
+  //   name: 'GitHub',
+  //   shortName: 'GitHub',
+  //   description: '',
+  // },
 ]
 
 export default projects;
