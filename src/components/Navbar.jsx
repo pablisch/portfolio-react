@@ -1,8 +1,9 @@
 import NavLink from './NavLink';
 import './Navbar.css';
-import {projectData} from '../data/projectData';
+import { projectData } from '../data/projectData';
+import PropTypes from 'prop-types';
 
-function Navbar() {
+function Navbar({ setFocusProjectId }) {
   return (
     <nav id="navbar">
       <div className="nav-container">
@@ -15,7 +16,7 @@ function Navbar() {
         </div>
         <div className="navlist">
           {projectData.map((project) => (
-            <NavLink key={project.id}>{project.navName || project.name}</NavLink>
+            <NavLink key={project.id} id={project.id} setFocusProjectId={setFocusProjectId} >{project.navName || project.name}</NavLink>
           ))}
           <a href="https://pablisch.github.io/cv-about-links/" className="nav-btn external-nav-link">More About Me</a>
           <a href="https://github.com/pablisch" className="nav-btn github-link-btn" target="_blank" rel="noreferrer">
@@ -32,5 +33,9 @@ function Navbar() {
     </nav>
   )
 }
+
+Navbar.propTypes = {
+  setFocusProjectId: PropTypes.func.isRequired,
+};
 
 export default Navbar

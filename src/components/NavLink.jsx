@@ -1,7 +1,29 @@
-function NavLink({children}) {
+// import { useState } from 'react';
+import PropTypes from 'prop-types';
+
+function NavLink({ children, id, setFocusProjectId }) {
+
+  const handleHoverStart = () => {
+    setFocusProjectId(id);
+  };
+
+  const handleHoverEnd = () => {
+    setFocusProjectId(null);
+  };
+
   return (
-    <div className="nav-btn nav-link">{children}</div>
-  )
+    <div
+      className='nav-btn nav-link'
+      onMouseOver={handleHoverStart}
+      onMouseLeave={handleHoverEnd}>
+      {children}
+    </div>
+  );
 }
 
-export default NavLink
+NavLink.propTypes = {
+  children: PropTypes.node.isRequired,
+  id: PropTypes.number.isRequired,
+};
+
+export default NavLink;

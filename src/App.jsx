@@ -1,14 +1,15 @@
-// import { useState } from 'react'
-import './App.css'
-import Navbar from './components/Navbar'
-import ProjectBox from './components/ProjectBox'
+import { useState } from 'react';
+import './App.css';
+import Navbar from './components/Navbar';
+import ProjectBox from './components/ProjectBox';
 
 function App() {
+  const [focusProjectId, setFocusProjectId] = useState(null);
 
   return (
     <div className="app">
-      <Navbar />
-      <ProjectBox />
+      <Navbar setFocusProjectId={setFocusProjectId} />
+      <ProjectBox setFocusProjectId={setFocusProjectId} focusProjectId={focusProjectId} />
     </div>
   )
 }
