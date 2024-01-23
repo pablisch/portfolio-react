@@ -4,10 +4,10 @@ import './projects.css'
 
 function Project({project}) {
   return (
-    <div className='project-panel'>
-    <div>{project.panelName || project.name}</div>
-    <img src={`images/${project.img}`} alt={project.name} />
-    </div>
+    <li className='project-panel'>
+    <img src={`images/${project.img}`} alt={project.name} className='project-image' />
+    <div className='project-label'>{project.panelName || project.name}</div>
+    </li>
   )
 }
 

@@ -3,11 +3,11 @@ import Project from './Project';
 
 function ProjectBox() {
   return (
-    <div className="project-box">
+    <ul className="project-box">
       {projectData.map((project) => (
         <Project key={project.id} project={project} />
       ))}
-    </div>
+    </ul>
   )
 }
 
