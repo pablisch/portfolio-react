@@ -1,4 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800;900&display=swap');
+
+:root {
+  --navbar: rgba(230, 230, 230, 0.8);
+  --navText: rgba(43, 43, 44, 0.7);
+  --navText2:rgba(17, 19, 17, 0.8);
+  --preOverlayLight: rgba(255, 255, 255, 0);
+  --preOverlayDarkText: rgba(43, 43, 44, 0);
+  --overlayLight: rgba(255, 255, 255, 0.9);
+  --overlayDarkText: rgba(43, 43, 44, 1);
+  --labelLightText: rgb(255, 255, 255);
+  --labelDark: rgba(43, 43, 44, 0.85);
+  --panelBorderMid: rgba(124, 124, 125, 0.45);
+  --hamburgerMenu: rgba(230, 230, 230, 0.9);
+  --tech: rgba(255, 255, 255, 0.4);
+
+  --light-pink: #f0b7b1;
+  --lime: #b6fc4c;
+
+  /* colour palette from https://coolors.co/palette/ffa69e-faf3dd-b8f2e6-aed9e0-5e6472 */
+  --pink: #ffa69e;
+  --cream: #faf3dd;
+  --light-blue: #b8f2e6;
+  --mid-blue: #aed9e0;
+  --grey: #626764;
+
+  /* colour palette from https://coolors.co/palette/faf3dd-c8d5b9-8fc0a9-68b0ab-696d7d */
+  --green1a: #fdfbf5;
+  --green1: #faf3dd;
+  --green2: #c8d5b9;
+  --green2Ref: rgb(200, 213, 185);
+  --green2b: #e7f1dd;
+  --green2c: #fbfde3;
+  --green3: #8fc0a9;
+  --green3b: #aecebf;
+  --green4: #68b0ab;
+  --green4Ref: rgb(104, 176, 171);
+  --green5: #696d7d;
+  --green6: rgba(74, 90, 68, 0.7);
+
+  --brown: #ac9a7a;
+  --fawn: #c2b6a3;
+}
 
 * {
   box-sizing: border-box;
