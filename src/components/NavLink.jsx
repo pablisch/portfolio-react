@@ -24,6 +24,7 @@ function NavLink({ children, id, setFocusProjectId }) {
 NavLink.propTypes = {
   children: PropTypes.node.isRequired,
   id: PropTypes.number.isRequired,
+  setFocusProjectId: PropTypes.func.isRequired,
 };
 
 export default NavLink;

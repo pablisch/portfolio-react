@@ -9,7 +9,7 @@ function Project({ project, setFocusProjectId, focusProjectId}) {
     setFocusProjectId(id);
   };
 
-  const handleHoverEnd = (id) => {
+  const handleHoverEnd = () => {
     setFocusProjectId(null);
   }
 
@@ -17,7 +17,8 @@ function Project({ project, setFocusProjectId, focusProjectId}) {
     <li
       className='project-panel'
       onMouseOver={() => handleHoverStart(project.id)}
-      onMouseLeave={() => handleHoverEnd(project.id)}>
+    onMouseLeave={handleHoverEnd}
+    >
       <img
         src={`images/${project.img}`}
         alt={project.name}
@@ -34,6 +35,8 @@ function Project({ project, setFocusProjectId, focusProjectId}) {
 
 Project.propTypes = {
   project: PropTypes.object.isRequired,
+  setFocusProjectId: PropTypes.func.isRequired,
+  focusProjectId: PropTypes.number.isRequired,
 };
 
 export default Project;
