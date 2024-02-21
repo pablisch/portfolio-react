@@ -6,7 +6,10 @@
   --fake-side-margin: 0.1px;
   --project-box-width: calc(85vw + var(--both-project-side-margin));
   --num-of-cols: 4;
-  --project-panel-width: calc((100% / var(--num-of-cols)) - var(--both-project-side-margin));
+  --project-panel-width: calc(
+    (100% / var(--num-of-cols)) - var(--both-project-side-margin)
+  );
+  --project-outline-radius: 15px;
 }
 
 .project-box {
@@ -21,10 +24,10 @@
 .project-panel {
   position: relative;
   list-style: none;
-  flex: 0 0 var(--project-panel-width); 
+  flex: 0 0 var(--project-panel-width);
   height: 250px;
-  margin: var(--project-side-margin); 
-  text-align: center; 
+  margin: var(--project-side-margin);
+  text-align: center;
 }
 
 .overlay {
@@ -36,13 +39,14 @@
   right: 0;
   bottom: 0;
   padding: 15px 20px;
-  border-radius: 50px;
-  border: 3px #6e9f9c solid;
+  border-radius: var(--project-outline-radius);
+  /* border: 2px #a9a9a9 solid; */
   background-color: rgba(50, 50, 50, 0.95);
   color: #fff;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #607674;
+  /* background-color: rgba(255, 255, 255, 0.9);
+  color: #607674; */
   font-size: 1.4rem;
+  font-weight: 200;
   transition: opacity 0.3s ease;
   display: flex;
   justify-content: center;
@@ -58,8 +62,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50px;
-  border: 1px #b6b6b6 solid;
+  border-radius: var(--project-outline-radius);
+  border: 1px #818181 solid;
 }
 
 .project-label {
@@ -71,7 +75,7 @@
   background-color: rgba(76, 76, 76, 0.9);
   color: #fff;
   transition: opacity 0.5s ease;
-  border-radius: 50px 50px 0 0;
+  border-radius: var(--project-outline-radius) var(--project-outline-radius) 0 0;
   display: flex;
   justify-content: center;
   align-items: center;

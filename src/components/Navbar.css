@@ -2,13 +2,25 @@
   --nav-side-padding: 20px;
   --fake-side-margin: 0.1px;
   --nav-container-width: calc(85vw + (2 * var(--nav-side-padding)));
+  --navbar-height: 65px;
 }
 
-nav {
+/* nav {
   background-color: #c8d5b9;
   background-size: cover;
   padding: 7px 0;
   z-index: 0;
+  transition: background-color 3s ease;
+} */
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(200, 213, 185, 0.92);
+  background-size: cover;
+  padding: 7px 0;
+  z-index: 1000; /* Adjust the z-index as needed */
   transition: background-color 3s ease;
 }
 
@@ -21,7 +33,7 @@ nav {
   margin: 0 auto;
   padding: 0 var(--nav-side-padding); /* standard 20px side padding for all outer containers */
   overflow: hidden;
-  min-height: 65px;
+  height: var(--navbar-height);
 }
 
 .nav-left {
@@ -47,8 +59,9 @@ nav {
   text-align: center;
   margin: 0 4px; /* Any change made here should also be made to margin in .github-link-btn  */
   border-radius: 15px;
-  padding: 5px 4px;
-  font-weight: bold;
+  padding: 5px 3px;
+  font-weight: 500;
+  font-size: 0.85rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,21 +102,9 @@ nav {
 }
 
 .github-logo {
-  max-width: 60px;
+  max-height: 50px;
 }
 
-.longlink1 {
-  flex-basis: 80px;
-}
-.longlink2 {
-  flex-basis: 145px;
-}
-.shortlink1 {
-  flex-basis: 50px;
-}
-.shortlink2 {
-  flex-basis: 40px;
-}
 
 .hamburger {
   display: none;

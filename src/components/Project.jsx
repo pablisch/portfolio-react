@@ -1,24 +1,36 @@
-// import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './projects.css';
 // import { useState } from 'react';
 
-function Project({ project, setFocusProjectId, focusProjectId}) {
+function Project({
+  project,
+  setFocusProjectId,
+  focusProjectId,
+  setSelectedProject,
+}) {
+  const navigate = useNavigate();
 
   const handleHoverStart = (id) => {
     setFocusProjectId(id);
   };
 
   const handleHoverEnd = () => {
-    setFocusProjectId(null);
-  }
+    setFocusProjectId('');
+  };
+
+  const handleClick = (project) => {
+    setSelectedProject(project);
+    // console.log('project clicked', project);
+    navigate(`/${project.id}`);
+  };
 
   return (
     <li
       className='project-panel'
       onMouseOver={() => handleHoverStart(project.id)}
-    onMouseLeave={handleHoverEnd}
-    >
+      onMouseLeave={handleHoverEnd}
+      onClick={() => handleClick(project)}>
       <img
         src={`images/${project.img}`}
         alt={project.name}
@@ -26,6 +38,7 @@ function Project({ project, setFocusProjectId, focusProjectId}) {
       />
       <div className='project-label'>{project.panelName || project.name}</div>
       <div
+        onClick={() => handleClick(project)}
         className={`overlay ${focusProjectId === project.id && 'hover-focus'}`}>
         {project.description}
       </div>
@@ -36,7 +49,8 @@ function Project({ project, setFocusProjectId, focusProjectId}) {
 Project.propTypes = {
   project: PropTypes.object.isRequired,
   setFocusProjectId: PropTypes.func.isRequired,
-  focusProjectId: PropTypes.number.isRequired,
+  focusProjectId: PropTypes.string.isRequired,
+  setSelectedProject: PropTypes.func.isRequired,
 };
 
 export default Project;

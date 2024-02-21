@@ -1,7 +1,7 @@
 export const projectData = [
   {
     // LUPO
-    id: 1,
+    id: '1',
     name: 'The London Underground Phony Orchestra',
     navName: 'LUPO',
     panelName: 'LUPO',
@@ -22,7 +22,7 @@ export const projectData = [
   },
   {
     // Gallery
-    id: 2,
+    id: '2',
     name: 'Gallery App',
     // navName: 'Gallery App',
     img: 'gallery-app-thumb.png',
@@ -41,7 +41,7 @@ export const projectData = [
   },
   {
     // FarceBook
-    id: 3,
+    id: '3',
     name: 'FarceBook',
     navName: 'Farce Book',
     panelName: 'FarceBook',
@@ -61,7 +61,7 @@ export const projectData = [
   },
   {
     // Knot Very Useful
-    id: 4,
+    id: '4',
     name: 'Knot Very Useful',
     // navName: 'Knot Very Useful',
     img: 'knot-very-useful-small.png',
@@ -80,7 +80,7 @@ export const projectData = [
   },
   {
     // Picture Pad
-    id: 5,
+    id: '5',
     name: 'Picture Pad',
     // navName: 'Picture Pad',
     img: 'picture-pad-small.png',
@@ -99,7 +99,7 @@ export const projectData = [
   },
   {
     // Eclipse
-    id: 6,
+    id: '6',
     name: 'Eclipse Layout',
     // navName: 'Eclipse Layout',
     img: 'eclipse-layout-image.png',
@@ -119,7 +119,7 @@ export const projectData = [
   },
   {
     // Alternative Routes
-    id: 7,
+    id: '7',
     name: 'Alternative Routes',
     navName: 'Alter Native Routes',
     img: 'alternativeRoutes-small.png',
@@ -139,7 +139,7 @@ export const projectData = [
   },
   // {
   //   // Lair BnB
-  //   id: 7,
+  //   id: '7',
   //   name: 'Lair BnB',
   //   url: 'https://pablisch.github.io/lair-bnb/',
   //   repo: 'https://github.com/pablisch/lair-bnb',
