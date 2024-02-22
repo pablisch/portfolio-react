@@ -1,3 +1,9 @@
 #single-project-page {
-  margin-top: calc(var(--navbar-height) + 14px);
+  width: calc(var(--project-box-width) - 40px);
+  margin: 0 auto;
+  margin-top: calc(var(--navbar-height) + 44px);
+}
+
+.bold {
+  font-weight: bold;
 }

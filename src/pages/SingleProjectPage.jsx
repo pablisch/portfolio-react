@@ -9,9 +9,14 @@ const SingleProjectPage = ({selectedProject}) => {
 
   return (
     <div id='single-project-page'>
-      {`I am the single project page for ${selectedProject.name}`}
+      <h1>{selectedProject.name}</h1>
+      <h2>{selectedProject.subheading}</h2>
+      {selectedProject.para1}
+      {selectedProject.techBadges}
+      {selectedProject.para2}
     </div>
-  )
+  );
+  
 }
 
 SingleProjectPage.propTypes = {
