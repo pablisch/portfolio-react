@@ -1,13 +1,31 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import ProjectsPage from './pages/ProjectsPage';
 import SingleProjectPage from './pages/SingleProjectPage';
+import axios from 'axios';
+import {projectData} from './data/projectData';
+
+const apiUrls = projectData.filter(project => project.apiWakeUpUrl).map(project => project.apiWakeUpUrl);
 
 function App() {
   const [focusProjectId, setFocusProjectId] = useState('');
   const [selectedProject, setSelectedProject] = useState({});
+
+  useEffect(() => {
+    const wakeUpDeployedApis = async () => {
+      apiUrls.forEach(async url => {
+        try {
+          await axios.get(url);
+        } catch (error) {
+          console.log('Api is sleeping', url, error);
+        }
+      });
+    };
+
+    wakeUpDeployedApis();
+  }, []);
 
   return (
     <BrowserRouter>

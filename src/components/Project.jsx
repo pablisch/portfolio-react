@@ -40,7 +40,7 @@ function Project({
       <div
         onClick={() => handleClick(project)}
         className={`overlay ${focusProjectId === project.id && 'hover-focus'}`}>
-        {project.description}
+        {project.summary}
       </div>
     </li>
   );

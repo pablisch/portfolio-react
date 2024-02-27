@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --navbar: rgba(230, 230, 230, 0.8);
   --navText: rgba(43, 43, 44, 0.7);
   --navText2:rgba(17, 19, 17, 0.8);
+
+  --text: #666;
+  --text-darker: #484848;
   --preOverlayLight: rgba(255, 255, 255, 0);
   --preOverlayDarkText: rgba(43, 43, 44, 0);
   --overlayLight: rgba(255, 255, 255, 0.9);
@@ -49,8 +54,11 @@
 }
 
 body {
+  font-family: 'Work Sans', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-family: 'Raleway', sans-serif;
-  font-size: 18px;
+  font-weight: 300;
+  font-size: 1.1rem;
   background-color: #d0f1f6;
   color: #606060;
 }
