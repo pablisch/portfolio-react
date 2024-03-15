@@ -625,9 +625,18 @@ export const projectData = [
     url: 'https://alternative-routes.onrender.com/',
     heading: 'Eclipse Layout Generator',
     subheading:
-      'A companion to the board game, Eclipse, A new Dawn for the Galaxy',
+      'LLM generated alternative station names for London tube lines',
     descriptionText: (
       <>
+        <p className='para'>
+          <span className='emphasise'>Description:</span> This playful app began as an experimental companion app to the London Underground Phony Orchestra (LUPO) app with the intention of possible integration to allow the renaming of all stations within LUPO. It is proof of concept for when time is available to integrate it into LUPO. 
+        </p>
+        <p className='para'>
+          <span className='bold'>Alternative Routes</span> was my first experimentation utilising the GPT-3 API, which was fun and far simpler tham had anticipated. The app generates alternative station names for the London Underground based on user themes. Themes and generated names are stored in a MongoDB Atlas database where data is not linked to any user so any user of the app sees the collective result of all users.
+        </p>
+        <p className='para'>
+          Mainly to expand the technical reach of this simple app, I added an &apos;About&apos; page and a &apos;Contact Us&apos; page. The &apos;Contact Us&apos; page uses an additonal MongoDB Atlas collection to store messages and whether or not they have subscribed to the newsletter in additon to emailing me the message
+        </p>
         <span className='emphasise'>Description:</span> This Eclipse Layout
         Generator App started off as a simple Vanilla JavaScript project before
         I had any formal programming training at the Makers boot camp. After
