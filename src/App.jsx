@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
+// import SubNavBar from './components/SubNavBar';
 import ProjectsPage from './pages/ProjectsPage';
 import SingleProjectPage from './pages/SingleProjectPage';
 import axios from 'axios';
@@ -33,6 +34,7 @@ function App() {
         setFocusProjectId={setFocusProjectId}
         setSelectedProject={setSelectedProject}
       />
+      {/* <SubNavBar /> */}
       <Routes>
         <Route
           path='/'

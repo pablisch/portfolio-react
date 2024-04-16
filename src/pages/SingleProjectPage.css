@@ -1,8 +1,15 @@
 #single-project-page {
+  max-width: var(--app-max-width);
   width: calc(var(--project-box-width) - 40px);
   margin: 0 auto;
-  margin-top: calc(var(--navbar-height) + 44px);
+  margin-top: calc(var(--navbar-height) + 44px); /* leave space for fixed navbar */
   display: flex;
+  flex-direction: column;
+}
+
+#single-project-upper-section {
+  display: flex;
+  margin-bottom: 10px;
 }
 
 .emphasise {
@@ -29,8 +36,10 @@
 
 #single-project-tech-badges {
   margin-bottom: 10px;
+  margin-right: 15px;
   font-size: 1.8rem;
   font-weight: 400;
+  text-align: center;
 }
 
 .para {
@@ -55,4 +64,15 @@
   flex: 2;
   width: 100%;
   margin-left: 20px;
+  padding: 10px 20px 0;
+}
+
+.project-text {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.sm {
+  margin-bottom: 10px;
 }

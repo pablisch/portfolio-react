@@ -1,3 +1,7 @@
+const galleryBadgeSize = '30';
+const farcebookBadgeSize = '30';
+const knotBadgeSize = '35';
+
 export const projectData = [
   {
     // LUPO
@@ -11,30 +15,55 @@ export const projectData = [
     repo: 'https://github.com/pablisch/lupo',
     summary:
       'An audio/visual generative music app based on real-time arrivals of trains on the London Underground network using data from the TFL Unified API.',
-    note: 'Click on the <span className="bold">TO TRAINS</span> icon to go to the main page, then <span className="bold">tap in</span> to start your journey.',
+    buttonText: (
+      <>
+        This app is partially responsive.{' '}
+        <span className='bold'>Click this button</span> to open the app in its
+        own window.
+      </>
+    ),
     heading: 'London Underground Phony Orchestra',
-    subheading:
-      'The sonification and visualisation of the London Underground Tube network',
+    subheading: 'The sonification of the London Underground',
     descriptionText: (
       <>
-        <span className='emphasise'>Description:</span> A generative music app
-        based on real-time arrivals of trains on the London Underground network
-        using data from the TFL Unified API. Each tube line is assigned an
-        instrument and each station assigned a different note. LUPO is the
-        outcome of my final group engineering project on the Makers Software
-        Development bootcamp. The app was designed and coded entirely from
-        scratch as a group collaboration. It was designed and built in eight
-        days by five students.
+        <p className='project-text'>
+          <span className='emphasise'>Description:</span> A generative music app
+          based on real-time arrivals of trains on the London Underground
+          network using data from the TFL Unified API.
+        </p>
+        <p className='project-text'>
+          Each tube line is assigned an instrument and each station assigned a
+          different note. LUPO is the outcome of my final group engineering
+          project on the Makers Software Development bootcamp.
+        </p>
+        <p className='project-text'>
+          The app was conceived, researched, planned, designed, coded and
+          deployed entirely from scratch as a group collaboration project in
+          just eight days by five students.
+        </p>
       </>
     ),
     technologiesText: (
       <>
-        <span className='emphasise'>Technologies:</span> The app is primarily
-        built in JavaScript using the React.js library. We relied heavily on
-        tone.js for the audio side of things which was new to all in the group.
-        We also learnt chart.js when we discovered an urgent need to visualise
-        TFL&apos;s dubious data. We, of course used Git and GitHub throughout as
-        well as Postman.
+        <p className='project-text sm'>
+          <span className='emphasise'>Technologies:</span> This app is primarily
+          built in JavaScript using the React.js library. We planned to use a
+          Node and Express backend but as all API calls were made without using
+          an API key we decided to make all requests on the client side allowing
+          us to deploy the entire app as a static site on Render.com.
+        </p>
+        <p className='project-text sm'>
+          We relied heavily on tone.js for the audio side of things which was
+          new to all in the group. This meant considerable time was spent on
+          researching and learning to use the library but was well worth the
+          effort.
+        </p>
+        <p className='project-text sm'>
+          I also learnt chart.js when we discovered an urgent need to visualise
+          TFL&apos;s dubious data. Being able to instantly visualise and share
+          the live streams of data was essential to the project&apos;s success,
+          allowing us to make informed decisions on how to proceed.
+        </p>
       </>
     ),
     techBadges: (
@@ -112,34 +141,54 @@ export const projectData = [
     repo: 'https://github.com/pablisch/gallery',
     summary:
       'A MERN stack image sharing app using a responsive Masonry layout and Cloudinary. An exploration of image layout and React.js.',
-    note: "As this is hosted on a free tier of <span className='emphasise'>Render</span>, the backend may take up to 60 seconds to spin up. The app will not work until the backend is running. Please be patient",
+    buttonText: (
+      <>
+        This app is mostly responsive.{' '}
+        <span className='bold'>Click this button</span> to open the app in its
+        own window.
+      </>
+    ),
     heading: 'Gallery App',
     subheading: 'A MERN stack image app',
     descriptionText: (
       <>
-        <span className='emphasise'>Description:</span>{' '}
-        <span className='emphasise'>Gallery</span> is a MERN stack image sharing
-        app using a Masonry grid layout to produce an image feed similar to
-        Pinterest. It uses Cloudinary in a very rudimentary way to upload images
-        whose URLs are stored in the MongoDB Atlas database. Fronted image
-        processing is used to ensure that any image upload to Cloudinary is at
-        the maximum resolution that the image might be needed, i.e. avatar
-        images have a maximum height of 40px. Feed images are dynamically
-        reduced to a maximum intrinsic width of 400px suitable for the dynamic
-        column width used. Logged in users are able to upload their own images,
-        make comments, like photos and delete their own photos.
+        <p className='project-text'>
+          <span className='emphasise'>Description:</span>{' '}
+          <span className='emphasise'>Gallery</span> is a MERN stack image
+          sharing app using a Masonry grid layout to produce an image feed
+          similar to Pinterest.
+        </p>
+        <p className='project-text'>
+          Images are uploaded using Cloudinary and URLs are stored in the
+          MongoDB Atlas database. Fronted image processing ensures that image
+          uploads are reduced to the maximum resolution required, i.e. avatars
+          have a maximum height of 40px. Feed images are dynamically reduced to
+          a maximum width of 400px suitable for the column display width.
+        </p>
+        <p className='project-text'>
+          Logged in users are able to upload their own images, make comments,
+          like photos and delete their own photos.
+        </p>
       </>
     ),
     technologiesText: (
       <>
-        <span className='emphasise'>Technologies:</span> The app is built from
-        scratch employing the MERN stack. The core of the app is a Vite React
-        frontend and calls to the MongoDB database are made through the custom
-        API using Node.js and Express. The app also uses JWT token for sessions
-        and all passwords are salted and hashed using BCrypt. There is an
-        addional test suite for this app with a comprehensive set of end to end
-        tests in Java & Selenium using a Page Object Model with highly modular
-        functions
+        <p className='project-text sm'>
+          <span className='emphasise'>Technologies:</span> The app is built from
+          scratch employing the MERN stack. The core of the app is a Vite React
+          frontend and calls to the MongoDB database are made through the custom
+          API using Node.js and Express.
+        </p>
+        <p className='project-text sm'>
+          The app also uses JWT token for session authentication and all
+          passwords are salted and hashed using BCrypt before being stored in
+          the MongoDB Atlass database.
+        </p>
+        <p className='project-text sm'>
+          There is an addional test suite for this app in a separate repo with a
+          comprehensive set of end to end tests in Java & Selenium using a Page
+          Object Model with highly modular functions.
+        </p>
       </>
     ),
     techBadges: (
@@ -147,74 +196,74 @@ export const projectData = [
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg'
           alt='javascript'
-          width='30'
-          height='30'
+          width={galleryBadgeSize}
+          height={galleryBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg'
           alt='nodejs'
           className='left-space-1'
-          width='30'
-          height='30'
+          width={galleryBadgeSize}
+          height={galleryBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/npm/npm-original-wordmark.svg'
           alt='npm'
           className='left-space-2'
-          width='30'
-          height='30'
+          width={galleryBadgeSize}
+          height={galleryBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg'
           alt='express'
           className='left-space-2'
-          width='30'
-          height='30'
+          width={galleryBadgeSize}
+          height={galleryBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg'
           alt='mongodb'
           className='left-right-space-minus'
-          width='30'
-          height='30'
+          width={galleryBadgeSize}
+          height={galleryBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg'
           alt='react'
-          width='30'
-          height='30'
+          width={galleryBadgeSize}
+          height={galleryBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg'
           alt='html5'
-          width='30'
-          height='30'
+          width={galleryBadgeSize}
+          height={galleryBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg'
           alt='css3'
-          width='30'
-          height='30'
+          width={galleryBadgeSize}
+          height={galleryBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/jest/jest-plain.svg'
           alt='jest'
-          width='30'
-          height='30'
+          width={galleryBadgeSize}
+          height={galleryBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
           alt='git'
           className='left-space-2'
-          width='30'
-          height='30'
+          width={galleryBadgeSize}
+          height={galleryBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg'
           alt='github'
           className='left-space-2'
-          width='30'
-          height='30'
+          width={galleryBadgeSize}
+          height={galleryBadgeSize}
         />
       </>
     ),
@@ -231,43 +280,66 @@ export const projectData = [
     repo: 'https://github.com/pablisch/farce-book',
     summary:
       'A Facebook clone group engineering project. This was an immersive introduction to all of the MERN stack technologies.',
-    note: "As this is hosted on a free tier of <span className='emphasise'>Render</span>, the backend may take up to 60 seconds to spin up. The app will not work until the backend is running. Please be patient",
+    buttonText: (
+      <>
+        This app is partially responsive.{' '}
+        <span className='bold'>Click this button</span> to open the app in its
+        own window.
+      </>
+    ),
     heading: 'FarceBook',
     subheading: 'A Facebook clone using the MERN stack',
     descriptionText: (
       <>
-        <p className='para'>
+        <p className='project-text'>
           <span className='emphasise'>Description:</span> This Facebook clone
           app was the second group engineering project on the Makers Software
           Develpment Bootcamp and was completed in eight days.
         </p>
-        <p className='para'>
-          It was a first introduction to the MERN stack with no prior knowledge
-          of any of the technologies except for nine days of having used Node.js
-          simply as a runtime for vanilla JavaScript fundamentals. We were
-          supplied with a complex existing codebase consisting of an Express
-          backend API with minimal endpoints and the default React app with a
-          few base components. We spent the the first couple of days reading
-          through the codebase and exploring the new technologies.
+        <p className='project-text'>
+          This was an introduction to the MERN stack with no prior knowledge
+          of any of the technologies. This approach may not be an ideal way to
+          learn but does provide an excellent example of working
+          under pressure with a non-negotiable deadline.
         </p>
-        <p className='para'>
-          Such an &quot;into the deep end&quot; approach may not be an ideal way
-          to learn best practice but does provide an excellent example of
-          working under pressure with an existing codebase using never seen
-          before technologies and an extremely tight deadline.
+        <p className='project-text'>
+          We were supplied with an existing codebase consisting of an Express
+          backend API with minimal endpoints and the default React app with a
+          few base components and had free direction from that point.
         </p>
       </>
     ),
     technologiesText: (
       <>
-        <span className='emphasise'>Technologies:</span> The app is built on a
-        seed MERN stack codebase. It uses JWT web tokens for authentication and
-        authorization. The backend is built in Node.js using Express.js and
-        MongoDB. The frontend is built in React.js. We used Jest for testing the
-        backend and Cypress for testing the frontend using both component and
-        end-to-end testing. We used Git and GitHub for version control and
-        collaboration with PR reviews and main branch protection. We used
-        Postman for testing the backend API.
+        <p className='project-text'>
+          <span className='emphasise'>Technologies:</span> The app is built on a
+          seed MERN stack codebase. As the entire group were new to the
+          technologies, we spent the first couple of days exploring the codebase
+          and the technologies used inlcuding JWT web tokens which was used for
+          authentication and authorization.
+        </p>
+        <p className='project-text'>
+          Developing working as a team using Agile practices was a focus for
+          this project being only the second group project. We used Git and
+          GitHub for version control and collaboration with PR reviews and used
+          main branch protection. We used Postman for manual testing the backend
+          API.
+        </p>
+        <p className='project-text'>
+        For the purposes of trying out this app, you may create a new user or use the following credentials: Username: portfolio-user, Username: portfolio-user.
+        </p>
+        <p className='project-text sm'>
+        <span className='emphasise'>Username:</span> portfolio-user
+        </p>
+        <p className='project-text'>
+        <span className='emphasise'>Password:</span> verysecureA1
+        </p>
+        <p className='project-text'>
+        Logging in is a basic requirement of the app in order to see the message feed. My personal preference would be to have open access to a public feed but was happy to go with the group decision on this matter. The project was about learning rather than producing a final product.
+        </p>
+        <p className='project-text'>
+        <span className='emphasise'>Known Issues:</span> The original app used a local instance of MongoDB and user avatars were stored locally. For deployement purposes, the database was migrated to MongoDB Atlas but avatar has not been updated to reflect this change. The original avatar images remain but new avatars are not persistent. As a legacy app, it is likely that this issue will not be resolved.
+        </p>
       </>
     ),
     techBadges: (
@@ -275,74 +347,74 @@ export const projectData = [
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg'
           alt='javascript'
-          width='30'
-          height='30'
+          width={farcebookBadgeSize}
+          height={farcebookBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg'
           alt='nodejs'
           className='left-space-1'
-          width='30'
-          height='30'
+          width={farcebookBadgeSize}
+          height={farcebookBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/npm/npm-original-wordmark.svg'
           alt='npm'
           className='left-space-2'
-          width='30'
-          height='30'
+          width={farcebookBadgeSize}
+          height={farcebookBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg'
           alt='express'
           className='left-space-2'
-          width='30'
-          height='30'
+          width={farcebookBadgeSize}
+          height={farcebookBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg'
           alt='mongodb'
           className='left-right-space-minus'
-          width='30'
-          height='30'
+          width={farcebookBadgeSize}
+          height={farcebookBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg'
           alt='react'
-          width='30'
-          height='30'
+          width={farcebookBadgeSize}
+          height={farcebookBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg'
           alt='html5'
-          width='30'
-          height='30'
+          width={farcebookBadgeSize}
+          height={farcebookBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg'
           alt='css3'
-          width='30'
-          height='30'
+          width={farcebookBadgeSize}
+          height={farcebookBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/jest/jest-plain.svg'
           alt='jest'
-          width='30'
-          height='30'
+          width={farcebookBadgeSize}
+          height={farcebookBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
           alt='git'
           className='left-space-2'
-          width='30'
-          height='30'
+          width={farcebookBadgeSize}
+          height={farcebookBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg'
           alt='github'
           className='left-space-2'
-          width='30'
-          height='30'
+          width={farcebookBadgeSize}
+          height={farcebookBadgeSize}
         />
       </>
     ),
@@ -357,33 +429,49 @@ export const projectData = [
     apiWakeUpUrl: null,
     repo: 'https://github.com/pablisch/knot-very-useful',
     summary:
-      'A practical educational app for learning knots and hitches for Forest School. This is an early exploration of vanilla JavaScript.',
-    note: 'Hover over a knot panel of navbar link to see details. Click on either to see a video of that knot or hitch.',
+      'A practical educational app for learning knots and hitches for Forest School built as an early exploration of vanilla JavaScript and CSS.',
+    buttonText: (
+      <>
+        This app is responsive. <span className='bold'>Click this button</span>{' '}
+        to open the app in its own window.
+      </>
+    ),
     heading: 'Knot Very Useful',
     subheading: 'An educational app for learning knots and hitches',
     descriptionText: (
       <>
-        <span className='emphasise'>Description:</span> This is one of my
-        favourite projects of all as it combines a challenging, playful
-        exploration of code at an early stage of my independent learning and a
-        solid real-world use that fulfils a genuine need. As part of my Forest
-        School Leader training, I had already made an ugly app with the same
-        purpose using Google Sites but I was not happy with it. Following a
-        spree of independent code exploration and extension, I took some of the
-        skills I had gathered and decided to rebuild the app from scratch but it
-        required a lot of extra learning and experimentation to get it to work.
-        I am proud of the result and have used it in the wild to teach how to
-        tie knots and hitches.
+        <p className='project-text'>
+          <span className='emphasise'>Description:</span> This is one of my
+          favourite projects as it combines a challenging, playful exploration
+          of code from early independent learning and a solid real-world use
+          that fulfils a genuine need.
+        </p>
+        <p className='project-text'>
+          As part of my Forest School Leader training, I had already made an
+          ugly Google Sites app but was not happy with it. After independent
+          code exploration and application, I took some of the skills I had
+          gathered and rebuilt the app from scratch. It required a lot of extra
+          learning, resilience and experimentation to get it to work.
+        </p>
+        <p className='project-text'>
+          I am proud of the result and have used it in the wild to teach how to
+          tie knots and hitches.
+        </p>
       </>
     ),
     technologiesText: (
       <>
-        <span className='emphasise'>Technologies:</span> This app was made six
-        months before the Makers Software Development Bootcamp using vanilla
-        JavaScript, HTML and CSS. It was a real challenge in learning new code
-        techniques and combining them in a way that worked including making it
-        fully responsive to be coherent on different screen sizes and
-        orientations making it possible to use in the wild.
+        <p className='project-text sm'>
+          <span className='emphasise'>Technologies:</span> This app was made six
+          months before the Makers Software Development Bootcamp using vanilla
+          JavaScript, HTML and CSS, and no a whiff of AI in sight.
+        </p>
+        <p className='project-text sm'>
+          It was a real challenge at this early stage of learning to
+          successfully combine all my new knowledge in a way that worked
+          including making it fully responsive to be coherent on different
+          screen sizes and orientations making it possible to use in the wild.
+        </p>
       </>
     ),
     techBadges: (
@@ -391,36 +479,36 @@ export const projectData = [
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg'
           alt='javascript'
-          width='45'
-          height='45'
+          width={knotBadgeSize}
+          height={knotBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg'
           alt='html5'
           className='left-space-2'
-          width='45'
-          height='45'
+          width={knotBadgeSize}
+          height={knotBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg'
           alt='css3'
           className='left-space-1'
-          width='45'
-          height='45'
+          width={knotBadgeSize}
+          height={knotBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
           alt='git'
           className='left-space-2'
-          width='45'
-          height='45'
+          width={knotBadgeSize}
+          height={knotBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg'
           alt='github'
           className='left-space-2'
-          width='45'
-          height='45'
+          width={knotBadgeSize}
+          height={knotBadgeSize}
         />
       </>
     ),
@@ -436,7 +524,13 @@ export const projectData = [
     repo: 'https://github.com/pablisch/picture-pad-flex-morph',
     summary:
       'A playful, early exploration of displaying images using vanilla JavaScript and Flexbox to create a new way of viewing photo collections.',
-    note: 'Click on compressed image panels to expand them',
+    buttonText: (
+      <>
+        This app is partially responsive.{' '}
+        <span className='bold'>Click this button</span> to open the app in its
+        own window.
+      </>
+    ),
     heading: 'Picture Pad Flex Morph',
     subheading: 'A playful exploration of how to display your holiday photos',
     descriptionText: (
@@ -481,36 +575,36 @@ export const projectData = [
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg'
           alt='javascript'
-          width='45'
-          height='45'
+          width={knotBadgeSize}
+          height={knotBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg'
           alt='html5'
           className='left-space-2'
-          width='45'
-          height='45'
+          width={knotBadgeSize}
+          height={knotBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg'
           alt='css3'
           className='left-space-1'
-          width='45'
-          height='45'
+          width={knotBadgeSize}
+          height={knotBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
           alt='git'
           className='left-space-2'
-          width='45'
-          height='45'
+          width={knotBadgeSize}
+          height={knotBadgeSize}
         />
         <img
           src='https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg'
           alt='github'
           className='left-space-2'
-          width='45'
-          height='45'
+          width={knotBadgeSize}
+          height={knotBadgeSize}
         />
       </>
     ),
@@ -518,16 +612,22 @@ export const projectData = [
   {
     // Eclipse
     id: '6',
-    name: 'Eclipse Layout',
+    name: 'Eclipse Battle Calculator',
     // navName: 'Eclipse Layout',
-    img: 'eclipse-layout-image.png',
-    url: 'https://eclipse-generator.onrender.com/',
+    img: 'eclipse-combat-small.png',
+    url: 'https://eclipse-battle-calculator.onrender.com/',
     apiWakeUpUrl: null,
     repo: 'https://github.com/pablisch/eclipse-layout-react',
     summary:
-      'A companion to the board game, Eclipse, A new Dawn for the Galaxy, which automates the complex game setup.',
-    note: "Select or deselect names from the player form and click the <span className='emphasise'>GENERATE</span> button to generate the starting game layout.",
-    heading: 'Eclipse Layout Generator',
+      'A companion to the board game, Eclipse, A new Dawn for the Galaxy, which calculates combat odds for different ship configuarations.',
+    buttonText: (
+      <>
+        This app is not responsive.{' '}
+        <span className='bold'>Click this button</span> to open the app in its
+        own window.
+      </>
+    ),
+    heading: 'Eclipse Battle Calculator',
     subheading:
       'A companion to the board game, Eclipse, A new Dawn for the Galaxy',
     descriptionText: (
@@ -621,21 +721,40 @@ export const projectData = [
     repo: 'https://github.com/pablisch/eclipse-layout-react',
     summary:
       'A playful app that generates alternative station names for the London Underground based on user themes using the GPT-3 API.',
-    note: "Select or deselect names from the player form and click the <span className='emphasise'>GENERATE</span> button to generate the starting game layout.",
+    buttonText: (
+      <>
+        This app is very poorly responsive.{' '}
+        <span className='bold'>Click this button</span> to open the app in its
+        own window.
+      </>
+    ),
     url: 'https://alternative-routes.onrender.com/',
     heading: 'Eclipse Layout Generator',
-    subheading:
-      'LLM generated alternative station names for London tube lines',
+    subheading: 'LLM generated alternative station names for London tube lines',
     descriptionText: (
       <>
         <p className='para'>
-          <span className='emphasise'>Description:</span> This playful app began as an experimental companion app to the London Underground Phony Orchestra (LUPO) app with the intention of possible integration to allow the renaming of all stations within LUPO. It is proof of concept for when time is available to integrate it into LUPO. 
+          <span className='emphasise'>Description:</span> This playful app began
+          as an experimental companion app to the London Underground Phony
+          Orchestra (LUPO) app with the intention of possible integration to
+          allow the renaming of all stations within LUPO. It is proof of concept
+          for when time is available to integrate it into LUPO.
         </p>
         <p className='para'>
-          <span className='bold'>Alternative Routes</span> was my first experimentation utilising the GPT-3 API, which was fun and far simpler tham had anticipated. The app generates alternative station names for the London Underground based on user themes. Themes and generated names are stored in a MongoDB Atlas database where data is not linked to any user so any user of the app sees the collective result of all users.
+          <span className='bold'>Alternative Routes</span> was my first
+          experimentation utilising the GPT-3 API, which was fun and far simpler
+          tham had anticipated. The app generates alternative station names for
+          the London Underground based on user themes. Themes and generated
+          names are stored in a MongoDB Atlas database where data is not linked
+          to any user so any user of the app sees the collective result of all
+          users.
         </p>
         <p className='para'>
-          Mainly to expand the technical reach of this simple app, I added an &apos;About&apos; page and a &apos;Contact Us&apos; page. The &apos;Contact Us&apos; page uses an additonal MongoDB Atlas collection to store messages and whether or not they have subscribed to the newsletter in additon to emailing me the message
+          Mainly to expand the technical reach of this simple app, I added an
+          &apos;About&apos; page and a &apos;Contact Us&apos; page. The
+          &apos;Contact Us&apos; page uses an additonal MongoDB Atlas collection
+          to store messages and whether or not they have subscribed to the
+          newsletter in additon to emailing me the message
         </p>
         <span className='emphasise'>Description:</span> This Eclipse Layout
         Generator App started off as a simple Vanilla JavaScript project before
@@ -725,7 +844,13 @@ export const projectData = [
     url: 'https://pablisch.github.io/lair-bnb/',
     apiWakeUpUrl: null,
     repo: 'https://github.com/pablisch/lair-bnb',
-    note: '<span className="bold">Lair BnB</span> is <span className="bold">NOT</span> currently deployed online. Please see the <span className="bold">README</span> for instructions on how to run it locally.',
+    buttonText: (
+      <>
+        This app is not responsive.{' '}
+        <span className='bold'>Click this button</span> to open the app in its
+        own window.
+      </>
+    ),
     heading: 'Lair BnB',
     subheading: 'An Air BnB clone with a Lord of The Rings theme',
     descriptionText: (
