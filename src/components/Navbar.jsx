@@ -7,9 +7,9 @@ import PropTypes from 'prop-types';
 function Navbar({ setFocusProjectId, setSelectedProject, section }) {
   const navigate = useNavigate();
 
-  const handleMyProjectsClick = () => {
+  const handleNavTitleClick = () => {
     setSelectedProject({});
-    navigate(`/`);
+    navigate(section === 'about' ? `/more-about-me` : '/');
   };
 
   return (
@@ -23,7 +23,7 @@ function Navbar({ setFocusProjectId, setSelectedProject, section }) {
             src='images/pablo-circle-avatar.png'
             alt='icon'
           />
-          <h1 onClick={handleMyProjectsClick}>{section === 'projects' ? 'My Projects' : section === 'about' ? 'About Me' : ''}</h1>
+          <h1 onClick={handleNavTitleClick}>{section === 'projects' ? 'My Projects' : section === 'about' ? 'About Me' : ''}</h1>
         </div>
         <div className='navlist'>
           {projectData.map((project) => (
@@ -79,6 +79,7 @@ function Navbar({ setFocusProjectId, setSelectedProject, section }) {
 Navbar.propTypes = {
   setFocusProjectId: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
+  section: PropTypes.string.isRequired,
 };
 
 export default Navbar;

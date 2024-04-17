@@ -1,10 +1,10 @@
-import { projectData } from '../data/projectData';
+import { aboutData } from '../data/aboutData';
 import { useEffect } from 'react';
-import Project from '../components/Project';
+import AboutPanel from '../components/AboutPanel';
 import PropTypes from 'prop-types';
 import './ProjectsPage.css';
 
-function ProjectsPage({
+function AboutPage({
   setFocusProjectId,
   focusProjectId,
   setSelectedProject,
@@ -13,12 +13,12 @@ function ProjectsPage({
   useEffect(() => {
     setSection('about')
     document.title = 'Pablo Joyce - About Me';
-  }, []);
+  }, [setSection]);
 
   return (
     <ul className='project-box'>
-      {projectData.map((project) => (
-        <Project
+      {aboutData.map((project) => (
+        <AboutPanel
           key={project.id}
           project={project}
           setFocusProjectId={setFocusProjectId}
@@ -30,11 +30,11 @@ function ProjectsPage({
   );
 }
 
-ProjectsPage.propTypes = {
+AboutPage.propTypes = {
   setFocusProjectId: PropTypes.func.isRequired,
   focusProjectId: PropTypes.string,
   setSelectedProject: PropTypes.func.isRequired,
   setSection: PropTypes.func.isRequired
 };
 
-export default ProjectsPage;
+export default AboutPage;

@@ -7,7 +7,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import AboutPage from './pages/AboutPage';
 import SingleProjectPage from './pages/SingleProjectPage';
 import axios from 'axios';
-import {projectData} from './data/projectData';
+import { projectData } from './data/projectData';
 
 const apiUrls = projectData.filter(project => project.apiWakeUpUrl).map(project => project.apiWakeUpUrl);
 
