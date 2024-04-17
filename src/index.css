@@ -46,8 +46,12 @@
   --brown: #ac9a7a;
   --fawn: #c2b6a3;
 
-  --primary-background: rgb(208, 241, 246, 1);
-  --primary-background-zero: rgb(208, 241, 246, 0);
+  --old-background-blue: #d0f1f6;
+
+  --primary-background: var(--cream);
+  --primary-background-bar: rgb(250, 243, 221, 1);
+  --primary-background-bar-zero: rgb(250, 243, 221, 0);
+
 }
 
 * {

@@ -2,27 +2,42 @@
   --nav-side-padding: 20px;
   --fake-side-margin: 0.1px;
   --nav-container-width: calc(85vw + (2 * var(--nav-side-padding)));
-  --navbar-height: 65px;
+  --navbar-height: 85px;
   --app-max-width: 1100px;
 }
 
-/* nav {
-  background-color: #c8d5b9;
-  background-size: cover;
-  padding: 7px 0;
-  z-index: 0;
-  transition: background-color 3s ease;
-} */
+#nav-border-bar-1 {
+  height: 1px;
+  background-color: var(--brown);
+}
+
+#nav-border-bar-2 {
+  height: 4px;
+  background-color: var(--fawn);
+}
+
+#nav-border-bar-3 {
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0);
+  background: linear-gradient(
+    to bottom,
+    rgba(250, 243, 221, 1) 0%,
+    rgba(250, 243, 221, 0) 100%
+  );
+}
 
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(200, 213, 185, 1);
   background-size: cover;
-  padding: 7px 0;
+  /* padding: 7px 0; */
   z-index: 1000; /* Adjust the z-index as needed */
   transition: background-color 3s ease;
+}
+
+#navbar {
+  background-color: rgba(200, 213, 185, 1);
 }
 
 .nav-container {
@@ -30,8 +45,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: calc(var(--app-max-width) + (2 * var(--nav-side-padding)));
-  width: var(--nav-container-width); /* USE SAME SETTING for .nav-containter, .gallery-container, .focus-container & .footer-container */
+  max-width: calc(var(--app-max-width) + (2 * var(--nav-side-padding)) + 200px);
+  width: var(
+    --nav-container-width
+  ); /* USE SAME SETTING for .nav-containter, .gallery-container, .focus-container & .footer-container */
   margin: 0 auto;
   padding: 0 var(--nav-side-padding); /* standard 20px side padding for all outer containers */
   overflow: hidden;
@@ -92,7 +109,6 @@ nav {
   color: var(--lime);
 }
 
-
 .github-link-btn {
   background-color: var(--green1a);
   margin: 0 0 0 4px;
@@ -106,7 +122,6 @@ nav {
 .github-logo {
   max-height: 50px;
 }
-
 
 .hamburger {
   display: none;

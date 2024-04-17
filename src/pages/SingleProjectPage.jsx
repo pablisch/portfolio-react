@@ -60,6 +60,7 @@ const SingleProjectPage = ({ selectedProject }) => {
           <p className='project-text'>{selectedProject.technologiesText}</p>
         </div>
       </div>
+      <div id="bit-at-the-bottom"></div>
     </div>
   );
 };

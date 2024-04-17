@@ -27,14 +27,16 @@ export const projectData = [
     descriptionText: (
       <>
         <p className='project-text'>
-          <span className='emphasise'>Description:</span> A generative music and visualisation app
-          based on real-time arrivals of tube trains on the London Underground
-          network using real-time data from the TFL Unified API.
+          <span className='emphasise'>Description:</span> A generative music and
+          visualisation app based on real-time arrivals of tube trains on the
+          London Underground network using real-time data from the TFL Unified
+          API.
         </p>
         <p className='project-text'>
-        LUPO is the outcome of my final group engineering
-          project on the Makers Software Development bootcamp, where each tube line is assigned an instrument and each station assigned a
-          different note which is played when a train arrives. 
+          LUPO is the outcome of my final group engineering project on the
+          Makers Software Development bootcamp, where each tube line is assigned
+          an instrument and each station assigned a different note which is
+          played when a train arrives.
         </p>
         <p className='project-text'>
           The app was conceived, researched, planned, designed, coded and
@@ -65,10 +67,20 @@ export const projectData = [
           allowing us to make informed decisions on how to proceed.
         </p>
         <p className='project-text'>
-          <span className='emphasise'>Reponsiveness:</span> LUPO was primarily conceived as a desktop app and was first deployed with minimal responsiveness. I have since added a considerable amount of responsive CSS making the app viable even on a small phone such as an iPhone SE but more work is needed to create a truly mobile-first experience.
+          <span className='emphasise'>Reponsiveness:</span> LUPO was primarily
+          conceived as a desktop app and was first deployed with minimal
+          responsiveness. I have since added a considerable amount of responsive
+          CSS making the app viable even on a small phone such as an iPhone SE
+          but more work is needed to create a truly mobile-first experience.
         </p>
         <p className='project-text'>
-          <span className='emphasise'>Next Steps:</span> There are many ways that this app could be improved but the thing that stands out to me is the way that the controls are unclear making the finer points of the app unintuitive. For example, with the Mute and Service buttons, it is not clear visually whether you are turning them on or off. The majority of next steps are visual UX improvements rather than core functionality.
+          <span className='emphasise'>Next Steps:</span> There are many ways
+          that this app could be improved but the thing that stands out to me is
+          the way that the controls are unclear making the finer points of the
+          app unintuitive. For example, with the Mute and Service buttons, it is
+          not clear visually whether you are turning them on or off. The
+          majority of next steps are visual UX improvements rather than core
+          functionality.
         </p>
       </>
     ),
@@ -167,9 +179,10 @@ export const projectData = [
         <p className='project-text'>
           Images are uploaded using Cloudinary and URLs are stored in the
           MongoDB Atlas database. Fronted image processing ensures that image
-          uploads are reduced to the maximum resolution required preventing wasteful resource storage, i.e. avatars
-          have a maximum height of 40px. Feed images are dynamically reduced to
-          a maximum width of 400px suitable for the column display width.
+          uploads are reduced to the maximum resolution required preventing
+          wasteful resource storage, i.e. avatars have a maximum height of 40px.
+          Feed images are dynamically reduced to a maximum width of 400px
+          suitable for the column display width.
         </p>
         <p className='project-text'>
           Logged in users are able to upload their own images, make comments,
@@ -608,7 +621,13 @@ export const projectData = [
           that I could not accept.
         </p>
         <p className='project-text'>
-          <span className='emphasise'>Responsiveness:</span> Recent Responsiveness updates now make this app dynamically change the number of rows and columns independently according to the screen width and height which should make it more usuable on devices of all sizes or orientations. The app retains a default maximum grid, however, meaning any responsive reduction results in some images being hidden and what is hidden is dependent on orientation rather than priority.
+          <span className='emphasise'>Responsiveness:</span> Recent
+          Responsiveness updates now make this app dynamically change the number
+          of rows and columns independently according to the screen width and
+          height which should make it more usuable on devices of all sizes or
+          orientations. The app retains a default maximum grid, however, meaning
+          any responsive reduction results in some images being hidden and what
+          is hidden is dependent on orientation rather than priority.
         </p>
         <p className='project-text'>
           <span className='emphasise'>Known Issues:</span> Performance is a real
@@ -684,35 +703,63 @@ export const projectData = [
     descriptionText: (
       <>
         <p className='project-text'>
-
-        <span className='emphasise'>Description:</span> This Eclipse Battle Calculator app is a combination of geeky curiousity and an exploration of complex algorithms.
+          <span className='emphasise'>Description:</span> This Eclipse Battle
+          Calculator app is a combination of geeky curiousity and an exploration
+          of complex algorithms.
         </p>
         <p className='project-text'>
-          Any combat situation in the board game Eclipse, is the result of a mind-boggling number of possible ship configurations and combinations resulting in complex real-world decisions which proved extremely challenging to express in code.
-          </p>
+          Any combat situation in the board game Eclipse, is the result of a
+          mind-boggling number of possible ship configurations and combinations
+          resulting in complex real-world decisions which proved extremely
+          challenging to express in code.
+        </p>
         <p className='project-text'>
-          This app runs through 100,000 battle simulations to calculate the odds of winning any given battle, but experience has shown that odds are no guarantee of success.
-
-          </p>
+          This app runs through 100,000 battle simulations to calculate the odds
+          of winning any given battle, but experience has shown that odds are no
+          guarantee of success.
+        </p>
       </>
     ),
     technologiesText: (
       <>
         <p className='project-text sm'>
-
-        <span className='emphasise'>Technologies:</span> This is a static app using Vite React. The app starts with the default game data but keeps track of the user&apos;s configuaration choices for easy switching between species. Since players are aligned to a particular species, and all data would naturally reset between games, there was no need to store data in a database and no need for a backend.
+          <span className='emphasise'>Technologies:</span> This is a static app
+          using Vite React. The app starts with the default game data but keeps
+          track of the user&apos;s configuaration choices for easy switching
+          between species. Since players are aligned to a particular species,
+          and all data would naturally reset between games, there was no need to
+          store data in a database and no need for a backend.
         </p>
         <p className='project-text sm'>
-          What surprised me most about this app was the sheer complexity of the algorithms required to accurately carry out a battle calculation when so many parameters affected where damage &apos;should&apos; be applied. I began by using a series of helper functions but in the end went back to the drawing board and created Ship and Battle Classes to handle the complexity. 
+          What surprised me most about this app was the sheer complexity of the
+          algorithms required to accurately carry out a battle calculation when
+          so many parameters affected where damage &apos;should&apos; be
+          applied. I began by using a series of helper functions but in the end
+          went back to the drawing board and created Ship and Battle Classes to
+          handle the complexity.
         </p>
         <p className='project-text'>
-          The app currently accurately handles battles with complex ship configuarations where each single fleet has ships with a common shield value (attacker and defender may have different values). Battles where a single fleet has different shield values are another step in complexity which I am excited to explore when time allows.
+          The app currently accurately handles battles with complex ship
+          configuarations where each single fleet has ships with a common shield
+          value (attacker and defender may have different values). Battles where
+          a single fleet has different shield values are another step in
+          complexity which I am excited to explore when time allows.
         </p>
         <p className='project-text'>
-        <span className='emphasise'>Responsiveness:</span> This app is the least responsive of all my projects and was created on a 32&quot; desktop screen. It works fine on smaller screens and contains some natural responsiveness thanks to flexbox however the basic sizing and layout means that it starts to lose integrity below 1200 x 850 pixels. I would like to make the layout fully responsive so that relevant sections expand and comtract according to current need on smaller screen size but there always seems to be something more pressing and exciting.
+          <span className='emphasise'>Responsiveness:</span> This app is the
+          least responsive of all my projects and was created on a 32&quot;
+          desktop screen. It works fine on smaller screens and contains some
+          natural responsiveness thanks to flexbox however the basic sizing and
+          layout means that it starts to lose integrity below 1200 x 850 pixels.
+          I would like to make the layout fully responsive so that relevant
+          sections expand and comtract according to current need on smaller
+          screen size but there always seems to be something more pressing and
+          exciting.
         </p>
         <p className='project-text'>
-        <span className='emphasise'>Companion app:</span> This app is the second campanion app to the board game Eclipse, A new Dawn for the Galaxy, that I have made. It was vastly predated by the{' '}
+          <span className='emphasise'>Companion app:</span> This app is the
+          second campanion app to the board game Eclipse, A new Dawn for the
+          Galaxy, that I have made. It was vastly predated by the{' '}
           <a
             href='https://eclipse-generator.onrender.com/'
             rel='noreferrer'
@@ -722,10 +769,19 @@ export const projectData = [
           app first made in Vanilla JavaScript and later upgraded to React.
         </p>
         <p className='project-text'>
-        <span className='emphasise'>Next Steps:</span> Both previously mentioned, my priority next steps for this app are to make it responsive for smaller screen sizes including smaller laptops, tablets and even phones, and to extend the battle calculation algorithms to better handle battles where a single fleet has ships with multiple shield values.
+          <span className='emphasise'>Next Steps:</span> Both previously
+          mentioned, my priority next steps for this app are to make it
+          responsive for smaller screen sizes including smaller laptops, tablets
+          and even phones, and to extend the battle calculation algorithms to
+          better handle battles where a single fleet has ships with multiple
+          shield values.
         </p>
         <p className='project-text sm'>
-          A third next step would be to return more detailed information about battle results, e.g. the likelihood of the winner losing this or that ship during the battle. The data for this is already calculated to some extent but extracting and processing it would be very interesting.
+          A third next step would be to return more detailed information about
+          battle results, e.g. the likelihood of the winner losing this or that
+          ship during the battle. The data for this is already calculated to
+          some extent but extracting and processing it would be very
+          interesting.
         </p>
       </>
     ),
@@ -791,56 +847,35 @@ export const projectData = [
       'A playful app that generates alternative station names for the London Underground based on user themes using the GPT-3 API.',
     buttonText: (
       <>
-        This app is very poorly responsive.{' '}
+        This app is mildly responsive.{' '}
         <span className='bold'>Click this button</span> to open the app in its
         own window.
       </>
     ),
     url: 'https://alternative-routes.onrender.com/',
-    heading: 'Eclipse Layout Generator',
+    heading: 'Alter Native Routes',
     subheading: 'LLM generated alternative station names for London tube lines',
     descriptionText: (
       <>
-        <p className='para'>
-          <span className='emphasise'>Description:</span> This playful app began
-          as an experimental companion app to the London Underground Phony
-          Orchestra (LUPO) app with the intention of possible integration to
-          allow the renaming of all stations within LUPO. It is proof of concept
-          for when time is available to integrate it into LUPO.
+        <p className='project-text'>
+          <span className='emphasise'>Description:</span> This playful app was
+          my first experimentation utilising the OpenAI GPT-3 API, which was fun
+          and far simpler tham had anticipated. The app generates alternative
+          station names for the London Underground based on user themes.
         </p>
-        <p className='para'>
-          <span className='bold'>Alternative Routes</span> was my first
-          experimentation utilising the GPT-3 API, which was fun and far simpler
-          tham had anticipated. The app generates alternative station names for
-          the London Underground based on user themes. Themes and generated
-          names are stored in a MongoDB Atlas database where data is not linked
-          to any user so any user of the app sees the collective result of all
-          users.
+        <p className='project-text'>
+          The app started as a companion app to{' '}
+          <a href='https://lupo.onrender.com/' rel='noreferrer' target='_blank'>
+            LUPO
+          </a>{' '}
+          with the intention of integrating it so that station names could be
+          dynacially changed. The app is proof of concept.
         </p>
-        <p className='para'>
-          Mainly to expand the technical reach of this simple app, I added an
-          &apos;About&apos; page and a &apos;Contact Us&apos; page. The
-          &apos;Contact Us&apos; page uses an additonal MongoDB Atlas collection
-          to store messages and whether or not they have subscribed to the
-          newsletter in additon to emailing me the message
+        <p className='project-text'>
+          Themes and generated names are stored in a MongoDB Atlas database
+          where data is not linked to any user so any user of the app sees the
+          collective result of all users.
         </p>
-        <span className='emphasise'>Description:</span> This Eclipse Layout
-        Generator App started off as a simple Vanilla JavaScript project before
-        I had any formal programming training at the Makers boot camp. After
-        completing my studies I decided to upgrade the app using the React
-        library. The initial inspiration for the app came from the complex game
-        setup when there were four or five players and order mattered including
-        the locations of empty spaces. After the first React iteration I kept
-        adding more functionality to add new players and allow for any valid
-        number of players . Please note that this app does not fit well inside
-        this app&apos;s iframe. Please{' '}
-        <a
-          href='https://eclipse-generator.onrender.com/'
-          rel='noreferrer'
-          target='_blank'>
-          open in a new window
-        </a>{' '}
-        for full functionality.
       </>
     ),
     techBadges: (
@@ -894,12 +929,41 @@ export const projectData = [
     ),
     technologiesText: (
       <>
-        <span className='emphasise'>Technologies:</span> This app is written in
-        is JavaScript using the React.js library. Despite the simplicity of the
-        app, small design choices such as having the{' '}
-        <span className='emphasise'>Generate</span> button in the navbar rather
-        than the player form added a surprising amount of complexity to state
-        management.
+        <p className='project-text sm'>
+          <span className='emphasise'>Technologies:</span> Alternative Routes
+          started as a simple Vanilla JavaScript project and has grown as need
+          arose. Since the initial project was a simple experiment in using the
+          OpenAI GPT-3 API, it made sense to keep things simple. In retrospect,
+          through familiarity, it might have been better to start with the MERN
+          stack as I quickly found the need for an Express API to handle the API
+          key and calls to OpenAI.
+        </p>
+        <p className='project-text sm'>
+          The need for a database only arose later when I decided to make the
+          new station names persistent. I considered having a user login system
+          but since this was never intended as a serious app, it seemed quite
+          fun that everyone would see the collective result of all users. The
+          database use is very light and so the choice of MongoDB Atlas was a
+          pragmatic choice made for ease deployment since Render has
+          restrictions on free instances of SQL databases.
+        </p>
+        <p className='project-text'>
+          Mainly to expand the technical reach of this simple app, I added an
+          &apos;About&apos; page and a &apos;Contact Us&apos; page. The
+          &apos;Contact Us&apos; page uses an additonal MongoDB Atlas collection
+          to store messages and whether or not they have subscribed to the
+          newsletter in additon to emailing me the message.
+        </p>
+        <p className='project-text'>
+          <span className='emphasise'>Responsiveness:</span> This app has
+          rudimentary responsiveness but is not suitable for use on mobile
+          devices. As a proof of concept app and exploration of the GPT-3 API,
+          there was little to be gained in the extra work with no learning
+          benefit. The app is best viewed on a desktop or laptop screen. Aside
+          from somew responsive text sizing, the main effect is that below 950px
+          screen width, the orginal station names are hidden to allow more space
+          for displaying the generated names.
+        </p>
       </>
     ),
   },
@@ -923,27 +987,37 @@ export const projectData = [
     subheading: 'An Air BnB clone with a Lord of The Rings theme',
     descriptionText: (
       <>
-        <span className='emphasise'>Description:</span> This Air BnB clone was
-        the first group engineering project on the Makers Software Development
-        Bootcamp and was completed in four and a half days. A huge focus of this
-        project was on learning to work as a team using Agile methodologies and
-        XP values. We established a group charter with our core values, used
-        daily standups and retros, two-day sprints, pair-programming and PR
-        reviews. We also used Trello for project management and GitHub for
-        version control and collaboration. The project was built using Ruby and
-        Sinatra from scratch based on a set of user stories.
+        <p className='project-text'>
+          <span className='emphasise'>Description:</span> This Air BnB clone was
+          the first group engineering project on the Makers Software Development
+          Bootcamp and was completed in four and a half days.
+        </p>
+        <p className='project-text'>
+          A huge focus of this project was on learning to work as a team using
+          Agile methodologies and XP values. We established a group charter with
+          our core values, used daily standups and retros, two-day sprints,
+          pair-programming and PR reviews. We also used Trello for project
+          management and GitHub for version control and collaboration. The
+          project was built using Ruby and Sinatra from scratch based on a set
+          of user stories.
+        </p>
       </>
     ),
     technologiesText: (
       <>
-        <span className='emphasise'>Technologies:</span> The app is built from
-        scratch in Ruby and ERB, using Sinatra for routing with the Rack web
-        server interface. We used PostgreSQL relational database with three
-        tables and one-to-many relationships. Apart from being our first group
-        project, for much of the group it was a first venture into CSS which was
-        not taught by Makers. We used RSpec for testing and achieved 100%
-        coverage over 50 unit and integration tests. We used Git and GitHub for
-        version control and Postman API testing.
+        <p className='project-text'>
+          <span className='emphasise'>Technologies:</span> The app is built from
+          scratch in Ruby and ERB, using Sinatra for routing with the Rack web
+          server interface. We used PostgreSQL relational database with three
+          tables and one-to-many relationships.
+        </p>
+        <p className='project-text'>
+          Apart from being our first group project, for much of the group it was
+          a first venture into CSS which was not taught by Makers. We used RSpec
+          for testing and achieved 100% coverage over 50 unit and integration
+          tests. We used Git and GitHub for version control and Postman API
+          testing.
+        </p>
       </>
     ),
     techBadges: (

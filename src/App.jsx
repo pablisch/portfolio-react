@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 // import SubNavBar from './components/SubNavBar';
 import ProjectsPage from './pages/ProjectsPage';
+import AboutPage from './pages/AboutPage';
 import SingleProjectPage from './pages/SingleProjectPage';
 import axios from 'axios';
 import {projectData} from './data/projectData';
@@ -13,6 +14,7 @@ const apiUrls = projectData.filter(project => project.apiWakeUpUrl).map(project 
 function App() {
   const [focusProjectId, setFocusProjectId] = useState('');
   const [selectedProject, setSelectedProject] = useState({});
+  const [section, setSection] = useState('projects');
 
   useEffect(() => {
     const wakeUpDeployedApis = async () => {
@@ -33,8 +35,8 @@ function App() {
       <Navbar
         setFocusProjectId={setFocusProjectId}
         setSelectedProject={setSelectedProject}
+        section={section}
       />
-      {/* <SubNavBar /> */}
       <Routes>
         <Route
           path='/'
@@ -43,6 +45,19 @@ function App() {
               setFocusProjectId={setFocusProjectId}
               focusProjectId={focusProjectId}
               setSelectedProject={setSelectedProject}
+              setSection={setSection}
+              section={section}
+            />
+          }
+        />
+        <Route
+          path='/more-about-me'
+          element={
+            <AboutPage
+              setFocusProjectId={setFocusProjectId}
+              focusProjectId={focusProjectId}
+              setSelectedProject={setSelectedProject}
+              setSection={setSection}
             />
           }
         />

@@ -8,16 +8,12 @@ function ProjectsPage({
   setFocusProjectId,
   focusProjectId,
   setSelectedProject,
-  setSection,
-  section,
+  setSection
 }) {
-
   useEffect(() => {
-    if (section !== 'projects') {
-      setSection('projects');
-    }
-    document.title = 'Pablo Joyce - Projects';
-  }, [section, setSection]);
+    setSection('about')
+    document.title = 'Pablo Joyce - About Me';
+  }, []);
 
   return (
     <ul className='project-box'>
@@ -38,8 +34,7 @@ ProjectsPage.propTypes = {
   setFocusProjectId: PropTypes.func.isRequired,
   focusProjectId: PropTypes.string,
   setSelectedProject: PropTypes.func.isRequired,
-  setSection: PropTypes.func.isRequired,
-  section: PropTypes.string.isRequired,
+  setSection: PropTypes.func.isRequired
 };
 
 export default ProjectsPage;
