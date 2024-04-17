@@ -44,11 +44,6 @@ function Navbar({ setFocusProjectId, setSelectedProject, section }) {
               <Link to='/more-about-me' className='nav-btn nav-link' >
               More About Me
             </Link>}
-          {/* <a
-            href='https://pablisch.github.io/cv-about-links/'
-            className='nav-btn external-nav-link'>
-            More About Me
-          </a> */}
           <a
             href='https://github.com/pablisch'
             className='nav-btn github-link-btn'
