@@ -24,6 +24,10 @@ const SingleProjectPage = ({ selectedProject }) => {
     window.open(selectedProject.url, '_blank');
   }
 
+  useEffect(() => {
+    document.title = `Pablo - ${selectedProject.navName || selectedProject.name}`;
+  }, [selectedProject]);
+
   return (
     <div id='single-project-page'>
       <div id='single-project-upper-section'>

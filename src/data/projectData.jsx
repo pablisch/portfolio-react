@@ -27,14 +27,14 @@ export const projectData = [
     descriptionText: (
       <>
         <p className='project-text'>
-          <span className='emphasise'>Description:</span> A generative music app
-          based on real-time arrivals of trains on the London Underground
-          network using data from the TFL Unified API.
+          <span className='emphasise'>Description:</span> A generative music and visualisation app
+          based on real-time arrivals of tube trains on the London Underground
+          network using real-time data from the TFL Unified API.
         </p>
         <p className='project-text'>
-          Each tube line is assigned an instrument and each station assigned a
-          different note. LUPO is the outcome of my final group engineering
-          project on the Makers Software Development bootcamp.
+        LUPO is the outcome of my final group engineering
+          project on the Makers Software Development bootcamp, where each tube line is assigned an instrument and each station assigned a
+          different note which is played when a train arrives. 
         </p>
         <p className='project-text'>
           The app was conceived, researched, planned, designed, coded and
@@ -58,11 +58,17 @@ export const projectData = [
           researching and learning to use the library but was well worth the
           effort.
         </p>
-        <p className='project-text sm'>
+        <p className='project-text'>
           I also learnt chart.js when we discovered an urgent need to visualise
           TFL&apos;s dubious data. Being able to instantly visualise and share
           the live streams of data was essential to the project&apos;s success,
           allowing us to make informed decisions on how to proceed.
+        </p>
+        <p className='project-text'>
+          <span className='emphasise'>Reponsiveness:</span> LUPO was primarily conceived as a desktop app and was first deployed with minimal responsiveness. I have since added a considerable amount of responsive CSS making the app viable even on a small phone such as an iPhone SE but more work is needed to create a truly mobile-first experience.
+        </p>
+        <p className='project-text'>
+          <span className='emphasise'>Next Steps:</span> There are many ways that this app could be improved but the thing that stands out to me is the way that the controls are unclear making the finer points of the app unintuitive. For example, with the Mute and Service buttons, it is not clear visually whether you are turning them on or off. The majority of next steps are visual UX improvements rather than core functionality.
         </p>
       </>
     ),
@@ -161,7 +167,7 @@ export const projectData = [
         <p className='project-text'>
           Images are uploaded using Cloudinary and URLs are stored in the
           MongoDB Atlas database. Fronted image processing ensures that image
-          uploads are reduced to the maximum resolution required, i.e. avatars
+          uploads are reduced to the maximum resolution required preventing wasteful resource storage, i.e. avatars
           have a maximum height of 40px. Feed images are dynamically reduced to
           a maximum width of 400px suitable for the column display width.
         </p>
@@ -297,10 +303,10 @@ export const projectData = [
           Develpment Bootcamp and was completed in eight days.
         </p>
         <p className='project-text'>
-          This was an introduction to the MERN stack with no prior knowledge
-          of any of the technologies. This approach may not be an ideal way to
-          learn but does provide an excellent example of working
-          under pressure with a non-negotiable deadline.
+          This was an introduction to the MERN stack with no prior knowledge of
+          any of the technologies. This approach may not be an ideal way to
+          learn but does provide an excellent example of working under pressure
+          with a non-negotiable deadline.
         </p>
         <p className='project-text'>
           We were supplied with an existing codebase consisting of an Express
@@ -326,19 +332,30 @@ export const projectData = [
           API.
         </p>
         <p className='project-text'>
-        For the purposes of trying out this app, you may create a new user or use the following credentials: Username: portfolio-user, Username: portfolio-user.
+          For the purposes of trying out this app, you may create a new user or
+          use the following credentials: Username: portfolio-user, Username:
+          portfolio-user.
         </p>
         <p className='project-text sm'>
-        <span className='emphasise'>Username:</span> portfolio-user
+          <span className='emphasise'>Username:</span> portfolio-user
         </p>
         <p className='project-text'>
-        <span className='emphasise'>Password:</span> verysecureA1
+          <span className='emphasise'>Password:</span> verysecureA1
         </p>
         <p className='project-text'>
-        Logging in is a basic requirement of the app in order to see the message feed. My personal preference would be to have open access to a public feed but was happy to go with the group decision on this matter. The project was about learning rather than producing a final product.
+          Logging in is a basic requirement of the app in order to see the
+          message feed. My personal preference would be to have open access to a
+          public feed but was happy to go with the group decision on this
+          matter. The project was about learning rather than producing a final
+          product.
         </p>
         <p className='project-text'>
-        <span className='emphasise'>Known Issues:</span> The original app used a local instance of MongoDB and user avatars were stored locally. For deployement purposes, the database was migrated to MongoDB Atlas but avatar has not been updated to reflect this change. The original avatar images remain but new avatars are not persistent. As a legacy app, it is likely that this issue will not be resolved.
+          <span className='emphasise'>Known Issues:</span> The original app used
+          a local instance of MongoDB and user avatars were stored locally. For
+          deployement purposes, the database was migrated to MongoDB Atlas but
+          avatar has not been updated to reflect this change. The original
+          avatar images remain but new avatars are not persistent. As a legacy
+          app, it is likely that this issue will not be resolved.
         </p>
       </>
     ),
@@ -532,42 +549,76 @@ export const projectData = [
       </>
     ),
     heading: 'Picture Pad Flex Morph',
-    subheading: 'A playful exploration of how to display your holiday photos',
+    subheading: 'A playful exploration of displaying images',
     descriptionText: (
       <>
-        <span className='emphasise'>Description:</span> This project is a
-        playful exploration of coding as well as visualising images in a fun,
-        novel way. Its primary drive was not to create a useful app but an
-        aspirational &apos;how can I do this?&apos; approach. This represents
-        the second adaptationa and extension from Brad Traversy&apos;s{' '}
-        <a
-          href='https://pablisch.github.io/expanding-cards-layout/'
-          rel='noreferrer'
-          target='_blank'>
-          Expanding Cards
-        </a>{' '}
-        tutorial after the even more impractical{' '}
-        <a
-          href='https://pablisch.github.io/nonsense-pad-sampler/'
-          rel='noreferrer'
-          target='_blank'>
-          Nonsense Pad Sampler
-        </a>{' '}
-        project. It took considerable experimentation and learning to get the
-        images to display in the way I wanted them to and still have unresolved
-        issues with picture quality and image size while retaining a good user
-        experience on some devices. I also experimented with using Grid rather
-        than Flexbox but found that Flexbox was entirely better suited to this
-        project.
+        <p className='project-text'>
+          <span className='emphasise'>Description:</span> This project is a
+          playful exploration of coding as well as visualising images in a fun,
+          novel way.
+        </p>
+        <p className='project-text'>
+          Its primary drive was not to create a useful app but an aspirational
+          &apos;how can I do this?&apos; desire to explore and create. This
+          represents the second adaptation and extension from Brad
+          Traversy&apos;s{' '}
+          <a
+            href='https://pablisch.github.io/expanding-cards-layout/'
+            rel='noreferrer'
+            target='_blank'>
+            Expanding Cards
+          </a>{' '}
+          tutorial after the even more impractical{' '}
+          <a
+            href='https://pablisch.github.io/nonsense-pad-sampler/'
+            rel='noreferrer'
+            target='_blank'>
+            Nonsense Pad Sampler
+          </a>{' '}
+          project.
+        </p>
+        <p className='project-text'>
+          Neither this nor{' '}
+          <a
+            href='https://pablisch.github.io/nonsense-pad-sampler/'
+            rel='noreferrer'
+            target='_blank'>
+            Nonsense Pad Sampler
+          </a>{' '}
+          are intended to showcase what I am capable of but are included as they
+          represent curiosity and growth mindset at a time when I was still
+          working out basic CSS and what DOM stood for.
+        </p>
       </>
     ),
     technologiesText: (
       <>
-        <span className='emphasise'>Technologies:</span> This app was made using
-        vanilla JavaScript, HTML and CSS. It was a playful, early exploration of
-        code and represented a real challenge at that time. Technically
-        speaking, it was primarily an exploration of layout, Flexbox, Grid and
-        DOM manipulation but it was also a lot of fun
+        <p className='project-text'>
+          <span className='emphasise'>Technologies:</span> This app was made
+          using vanilla JavaScript, HTML and CSS at a time when all three were
+          new and challenging in my earliest exploration of DOM manipulation but
+          it was also a lot of fun.
+        </p>
+        <p className='project-text'>
+          It took considerable experimentation and and a good few iterations
+          before I got the images to display in the way I wanted them to and
+          still have unresolved issues with picture quality and image size
+          while. I experimented with using Grid rather than Flexbox which worked
+          very well in some sense but restricted the visual effects in a way
+          that I could not accept.
+        </p>
+        <p className='project-text'>
+          <span className='emphasise'>Responsiveness:</span> Recent Responsiveness updates now make this app dynamically change the number of rows and columns independently according to the screen width and height which should make it more usuable on devices of all sizes or orientations. The app retains a default maximum grid, however, meaning any responsive reduction results in some images being hidden and what is hidden is dependent on orientation rather than priority.
+        </p>
+        <p className='project-text'>
+          <span className='emphasise'>Known Issues:</span> Performance is a real
+          issue here but was not my primary concern at the time when I was
+          simply trying to make a concept work. Especially on a large page,
+          where more images are displayed, performace can be expremely poor on
+          some devices. Although I retain a real affection for this project, I
+          have not yet revisited it to explore the performance issues further
+          and see if I can find a practical solution.
+        </p>
       </>
     ),
     techBadges: (
@@ -632,33 +683,50 @@ export const projectData = [
       'A companion to the board game, Eclipse, A new Dawn for the Galaxy',
     descriptionText: (
       <>
-        <span className='emphasise'>Description:</span> This Eclipse Layout
-        Generator App started off as a simple Vanilla JavaScript project before
-        I had any formal programming training at the Makers boot camp. After
-        completing my studies I decided to upgrade the app using the React
-        library. The initial inspiration for the app came from the complex game
-        setup when there were four or five players and order mattered including
-        the locations of empty spaces. After the first React iteration I kept
-        adding more functionality to add new players and allow for any valid
-        number of players . Please note that this app does not fit well inside
-        this app&apos;s iframe. Please{' '}
-        <a
-          href='https://eclipse-generator.onrender.com/'
-          rel='noreferrer'
-          target='_blank'>
-          open in a new window
-        </a>{' '}
-        for full functionality.
+        <p className='project-text'>
+
+        <span className='emphasise'>Description:</span> This Eclipse Battle Calculator app is a combination of geeky curiousity and an exploration of complex algorithms.
+        </p>
+        <p className='project-text'>
+          Any combat situation in the board game Eclipse, is the result of a mind-boggling number of possible ship configurations and combinations resulting in complex real-world decisions which proved extremely challenging to express in code.
+          </p>
+        <p className='project-text'>
+          This app runs through 100,000 battle simulations to calculate the odds of winning any given battle, but experience has shown that odds are no guarantee of success.
+
+          </p>
       </>
     ),
     technologiesText: (
       <>
-        <span className='emphasise'>Technologies:</span> This app is written in
-        is JavaScript using the React.js library. Despite the simplicity of the
-        app, small design choices such as having the{' '}
-        <span className='emphasise'>Generate</span> button in the navbar rather
-        than the player form added a surprising amount of complexity to state
-        management.
+        <p className='project-text sm'>
+
+        <span className='emphasise'>Technologies:</span> This is a static app using Vite React. The app starts with the default game data but keeps track of the user&apos;s configuaration choices for easy switching between species. Since players are aligned to a particular species, and all data would naturally reset between games, there was no need to store data in a database and no need for a backend.
+        </p>
+        <p className='project-text sm'>
+          What surprised me most about this app was the sheer complexity of the algorithms required to accurately carry out a battle calculation when so many parameters affected where damage &apos;should&apos; be applied. I began by using a series of helper functions but in the end went back to the drawing board and created Ship and Battle Classes to handle the complexity. 
+        </p>
+        <p className='project-text'>
+          The app currently accurately handles battles with complex ship configuarations where each single fleet has ships with a common shield value (attacker and defender may have different values). Battles where a single fleet has different shield values are another step in complexity which I am excited to explore when time allows.
+        </p>
+        <p className='project-text'>
+        <span className='emphasise'>Responsiveness:</span> This app is the least responsive of all my projects and was created on a 32&quot; desktop screen. It works fine on smaller screens and contains some natural responsiveness thanks to flexbox however the basic sizing and layout means that it starts to lose integrity below 1200 x 850 pixels. I would like to make the layout fully responsive so that relevant sections expand and comtract according to current need on smaller screen size but there always seems to be something more pressing and exciting.
+        </p>
+        <p className='project-text'>
+        <span className='emphasise'>Companion app:</span> This app is the second campanion app to the board game Eclipse, A new Dawn for the Galaxy, that I have made. It was vastly predated by the{' '}
+          <a
+            href='https://eclipse-generator.onrender.com/'
+            rel='noreferrer'
+            target='_blank'>
+            Eclipse Setup Genrator
+          </a>{' '}
+          app first made in Vanilla JavaScript and later upgraded to React.
+        </p>
+        <p className='project-text'>
+        <span className='emphasise'>Next Steps:</span> Both previously mentioned, my priority next steps for this app are to make it responsive for smaller screen sizes including smaller laptops, tablets and even phones, and to extend the battle calculation algorithms to better handle battles where a single fleet has ships with multiple shield values.
+        </p>
+        <p className='project-text sm'>
+          A third next step would be to return more detailed information about battle results, e.g. the likelihood of the winner losing this or that ship during the battle. The data for this is already calculated to some extent but extracting and processing it would be very interesting.
+        </p>
       </>
     ),
     techBadges: (

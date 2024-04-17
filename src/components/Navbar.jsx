@@ -18,7 +18,7 @@ function Navbar({ setFocusProjectId, setSelectedProject }) {
         <div className='nav-left'>
           <img
             className='logo-image'
-            src='images/pablo-wobbly-circle-avatar.png'
+            src='images/pablo-circle-avatar.png'
             alt='icon'
           />
           <h1 onClick={handleMyProjectsClick}>My Projects</h1>

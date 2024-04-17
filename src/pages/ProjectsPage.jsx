@@ -1,4 +1,5 @@
 import { projectData } from '../data/projectData';
+import { useEffect } from 'react';
 import Project from '../components/Project';
 import PropTypes from 'prop-types';
 import './ProjectsPage.css';
@@ -8,6 +9,11 @@ function ProjectsPage({
   focusProjectId,
   setSelectedProject,
 }) {
+
+  useEffect(() => {
+    document.title = 'Pablo Joyce - Projects';
+  }, []);
+
   return (
     <ul className='project-box'>
       {projectData.map((project) => (
