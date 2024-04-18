@@ -683,7 +683,7 @@ export const projectData = [
     // Eclipse
     id: '6',
     name: 'Eclipse Battle Calculator',
-    // navName: 'Eclipse Layout',
+    navName: 'Eclipse Battle Calc',
     img: 'eclipse-combat-small.png',
     url: 'https://eclipse-battle-calculator.onrender.com/',
     apiWakeUpUrl: null,

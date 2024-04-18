@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './projects.css';
 // import { useState } from 'react';
 
-function Project({
+function ProjectPanel({
   project,
   setFocusProjectId,
   focusProjectId,
@@ -32,7 +32,7 @@ function Project({
       onMouseLeave={handleHoverEnd}
       onClick={() => handleClick(project)}>
       <img
-        src={`images/${project.img}`}
+        src={`images/project-images/${project.img}`}
         alt={project.name}
         className='project-image'
       />
@@ -46,11 +46,11 @@ function Project({
   );
 }
 
-Project.propTypes = {
+ProjectPanel.propTypes = {
   project: PropTypes.object.isRequired,
   setFocusProjectId: PropTypes.func.isRequired,
   focusProjectId: PropTypes.string.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
 };
 
-export default Project;
+export default ProjectPanel;

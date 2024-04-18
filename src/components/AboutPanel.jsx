@@ -32,7 +32,7 @@ function AboutPanel({
       onMouseLeave={handleHoverEnd}
       onClick={() => handleClick(project)}>
       <img
-        src={`about-images/${project.img}`}
+        src={`images/about-images/${project.img}`}
         alt={project.name}
         className='project-image'
       />

@@ -1,6 +1,6 @@
 import { projectData } from '../data/projectData';
 import { useEffect } from 'react';
-import Project from '../components/Project';
+import ProjectPanel from '../components/ProjectPanel';
 import PropTypes from 'prop-types';
 import './ProjectsPage.css';
 
@@ -22,7 +22,7 @@ function ProjectsPage({
   return (
     <ul className='project-box'>
       {projectData.map((project) => (
-        <Project
+        <ProjectPanel
           key={project.id}
           project={project}
           setFocusProjectId={setFocusProjectId}
