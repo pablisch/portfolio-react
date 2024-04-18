@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
-function NavLink({ children, project, setFocusProjectId, setSelectedProject }) {
+function NavLink({ children, project, setFocusProjectId, setSelectedProject, className = 'nav-btn nav-link' }) {
   const navigate = useNavigate();
 
   const handleHoverStart = () => {
@@ -20,7 +20,7 @@ function NavLink({ children, project, setFocusProjectId, setSelectedProject }) {
 
   return (
     <div
-      className='nav-btn nav-link'
+      className={className}
       onClick={() => handleClick(project)}
       onMouseOver={handleHoverStart}
       onMouseLeave={handleHoverEnd}>
@@ -34,6 +34,7 @@ NavLink.propTypes = {
   project: PropTypes.object.isRequired,
   setFocusProjectId: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
 export default NavLink;

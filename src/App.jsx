@@ -19,6 +19,7 @@ function App() {
   const [selectedProject, setSelectedProject] = useState({});
   const [selectedAbout, setSelectedAbout] = useState({});
   const [section, setSection] = useState('projects');
+  const [isAvatarHovered, setIsAvatarHovered] = useState(false);
 
   useEffect(() => {
     const wakeUpDeployedApis = async () => {
@@ -36,12 +37,16 @@ function App() {
 
   return (
     <BrowserRouter>
+      <div className={`app ${isAvatarHovered && 'avatar-hovered-app'}`}>
+
       <Navbar
         setFocusProjectId={setFocusProjectId}
         setSelectedProject={setSelectedProject}
         setFocusAboutId={setFocusAboutId}
         setSelectedAbout={setSelectedAbout}
         section={section}
+        isAvatarHovered={isAvatarHovered}
+        setIsAvatarHovered={setIsAvatarHovered}
       />
       <Routes>
         <Route
@@ -53,6 +58,7 @@ function App() {
               setSelectedProject={setSelectedProject}
               setSection={setSection}
               section={section}
+              isAvatarHovered={isAvatarHovered}
             />
           }
         />
@@ -64,6 +70,7 @@ function App() {
               focusAboutId={focusAboutId}
               setSelectedAbout={setSelectedAbout}
               setSection={setSection}
+              isAvatarHovered={isAvatarHovered}
 
               setFocusProjectId={setFocusProjectId}
               focusProjectId={focusProjectId}
@@ -73,13 +80,14 @@ function App() {
         />
         <Route
           path='/project/:id'
-          element={<SingleProjectPage selectedProject={selectedProject} />}
+          element={<SingleProjectPage selectedProject={selectedProject} isAvatarHovered={isAvatarHovered} />}
         />
         <Route
           path='/more-about-me/:id'
-          element={<SingleAboutPage selectedAbout={selectedAbout} />}
+          element={<SingleAboutPage selectedAbout={selectedAbout} isAvatarHovered={isAvatarHovered} />}
         />
       </Routes>
+      </div>
     </BrowserRouter>
   );
 }

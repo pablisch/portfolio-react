@@ -8,6 +8,7 @@ function ProjectPanel({
   setFocusProjectId,
   focusProjectId,
   setSelectedProject,
+  isAvatarHovered
 }) {
   const navigate = useNavigate();
 
@@ -36,10 +37,11 @@ function ProjectPanel({
         alt={project.name}
         className='project-image'
       />
-      <div className='project-label'>{project.panelName || project.name}</div>
+      {/* <div className={`project-label ${focusProjectId === project.id && 'hover-fade'} ${isAvatarHovered && 'hover-fade'}`} >{project.panelName || project.name}</div> */}
+      <div className={`project-label ${(focusProjectId === project.id || isAvatarHovered) && 'hover-fade'}`} >{project.panelName || project.name}</div>
       <div
         onClick={() => handleClick(project)}
-        className={`overlay ${focusProjectId === project.id && 'hover-focus'}`}>
+        className={`project-overlay ${(focusProjectId === project.id || isAvatarHovered) && 'hover-focus'}`}>
         {project.summary}
       </div>
     </li>
@@ -51,6 +53,7 @@ ProjectPanel.propTypes = {
   setFocusProjectId: PropTypes.func.isRequired,
   focusProjectId: PropTypes.string.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
+  isAvatarHovered: PropTypes.bool.isRequired,
 };
 
 export default ProjectPanel;

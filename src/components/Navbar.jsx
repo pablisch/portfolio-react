@@ -5,7 +5,7 @@ import { projectData } from '../data/projectData';
 import { aboutData } from '../data/aboutData';
 import PropTypes from 'prop-types';
 
-function Navbar({ setFocusProjectId, setSelectedProject, setFocusAboutId, setSelectedAbout, section }) {
+function Navbar({ setFocusProjectId, setSelectedProject, setFocusAboutId, setSelectedAbout, section, isAvatarHovered, setIsAvatarHovered}) {
   const navigate = useNavigate();
 
   const handleNavTitleClick = () => {
@@ -13,20 +13,20 @@ function Navbar({ setFocusProjectId, setSelectedProject, setFocusAboutId, setSel
     navigate(section === 'about' ? `/more-about-me` : '/');
   };
 
-  console.log('section', section);
-
   return (
 
     <nav>
-      <div id="navbar">
+      <div className={`navbar ${isAvatarHovered && 'avatar-hovered-navbar'}`}>
       <div className='nav-container'>
         <div className='nav-left'>
           <img
-            className='logo-image'
+            className={`logo-image ${isAvatarHovered && 'avatar-hovered-avatar'}`}
             src='images/pablo-circle-avatar.png'
-            alt='icon'
+              alt='icon'
+              onMouseEnter={() => setIsAvatarHovered(true)}
+              onMouseLeave={() => setIsAvatarHovered(false)}
             />
-          <div id='nav-title'>
+          <div className={`nav-title ${isAvatarHovered && 'avatar-hovered-nav-title'}`}>
           <h1 onClick={handleNavTitleClick}>{section === 'projects' ? 'My Projects' : section === 'about' ? 'About Me' : ''}</h1>
             </div>
             {/* <div className="test1"></div>
@@ -36,6 +36,7 @@ function Navbar({ setFocusProjectId, setSelectedProject, setFocusAboutId, setSel
         <div className='navlist'>
           {section === 'projects' && projectData.map((project) => (
             <NavLink
+              className={`nav-btn nav-link ${isAvatarHovered && 'avatar-hovered-nav-link'}`}
               key={project.id}
               project={project}
               setFocusProjectId={setFocusProjectId}
@@ -46,6 +47,7 @@ function Navbar({ setFocusProjectId, setSelectedProject, setFocusAboutId, setSel
           ))}
           {section === 'about' && aboutData.map((about) => (
             <NavLink
+              className={`nav-btn nav-link ${isAvatarHovered && 'avatar-hovered-nav-link'}`}
               key={about.id}
               project={about}
               setFocusProjectId={setFocusAboutId}
@@ -55,16 +57,16 @@ function Navbar({ setFocusProjectId, setSelectedProject, setFocusAboutId, setSel
             </NavLink>
           ))}
             {section === 'about' &&
-              <Link to='/' className='nav-btn nav-section-link' >
+              <Link to='/' className={`nav-btn nav-section-link ${isAvatarHovered && 'avatar-hovered-nav-section-link'}`} >
               Software Projects
             </Link>}
             {section === 'projects' &&
-              <Link to='/more-about-me' className='nav-btn nav-section-link' >
+              <Link to='/more-about-me' className={`nav-btn nav-section-link ${isAvatarHovered && 'avatar-hovered-nav-section-link'}`} >
               More About Me
             </Link>}
           <a
             href='https://github.com/pablisch'
-            className='nav-btn github-link-btn'
+            className={`nav-btn github-link-btn ${isAvatarHovered && 'avatar-hovered-github-link'}`}
             target='_blank'
             rel='noreferrer'>
             <img
@@ -83,8 +85,8 @@ function Navbar({ setFocusProjectId, setSelectedProject, setFocusAboutId, setSel
         </div>
         </div>
       <div id="nav-border-bar-1"></div>
-      <div id="nav-border-bar-2"></div>
-      <div id="nav-border-bar-3"></div>
+      <div className={`nav-border-bar-2 ${isAvatarHovered && 'avatar-hovered-nav-border-bar-2'}`}></div>
+      <div className={`nav-border-bar-3 ${isAvatarHovered && 'avatar-hovered-nav-border-bar-3'}`}></div>
       </nav>
   );
 }
@@ -95,6 +97,8 @@ Navbar.propTypes = {
   setFocusAboutId: PropTypes.func.isRequired,
   setSelectedAbout: PropTypes.func.isRequired,
   section: PropTypes.string.isRequired,
+  isAvatarHovered: PropTypes.bool.isRequired,
+  setIsAvatarHovered: PropTypes.func.isRequired,
 };
 
 export default Navbar;

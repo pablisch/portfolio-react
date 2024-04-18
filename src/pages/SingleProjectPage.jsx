@@ -21,7 +21,11 @@ const SingleProjectPage = ({ selectedProject }) => {
 
   const handleOpenApp = () => {
     console.log('selectedProject.url', selectedProject.url)
-    window.open(selectedProject.url, '_blank');
+    if (selectedProject.name === 'Lair BnB') {
+      window.open(selectedProject.repo, '_blank');
+    } else {
+      window.open(selectedProject.url, '_blank');
+    }
   }
 
   useEffect(() => {

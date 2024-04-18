@@ -978,8 +978,8 @@ export const projectData = [
     repo: 'https://github.com/pablisch/lair-bnb',
     buttonText: (
       <>
-        This app is not responsive.{' '}
-        <span className='bold'>Click this button</span> to open the app in its
+        This app was never deployed.{' '}
+        <span className='bold'>Click this button</span> to open the repo in its
         own window.
       </>
     ),

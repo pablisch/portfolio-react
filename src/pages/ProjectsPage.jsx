@@ -10,6 +10,7 @@ function ProjectsPage({
   setSelectedProject,
   setSection,
   section,
+  isAvatarHovered,
 }) {
 
   useEffect(() => {
@@ -20,7 +21,7 @@ function ProjectsPage({
   }, [section, setSection]);
 
   return (
-    <ul className='project-box'>
+    <ul className='project-box' >
       {projectData.map((project) => (
         <ProjectPanel
           key={project.id}
@@ -28,6 +29,7 @@ function ProjectsPage({
           setFocusProjectId={setFocusProjectId}
           focusProjectId={focusProjectId}
           setSelectedProject={setSelectedProject}
+          isAvatarHovered={isAvatarHovered}
         />
       ))}
     </ul>
@@ -40,6 +42,7 @@ ProjectsPage.propTypes = {
   setSelectedProject: PropTypes.func.isRequired,
   setSection: PropTypes.func.isRequired,
   section: PropTypes.string.isRequired,
+  isAvatarHovered: PropTypes.bool.isRequired,
 };
 
 export default ProjectsPage;

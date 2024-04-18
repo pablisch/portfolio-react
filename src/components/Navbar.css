@@ -11,18 +11,33 @@
   background-color: var(--fawn-400);
 }
 
-#nav-border-bar-2 {
+.nav-border-bar-2 {
   height: 4px;
+  transition: background-color 4s ease;
   background-color: var(--fawn-200);
 }
 
-#nav-border-bar-3 {
+.avatar-hovered-nav-border-bar-2 {
+  transition: background-color 4s ease;
+  background-color: var(--pink-500);
+}
+
+.nav-border-bar-3 {
   height: 25px;
   background-color: rgba(255, 255, 255, 0);
   background: linear-gradient(
     to bottom,
     rgba(250, 243, 221, 1) 0%,
     rgba(250, 243, 221, 0) 100%
+  );
+  background-size: 100% 100%;
+}
+
+.avatar-hovered-nav-border-bar-3 {
+  background: linear-gradient(
+    to bottom,
+    var(--turquoise-200) 0%,
+    var(--turquoise-200-zero) 100%
   );
 }
 
@@ -31,13 +46,17 @@ nav {
   top: 0;
   width: 100%;
   background-size: cover;
-  /* padding: 7px 0; */
-  z-index: 1000; /* Adjust the z-index as needed */
-  transition: background-color 3s ease;
+  z-index: 1000;
 }
 
-#navbar {
+.navbar {
+  transition: background-color 4s ease;
   background-color: var(--nav-background);
+}
+
+.avatar-hovered-navbar {
+  transition: background-color 4s ease;
+  background-color: var(--grey-blue-1300);
 }
 
 .nav-container {
@@ -85,11 +104,13 @@ nav {
   align-items: center;
   justify-content: center;
   min-width: 70px;
+  transition: border 1s ease;
   border: 1px var(--sea-green-200) solid;
 }
 
 .nav-link {
-  background-color: var(--leaf100);
+  transition: background-color 4s ease, color 16s ease;
+  background-color: var(--leaf-100);
   color: var(--navText);
 }
 
@@ -98,7 +119,15 @@ nav {
   color: var(--navText-darker);
 }
 
+.avatar-hovered-nav-link {
+  transition: background-color 4s ease, border 8s ease, color 16s ease;
+  background-color: var(--grey-blue-1300);
+  border: 1px var(--leaf-900) solid;
+  color: var(--lime-500);
+}
+
 .nav-section-link {
+  transition: background-color 4s ease;
   background-color: var(--nav-section-link-background);
   color: var(--nav-section-link-text);
   text-decoration: none;
@@ -106,21 +135,35 @@ nav {
 
 .nav-section-link:hover {
   background-color: var(--navText-darker);
-  color: var(--lime);
+  color: var(--lime-300);
+}
+
+.avatar-hovered-nav-section-link {
+  transition: background-color 4s ease, border 8s ease, color 16s ease;
+  background-color: var(--grey-blue-1300);
+  border: 1px var(--leaf-900) solid;
+  color: var(--lime-500);
 }
 
 .github-link-btn {
+  transition: background-color 4s ease;
   background-color: var(--cream100);
   margin: 0 0 0 4px;
 }
 
 .github-link-btn:hover {
-  background-color: var(--lime);
+  background-color: var(--lime-300);
   border: 1px var(--navText-darker) solid;
 }
 
 .github-logo {
   max-height: 50px;
+}
+
+.avatar-hovered-github-link {
+  transition: background-color 4s ease, border 8s ease;
+  background-color: var(--grey-blue-1300);
+  border: 1px var(--leaf-900) solid;
 }
 
 .hamburger {
@@ -139,24 +182,37 @@ nav {
   z-index: 1;
 }
 
-#nav-title {
+.nav-title {
   flex: 1 400px;
-  /* font-size: 2.2rem; */
-  /* font-weight: normal; */
-  /* color: var(--navText); */
-  transition: color 7s ease;
   text-align: center;
   border-radius: 15px;
   padding: 10px 15px;
+  transition: background-color 3s ease, border 8s ease;
   background-color: var(--nav-title-background);
+  border: 1px var(--sea-green-200) solid;
+}
+
+.nav-title:hover {
+  background-color: var(--leaf-100);
   border: 1px var(--sea-green-400) solid;
+}
+
+.avatar-hovered-nav-title {
+  transition: background-color 3s ease, border 8s ease;
+  background-color: var(--grey-blue-1300);
+  border: 1px var(--grey-blue-1300) solid;
+}
+
+.avatar-hovered-nav-title h1 {
+  transition: color 16s ease;
+  color: var(--lime-300);
 }
 
 nav h1 {
   font-size: 2.2rem;
   font-weight: normal;
   color: var(--navText);
-  /* transition: color 7s ease; */
+  transition: color 16s ease;
 }
 
 nav li {
@@ -170,10 +226,6 @@ nav li {
   transition: opacity 4s ease;
 }
 
-.logo-image:hover {
+.avatar-hovered-avatar {
   opacity: 0.1;
-}
-
-.logo-image:hover ~ h1 {
-  color: #adfe2f;
 }

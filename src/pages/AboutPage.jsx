@@ -9,18 +9,15 @@ function AboutPage({
   focusAboutId,
   setSelectedAbout,
   setSection,
-
-  setFocusProjectId,
-  focusProjectId,
-  setSelectedProject,
 }) {
+  
   useEffect(() => {
     setSection('about')
     document.title = 'Pablo Joyce - About Me';
   }, [setSection]);
 
   return (
-    <ul className='about-box project-about-box'>
+    <ul className='about-box'>
       {aboutData.map((about) => (
         <AboutPanel
           key={about.id}
@@ -28,10 +25,6 @@ function AboutPage({
           setFocusAboutId={setFocusAboutId}
           focusAboutId={focusAboutId}
           setSelectedAbout={setSelectedAbout}
-
-          setFocusProjectId={setFocusProjectId}
-          focusProjectId={focusProjectId}
-          setSelectedProject={setSelectedProject}
         />
       ))}
     </ul>
@@ -43,11 +36,6 @@ AboutPage.propTypes = {
   focusAboutId: PropTypes.string,
   setSelectedAbout: PropTypes.func.isRequired,
   setSection: PropTypes.func.isRequired,
-
-  setFocusProjectId: PropTypes.func.isRequired,
-  focusProjectId: PropTypes.string,
-  setSelectedProject: PropTypes.func.isRequired,
-
 };
 
 export default AboutPage;

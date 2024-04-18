@@ -6,7 +6,7 @@
   /* OLD OVERLAY COLOURS */
   --preOverlayLight: rgba(255, 255, 255, 0);
   --preOverlayDarkText: rgba(43, 43, 44, 0);
-  --overlayLight: rgba(255, 255, 255, 0.9);
+  --overlay-light: rgba(252, 255, 250, 0.8);
   --overlayDarkText: rgba(43, 43, 44, 1);
   --labelLightText: rgb(255, 255, 255);
   --labelDark: rgba(43, 43, 44, 0.85);
@@ -21,7 +21,7 @@
 
   --pink-300: #f0b7b1;
   --pink-500: #ffa69e;
-  
+
   --blue-200: #d0f1f6;
   --blue-400: #aed9e0;
 
@@ -29,17 +29,21 @@
   --cream200: #fbfde3;
   --cream300: #faf3dd;
 
-  --lime: #b6fc4c;
+  --lime-300: #b6fc4c;
+  --lime-500: #84b836;
 
-  --leaf100: #e7f1dd;
-  --leaf200: #d0dcc4;
-  --leaf300: #c8d5b9;
-  --leaf700: #6b7e62;
+  --leaf-100: #e7f1dd;
+  --leaf-200: #d0dcc4;
+  --leaf-300: #c8d5b9;
+  --leaf-700: #6b7e62;
+  --leaf-900: #4f6048;
 
   --sea-green-200: #aecebf;
   --sea-green-400: #8fc0a9;
+  --sea-green-600: #7aa490;
 
   --turquoise-200: #b8f2e6;
+  --turquoise-200-zero: rgba(184, 242, 230, 0);
   --turquoise-400: #68b0ab;
 
   --grey-blue-400: #696d7d;
@@ -57,10 +61,10 @@
   --primary-background-bar: rgb(250, 243, 221, 1);
   --primary-background-bar-zero: rgb(250, 243, 221, 0);
 
-  --nav-background: var(--leaf300);
-  --nav-title-background: var(--leaf200);
-  --nav-section-link-background: var(--leaf700);
-  --nav-section-link-text: var(--leaf100);
+  --nav-background: var(--leaf-300);
+  --nav-title-background: var(--leaf-200);
+  --nav-section-link-background: var(--leaf-700);
+  --nav-section-link-text: var(--leaf-100);
 
   --navText: var(--grey-blue-700);
   --navText-darker: var(--grey-blue-1300);
@@ -89,6 +93,16 @@ body {
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   font-size: 1.1rem;
-  background-color: var(--primary-background);
   color: #606060;
+  background-color: var(--primary-background);
+}
+
+.app {
+  transition: background-color 3s ease;
+  background-color: var(--primary-background);
+}
+
+.avatar-hovered-app {
+  transition: background-color 3s ease;
+  background-color: var(--turquoise-400);
 }

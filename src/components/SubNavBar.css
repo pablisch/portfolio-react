@@ -1,8 +1,0 @@
-.graduated-opacity-div {
-  /* margin-top: -1px; */
-  position: fixed;
-  width: 100%; 
-  height: 20px; 
-  background: linear-gradient(var(--primary-background), var(--primary-background-zero));
-  z-index: 500;
-}

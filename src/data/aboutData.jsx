@@ -8,7 +8,7 @@ export const aboutData = [
     img: 'edge-of-space-small.png',
     url: 'https://www.youtube.com/embed/9Rz9ZmfYuqk?rel=0&autoplay=1',
     apiWakeUpUrl: null,
-    summary: 'Edge of Space Explorer',
+    summary: 'As a special school project, I sent a Raspberry Pi to the edge of space on a high-altitude balloon sending back live images and flight telemetry.',
     buttonText: (
       <>
         <span className='bold'>Click</span> to open in a new tab or window.
@@ -40,7 +40,7 @@ export const aboutData = [
     img: 'march-wood-small.png',
     url: 'https://pablisch.github.io/MarchWood/',
     apiWakeUpUrl: null,
-    summary: 'Forest Creator',
+    summary: 'It was a real pleasure to create and nurture a brand new baby woodland at my primary school that has now grown into a thriving outdoor learning area.',
     buttonText: (
       <>
         <span className='bold'>Click</span> to open in a new tab or window.
@@ -71,7 +71,7 @@ export const aboutData = [
     img: 'stem-rocket-square.jpg',
     url: 'https://www.youtube.com/embed/CG7WkIYNqQA?rel=0&autoplay=1',
     apiWakeUpUrl: null,
-    summary: 'Primary STEM and Computing Lead',
+    summary: 'My STEM work with London primary schools repeatedly won target awards and competitions and was a huge amount of fun.',
     buttonText: (
       <>
         <span className='bold'>Click</span> to open in a new tab or window.
@@ -102,7 +102,7 @@ export const aboutData = [
     img: 'forest-school-small.png',
     url: 'https://pablisch.github.io/forest-school-images-expanding/',
     apiWakeUpUrl: null,
-    summary: 'Forest School Leader',
+    summary: "As a Forest School Leader it was amazing to help children grow and explore their world helping them develop into joyful, kind and aspirational people.",
     buttonText: (
       <>
         <span className='bold'>Click</span> to open in a new tab or window.
@@ -133,7 +133,7 @@ export const aboutData = [
     img: 'yew-tables.jpg',
     url: 'https://pablisch.github.io/travel-images-picture-pad/',
     apiWakeUpUrl: null,
-    summary: 'Furniture Designer & Maker',
+    summary: "I studied Furniture Craftsmanship & Design at university in pursuit of my life-long love of making and the desire to bring beautiful things into the world.",
     buttonText: (
       <>
         <span className='bold'>Click</span> to open in a new tab or window.
@@ -164,7 +164,7 @@ export const aboutData = [
     img: 'coffee-prayers.jpg',
     url: 'https://pablisch.github.io/travel-images-picture-pad/',
     apiWakeUpUrl: null,
-    summary: 'Lifelong Learning & Curiosity',
+    summary: "I am naturally curious about the world, people, places, how things work or why they don't. I love to explore the world near and far, and the spaces in between.",
     buttonText: (
       <>
         <span className='bold'>Click</span> to open in a new tab or window.
