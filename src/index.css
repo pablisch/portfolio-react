@@ -3,12 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --navbar: rgba(230, 230, 230, 0.8);
-  --navText: rgba(43, 43, 44, 0.7);
-  --navText2:rgba(17, 19, 17, 0.8);
-
-  --text: #666;
-  --text-darker: #484848;
+  /* OLD OVERLAY COLOURS */
   --preOverlayLight: rgba(255, 255, 255, 0);
   --preOverlayDarkText: rgba(43, 43, 44, 0);
   --overlayLight: rgba(255, 255, 255, 0.9);
@@ -19,40 +14,68 @@
   --hamburgerMenu: rgba(230, 230, 230, 0.9);
   --tech: rgba(255, 255, 255, 0.4);
 
-  --light-pink: #f0b7b1;
+  /* colour palette from https://coolors.co/palette/ffa69e-faf3dd-b8f2e6-aed9e0-5e6472 */
+  /* colour palette from https://coolors.co/palette/faf3dd-c8d5b9-8fc0a9-68b0ab-696d7d */
+
+  /* COLOUR DECLARATIONS */
+
+  --pink-300: #f0b7b1;
+  --pink-500: #ffa69e;
+  
+  --blue-200: #d0f1f6;
+  --blue-400: #aed9e0;
+
+  --cream100: #fdfbf5;
+  --cream200: #fbfde3;
+  --cream300: #faf3dd;
+
   --lime: #b6fc4c;
 
-  /* colour palette from https://coolors.co/palette/ffa69e-faf3dd-b8f2e6-aed9e0-5e6472 */
-  --pink: #ffa69e;
-  --cream: #faf3dd;
-  --light-blue: #b8f2e6;
-  --mid-blue: #aed9e0;
-  --grey: #626764;
+  --leaf100: #e7f1dd;
+  --leaf200: #d0dcc4;
+  --leaf300: #c8d5b9;
+  --leaf700: #6b7e62;
 
-  /* colour palette from https://coolors.co/palette/faf3dd-c8d5b9-8fc0a9-68b0ab-696d7d */
-  --green1a: #fdfbf5;
-  --green1: #faf3dd;
-  --green2: #c8d5b9;
-  --green2Ref: rgb(200, 213, 185);
-  --green2b: #e7f1dd;
-  --green2c: #fbfde3;
-  --green3: #8fc0a9;
-  --green3b: #aecebf;
-  --green4: #68b0ab;
-  --green4Ref: rgb(104, 176, 171);
-  --green5: #696d7d;
-  --green6: rgba(74, 90, 68, 0.7);
+  --sea-green-200: #aecebf;
+  --sea-green-400: #8fc0a9;
 
-  --brown: #ac9a7a;
-  --fawn: #c2b6a3;
+  --turquoise-200: #b8f2e6;
+  --turquoise-400: #68b0ab;
 
-  --old-background-blue: #d0f1f6;
+  --grey-blue-400: #696d7d;
+  --grey-blue-700: #646465;
+  --grey-blue-800: #626364;
+  --grey-blue-1100: #484849;
+  --grey-blue-1300: #404041;
 
-  --primary-background: var(--cream);
+  --fawn-200: #c2b6a3;
+  --fawn-400: #ac9a7a;
+
+  /* ELEMENT DECLARATIONS */
+
+  --primary-background: var(--cream300);
   --primary-background-bar: rgb(250, 243, 221, 1);
   --primary-background-bar-zero: rgb(250, 243, 221, 0);
 
+  --nav-background: var(--leaf300);
+  --nav-title-background: var(--leaf200);
+  --nav-section-link-background: var(--leaf700);
+  --nav-section-link-text: var(--leaf100);
+
+  --navText: var(--grey-blue-700);
+  --navText-darker: var(--grey-blue-1300);
 }
+
+/* .test1 {
+  background-color: var(--grey-blue-1300);
+  height: 50px;
+  width: 200px;
+}
+.test2 {
+  background-color: var(--grey-blue-1300b);
+  height: 50px;
+  width: 200px;
+} */
 
 * {
   box-sizing: border-box;

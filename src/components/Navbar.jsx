@@ -2,15 +2,18 @@ import NavLink from './NavLink';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import { projectData } from '../data/projectData';
+import { aboutData } from '../data/aboutData';
 import PropTypes from 'prop-types';
 
-function Navbar({ setFocusProjectId, setSelectedProject, section }) {
+function Navbar({ setFocusProjectId, setSelectedProject, setFocusAboutId, setSelectedAbout, section }) {
   const navigate = useNavigate();
 
   const handleNavTitleClick = () => {
     setSelectedProject({});
     navigate(section === 'about' ? `/more-about-me` : '/');
   };
+
+  console.log('section', section);
 
   return (
 
@@ -22,11 +25,16 @@ function Navbar({ setFocusProjectId, setSelectedProject, section }) {
             className='logo-image'
             src='images/pablo-circle-avatar.png'
             alt='icon'
-          />
+            />
+          <div id='nav-title'>
           <h1 onClick={handleNavTitleClick}>{section === 'projects' ? 'My Projects' : section === 'about' ? 'About Me' : ''}</h1>
+            </div>
+            {/* <div className="test1"></div>
+            <div className="test2"></div> */}
+
         </div>
         <div className='navlist'>
-          {projectData.map((project) => (
+          {section === 'projects' && projectData.map((project) => (
             <NavLink
               key={project.id}
               project={project}
@@ -36,12 +44,22 @@ function Navbar({ setFocusProjectId, setSelectedProject, section }) {
               {project.navName || project.name}
             </NavLink>
           ))}
+          {section === 'about' && aboutData.map((about) => (
+            <NavLink
+              key={about.id}
+              project={about}
+              setFocusProjectId={setFocusAboutId}
+              setSelectedProject={setSelectedAbout}
+            >
+              {about.navName || about.name}
+            </NavLink>
+          ))}
             {section === 'about' &&
-              <Link to='/' className='nav-btn nav-link' >
-              My Software Projects
+              <Link to='/' className='nav-btn nav-section-link' >
+              Software Projects
             </Link>}
             {section === 'projects' &&
-              <Link to='/more-about-me' className='nav-btn nav-link' >
+              <Link to='/more-about-me' className='nav-btn nav-section-link' >
               More About Me
             </Link>}
           <a
@@ -74,6 +92,8 @@ function Navbar({ setFocusProjectId, setSelectedProject, section }) {
 Navbar.propTypes = {
   setFocusProjectId: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
+  setFocusAboutId: PropTypes.func.isRequired,
+  setSelectedAbout: PropTypes.func.isRequired,
   section: PropTypes.string.isRequired,
 };
 

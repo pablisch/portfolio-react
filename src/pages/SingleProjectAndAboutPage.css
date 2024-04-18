@@ -2,7 +2,9 @@
   max-width: var(--app-max-width);
   width: calc(var(--project-box-width) - 40px);
   margin: 0 auto;
-  margin-top: calc(var(--navbar-height) + 44px); /* leave space for fixed navbar */
+  margin-top: calc(
+    var(--navbar-height) + 44px
+  ); /* leave space for fixed navbar */
   display: flex;
   flex-direction: column;
 }
@@ -14,7 +16,7 @@
 
 .emphasise {
   font-weight: bold;
-  color: var(--text-darker);
+  color: var(--grey-blue-1100);
   font-size: 1.3rem;
 }
 
@@ -26,7 +28,7 @@
   margin-bottom: 5px;
   font-size: 2.1rem;
   font-weight: 500;
-  color: var(--text-darker);
+  color: var(--grey-blue-1100);
 }
 
 #single-project-subheading {

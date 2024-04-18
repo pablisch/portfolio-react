@@ -8,12 +8,12 @@
 
 #nav-border-bar-1 {
   height: 1px;
-  background-color: var(--brown);
+  background-color: var(--fawn-400);
 }
 
 #nav-border-bar-2 {
   height: 4px;
-  background-color: var(--fawn);
+  background-color: var(--fawn-200);
 }
 
 #nav-border-bar-3 {
@@ -37,7 +37,7 @@ nav {
 }
 
 #navbar {
-  background-color: rgba(200, 213, 185, 1);
+  background-color: var(--nav-background);
 }
 
 .nav-container {
@@ -85,38 +85,38 @@ nav {
   align-items: center;
   justify-content: center;
   min-width: 70px;
-  border: 1px var(--green3b) solid;
+  border: 1px var(--sea-green-200) solid;
 }
 
 .nav-link {
-  background-color: var(--green2b);
+  background-color: var(--leaf100);
   color: var(--navText);
 }
 
 .nav-link:hover {
-  background-color: var(--green1a);
-  color: var(--navText2);
+  background-color: var(--cream100);
+  color: var(--navText-darker);
 }
 
-.external-nav-link {
-  background-color: var(--green6);
-  color: var(--green2b);
+.nav-section-link {
+  background-color: var(--nav-section-link-background);
+  color: var(--nav-section-link-text);
   text-decoration: none;
 }
 
-.external-nav-link:hover {
-  background-color: var(--navText2);
+.nav-section-link:hover {
+  background-color: var(--navText-darker);
   color: var(--lime);
 }
 
 .github-link-btn {
-  background-color: var(--green1a);
+  background-color: var(--cream100);
   margin: 0 0 0 4px;
 }
 
 .github-link-btn:hover {
   background-color: var(--lime);
-  border: 1px var(--navText2) solid;
+  border: 1px var(--navText-darker) solid;
 }
 
 .github-logo {
@@ -139,12 +139,24 @@ nav {
   z-index: 1;
 }
 
+#nav-title {
+  flex: 1 400px;
+  /* font-size: 2.2rem; */
+  /* font-weight: normal; */
+  /* color: var(--navText); */
+  transition: color 7s ease;
+  text-align: center;
+  border-radius: 15px;
+  padding: 10px 15px;
+  background-color: var(--nav-title-background);
+  border: 1px var(--sea-green-400) solid;
+}
+
 nav h1 {
   font-size: 2.2rem;
   font-weight: normal;
-  flex: 1 400px;
   color: var(--navText);
-  transition: color 7s ease;
+  /* transition: color 7s ease; */
 }
 
 nav li {

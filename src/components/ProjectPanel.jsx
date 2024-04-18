@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import './projects.css';
+import './projectAndAboutPanel.css';
 // import { useState } from 'react';
 
 function ProjectPanel({
@@ -22,7 +22,7 @@ function ProjectPanel({
   const handleClick = (project) => {
     setSelectedProject(project);
     // console.log('project clicked', project);
-    navigate(`/${project.id}`);
+    navigate(`/project/${project.id}`);
   };
 
   return (

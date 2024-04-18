@@ -2,7 +2,7 @@ import { projectData } from '../data/projectData';
 import { useEffect } from 'react';
 import ProjectPanel from '../components/ProjectPanel';
 import PropTypes from 'prop-types';
-import './ProjectsPage.css';
+import '../components/projectAndAboutPanel.css';
 
 function ProjectsPage({
   setFocusProjectId,

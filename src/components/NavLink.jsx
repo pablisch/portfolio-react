@@ -15,7 +15,7 @@ function NavLink({ children, project, setFocusProjectId, setSelectedProject }) {
   const handleClick = (project) => {
     setSelectedProject(project);
     console.log('project clicked', project);
-    navigate(`/${project.id}`);
+    navigate(`/${project.id < 10 ? 'project' : 'more-about-me'}/${project.id}`);
   };
 
   return (

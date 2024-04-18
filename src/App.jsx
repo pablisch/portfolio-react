@@ -6,14 +6,18 @@ import Navbar from './components/Navbar';
 import ProjectsPage from './pages/ProjectsPage';
 import AboutPage from './pages/AboutPage';
 import SingleProjectPage from './pages/SingleProjectPage';
+import SingleAboutPage from './pages/SingleAboutPage';
 import axios from 'axios';
 import { projectData } from './data/projectData';
 
 const apiUrls = projectData.filter(project => project.apiWakeUpUrl).map(project => project.apiWakeUpUrl);
 
 function App() {
+  // This app has two main sections: projects and abouts - abouts refers to the 'about me' section.
   const [focusProjectId, setFocusProjectId] = useState('');
+  const [focusAboutId, setFocusAboutId] = useState('');
   const [selectedProject, setSelectedProject] = useState({});
+  const [selectedAbout, setSelectedAbout] = useState({});
   const [section, setSection] = useState('projects');
 
   useEffect(() => {
@@ -35,6 +39,8 @@ function App() {
       <Navbar
         setFocusProjectId={setFocusProjectId}
         setSelectedProject={setSelectedProject}
+        setFocusAboutId={setFocusAboutId}
+        setSelectedAbout={setSelectedAbout}
         section={section}
       />
       <Routes>
@@ -54,16 +60,24 @@ function App() {
           path='/more-about-me'
           element={
             <AboutPage
+              setFocusAboutId={setFocusAboutId}
+              focusAboutId={focusAboutId}
+              setSelectedAbout={setSelectedAbout}
+              setSection={setSection}
+
               setFocusProjectId={setFocusProjectId}
               focusProjectId={focusProjectId}
               setSelectedProject={setSelectedProject}
-              setSection={setSection}
             />
           }
         />
         <Route
-          path='/:id'
+          path='/project/:id'
           element={<SingleProjectPage selectedProject={selectedProject} />}
+        />
+        <Route
+          path='/more-about-me/:id'
+          element={<SingleAboutPage selectedAbout={selectedAbout} />}
         />
       </Routes>
     </BrowserRouter>

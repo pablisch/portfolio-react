@@ -1,56 +1,58 @@
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import './projects.css';
+import './projectAndAboutPanel.css';
 // import { useState } from 'react';
 
 function AboutPanel({
-  project,
-  setFocusProjectId,
-  focusProjectId,
-  setSelectedProject,
+  about,
+  setFocusAboutId,
+  focusAboutId,
+  setSelectedAbout,
 }) {
   const navigate = useNavigate();
 
   const handleHoverStart = (id) => {
-    setFocusProjectId(id);
+    setFocusAboutId(id);
   };
 
   const handleHoverEnd = () => {
-    setFocusProjectId('');
+    setFocusAboutId('');
   };
 
-  const handleClick = (project) => {
-    setSelectedProject(project);
-    // console.log('project clicked', project);
-    navigate(`/${project.id}`);
+  const handleClick = (about) => {
+    setSelectedAbout(about);
+    // console.log('about clicked', about);
+    console.log('about id clicked', about.id);
+    navigate(`/more-about-me/${about.id}`);
+    console.log('meant to go to more about me')
   };
 
   return (
     <li
-      className='project-panel'
-      onMouseOver={() => handleHoverStart(project.id)}
+      className='about-panel'
+      onMouseOver={() => handleHoverStart(about.id)}
       onMouseLeave={handleHoverEnd}
-      onClick={() => handleClick(project)}>
+      onClick={() => handleClick(about)}>
       <img
-        src={`images/about-images/${project.img}`}
-        alt={project.name}
-        className='project-image'
+        src={`images/about-images/${about.img}`}
+        alt={about.name}
+        className='about-image'
       />
-      <div className='project-label'>{project.panelName || project.name}</div>
+      <div className='about-label'>{about.panelName || about.name}</div>
       <div
-        onClick={() => handleClick(project)}
-        className={`overlay ${focusProjectId === project.id && 'hover-focus'}`}>
-        {project.summary}
+        onClick={() => handleClick(about)}
+        className={`overlay ${focusAboutId === about.id && 'hover-focus'}`}>
+        {about.summary}
       </div>
     </li>
   );
 }
 
 AboutPanel.propTypes = {
-  project: PropTypes.object.isRequired,
-  setFocusProjectId: PropTypes.func.isRequired,
-  focusProjectId: PropTypes.string.isRequired,
-  setSelectedProject: PropTypes.func.isRequired,
+  about: PropTypes.object.isRequired,
+  setFocusAboutId: PropTypes.func.isRequired,
+  focusAboutId: PropTypes.string.isRequired,
+  setSelectedAbout: PropTypes.func.isRequired,
 };
 
 export default AboutPanel;

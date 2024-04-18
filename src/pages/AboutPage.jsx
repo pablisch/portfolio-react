@@ -2,13 +2,17 @@ import { aboutData } from '../data/aboutData';
 import { useEffect } from 'react';
 import AboutPanel from '../components/AboutPanel';
 import PropTypes from 'prop-types';
-import './ProjectsPage.css';
+import '../components/projectAndAboutPanel.css';
 
 function AboutPage({
+  setFocusAboutId,
+  focusAboutId,
+  setSelectedAbout,
+  setSection,
+
   setFocusProjectId,
   focusProjectId,
   setSelectedProject,
-  setSection
 }) {
   useEffect(() => {
     setSection('about')
@@ -16,11 +20,15 @@ function AboutPage({
   }, [setSection]);
 
   return (
-    <ul className='project-box'>
-      {aboutData.map((project) => (
+    <ul className='about-box project-about-box'>
+      {aboutData.map((about) => (
         <AboutPanel
-          key={project.id}
-          project={project}
+          key={about.id}
+          about={about}
+          setFocusAboutId={setFocusAboutId}
+          focusAboutId={focusAboutId}
+          setSelectedAbout={setSelectedAbout}
+
           setFocusProjectId={setFocusProjectId}
           focusProjectId={focusProjectId}
           setSelectedProject={setSelectedProject}
@@ -31,10 +39,15 @@ function AboutPage({
 }
 
 AboutPage.propTypes = {
+  setFocusAboutId: PropTypes.func.isRequired,
+  focusAboutId: PropTypes.string,
+  setSelectedAbout: PropTypes.func.isRequired,
+  setSection: PropTypes.func.isRequired,
+
   setFocusProjectId: PropTypes.func.isRequired,
   focusProjectId: PropTypes.string,
   setSelectedProject: PropTypes.func.isRequired,
-  setSection: PropTypes.func.isRequired
+
 };
 
 export default AboutPage;

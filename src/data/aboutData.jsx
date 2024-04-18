@@ -15,6 +15,7 @@ export const aboutData = [
       </>
     ),
     heading: 'Edge of Space Explorer',
+    subheading: 'Rapsberry Pi High Altitude Balloon Mission',
     descriptionText: (
       <>
         <p className='project-text'>
@@ -65,10 +66,10 @@ export const aboutData = [
     // STEM
     id: '13',
     name: 'Primary STEM and Computing Lead',
-    navName: 'Primary STEM and Computing Lead',
+    navName: 'STEM in Schools',
     panelName: 'Primary STEM and Computing Lead',
     img: 'stem-rocket-square.jpg',
-    url: 'https://www.youtube.com/embed/9Rz9ZmfYuqk?rel=0&autoplay=1',
+    url: 'https://www.youtube.com/embed/CG7WkIYNqQA?rel=0&autoplay=1',
     apiWakeUpUrl: null,
     summary: 'Primary STEM and Computing Lead',
     buttonText: (
@@ -96,7 +97,7 @@ export const aboutData = [
     // FOREST SCHOOL LEADER
     id: '14',
     name: 'Forest School Leader',
-    navName: 'Forest School Leader',
+    navName: 'Forest School',
     panelName: 'Forest School Leader',
     img: 'forest-school-small.png',
     url: 'https://pablisch.github.io/forest-school-images-expanding/',
@@ -127,7 +128,7 @@ export const aboutData = [
     // FURNITURE
     id: '15',
     name: 'Furniture Designer & Maker',
-    navName: 'Furniture Designer & Maker',
+    navName: 'Furniture & Craft',
     panelName: 'Furniture Designer & Maker',
     img: 'yew-tables.jpg',
     url: 'https://pablisch.github.io/travel-images-picture-pad/',
@@ -158,7 +159,7 @@ export const aboutData = [
     // LEARNING AND CURIOSITY
     id: '16',
     name: 'Lifelong Learning & Curiosity',
-    navName: 'Lifelong Learning & Curiosity',
+    navName: 'Learning & Curiosity',
     panelName: 'Lifelong Learning & Curiosity',
     img: 'coffee-prayers.jpg',
     url: 'https://pablisch.github.io/travel-images-picture-pad/',
