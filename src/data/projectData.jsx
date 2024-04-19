@@ -1,7 +1,3 @@
-const galleryBadgeSize = '30';
-const farcebookBadgeSize = '30';
-const knotBadgeSize = '35';
-
 export const projectData = [
   {
     // LUPO
@@ -15,13 +11,7 @@ export const projectData = [
     repo: 'https://github.com/pablisch/lupo',
     summary:
       'An audio/visual generative music app based on real-time arrivals of trains on the London Underground network using data from the TFL Unified API.',
-    buttonText: (
-      <>
-        This app is partially responsive.{' '}
-        <span className='bold'>Click this button</span> to open the app in its
-        own window.
-      </>
-    ),
+    responsivenessText: 'Partially responsive',
     heading: 'London Underground Phony Orchestra',
     subheading: 'The sonification of the London Underground',
     descriptionText: (
@@ -84,68 +74,19 @@ export const projectData = [
         </p>
       </>
     ),
-    techBadges: (
-      <>
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg'
-          alt='javascript'
-          width='35'
-          height='35'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg'
-          alt='nodejs'
-          className='left-space-1'
-          width='35'
-          height='35'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/npm/npm-original-wordmark.svg'
-          alt='npm'
-          width='35'
-          height='35'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg'
-          alt='react'
-          className='left-space-1'
-          width='35'
-          height='35'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg'
-          alt='html5'
-          width='35'
-          height='35'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg'
-          alt='css3'
-          width='35'
-          height='35'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/jest/jest-plain.svg'
-          alt='jest'
-          width='35'
-          height='35'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
-          alt='git'
-          className='left-space-2'
-          width='35'
-          height='35'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg'
-          alt='github'
-          className='left-space-2'
-          width='35'
-          height='35'
-        />
-      </>
-    ),
+    techBadgesArray: [
+      { scale: '37' },
+      [
+        { src: 'javascript/javascript-original.svg', alt: 'javascript'},
+        { src: 'nodejs/nodejs-original.svg', alt: 'nodejs'},
+        { src: 'npm/npm-original-wordmark.svg', alt: 'npm' },
+        { src: 'react/react-original-wordmark.svg', alt: 'react' },
+        { src: 'html5/html5-original.svg', alt: 'html5' },
+        { src: 'css3/css3-original.svg', alt: 'css3' },
+        { src: 'git/git-original.svg', alt: 'git', class: 'tech-left-space-1' },
+        { src: 'github/github-original.svg', alt: 'github', class: 'tech-left-space-1'  },
+      ]
+    ]
   },
   {
     // Gallery
@@ -159,13 +100,7 @@ export const projectData = [
     repo: 'https://github.com/pablisch/gallery',
     summary:
       'A MERN stack image sharing app using a responsive Masonry layout and Cloudinary. An exploration of image layout and React.js.',
-    buttonText: (
-      <>
-        This app is mostly responsive.{' '}
-        <span className='bold'>Click this button</span> to open the app in its
-        own window.
-      </>
-    ),
+    responsivenessText: 'Mostly responsive',
     heading: 'Gallery App',
     subheading: 'A MERN stack image app',
     descriptionText: (
@@ -210,82 +145,21 @@ export const projectData = [
         </p>
       </>
     ),
-    techBadges: (
-      <>
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg'
-          alt='javascript'
-          width={galleryBadgeSize}
-          height={galleryBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg'
-          alt='nodejs'
-          className='left-space-1'
-          width={galleryBadgeSize}
-          height={galleryBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/npm/npm-original-wordmark.svg'
-          alt='npm'
-          className='left-space-2'
-          width={galleryBadgeSize}
-          height={galleryBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg'
-          alt='express'
-          className='left-space-2'
-          width={galleryBadgeSize}
-          height={galleryBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg'
-          alt='mongodb'
-          className='left-right-space-minus'
-          width={galleryBadgeSize}
-          height={galleryBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg'
-          alt='react'
-          width={galleryBadgeSize}
-          height={galleryBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg'
-          alt='html5'
-          width={galleryBadgeSize}
-          height={galleryBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg'
-          alt='css3'
-          width={galleryBadgeSize}
-          height={galleryBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/jest/jest-plain.svg'
-          alt='jest'
-          width={galleryBadgeSize}
-          height={galleryBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
-          alt='git'
-          className='left-space-2'
-          width={galleryBadgeSize}
-          height={galleryBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg'
-          alt='github'
-          className='left-space-2'
-          width={galleryBadgeSize}
-          height={galleryBadgeSize}
-        />
-      </>
-    ),
+    techBadgesArray: [
+      { scale: '31' },
+      [
+        { src: 'javascript/javascript-original.svg', alt: 'javascript' },
+        { src: 'nodejs/nodejs-original.svg', alt: 'nodejs', class: 'tech-left-space-1' },
+        { src: 'npm/npm-original-wordmark.svg', alt: 'npm' },
+        { src: 'express/express-original.svg', alt: 'express', class: 'tech-left-space-2'  },
+        { src: 'mongodb/mongodb-original.svg', alt: 'mongodb', class: 'tech-minus-space-1'  },
+        { src: 'react/react-original-wordmark.svg', alt: 'react' },
+        { src: 'html5/html5-original.svg', alt: 'html5' },
+        { src: 'css3/css3-original.svg', alt: 'css3' },
+        { src: 'git/git-original.svg', alt: 'git', class: 'tech-left-space-1'  },
+        { src: 'github/github-original.svg', alt: 'github', class: 'tech-left-space-1'  },
+      ]
+    ]
   },
   {
     // FarceBook
@@ -299,13 +173,7 @@ export const projectData = [
     repo: 'https://github.com/pablisch/farce-book',
     summary:
       'A Facebook clone group engineering project. This was an immersive introduction to all of the MERN stack technologies.',
-    buttonText: (
-      <>
-        This app is partially responsive.{' '}
-        <span className='bold'>Click this button</span> to open the app in its
-        own window.
-      </>
-    ),
+      responsivenessText: 'Partially responsive',
     heading: 'FarceBook',
     subheading: 'A Facebook clone using the MERN stack',
     descriptionText: (
@@ -372,82 +240,21 @@ export const projectData = [
         </p>
       </>
     ),
-    techBadges: (
-      <>
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg'
-          alt='javascript'
-          width={farcebookBadgeSize}
-          height={farcebookBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg'
-          alt='nodejs'
-          className='left-space-1'
-          width={farcebookBadgeSize}
-          height={farcebookBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/npm/npm-original-wordmark.svg'
-          alt='npm'
-          className='left-space-2'
-          width={farcebookBadgeSize}
-          height={farcebookBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg'
-          alt='express'
-          className='left-space-2'
-          width={farcebookBadgeSize}
-          height={farcebookBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg'
-          alt='mongodb'
-          className='left-right-space-minus'
-          width={farcebookBadgeSize}
-          height={farcebookBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg'
-          alt='react'
-          width={farcebookBadgeSize}
-          height={farcebookBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg'
-          alt='html5'
-          width={farcebookBadgeSize}
-          height={farcebookBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg'
-          alt='css3'
-          width={farcebookBadgeSize}
-          height={farcebookBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/jest/jest-plain.svg'
-          alt='jest'
-          width={farcebookBadgeSize}
-          height={farcebookBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
-          alt='git'
-          className='left-space-2'
-          width={farcebookBadgeSize}
-          height={farcebookBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg'
-          alt='github'
-          className='left-space-2'
-          width={farcebookBadgeSize}
-          height={farcebookBadgeSize}
-        />
-      </>
-    ),
+    techBadgesArray: [
+      { scale: '31' },
+      [
+        { src: 'javascript/javascript-original.svg', alt: 'javascript' },
+        { src: 'nodejs/nodejs-original.svg', alt: 'nodejs', class: 'tech-left-space-1' },
+        { src: 'npm/npm-original-wordmark.svg', alt: 'npm' },
+        { src: 'express/express-original.svg', alt: 'express', class: 'tech-left-space-2'  },
+        { src: 'mongodb/mongodb-original.svg', alt: 'mongodb', class: 'tech-minus-space-1'  },
+        { src: 'react/react-original-wordmark.svg', alt: 'react' },
+        { src: 'html5/html5-original.svg', alt: 'html5' },
+        { src: 'css3/css3-original.svg', alt: 'css3' },
+        { src: 'git/git-original.svg', alt: 'git', class: 'tech-left-space-1'  },
+        { src: 'github/github-original.svg', alt: 'github', class: 'tech-left-space-1'  },
+      ]
+    ]
   },
   {
     // Knot Very Useful
@@ -460,12 +267,7 @@ export const projectData = [
     repo: 'https://github.com/pablisch/knot-very-useful',
     summary:
       'A practical educational app for learning knots and hitches for Forest School built as an early exploration of vanilla JavaScript and CSS.',
-    buttonText: (
-      <>
-        This app is responsive. <span className='bold'>Click this button</span>{' '}
-        to open the app in its own window.
-      </>
-    ),
+      responsivenessText: 'Mostly responsive',
     heading: 'Knot Very Useful',
     subheading: 'An educational app for learning knots and hitches',
     descriptionText: (
@@ -504,44 +306,16 @@ export const projectData = [
         </p>
       </>
     ),
-    techBadges: (
-      <>
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg'
-          alt='javascript'
-          width={knotBadgeSize}
-          height={knotBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg'
-          alt='html5'
-          className='left-space-2'
-          width={knotBadgeSize}
-          height={knotBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg'
-          alt='css3'
-          className='left-space-1'
-          width={knotBadgeSize}
-          height={knotBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
-          alt='git'
-          className='left-space-2'
-          width={knotBadgeSize}
-          height={knotBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg'
-          alt='github'
-          className='left-space-2'
-          width={knotBadgeSize}
-          height={knotBadgeSize}
-        />
-      </>
-    ),
+    techBadgesArray: [
+      { scale: '35' },
+      [
+        { src: 'javascript/javascript-original.svg', alt: 'javascript' },
+        { src: 'html5/html5-original.svg', alt: 'html5', class: 'tech-left-space-3' },
+        { src: 'css3/css3-original.svg', alt: 'css3', class: 'tech-left-space-1' },
+        { src: 'git/git-original.svg', alt: 'git', class: 'tech-left-space-1' },
+        { src: 'github/github-original.svg', alt: 'github', class: 'tech-left-space-2'  },
+      ]
+    ]
   },
   {
     // Picture Pad
@@ -554,13 +328,7 @@ export const projectData = [
     repo: 'https://github.com/pablisch/picture-pad-flex-morph',
     summary:
       'A playful, early exploration of displaying images using vanilla JavaScript and Flexbox to create a new way of viewing photo collections.',
-    buttonText: (
-      <>
-        This app is partially responsive.{' '}
-        <span className='bold'>Click this button</span> to open the app in its
-        own window.
-      </>
-    ),
+      responsivenessText: 'Partially responsive',
     heading: 'Picture Pad Flex Morph',
     subheading: 'A playful exploration of displaying images',
     descriptionText: (
@@ -640,44 +408,16 @@ export const projectData = [
         </p>
       </>
     ),
-    techBadges: (
-      <>
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg'
-          alt='javascript'
-          width={knotBadgeSize}
-          height={knotBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg'
-          alt='html5'
-          className='left-space-2'
-          width={knotBadgeSize}
-          height={knotBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg'
-          alt='css3'
-          className='left-space-1'
-          width={knotBadgeSize}
-          height={knotBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
-          alt='git'
-          className='left-space-2'
-          width={knotBadgeSize}
-          height={knotBadgeSize}
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg'
-          alt='github'
-          className='left-space-2'
-          width={knotBadgeSize}
-          height={knotBadgeSize}
-        />
-      </>
-    ),
+    techBadgesArray: [
+      { scale: '35' },
+      [
+        { src: 'javascript/javascript-original.svg', alt: 'javascript' },
+        { src: 'html5/html5-original.svg', alt: 'html5', class: 'tech-left-space-3' },
+        { src: 'css3/css3-original.svg', alt: 'css3', class: 'tech-left-space-1' },
+        { src: 'git/git-original.svg', alt: 'git', class: 'tech-left-space-1' },
+        { src: 'github/github-original.svg', alt: 'github', class: 'tech-left-space-2'  },
+      ]
+    ]
   },
   {
     // Eclipse
@@ -690,13 +430,7 @@ export const projectData = [
     repo: 'https://github.com/pablisch/eclipse-layout-react',
     summary:
       'A companion to the board game, Eclipse, A new Dawn for the Galaxy, which calculates combat odds for different ship configuarations.',
-    buttonText: (
-      <>
-        This app is not responsive.{' '}
-        <span className='bold'>Click this button</span> to open the app in its
-        own window.
-      </>
-    ),
+      responsivenessText: 'Not responsive',
     heading: 'Eclipse Battle Calculator',
     subheading:
       'A companion to the board game, Eclipse, A new Dawn for the Galaxy',
@@ -785,55 +519,19 @@ export const projectData = [
         </p>
       </>
     ),
-    techBadges: (
-      <>
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg'
-          alt='javascript'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg'
-          alt='nodejs'
-          className='left-space-1'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/npm/npm-original-wordmark.svg'
-          alt='npm'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg'
-          alt='html5'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg'
-          alt='css3'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
-          alt='git'
-          className='left-space-2'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg'
-          alt='github'
-          className='left-space-2'
-          width='40'
-          height='40'
-        />
-      </>
-    ),
+    techBadgesArray: [
+      { scale: '37' },
+      [
+        { src: 'javascript/javascript-original.svg', alt: 'javascript' },
+        { src: 'react/react-original-wordmark.svg', alt: 'react', class: 'tech-left-space-1' },
+        { src: 'nodejs/nodejs-original.svg', alt: 'nodejs', class: 'tech-left-space-1' },
+        { src: 'npm/npm-original-wordmark.svg', alt: 'npm', class: 'tech-left-space-1' },
+        { src: 'html5/html5-original.svg', alt: 'html5', class: 'tech-left-space-1' },
+        { src: 'css3/css3-original.svg', alt: 'css3', class: 'tech-left-space-1' },
+        { src: 'git/git-original.svg', alt: 'git', class: 'tech-left-space-1' },
+        { src: 'github/github-original.svg', alt: 'github', class: 'tech-left-space-2'  },
+      ]
+    ]
   },
   {
     // Alternative Routes
@@ -845,13 +543,7 @@ export const projectData = [
     repo: 'https://github.com/pablisch/eclipse-layout-react',
     summary:
       'A playful app that generates alternative station names for the London Underground based on user themes using the GPT-3 API.',
-    buttonText: (
-      <>
-        This app is mildly responsive.{' '}
-        <span className='bold'>Click this button</span> to open the app in its
-        own window.
-      </>
-    ),
+      responsivenessText: 'Mildly responsive',
     url: 'https://alternative-routes.onrender.com/',
     heading: 'Alter Native Routes',
     subheading: 'LLM generated alternative station names for London tube lines',
@@ -876,55 +568,6 @@ export const projectData = [
           where data is not linked to any user so any user of the app sees the
           collective result of all users.
         </p>
-      </>
-    ),
-    techBadges: (
-      <>
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg'
-          alt='javascript'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg'
-          alt='nodejs'
-          className='left-space-1'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/npm/npm-original-wordmark.svg'
-          alt='npm'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg'
-          alt='html5'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg'
-          alt='css3'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
-          alt='git'
-          className='left-space-2'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg'
-          alt='github'
-          className='left-space-2'
-          width='40'
-          height='40'
-        />
       </>
     ),
     technologiesText: (
@@ -966,6 +609,20 @@ export const projectData = [
         </p>
       </>
     ),
+    techBadgesArray: [
+      { scale: '35' },
+      [
+        { src: 'javascript/javascript-original.svg', alt: 'javascript' },
+        { src: 'nodejs/nodejs-original.svg', alt: 'nodejs', class: 'tech-left-space-2' },
+        { src: 'npm/npm-original-wordmark.svg', alt: 'npm', class: 'tech-left-space-1' },
+        { src: 'express/express-original.svg', alt: 'express', class: 'tech-left-space-2'  },
+        { src: 'mongodb/mongodb-original.svg', alt: 'mongodb', class: 'tech-minus-space-1'  },
+        { src: 'html5/html5-original.svg', alt: 'html5' },
+        { src: 'css3/css3-original.svg', alt: 'css3', class: 'tech-left-space-1' },
+        { src: 'git/git-original.svg', alt: 'git', class: 'tech-left-space-1' },
+        { src: 'github/github-original.svg', alt: 'github', class: 'tech-left-space-2'  },
+      ]
+    ]
   },
   {
     // Lair BnB
@@ -976,13 +633,7 @@ export const projectData = [
     url: 'https://pablisch.github.io/lair-bnb/',
     apiWakeUpUrl: null,
     repo: 'https://github.com/pablisch/lair-bnb',
-    buttonText: (
-      <>
-        This app was never deployed.{' '}
-        <span className='bold'>Click this button</span> to open the repo in its
-        own window.
-      </>
-    ),
+    responsivenessText: 'Never deployed',
     heading: 'Lair BnB',
     subheading: 'An Air BnB clone with a Lord of The Rings theme',
     descriptionText: (
@@ -1020,51 +671,17 @@ export const projectData = [
         </p>
       </>
     ),
-    techBadges: (
-      <>
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/ruby/ruby-original.svg'
-          alt='ruby'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg'
-          alt='postgresql'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg'
-          alt='html5'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg'
-          alt='css3'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/rspec/rspec-original.svg'
-          alt='rspec'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
-          alt='git'
-          width='40'
-          height='40'
-        />
-        <img
-          src='https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg'
-          alt='github'
-          width='40'
-          height='40'
-        />
-      </>
-    ),
+    techBadgesArray: [
+      { scale: '40' },
+      [
+        { src: 'ruby/ruby-original.svg', alt: 'ruby' },
+        { src: 'postgresql/postgresql-original.svg', alt: 'postgresql', class: 'tech-left-space-1' },
+        { src: 'html5/html5-original.svg', alt: 'html5' },
+        { src: 'css3/css3-original.svg', alt: 'css3', class: 'tech-left-space-1' },
+        { src: 'rspec/rspec-original.svg', alt: 'rspec', class: 'tech-left-space-1' },
+        { src: 'git/git-original.svg', alt: 'git', class: 'tech-left-space-1' },
+        { src: 'github/github-original.svg', alt: 'github', class: 'tech-left-space-2'  },
+      ]
+    ]
   },
 ];

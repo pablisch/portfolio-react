@@ -36,8 +36,8 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
       <div className={`app ${isAvatarHovered ? 'avatar-hovered-app' : ''}`}>
+    <BrowserRouter>
 
       <Navbar
         setFocusProjectId={setFocusProjectId}
@@ -71,24 +71,20 @@ function App() {
               setSelectedAbout={setSelectedAbout}
               setSection={setSection}
               isAvatarHovered={isAvatarHovered}
-
-              setFocusProjectId={setFocusProjectId}
-              focusProjectId={focusProjectId}
-              setSelectedProject={setSelectedProject}
             />
           }
         />
         <Route
           path='/project/:id'
-          element={<SingleProjectPage selectedProject={selectedProject} isAvatarHovered={isAvatarHovered} />}
+          element={<SingleProjectPage selectedProject={selectedProject} isAvatarHovered={isAvatarHovered} setSelectedProject={setSelectedProject} />}
         />
         <Route
           path='/more-about-me/:id'
-          element={<SingleAboutPage selectedAbout={selectedAbout} isAvatarHovered={isAvatarHovered} />}
+          element={<SingleAboutPage selectedAbout={selectedAbout} isAvatarHovered={isAvatarHovered} setSelectedAbout={setSelectedAbout} />}
         />
       </Routes>
-      </div>
     </BrowserRouter>
+      </div>
   );
 }
 

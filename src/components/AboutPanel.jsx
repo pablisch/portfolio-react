@@ -19,7 +19,7 @@ function AboutPanel({
     setFocusAboutId('');
   };
 
-  const handleClick = (about) => {
+  const handleSelectAbout = (about) => {
     setSelectedAbout(about);
     navigate(`/more-about-me/${about.id}`);
   };
@@ -29,7 +29,7 @@ function AboutPanel({
       className='about-panel'
       onMouseOver={() => handleHoverStart(about.id)}
       onMouseLeave={handleHoverEnd}
-      onClick={() => handleClick(about)}>
+      onClick={() => handleSelectAbout(about)}>
       <img
         src={`images/about-images/${about.img}`}
         alt={about.name}
@@ -37,7 +37,7 @@ function AboutPanel({
       />
       <div className={`about-label ${focusAboutId === about.id && 'hover-fade'}`} >{about.panelName || about.name}</div>
       <div
-        onClick={() => handleClick(about)}
+        onClick={() => handleSelectAbout(about)}
         className={`about-overlay ${focusAboutId === about.id && 'hover-focus'}`}> {/* IF hover-focus is applied then overlay opacity === 1 */}
         {about.summary}
       </div>

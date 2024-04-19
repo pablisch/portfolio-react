@@ -107,6 +107,7 @@ body {
   transition: background-color 3s ease;
   background-color: var(--primary-background);
   min-height: calc(100vh - var(--navbar-height));
+  /* min-height: 100vh; */
 }
 
 .avatar-hovered-app {

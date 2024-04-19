@@ -1,5 +1,5 @@
 .btn {
-  width: 200px;
+  /* width: 200px; */
   height: 38px;
   padding: 8px;
   background-color: #4caf50;
@@ -133,15 +133,18 @@
   cursor: not-allowed;
 }
 
-.iframe-btn {
-  width: 100%;
+.project-iframe-btn, .about-iframe-btn {
   color: #333;
   background-color: #d9d9ee;
   border: 1px solid #aaa;
-  margin-bottom: 30px;
+  flex: auto 1 1;
 }
 
-.iframe-btn:hover {
+.space-right {
+  margin-right: 10px;
+}
+
+.about-iframe-btn:hover, .project-iframe-btn:hover {
   background-color: #fff;
   color: #111;
   border: 1px solid #888;

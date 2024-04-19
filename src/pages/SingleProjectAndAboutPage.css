@@ -1,16 +1,119 @@
-#single-project-page {
+/* MAIN SECTIONS FORMATTING */
+
+#single-subject-page {
   max-width: var(--app-max-width);
   width: calc(var(--project-box-width) - 40px);
   margin: 0 auto;
-  padding-top: calc(
-    var(--navbar-height) + 44px
-  ); /* leave space for fixed navbar */
+  margin: var(--navbar-height) auto 0;
   display: flex;
   flex-direction: column;
 }
 
-#single-project-upper-section {
+#single-subject-upper-section {
   display: flex;
+  margin-top: 44px;
+  margin-bottom: 10px;
+}
+
+#single-subject-headers-and-description-1 {
+  flex: 1;
+  width: 100%;
+}
+
+/* HEADERS & DESCRIPTION 1 SECTION FORMATTING */
+
+#single-subject-title {
+  margin-bottom: 5px;
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: var(--grey-blue-1100);
+}
+
+#single-subject-subheading {
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+#single-project-tech-badges {
+  margin-bottom: 10px;
+  margin-right: 15px;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.tech-left-space-1 {
+  margin-left: 2px;
+}
+
+.tech-left-space-2 {
+  margin-left: 4px;
+}
+
+.tech-left-space-3 {
+  margin-left: 6px;
+}
+
+.tech-minus-space-1 {
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+/* IFRAME */
+
+#iframe-container {
+  flex: 2.5;
+  flex: 2;
+  width: 100%;
+  margin-left: 20px;
+  margin-bottom: -5px;
+  padding: 10px 20px 0;
+}
+
+#feature-iframe {
+  border: 1px solid #aaa;
+}
+
+.panel-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.arrow {
+  vertical-align: middle;
+  font-size: 18px;
+  margin-bottom: 4px;
+  color: var(--grey-blue-800);
+}
+
+.return {
+  color: #000;
+}
+
+.btn-icon {
+  vertical-align: middle;
+  margin-bottom: 3px;
+  margin-left: 3px;
+}
+
+.github-btn-logo {
+  height: 20px;
+}
+
+.new-tab-btn-logo {
+  height: 18px;
+}
+
+/* INLINE TEXT ADJUSTMENTS */
+
+.project-text {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.sm {
   margin-bottom: 10px;
 }
 
@@ -24,61 +127,7 @@
   font-weight: bold;
 }
 
-#single-project-title {
-  margin-bottom: 5px;
-  font-size: 2.1rem;
-  font-weight: 500;
-  color: var(--grey-blue-1100);
-}
-
-#single-project-subheading {
-  margin-bottom: 1.5rem;
-  font-weight: 400;
-}
-
-#single-project-tech-badges {
-  margin-bottom: 10px;
-  margin-right: 15px;
-  font-size: 1.8rem;
-  font-weight: 400;
-  text-align: center;
-}
-
-.para {
-  margin-bottom: 10px;
-}
-
-#single-project-iframe {
-  border: 1px solid #aaa;
-}
-
-#single-project-details-and-iframe-container {
-  display: flex;
-}
-
-#single-project-details-container {
-  flex: 1;
-  width: 100%;
-}
-
-#iframe-container {
-  flex: 2.5;
-  flex: 2;
-  width: 100%;
-  margin-left: 20px;
-  margin-bottom: -5px;
-  padding: 10px 20px 0;
-}
-
-.project-text {
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 20px;
-}
-
-.sm {
-  margin-bottom: 10px;
-}
+/* SPACE AT BOTTOM OF PAGE */
 
 #bit-at-the-bottom {
   height: 50px;
