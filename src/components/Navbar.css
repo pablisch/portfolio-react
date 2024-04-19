@@ -109,25 +109,26 @@ nav {
 }
 
 .nav-link {
-  transition: background-color 4s ease, color 16s ease;
-  background-color: var(--leaf-100);
-  color: var(--navText);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  background-color: var(--nav-link-background);
+  color: var(--nav-link-text);
 }
 
 .nav-link:hover {
-  background-color: var(--cream100);
+  background-color: var(--cream-100);
+  background-color: #fff;
   color: var(--navText-darker);
 }
 
 .avatar-hovered-nav-link {
-  transition: background-color 4s ease, border 8s ease, color 16s ease;
+  transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
   background-color: var(--grey-blue-1300);
   border: 1px var(--leaf-900) solid;
   color: var(--lime-500);
 }
 
 .nav-section-link {
-  transition: background-color 4s ease;
+  transition: background-color 0.5s ease;
   background-color: var(--nav-section-link-background);
   color: var(--nav-section-link-text);
   text-decoration: none;
@@ -139,31 +140,63 @@ nav {
 }
 
 .avatar-hovered-nav-section-link {
-  transition: background-color 4s ease, border 8s ease, color 16s ease;
+  transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
   background-color: var(--grey-blue-1300);
   border: 1px var(--leaf-900) solid;
   color: var(--lime-500);
 }
 
 .github-link-btn {
-  transition: background-color 4s ease;
-  background-color: var(--cream100);
+  transition: background-color 0.5s ease;
+  background-color: var(--nav-link-background);
   margin: 0 0 0 4px;
 }
 
 .github-link-btn:hover {
   background-color: var(--lime-300);
-  border: 1px var(--navText-darker) solid;
+  background-color: #fff;
+  border: 1px var(--grey-blue-400) solid;
+  /* border: 1px var(--green-600) solid; */
+}
+
+.github-link-btn:hover .github-logo {
+  transition: opacity 0.5s ease;
+  opacity: 1;
 }
 
 .github-logo {
   max-height: 50px;
+  transition: opacity 2s ease;
+  opacity: 0.6;
+}
+
+.linkedin-link-btn {
+  transition: background-color 1s ease;
+  background-color: var(--turquoise-400);
+  background-color: var(--sea-green-600);
+  margin: 0 0 0 4px;
+}
+
+.linkedin-link-btn:hover {
+  background-color: var(--linkedin-blue);
+  border: 1px var(--navText-darker) solid;
+}
+
+.linkedin-logo {
+  max-height: 40px;
+  transition: opacity 8s ease;
+  opacity: 1;
 }
 
 .avatar-hovered-github-link {
   transition: background-color 4s ease, border 8s ease;
   background-color: var(--grey-blue-1300);
   border: 1px var(--leaf-900) solid;
+}
+
+.avatar-hovered-linkedin-logo {
+  transition: opacity 3s ease;
+  opacity: 0.1;
 }
 
 .hamburger {
@@ -193,7 +226,7 @@ nav {
 }
 
 .nav-title:hover {
-  background-color: var(--leaf-100);
+  background-color: var(--cream-100);
   border: 1px var(--sea-green-400) solid;
 }
 

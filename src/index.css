@@ -25,12 +25,14 @@
   --blue-200: #d0f1f6;
   --blue-400: #aed9e0;
 
-  --cream100: #fdfbf5;
-  --cream200: #fbfde3;
-  --cream300: #faf3dd;
+  --cream-100: #fdfbf5;
+  --cream-200: #fbfde3;
+  --cream-300: #faf3dd;
 
   --lime-300: #b6fc4c;
   --lime-500: #84b836;
+
+  --green-600: #53a335;
 
   --leaf-100: #e7f1dd;
   --leaf-200: #d0dcc4;
@@ -55,14 +57,18 @@
   --fawn-200: #c2b6a3;
   --fawn-400: #ac9a7a;
 
+  --linkedin-blue: #0077b5;
+
   /* ELEMENT DECLARATIONS */
 
-  --primary-background: var(--cream300);
+  --primary-background: var(--cream-300);
   --primary-background-bar: rgb(250, 243, 221, 1);
   --primary-background-bar-zero: rgb(250, 243, 221, 0);
 
   --nav-background: var(--leaf-300);
   --nav-title-background: var(--leaf-200);
+  --nav-link-background: var(--leaf-100);
+  --nav-link-text: var(--grey-blue-700);
   --nav-section-link-background: var(--leaf-700);
   --nav-section-link-text: var(--leaf-100);
 
@@ -100,6 +106,7 @@ body {
 .app {
   transition: background-color 3s ease;
   background-color: var(--primary-background);
+  min-height: calc(100vh - var(--navbar-height));
 }
 
 .avatar-hovered-app {

@@ -37,7 +37,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className={`app ${isAvatarHovered && 'avatar-hovered-app'}`}>
+      <div className={`app ${isAvatarHovered ? 'avatar-hovered-app' : ''}`}>
 
       <Navbar
         setFocusProjectId={setFocusProjectId}

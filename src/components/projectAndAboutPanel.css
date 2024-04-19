@@ -61,7 +61,7 @@
   bottom: 0;
   padding: 15px 20px;
   border-radius: var(--project-outline-radius);
-  background-color: rgba(252, 255, 250, 0.82);
+  background-color: rgba(252, 255, 250, 0.9);
   border: 1px #8a8a8b solid;
   color: #373738;
   font-size: 1.4rem;

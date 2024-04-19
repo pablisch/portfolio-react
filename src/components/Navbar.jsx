@@ -75,6 +75,17 @@ function Navbar({ setFocusProjectId, setSelectedProject, setFocusAboutId, setSel
               alt='Button Image'
             />
           </a>
+          <a
+            href='https://www.linkedin.com/in/pablo-joyce/'
+            className={`nav-btn linkedin-link-btn ${isAvatarHovered && 'avatar-hovered-github-link'}`}
+            target='_blank'
+            rel='noreferrer'>
+              <img
+              className={`linkedin-logo ${isAvatarHovered && 'avatar-hovered-linkedin-logo'}`}
+              src='images/linkedin-trans.png'
+              alt='Button Image'
+            />
+          </a>
         </div>
 
         <div className='hamburger'>
