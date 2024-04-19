@@ -1,10 +1,15 @@
 // import React from 'react';
 import './SingleProjectAndAboutPage.css';
+import { projectData } from '../data/projectData';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import Button from '../components/Button';
 import { RiArrowGoBackLine } from 'react-icons/ri';
+import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
+
+const lastProjectId = projectData[projectData.length - 1].id;
+const firstProjectId = projectData[0].id;
 
 const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
   const navigate = useNavigate();
@@ -36,6 +41,22 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
   const handleReturnToProjects = () => {
     setSelectedProject({});
     navigate('/');
+  };
+
+  const handleNextSection = () => { 
+    if (selectedProject.id === lastProjectId) {
+      setSelectedProject(projectData[0]);
+    } else {
+      setSelectedProject(projectData[Number(selectedProject.id) - (Number(firstProjectId) - 1)]);
+    }
+  }
+
+  const handlePreviousSection = () => { 
+    if (selectedProject.id === firstProjectId) {
+      setSelectedProject(projectData[projectData.length - 1]);
+    } else {
+      setSelectedProject(projectData[Number(selectedProject.id) - (Number(firstProjectId) + 1)]);
+    }
   };
 
   useEffect(() => {
@@ -86,6 +107,11 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
             // frameBorder='0'
             allowFullScreen></iframe>
           <div className='panel-buttons'>
+          <Button
+              className='btn space-right project-iframe-btn'
+              onClick={handlePreviousSection}>
+              <BiSolidLeftArrow className='arrow' />
+            </Button>
             <Button className='btn space-right project-iframe-btn'>
               {selectedProject.responsivenessText}
             </Button>
@@ -110,9 +136,14 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
               />
             </Button>
             <Button
-              className='btn project-iframe-btn projects-btn'
+              className='btn space-right project-iframe-btn projects-btn'
               onClick={handleReturnToProjects}>
               Return to Projects <RiArrowGoBackLine className='arrow return' />
+            </Button>
+            <Button
+              className='btn project-iframe-btn'
+              onClick={handleNextSection}>
+              <BiSolidRightArrow className='arrow' />
             </Button>
           </div>
         </div>

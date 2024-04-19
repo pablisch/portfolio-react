@@ -47,7 +47,6 @@ const SingleAboutPage = ({ selectedAbout, setSelectedAbout }) => {
     } else {
       setSelectedAbout(aboutData[Number(selectedAbout.id) - (Number(firstAboutId) + 1)]);
     }
-  
   };
 
   const handleReturnToAboutMes = () => {
