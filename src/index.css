@@ -104,13 +104,13 @@ body {
 }
 
 .app {
-  transition: background-color 3s ease;
+  transition: background-color 9s ease;
   background-color: var(--primary-background);
   min-height: calc(100vh - var(--navbar-height));
   /* min-height: 100vh; */
 }
 
 .avatar-hovered-app {
-  transition: background-color 3s ease;
+  transition: background-color 2s ease;
   background-color: var(--turquoise-400);
 }
