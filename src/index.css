@@ -94,6 +94,10 @@ body {
   background-color: var(--primary-background);
 }
 
+li {
+  cursor: pointer;
+}
+
 .app {
   transition: background-color 13s ease;
   background-color: var(--primary-background);
@@ -109,9 +113,58 @@ body {
   .nav-container {
     width: 95vw;
   }
-  .navbar {
-  }
   .project-box, .about-box {
     width: 94vw;
   }
+}
+
+@media (max-width: 1200px) {
+  .nav-title h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 1170px) {
+  .nav-title h1 {
+    font-size: 1.55rem;
+  }
+  .nav-title {
+    max-width: 125px;
+    line-height: 0.9;
+  }
+  .github-logo {
+    max-height: 45px;
+  }
+  .linkedin-logo {
+    max-height: 37px;
+  }
+  .nav-btn {
+    font-size: 0.8rem;
+    min-width: 65px;
+    margin: 0 3px;
+  }
+}
+
+@media (max-width: 1035px) {
+  .nav-title h1 {
+    font-size: 1.6rem;
+  }
+  .github-logo {
+    max-height: 40px;
+  }
+  .linkedin-logo {
+    max-height: 35px;
+  }
+  .nav-btn {
+    font-size: 0.7rem;
+    min-width: 60px;
+    margin: 0 2px;
+  }
+  .project-panel, .about-panel {
+    margin: 15px;
+  }
+}
+
+@media (max-width: 950px) {
+
 }

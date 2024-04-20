@@ -26,10 +26,10 @@ export const linkData = [
     },
   },
   {
-    // PLACEHOLDER
-    name: 'placeholder',
+    // SETTINGS
+    name: 'settings',
     url: '#',
-    class: 'nav-btn github-link-btn',
+    class: 'nav-btn github-link-btn settings-btn',
     avatarClass: 'avatar-hovered-github-link',
     target: '',
     img: {
