@@ -8,6 +8,7 @@ import SingleProjectPage from './pages/SingleProjectPage';
 import SingleAboutPage from './pages/SingleAboutPage';
 import axios from 'axios';
 import { projectData } from './data/projectData';
+import { ScreenWidthProvider } from './context/ScreenWidthProvider';
 
 const apiUrls = projectData
   .filter((project) => project.apiWakeUpUrl)
@@ -37,6 +38,9 @@ function App() {
   }, []);
 
   return (
+    <ScreenWidthProvider>
+
+    
     <div className={`app ${isAvatarHovered ? 'avatar-hovered-app' : ''}`}>
       <BrowserRouter>
         <Navbar
@@ -104,7 +108,8 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
-    </div>
+      </div>
+      </ScreenWidthProvider>
   );
 }
 

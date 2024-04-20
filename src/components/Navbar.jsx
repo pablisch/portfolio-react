@@ -1,11 +1,13 @@
 import NavLink from './NavLink';
 import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import './Navbar.css';
 import { projectData } from '../data/projectData';
 import { aboutData } from '../data/aboutData';
 import { linkData } from '../data/linkData';
 import PropTypes from 'prop-types';
 import ExtNavLink from './ExtNavLink';
+import { useScreenWidth } from '../context/ScreenWidthProvider';
 
 function Navbar({
   setFocusProjectId,
@@ -17,6 +19,17 @@ function Navbar({
   setIsAvatarHovered,
 }) {
   const navigate = useNavigate();
+  const screenWidth = useScreenWidth();
+  // eslint-disable-next-line no-unused-vars
+  const [isHamburgerSize, setIsHamburgerSize] = useState(screenWidth > 950 ? false : true);
+
+  useEffect(() => {
+    if (screenWidth > 950) {
+      setIsHamburgerSize(false);
+    } else {
+      setIsHamburgerSize(true);
+    }
+  }, [screenWidth]);
 
   const handleNavTitleClick = () => {
     setSelectedProject({});
@@ -55,7 +68,8 @@ function Navbar({
             </div>
           </div>
           <div className='navlist'>
-            {section === 'projects' &&
+            {/* 👇🏻 PROJECT LINKS */}
+            {(section === 'projects' && !isHamburgerSize) &&
               projectData.map((project) => (
                 <NavLink
                   className={`nav-btn nav-link ${
@@ -68,7 +82,8 @@ function Navbar({
                   {project.navName || project.name}
                 </NavLink>
               ))}
-            {section === 'about' &&
+            {/* 👇🏻 ABOUT LINKS */}
+            {(section === 'about' && !isHamburgerSize) &&
               aboutData.map((about) => (
                 <NavLink
                   className={`nav-btn nav-link ${
@@ -81,6 +96,7 @@ function Navbar({
                   {about.navName || about.name}
                 </NavLink>
               ))}
+            {/* 👇🏻 LINK TO PROJECTS SECTION */}
             {section === 'about' && (
               <Link
                 to='/'
@@ -90,6 +106,7 @@ function Navbar({
                 Software Projects
               </Link>
             )}
+            {/* 👇🏻 LINK TO ABOUT ME SECTION */}
             {section === 'projects' && (
               <Link
                 to='/more-about-me'
@@ -103,13 +120,13 @@ function Navbar({
             {linkData.length && linkData.map((link) => (
               <ExtNavLink key={link.name} page={link} target={link.target} />
             ))}
-            <div className='hamburger-box'>
+            {isHamburgerSize && <div className='hamburger-box'>
               <div className='hamburger' onClick={handleBurgerClick}>
                 <span className='burgerBar buntop'></span>
                 <span className='burgerBar pattie'></span>
                 <span className='burgerBar bunbase'></span>
               </div>
-            </div>
+            </div>}
           </div>
         </div>
       </div>

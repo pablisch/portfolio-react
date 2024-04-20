@@ -129,6 +129,7 @@ li {
     font-size: 1.55rem;
   }
   .nav-title {
+    height: 57px;
     max-width: 125px;
     line-height: 0.9;
   }
@@ -143,11 +144,20 @@ li {
     min-width: 65px;
     margin: 0 3px;
   }
+  .logo-image {
+    max-width: 55px;
+  }
+  .nav-container {
+    height: calc(var(--navbar-height) - 10px);
+  }
+  .project-box, .about-box {
+    margin: calc(var(--navbar-height) - 15px) auto 0;
+  }
 }
 
 @media (max-width: 1035px) {
   .nav-title h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
   .github-logo {
     max-height: 40px;
@@ -163,8 +173,35 @@ li {
   .project-panel, .about-panel {
     margin: 15px;
   }
+  .nav-title {
+    height: 54px;
+    max-width: 125px;
+    line-height: 0.85;
+  }
+  .logo-image {
+    max-width: 52px;
+  }
+  .nav-container {
+    height: calc(var(--navbar-height) - 15px);
+  }
+  .project-box, .about-box {
+    margin: calc(var(--navbar-height) - 20px) auto 0;
+  }
 }
 
 @media (max-width: 950px) {
-
+  .nav-title {
+    height: 52px;
+    max-width: 225px;
+    line-height: 0.85;
+  }
+  .logo-image {
+    max-width: 50px;
+  }
+  .nav-container {
+    height: calc(var(--navbar-height) - 20px);
+  }
+  .project-box, .about-box {
+    margin: calc(var(--navbar-height) - 28px) auto 0;
+  }
 }

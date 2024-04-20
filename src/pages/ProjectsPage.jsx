@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import ProjectPanel from '../components/ProjectPanel';
 import PropTypes from 'prop-types';
 import '../components/projectAndAboutPanel.css';
+// import { useScreenWidth } from '../context/ScreenWidthProvider';
 
 function ProjectsPage({
   setFocusProjectId,
@@ -12,6 +13,9 @@ function ProjectsPage({
   section,
   isAvatarHovered,
 }) {
+
+  // const screenWidth = useScreenWidth();
+  // console.log('screenWidth', screenWidth);
 
   useEffect(() => {
     if (section !== 'projects') {
