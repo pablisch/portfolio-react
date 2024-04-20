@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 // import SubNavBar from './components/SubNavBar';
@@ -10,7 +10,9 @@ import SingleAboutPage from './pages/SingleAboutPage';
 import axios from 'axios';
 import { projectData } from './data/projectData';
 
-const apiUrls = projectData.filter(project => project.apiWakeUpUrl).map(project => project.apiWakeUpUrl);
+const apiUrls = projectData
+  .filter((project) => project.apiWakeUpUrl)
+  .map((project) => project.apiWakeUpUrl);
 
 function App() {
   // This app has two main sections: projects and abouts - abouts refers to the 'about me' section.
@@ -23,7 +25,7 @@ function App() {
 
   useEffect(() => {
     const wakeUpDeployedApis = async () => {
-      apiUrls.forEach(async url => {
+      apiUrls.forEach(async (url) => {
         try {
           await axios.get(url);
         } catch (error) {
@@ -36,55 +38,70 @@ function App() {
   }, []);
 
   return (
-      <div className={`app ${isAvatarHovered ? 'avatar-hovered-app' : ''}`}>
-    <BrowserRouter>
-
-      <Navbar
-        setFocusProjectId={setFocusProjectId}
-        setSelectedProject={setSelectedProject}
-        setFocusAboutId={setFocusAboutId}
-        setSelectedAbout={setSelectedAbout}
-        section={section}
-        isAvatarHovered={isAvatarHovered}
-        setIsAvatarHovered={setIsAvatarHovered}
-      />
-      <Routes>
-        <Route
-          path='/'
-          element={
-            <ProjectsPage
-              setFocusProjectId={setFocusProjectId}
-              focusProjectId={focusProjectId}
-              setSelectedProject={setSelectedProject}
-              setSection={setSection}
-              section={section}
-              isAvatarHovered={isAvatarHovered}
-            />
-          }
+    <div className={`app ${isAvatarHovered ? 'avatar-hovered-app' : ''}`}>
+      <BrowserRouter>
+        <Navbar
+          setFocusProjectId={setFocusProjectId}
+          setSelectedProject={setSelectedProject}
+          setFocusAboutId={setFocusAboutId}
+          setSelectedAbout={setSelectedAbout}
+          section={section}
+          isAvatarHovered={isAvatarHovered}
+          setIsAvatarHovered={setIsAvatarHovered}
         />
-        <Route
-          path='/more-about-me'
-          element={
-            <AboutPage
-              setFocusAboutId={setFocusAboutId}
-              focusAboutId={focusAboutId}
-              setSelectedAbout={setSelectedAbout}
-              setSection={setSection}
-              isAvatarHovered={isAvatarHovered}
-            />
-          }
-        />
-        <Route
-          path='/project/:id'
-          element={<SingleProjectPage selectedProject={selectedProject} isAvatarHovered={isAvatarHovered} setSelectedProject={setSelectedProject} />}
-        />
-        <Route
-          path='/more-about-me/:id'
-          element={<SingleAboutPage selectedAbout={selectedAbout} isAvatarHovered={isAvatarHovered} setSelectedAbout={setSelectedAbout} />}
-        />
-      </Routes>
-    </BrowserRouter>
-      </div>
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <ProjectsPage
+                setFocusProjectId={setFocusProjectId}
+                focusProjectId={focusProjectId}
+                setSelectedProject={setSelectedProject}
+                setSection={setSection}
+                section={section}
+                isAvatarHovered={isAvatarHovered}
+              />
+            }
+          />
+          <Route
+            path='/project'
+            element={<Navigate to='/' replace />}
+          />
+          <Route
+            path='/more-about-me'
+            element={
+              <AboutPage
+                setFocusAboutId={setFocusAboutId}
+                focusAboutId={focusAboutId}
+                setSelectedAbout={setSelectedAbout}
+                setSection={setSection}
+                isAvatarHovered={isAvatarHovered}
+              />
+            }
+          />
+          <Route
+            path='/project/:id'
+            element={
+              <SingleProjectPage
+                selectedProject={selectedProject}
+                isAvatarHovered={isAvatarHovered}
+                setSelectedProject={setSelectedProject}
+              />
+            }
+          />
+          <Route
+            path='/more-about-me/:id'
+            element={
+              <SingleAboutPage
+                selectedAbout={selectedAbout}
+                isAvatarHovered={isAvatarHovered}
+                setSelectedAbout={setSelectedAbout}
+              />
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

@@ -2,7 +2,7 @@
 import './SingleProjectAndAboutPage.css';
 import { projectData } from '../data/projectData';
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import Button from '../components/Button';
 import { RiArrowGoBackLine } from 'react-icons/ri';
@@ -14,16 +14,26 @@ const firstProjectId = projectData[0].id;
 const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!selectedProject.name) {
-      console.log('selectedProject is empty');
-      navigate('/');
-      console.log('should have navigated back to /');
-    }
-  }, [selectedProject, navigate]);
+  const { id } = useParams();
 
   console.log('selectedProject', selectedProject);
   console.log('selectedProject.name', selectedProject.name);
+
+  useEffect(() => {
+    if (!id) {
+      console.log('Project ID not found in URL, redirecting to home');
+      navigate('/');
+    } else {
+      const project = projectData.find(project => project.id === id);
+      if (!project) {
+        console.log('Project not found, redirecting to home');
+        navigate('/');
+      } else {
+        console.log('Setting selected project', project);
+        setSelectedProject(project);
+      }
+    }
+  }, [id, navigate, setSelectedProject]);
 
   const handleOpenApp = () => {
     console.log('selectedProject.url', selectedProject.url);
@@ -65,9 +75,9 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
     }`;
   }, [selectedProject]);
 
-  console.log('tech', selectedProject.techBadgesArray[0]);
+  console.log('tech', selectedProject?.techBadgesArray?.[0]);
 
-  const size = selectedProject.techBadgesArray[0].scale;
+  const size = selectedProject?.techBadgesArray?.[0]?.scale || '30';
 
   return (
     <div id='single-subject-page'>
@@ -80,7 +90,7 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
               {selectedProject.techBadges}
             </div>
             <div id='single-project-tech-badges'>
-              {selectedProject.techBadgesArray[1].map((badge) => (
+              {selectedProject?.techBadgesArray?.[1].map((badge) => (
                 <img
                   key={badge.alt}
                   src={`https://raw.githubusercontent.com/devicons/devicon/master/icons/${badge.src}`}
