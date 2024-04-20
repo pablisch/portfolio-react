@@ -37,12 +37,14 @@
   --leaf-100: #e7f1dd;
   --leaf-200: #d0dcc4;
   --leaf-300: #c8d5b9;
-  --leaf-700: #6b7e62;
-  --leaf-900: #4f6048;
+  --leaf-700: #85a775;
+  --leaf-900: #6b7e62;
+  --leaf-1100: #4f6048;
 
   --sea-green-200: #aecebf;
   --sea-green-400: #8fc0a9;
   --sea-green-600: #7aa490;
+  --sea-green-800-dull: #688477;
 
   --turquoise-200: #b8f2e6;
   --turquoise-200-zero: rgba(184, 242, 230, 0);
@@ -69,23 +71,12 @@
   --nav-title-background: var(--leaf-200);
   --nav-link-background: var(--leaf-100);
   --nav-link-text: var(--grey-blue-700);
-  --nav-section-link-background: var(--leaf-700);
+  --nav-section-link-background: var(--leaf-900);
   --nav-section-link-text: var(--leaf-100);
 
   --navText: var(--grey-blue-700);
   --navText-darker: var(--grey-blue-1300);
 }
-
-/* .test1 {
-  background-color: var(--grey-blue-1300);
-  height: 50px;
-  width: 200px;
-}
-.test2 {
-  background-color: var(--grey-blue-1300b);
-  height: 50px;
-  width: 200px;
-} */
 
 * {
   box-sizing: border-box;
@@ -107,10 +98,20 @@ body {
   transition: background-color 13s ease;
   background-color: var(--primary-background);
   min-height: calc(100vh - var(--navbar-height));
-  /* min-height: 100vh; */
 }
 
 .avatar-hovered-app {
   transition: background-color 2s ease;
   background-color: var(--turquoise-400);
+}
+
+@media (max-width: 1300px) {
+  .nav-container {
+    width: 95vw;
+  }
+  .navbar {
+  }
+  .project-box, .about-box {
+    width: 94vw;
+  }
 }

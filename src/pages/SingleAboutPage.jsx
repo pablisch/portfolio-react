@@ -71,6 +71,7 @@ const SingleAboutPage = ({ selectedAbout, setSelectedAbout, section, setSection 
             {selectedAbout.descriptionText1}
           </div>
         </div>
+        
         <div id='iframe-container'>
           <iframe
             name={selectedAbout.name}
@@ -101,6 +102,7 @@ const SingleAboutPage = ({ selectedAbout, setSelectedAbout, section, setSection 
           </div>
         </div>
       </div>
+
       <div id='single-subject-lower-section'>
         <div id='single-about-description-text-2' className='paragraph'>
           <p className='project-text'>{selectedAbout.descriptionText2}</p>

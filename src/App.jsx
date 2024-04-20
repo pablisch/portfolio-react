@@ -48,6 +48,7 @@ function App() {
           isAvatarHovered={isAvatarHovered}
           setIsAvatarHovered={setIsAvatarHovered}
         />
+        <div className="all-pages"></div>
         <Routes>
           <Route
             path='/'

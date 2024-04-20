@@ -318,93 +318,78 @@ export const projectData = [
     ]
   },
   {
-    // Picture Pad
-    id: '5',
-    name: 'Picture Pad',
-    // navName: 'Picture Pad',
-    img: 'picture-pad-small.png',
-    url: 'https://pablisch.github.io/picture-pad-flex-morph/',
-    apiWakeUpUrl: null,
-    repo: 'https://github.com/pablisch/picture-pad-flex-morph',
+    // Alternative Routes
+    id: '7',
+    name: 'Alternative Routes',
+    navName: 'Alter Native Routes',
+    img: 'alternativeRoutes-small.png',
+    apiWakeUpUrl: 'https://alternative-routes-backend.onrender.com/lines',
+    repo: 'https://github.com/pablisch/eclipse-layout-react',
     summary:
-      'A playful, early exploration of displaying images using vanilla JavaScript and Flexbox to create a new way of viewing photo collections.',
-      responsivenessText: 'Partially responsive',
-    heading: 'Picture Pad Flex Morph',
-    subheading: 'A playful exploration of displaying images',
+      'A playful app that generates alternative station names for the London Underground based on user themes using the GPT-3 API.',
+      responsivenessText: 'Mildly responsive',
+    url: 'https://alternative-routes.onrender.com/',
+    heading: 'Alter Native Routes',
+    subheading: 'LLM generated alternative station names for London tube lines',
     descriptionText: (
       <>
         <p className='project-text'>
-          <span className='emphasise'>Description:</span> This project is a
-          playful exploration of coding as well as visualising images in a fun,
-          novel way.
+          <span className='emphasise'>Description:</span> This playful app was
+          my first experimentation utilising the OpenAI GPT-3 API, which was fun
+          and far simpler tham had anticipated. The app generates alternative
+          station names for the London Underground based on user themes.
         </p>
         <p className='project-text'>
-          Its primary drive was not to create a useful app but an aspirational
-          &apos;how can I do this?&apos; desire to explore and create. This
-          represents the second adaptation and extension from Brad
-          Traversy&apos;s{' '}
-          <a
-            href='https://pablisch.github.io/expanding-cards-layout/'
-            rel='noreferrer'
-            target='_blank'>
-            Expanding Cards
+          The app started as a companion app to{' '}
+          <a href='https://lupo.onrender.com/' rel='noreferrer' target='_blank'>
+            LUPO
           </a>{' '}
-          tutorial after the even more impractical{' '}
-          <a
-            href='https://pablisch.github.io/nonsense-pad-sampler/'
-            rel='noreferrer'
-            target='_blank'>
-            Nonsense Pad Sampler
-          </a>{' '}
-          project.
+          with the intention of integrating it so that station names could be
+          dynacially changed. The app is proof of concept.
         </p>
         <p className='project-text'>
-          Neither this nor{' '}
-          <a
-            href='https://pablisch.github.io/nonsense-pad-sampler/'
-            rel='noreferrer'
-            target='_blank'>
-            Nonsense Pad Sampler
-          </a>{' '}
-          are intended to showcase what I am capable of but are included as they
-          represent curiosity and growth mindset at a time when I was still
-          working out basic CSS and what DOM stood for.
+          Themes and generated names are stored in a MongoDB Atlas database
+          where data is not linked to any user so any user of the app sees the
+          collective result of all users.
         </p>
       </>
     ),
     technologiesText: (
       <>
-        <p className='project-text'>
-          <span className='emphasise'>Technologies:</span> This app was made
-          using vanilla JavaScript, HTML and CSS at a time when all three were
-          new and challenging in my earliest exploration of DOM manipulation but
-          it was also a lot of fun.
+        <p className='project-text sm'>
+          <span className='emphasise'>Technologies:</span> Alternative Routes
+          started as a simple Vanilla JavaScript project and has grown as need
+          arose. Since the initial project was a simple experiment in using the
+          OpenAI GPT-3 API, it made sense to keep things simple. In retrospect,
+          through familiarity, it might have been better to start with the MERN
+          stack as I quickly found the need for an Express API to handle the API
+          key and calls to OpenAI.
+        </p>
+        <p className='project-text sm'>
+          The need for a database only arose later when I decided to make the
+          new station names persistent. I considered having a user login system
+          but since this was never intended as a serious app, it seemed quite
+          fun that everyone would see the collective result of all users. The
+          database use is very light and so the choice of MongoDB Atlas was a
+          pragmatic choice made for ease deployment since Render has
+          restrictions on free instances of SQL databases.
         </p>
         <p className='project-text'>
-          It took considerable experimentation and and a good few iterations
-          before I got the images to display in the way I wanted them to and
-          still have unresolved issues with picture quality and image size
-          while. I experimented with using Grid rather than Flexbox which worked
-          very well in some sense but restricted the visual effects in a way
-          that I could not accept.
+          Mainly to expand the technical reach of this simple app, I added an
+          &apos;About&apos; page and a &apos;Contact Us&apos; page. The
+          &apos;Contact Us&apos; page uses an additonal MongoDB Atlas collection
+          to store messages and whether or not they have subscribed to the
+          newsletter in additon to emailing me the message.
         </p>
         <p className='project-text'>
-          <span className='emphasise'>Responsiveness:</span> Recent
-          Responsiveness updates now make this app dynamically change the number
-          of rows and columns independently according to the screen width and
-          height which should make it more usuable on devices of all sizes or
-          orientations. The app retains a default maximum grid, however, meaning
-          any responsive reduction results in some images being hidden and what
-          is hidden is dependent on orientation rather than priority.
-        </p>
-        <p className='project-text'>
-          <span className='emphasise'>Known Issues:</span> Performance is a real
-          issue here but was not my primary concern at the time when I was
-          simply trying to make a concept work. Especially on a large page,
-          where more images are displayed, performace can be expremely poor on
-          some devices. Although I retain a real affection for this project, I
-          have not yet revisited it to explore the performance issues further
-          and see if I can find a practical solution.
+          <span className='emphasise'>Responsiveness:</span> This app has
+          rudimentary responsiveness but is not suitable for use on mobile
+          devices. As a proof of concept app and exploration of the GPT-3 API,
+          there was little to be gained in the extra work with no learning
+          benefit. The app is best viewed on a desktop or laptop screen. Aside
+          from somew responsive text sizing, the main effect is that below 950px
+          screen width, the orginal station names are hidden to allow more space
+          for displaying the generated names.
         </p>
       </>
     ),
@@ -412,7 +397,11 @@ export const projectData = [
       { scale: '35' },
       [
         { src: 'javascript/javascript-original.svg', alt: 'javascript' },
-        { src: 'html5/html5-original.svg', alt: 'html5', class: 'tech-left-space-3' },
+        { src: 'nodejs/nodejs-original.svg', alt: 'nodejs', class: 'tech-left-space-2' },
+        { src: 'npm/npm-original-wordmark.svg', alt: 'npm', class: 'tech-left-space-1' },
+        { src: 'express/express-original.svg', alt: 'express', class: 'tech-left-space-2'  },
+        { src: 'mongodb/mongodb-original.svg', alt: 'mongodb', class: 'tech-minus-space-1'  },
+        { src: 'html5/html5-original.svg', alt: 'html5' },
         { src: 'css3/css3-original.svg', alt: 'css3', class: 'tech-left-space-1' },
         { src: 'git/git-original.svg', alt: 'git', class: 'tech-left-space-1' },
         { src: 'github/github-original.svg', alt: 'github', class: 'tech-left-space-2'  },
@@ -533,97 +522,108 @@ export const projectData = [
       ]
     ]
   },
-  {
-    // Alternative Routes
-    id: '7',
-    name: 'Alternative Routes',
-    navName: 'Alter Native Routes',
-    img: 'alternativeRoutes-small.png',
-    apiWakeUpUrl: 'https://alternative-routes-backend.onrender.com/lines',
-    repo: 'https://github.com/pablisch/eclipse-layout-react',
-    summary:
-      'A playful app that generates alternative station names for the London Underground based on user themes using the GPT-3 API.',
-      responsivenessText: 'Mildly responsive',
-    url: 'https://alternative-routes.onrender.com/',
-    heading: 'Alter Native Routes',
-    subheading: 'LLM generated alternative station names for London tube lines',
-    descriptionText: (
-      <>
-        <p className='project-text'>
-          <span className='emphasise'>Description:</span> This playful app was
-          my first experimentation utilising the OpenAI GPT-3 API, which was fun
-          and far simpler tham had anticipated. The app generates alternative
-          station names for the London Underground based on user themes.
-        </p>
-        <p className='project-text'>
-          The app started as a companion app to{' '}
-          <a href='https://lupo.onrender.com/' rel='noreferrer' target='_blank'>
-            LUPO
-          </a>{' '}
-          with the intention of integrating it so that station names could be
-          dynacially changed. The app is proof of concept.
-        </p>
-        <p className='project-text'>
-          Themes and generated names are stored in a MongoDB Atlas database
-          where data is not linked to any user so any user of the app sees the
-          collective result of all users.
-        </p>
-      </>
-    ),
-    technologiesText: (
-      <>
-        <p className='project-text sm'>
-          <span className='emphasise'>Technologies:</span> Alternative Routes
-          started as a simple Vanilla JavaScript project and has grown as need
-          arose. Since the initial project was a simple experiment in using the
-          OpenAI GPT-3 API, it made sense to keep things simple. In retrospect,
-          through familiarity, it might have been better to start with the MERN
-          stack as I quickly found the need for an Express API to handle the API
-          key and calls to OpenAI.
-        </p>
-        <p className='project-text sm'>
-          The need for a database only arose later when I decided to make the
-          new station names persistent. I considered having a user login system
-          but since this was never intended as a serious app, it seemed quite
-          fun that everyone would see the collective result of all users. The
-          database use is very light and so the choice of MongoDB Atlas was a
-          pragmatic choice made for ease deployment since Render has
-          restrictions on free instances of SQL databases.
-        </p>
-        <p className='project-text'>
-          Mainly to expand the technical reach of this simple app, I added an
-          &apos;About&apos; page and a &apos;Contact Us&apos; page. The
-          &apos;Contact Us&apos; page uses an additonal MongoDB Atlas collection
-          to store messages and whether or not they have subscribed to the
-          newsletter in additon to emailing me the message.
-        </p>
-        <p className='project-text'>
-          <span className='emphasise'>Responsiveness:</span> This app has
-          rudimentary responsiveness but is not suitable for use on mobile
-          devices. As a proof of concept app and exploration of the GPT-3 API,
-          there was little to be gained in the extra work with no learning
-          benefit. The app is best viewed on a desktop or laptop screen. Aside
-          from somew responsive text sizing, the main effect is that below 950px
-          screen width, the orginal station names are hidden to allow more space
-          for displaying the generated names.
-        </p>
-      </>
-    ),
-    techBadgesArray: [
-      { scale: '35' },
-      [
-        { src: 'javascript/javascript-original.svg', alt: 'javascript' },
-        { src: 'nodejs/nodejs-original.svg', alt: 'nodejs', class: 'tech-left-space-2' },
-        { src: 'npm/npm-original-wordmark.svg', alt: 'npm', class: 'tech-left-space-1' },
-        { src: 'express/express-original.svg', alt: 'express', class: 'tech-left-space-2'  },
-        { src: 'mongodb/mongodb-original.svg', alt: 'mongodb', class: 'tech-minus-space-1'  },
-        { src: 'html5/html5-original.svg', alt: 'html5' },
-        { src: 'css3/css3-original.svg', alt: 'css3', class: 'tech-left-space-1' },
-        { src: 'git/git-original.svg', alt: 'git', class: 'tech-left-space-1' },
-        { src: 'github/github-original.svg', alt: 'github', class: 'tech-left-space-2'  },
-      ]
-    ]
-  },
+  // {
+  //   // Picture Pad
+  //   id: '5',
+  //   name: 'Picture Pad',
+  //   // navName: 'Picture Pad',
+  //   img: 'picture-pad-small.png',
+  //   url: 'https://pablisch.github.io/picture-pad-flex-morph/',
+  //   apiWakeUpUrl: null,
+  //   repo: 'https://github.com/pablisch/picture-pad-flex-morph',
+  //   summary:
+  //     'A playful, early exploration of displaying images using vanilla JavaScript and Flexbox to create a new way of viewing photo collections.',
+  //     responsivenessText: 'Partially responsive',
+  //   heading: 'Picture Pad Flex Morph',
+  //   subheading: 'A playful exploration of displaying images',
+  //   descriptionText: (
+  //     <>
+  //       <p className='project-text'>
+  //         <span className='emphasise'>Description:</span> This project is a
+  //         playful exploration of coding as well as visualising images in a fun,
+  //         novel way.
+  //       </p>
+  //       <p className='project-text'>
+  //         Its primary drive was not to create a useful app but an aspirational
+  //         &apos;how can I do this?&apos; desire to explore and create. This
+  //         represents the second adaptation and extension from Brad
+  //         Traversy&apos;s{' '}
+  //         <a
+  //           href='https://pablisch.github.io/expanding-cards-layout/'
+  //           rel='noreferrer'
+  //           target='_blank'>
+  //           Expanding Cards
+  //         </a>{' '}
+  //         tutorial after the even more impractical{' '}
+  //         <a
+  //           href='https://pablisch.github.io/nonsense-pad-sampler/'
+  //           rel='noreferrer'
+  //           target='_blank'>
+  //           Nonsense Pad Sampler
+  //         </a>{' '}
+  //         project.
+  //       </p>
+  //       <p className='project-text'>
+  //         Neither this nor{' '}
+  //         <a
+  //           href='https://pablisch.github.io/nonsense-pad-sampler/'
+  //           rel='noreferrer'
+  //           target='_blank'>
+  //           Nonsense Pad Sampler
+  //         </a>{' '}
+  //         are intended to showcase what I am capable of but are included as they
+  //         represent curiosity and growth mindset at a time when I was still
+  //         working out basic CSS and what DOM stood for.
+  //       </p>
+  //     </>
+  //   ),
+  //   technologiesText: (
+  //     <>
+  //       <p className='project-text'>
+  //         <span className='emphasise'>Technologies:</span> This app was made
+  //         using vanilla JavaScript, HTML and CSS at a time when all three were
+  //         new and challenging in my earliest exploration of DOM manipulation but
+  //         it was also a lot of fun.
+  //       </p>
+  //       <p className='project-text'>
+  //         It took considerable experimentation and and a good few iterations
+  //         before I got the images to display in the way I wanted them to and
+  //         still have unresolved issues with picture quality and image size
+  //         while. I experimented with using Grid rather than Flexbox which worked
+  //         very well in some sense but restricted the visual effects in a way
+  //         that I could not accept.
+  //       </p>
+  //       <p className='project-text'>
+  //         <span className='emphasise'>Responsiveness:</span> Recent
+  //         Responsiveness updates now make this app dynamically change the number
+  //         of rows and columns independently according to the screen width and
+  //         height which should make it more usuable on devices of all sizes or
+  //         orientations. The app retains a default maximum grid, however, meaning
+  //         any responsive reduction results in some images being hidden and what
+  //         is hidden is dependent on orientation rather than priority.
+  //       </p>
+  //       <p className='project-text'>
+  //         <span className='emphasise'>Known Issues:</span> Performance is a real
+  //         issue here but was not my primary concern at the time when I was
+  //         simply trying to make a concept work. Especially on a large page,
+  //         where more images are displayed, performace can be expremely poor on
+  //         some devices. Although I retain a real affection for this project, I
+  //         have not yet revisited it to explore the performance issues further
+  //         and see if I can find a practical solution.
+  //       </p>
+  //     </>
+  //   ),
+  //   techBadgesArray: [
+  //     { scale: '35' },
+  //     [
+  //       { src: 'javascript/javascript-original.svg', alt: 'javascript' },
+  //       { src: 'html5/html5-original.svg', alt: 'html5', class: 'tech-left-space-3' },
+  //       { src: 'css3/css3-original.svg', alt: 'css3', class: 'tech-left-space-1' },
+  //       { src: 'git/git-original.svg', alt: 'git', class: 'tech-left-space-1' },
+  //       { src: 'github/github-original.svg', alt: 'github', class: 'tech-left-space-2'  },
+  //     ]
+  //   ]
+  // },
   // {
   //   // Lair BnB
   //   id: '8',
