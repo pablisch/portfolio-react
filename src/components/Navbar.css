@@ -209,6 +209,7 @@ nav h1 {
 .github-link-btn {
   transition: background-color 0.5s ease;
   background-color: var(--nav-link-background);
+  cursor: url('./looking-glass4.png'), auto;
 }
 
 .github-link-btn:hover {
@@ -233,6 +234,7 @@ nav h1 {
   transition: background-color 1s ease;
   background-color: var(--turquoise-400);
   background-color: var(--sea-green-600);
+  cursor: url('./looking-glass4.png'), auto;
 }
 
 .linkedin-link-btn:hover {
