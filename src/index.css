@@ -182,10 +182,10 @@ li {
     max-width: 52px;
   }
   .nav-container {
-    height: calc(var(--navbar-height) - 15px);
+    height: calc(var(--navbar-height) - 12px);
   }
   .project-box, .about-box {
-    margin: calc(var(--navbar-height) - 20px) auto 0;
+    margin: calc(var(--navbar-height) - 17px) auto 0;
   }
 }
 
@@ -199,9 +199,9 @@ li {
     max-width: 50px;
   }
   .nav-container {
-    height: calc(var(--navbar-height) - 20px);
+    height: calc(var(--navbar-height) - 15px);
   }
   .project-box, .about-box {
-    margin: calc(var(--navbar-height) - 28px) auto 0;
+    margin: calc(var(--navbar-height) - 23px) auto 0;
   }
 }
