@@ -29,8 +29,6 @@ function Navbar({ setFocusProjectId, setSelectedProject, setFocusAboutId, setSel
           <div className={`nav-title ${isAvatarHovered && 'avatar-hovered-nav-title'}`}>
           <h1 onClick={handleNavTitleClick}>{section === 'projects' ? 'My Projects' : section === 'about' ? 'About Me' : ''}</h1>
             </div>
-            {/* <div className="test1"></div>
-            <div className="test2"></div> */}
 
         </div>
         <div className='navlist'>

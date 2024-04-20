@@ -624,64 +624,64 @@ export const projectData = [
       ]
     ]
   },
-  {
-    // Lair BnB
-    id: '8',
-    name: 'Lair BnB',
-    navName: 'Lair BnB',
-    img: 'lair-bnb-screen-small.png',
-    url: 'https://pablisch.github.io/lair-bnb/',
-    apiWakeUpUrl: null,
-    repo: 'https://github.com/pablisch/lair-bnb',
-    responsivenessText: 'Never deployed',
-    heading: 'Lair BnB',
-    subheading: 'An Air BnB clone with a Lord of The Rings theme',
-    descriptionText: (
-      <>
-        <p className='project-text'>
-          <span className='emphasise'>Description:</span> This Air BnB clone was
-          the first group engineering project on the Makers Software Development
-          Bootcamp and was completed in four and a half days.
-        </p>
-        <p className='project-text'>
-          A huge focus of this project was on learning to work as a team using
-          Agile methodologies and XP values. We established a group charter with
-          our core values, used daily standups and retros, two-day sprints,
-          pair-programming and PR reviews. We also used Trello for project
-          management and GitHub for version control and collaboration. The
-          project was built using Ruby and Sinatra from scratch based on a set
-          of user stories.
-        </p>
-      </>
-    ),
-    technologiesText: (
-      <>
-        <p className='project-text'>
-          <span className='emphasise'>Technologies:</span> The app is built from
-          scratch in Ruby and ERB, using Sinatra for routing with the Rack web
-          server interface. We used PostgreSQL relational database with three
-          tables and one-to-many relationships.
-        </p>
-        <p className='project-text'>
-          Apart from being our first group project, for much of the group it was
-          a first venture into CSS which was not taught by Makers. We used RSpec
-          for testing and achieved 100% coverage over 50 unit and integration
-          tests. We used Git and GitHub for version control and Postman API
-          testing.
-        </p>
-      </>
-    ),
-    techBadgesArray: [
-      { scale: '40' },
-      [
-        { src: 'ruby/ruby-original.svg', alt: 'ruby' },
-        { src: 'postgresql/postgresql-original.svg', alt: 'postgresql', class: 'tech-left-space-1' },
-        { src: 'html5/html5-original.svg', alt: 'html5' },
-        { src: 'css3/css3-original.svg', alt: 'css3', class: 'tech-left-space-1' },
-        { src: 'rspec/rspec-original.svg', alt: 'rspec', class: 'tech-left-space-1' },
-        { src: 'git/git-original.svg', alt: 'git', class: 'tech-left-space-1' },
-        { src: 'github/github-original.svg', alt: 'github', class: 'tech-left-space-2'  },
-      ]
-    ]
-  },
+  // {
+  //   // Lair BnB
+  //   id: '8',
+  //   name: 'Lair BnB',
+  //   navName: 'Lair BnB',
+  //   img: 'lair-bnb-screen-small.png',
+  //   url: 'https://pablisch.github.io/lair-bnb/',
+  //   apiWakeUpUrl: null,
+  //   repo: 'https://github.com/pablisch/lair-bnb',
+  //   responsivenessText: 'Never deployed',
+  //   heading: 'Lair BnB',
+  //   subheading: 'An Air BnB clone with a Lord of The Rings theme',
+  //   descriptionText: (
+  //     <>
+  //       <p className='project-text'>
+  //         <span className='emphasise'>Description:</span> This Air BnB clone was
+  //         the first group engineering project on the Makers Software Development
+  //         Bootcamp and was completed in four and a half days.
+  //       </p>
+  //       <p className='project-text'>
+  //         A huge focus of this project was on learning to work as a team using
+  //         Agile methodologies and XP values. We established a group charter with
+  //         our core values, used daily standups and retros, two-day sprints,
+  //         pair-programming and PR reviews. We also used Trello for project
+  //         management and GitHub for version control and collaboration. The
+  //         project was built using Ruby and Sinatra from scratch based on a set
+  //         of user stories.
+  //       </p>
+  //     </>
+  //   ),
+  //   technologiesText: (
+  //     <>
+  //       <p className='project-text'>
+  //         <span className='emphasise'>Technologies:</span> The app is built from
+  //         scratch in Ruby and ERB, using Sinatra for routing with the Rack web
+  //         server interface. We used PostgreSQL relational database with three
+  //         tables and one-to-many relationships.
+  //       </p>
+  //       <p className='project-text'>
+  //         Apart from being our first group project, for much of the group it was
+  //         a first venture into CSS which was not taught by Makers. We used RSpec
+  //         for testing and achieved 100% coverage over 50 unit and integration
+  //         tests. We used Git and GitHub for version control and Postman API
+  //         testing.
+  //       </p>
+  //     </>
+  //   ),
+  //   techBadgesArray: [
+  //     { scale: '40' },
+  //     [
+  //       { src: 'ruby/ruby-original.svg', alt: 'ruby' },
+  //       { src: 'postgresql/postgresql-original.svg', alt: 'postgresql', class: 'tech-left-space-1' },
+  //       { src: 'html5/html5-original.svg', alt: 'html5' },
+  //       { src: 'css3/css3-original.svg', alt: 'css3', class: 'tech-left-space-1' },
+  //       { src: 'rspec/rspec-original.svg', alt: 'rspec', class: 'tech-left-space-1' },
+  //       { src: 'git/git-original.svg', alt: 'git', class: 'tech-left-space-1' },
+  //       { src: 'github/github-original.svg', alt: 'github', class: 'tech-left-space-2'  },
+  //     ]
+  //   ]
+  // },
 ];

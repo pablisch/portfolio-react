@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
-// import SubNavBar from './components/SubNavBar';
 import ProjectsPage from './pages/ProjectsPage';
 import AboutPage from './pages/AboutPage';
 import SingleProjectPage from './pages/SingleProjectPage';
@@ -20,7 +19,7 @@ function App() {
   const [focusAboutId, setFocusAboutId] = useState('');
   const [selectedProject, setSelectedProject] = useState({});
   const [selectedAbout, setSelectedAbout] = useState({});
-  const [section, setSection] = useState('projects');
+  const [section, setSection] = useState('');
   const [isAvatarHovered, setIsAvatarHovered] = useState(false);
 
   useEffect(() => {
@@ -54,11 +53,11 @@ function App() {
             path='/'
             element={
               <ProjectsPage
-                setFocusProjectId={setFocusProjectId}
                 focusProjectId={focusProjectId}
+                setFocusProjectId={setFocusProjectId}
                 setSelectedProject={setSelectedProject}
-                setSection={setSection}
                 section={section}
+                setSection={setSection}
                 isAvatarHovered={isAvatarHovered}
               />
             }
@@ -74,6 +73,7 @@ function App() {
                 setFocusAboutId={setFocusAboutId}
                 focusAboutId={focusAboutId}
                 setSelectedAbout={setSelectedAbout}
+                section={section}
                 setSection={setSection}
                 isAvatarHovered={isAvatarHovered}
               />
@@ -96,6 +96,8 @@ function App() {
                 selectedAbout={selectedAbout}
                 isAvatarHovered={isAvatarHovered}
                 setSelectedAbout={setSelectedAbout}
+                section={section}
+                setSection={setSection}
               />
             }
           />

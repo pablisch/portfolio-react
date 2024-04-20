@@ -8,13 +8,14 @@ function AboutPage({
   setFocusAboutId,
   focusAboutId,
   setSelectedAbout,
+  section,
   setSection,
 }) {
   
   useEffect(() => {
-    setSection('about')
+    if (section !== 'about') setSection('about')
     document.title = 'Pablo Joyce - About Me';
-  }, [setSection]);
+  }, [section, setSection]);
 
   return (
     <ul className='about-box'>
@@ -35,6 +36,7 @@ AboutPage.propTypes = {
   setFocusAboutId: PropTypes.func.isRequired,
   focusAboutId: PropTypes.string,
   setSelectedAbout: PropTypes.func.isRequired,
+  section: PropTypes.string.isRequired,
   setSection: PropTypes.func.isRequired,
 };
 

@@ -2,34 +2,40 @@
 import './SingleProjectAndAboutPage.css';
 import PropTypes from 'prop-types';
 import { aboutData } from '../data/aboutData';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import Button from '../components/Button';
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 import { RiArrowGoBackLine } from "react-icons/ri";
 
-
 const lastAboutId = aboutData[aboutData.length - 1].id;
 const firstAboutId = aboutData[0].id;
 
 
-const SingleAboutPage = ({ selectedAbout, setSelectedAbout }) => {
+const SingleAboutPage = ({ selectedAbout, setSelectedAbout, section, setSection }) => {
   const navigate = useNavigate();
-  // console.log('test - about data index 0:', aboutData[0]);
-  console.log('lastAboutId:', lastAboutId);
+  
+  const { id } = useParams();
+  
+  useEffect(() => {
+    if (section !== 'about') setSection('about')
+    document.title = `Pablo - ${selectedAbout.navName || selectedAbout.name}`;
+  }, [section, setSection, selectedAbout]);
 
   useEffect(() => {
-    if (!selectedAbout.name) {
-      console.log('selectedAbout is empty');
+    if (!id) {
       navigate('/');
-      console.log('should have navigated back to /');
+    } else {
+      const about = aboutData.find(about => about.id === id);
+      if (!about) {
+        navigate('/');
+      } else {
+        setSelectedAbout(about);
+      }
     }
-  }, [selectedAbout, navigate]);
-
-  // console.log('selectedAbout.name', selectedAbout.name);
+  }, [id, navigate, setSelectedAbout]);
 
   const handleOpenNewTab = () => {
-    console.log('selectedAbout.url', selectedAbout.url);
     window.open(selectedAbout.url, '_blank');
   };
 
@@ -54,15 +60,6 @@ const SingleAboutPage = ({ selectedAbout, setSelectedAbout }) => {
     navigate('/more-about-me');
   };
 
-  useEffect(() => {
-    console.log('selectedAbout.id', selectedAbout.id);
-    navigate(`/more-about-me/${selectedAbout.id}`);
-  }, [selectedAbout, navigate]);
-
-
-  useEffect(() => {
-    document.title = `Pablo - ${selectedAbout.navName || selectedAbout.name}`;
-  }, [selectedAbout]);
 
   return (
     <div id='single-subject-page'>
@@ -81,15 +78,12 @@ const SingleAboutPage = ({ selectedAbout, setSelectedAbout }) => {
             id='feature-iframe'
             src={selectedAbout.url}
             title='CV link'
-            // style={{ width: selectedAbout.iframeWidth || '100%', height: selectedAbout.iframeHeight || '600px' }}
-            // style={{ width: selectedAbout.iframeWidth, height: selectedAbout.iframeHeight}}
             style={{
               width: selectedAbout.iframeWidth,
               height: selectedAbout.iframeHeight,
               border: selectedAbout.iframeBorder,
             }}
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            // frameBorder='0'
             allowFullScreen></iframe>
           <div className='panel-buttons'>
             <Button className='btn about-iframe-btn space-right' onClick={handlePreviousSection}>
@@ -120,6 +114,8 @@ const SingleAboutPage = ({ selectedAbout, setSelectedAbout }) => {
 SingleAboutPage.propTypes = {
   selectedAbout: PropTypes.object.isRequired,
   setSelectedAbout: PropTypes.func.isRequired,
+  section: PropTypes.string.isRequired,
+  setSection: PropTypes.func.isRequired,
 };
 
 export default SingleAboutPage;
