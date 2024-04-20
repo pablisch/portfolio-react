@@ -6,6 +6,8 @@
   --app-max-width: 1100px;
 }
 
+/* UNDER NAVBAR BORDERS inc FADE BORDER */
+
 #nav-border-bar-1 {
   height: 1px;
   background-color: var(--fawn-400);
@@ -41,6 +43,8 @@
   );
 }
 
+/* MAIN NAVBAR STYLING */
+
 nav {
   position: fixed;
   top: 0;
@@ -74,11 +78,15 @@ nav {
   height: var(--navbar-height);
 }
 
+/* NAV LEFT - LOGO AND TITLE */
+
 .nav-left {
   display: flex;
   align-items: center;
   height: inherit;
 }
+
+/* NAV RIGHT - NAVLIST containing LINK BUTTONS */
 
 .navlist {
   display: flex;
@@ -150,7 +158,6 @@ nav {
 .github-link-btn {
   transition: background-color 0.5s ease;
   background-color: var(--nav-link-background);
-  margin: 0 0 0 4px;
 }
 
 .github-link-btn:hover {
@@ -175,7 +182,6 @@ nav {
   transition: background-color 1s ease;
   background-color: var(--turquoise-400);
   background-color: var(--sea-green-600);
-  margin: 0 0 0 4px;
 }
 
 .linkedin-link-btn:hover {
