@@ -91,7 +91,7 @@ nav {
   margin-right: 15px;
   opacity: 0.7;
   transition: opacity 4s ease;
-  cursor: url('./tinytorch2.png'), auto;
+  cursor: none;
 }
 
 .avatar-hovered-avatar {
@@ -101,45 +101,53 @@ nav {
 .nav-title {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex: 1 400px;
   text-align: center;
   height: 62px;
   border-radius: 15px;
   padding: 5px 15px;
-  transition: background-color 3s ease, border 8s ease;
-  background-color: var(--nav-title-background);
+  transition: background-color 3s ease, border 8s ease, color 3s ease;
+  background-color: var(--nav-section-link-background);
+  color: var(--nav-section-link-text);
   border: 1px var(--sea-green-200) solid;
   cursor: pointer;
+  margin-right: 5px;
+  max-width: 100px;
+}
+
+.abouts-title {
+  max-width: 195px;
+}
+
+.projects-title {
+  max-width: 225px;
 }
 
 .nav-title:hover {
-  background-color: var(--cream-100);
+  transition: background-color 1s ease, border 8s ease, color 1s ease;
+  background-color: var(--navText-darker);
+  color: var(--lime-300);
   border: 1px var(--sea-green-400) solid;
 }
 
 .avatar-hovered-nav-title {
-  transition: background-color 3s ease, border 8s ease;
+  transition: background-color 3s ease, border 8s ease, color 3s ease;
   background-color: var(--grey-blue-1300);
   border: 1px var(--grey-blue-1300) solid;
-}
-
-.avatar-hovered-nav-title h1 {
-  transition: color 16s ease;
   color: var(--lime-300);
 }
 
 nav h1 {
   font-size: 2.2rem;
   font-weight: normal;
-  color: var(--navText);
-  transition: color 16s ease;
 }
 
 /* NAV RIGHT - NAVLIST containing LINK BUTTONS */
 
 .navlist {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   /* align-items: center; */
   max-width: 600px;
 }
@@ -209,7 +217,7 @@ nav h1 {
 .github-link-btn {
   transition: background-color 0.5s ease;
   background-color: var(--nav-link-background);
-  cursor: url('./looking-glass4.png'), auto;
+  cursor: url('./looking-glass.png'), auto;
 }
 
 .github-link-btn:hover {
@@ -234,7 +242,7 @@ nav h1 {
   transition: background-color 1s ease;
   background-color: var(--turquoise-400);
   background-color: var(--sea-green-600);
-  cursor: url('./looking-glass4.png'), auto;
+  cursor: url('./looking-glass.png'), auto;
 }
 
 .linkedin-link-btn:hover {
@@ -260,7 +268,7 @@ nav h1 {
 }
 
 .settings-btn {
-  cursor: url('./smallaxe2.png'), auto;
+  cursor: url('./smallaxe.png'), auto;
 }
 
 /* HAMBURGER STYLING */

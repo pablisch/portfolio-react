@@ -46,9 +46,7 @@ function Navbar({
         <div className='nav-container'>
           <div className='nav-left'>
             <img
-              className={`logo-image ${
-                isAvatarHovered ? 'avatar-hovered-avatar' : ''
-              }`}
+              className={`logo-image ${isAvatarHovered ? 'avatar-hovered-avatar' : ''}`}
               src='images/pablo-circle-avatar.png'
               alt='icon'
               onMouseEnter={() => setIsAvatarHovered(true)}
@@ -57,7 +55,7 @@ function Navbar({
             <div
               className={`nav-title ${
                 isAvatarHovered ? 'avatar-hovered-nav-title' : ''
-              }`}>
+              } ${section === 'projects' ? 'projects-title' : 'abouts-title'}`}>
               <h1 onClick={handleNavTitleClick}>
                 {section === 'projects'
                   ? 'My Projects'
@@ -66,8 +64,7 @@ function Navbar({
                   : ''}
               </h1>
             </div>
-          </div>
-          <div className='navlist'>
+            <div className='navlist'>
             {/* 👇🏻 PROJECT LINKS */}
             {(section === 'projects' && !isHamburgerSize) &&
               projectData.map((project) => (
@@ -96,6 +93,10 @@ function Navbar({
                   {about.navName || about.name}
                 </NavLink>
               ))}
+
+            </div>
+          </div>
+          <div className='nav-right navlist'>
             {/* 👇🏻 LINK TO PROJECTS SECTION */}
             {section === 'about' && (
               <Link
