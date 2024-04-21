@@ -1,0 +1,56 @@
+.hamburger-blocks-container {
+  position: fixed;
+  top: calc(var(--navbar-height) - 10px);
+  /* right: 5vw; */
+  left: 50%;
+  transform: translateX(-50%);
+  /* margin-top: 100px; */
+  width: 490px;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /* background-color: rgba(255, 255, 255, 0.9); */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 10px 10px 0 10px;
+}
+
+.burger-btn {
+  flex: 1 1 70px;
+  max-width: 80px;
+  text-align: center;
+  margin: 0 4px 10px;
+  border-radius: 15px;
+  padding: 5px 3px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border 1s ease;
+  border: 3px var(--sea-green-600) solid;
+  cursor: pointer;
+  height: 70px;
+}
+
+.burger-link {
+  transition: background-color 0.5s ease, color 0.5s ease;
+  background-color: var(--nav-link-background);
+  color: var(--nav-link-text);
+}
+
+.burger-link:hover {
+  background-color: var(--cream-100);
+  background-color: #fff;
+  color: var(--navText-darker);
+}
+
+.avatar-hovered-burger-link {
+  transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
+  background-color: var(--grey-blue-1300);
+  border: 1px var(--leaf-1100) solid;
+  color: var(--lime-500);
+}

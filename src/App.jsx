@@ -63,8 +63,9 @@ function App() {
             setFocusProjectId={setFocusProjectId}
             setSelectedAbout={setSelectedAbout}
             setSelectedProject={setSelectedProject}
+            setIsHamburgerOpen={setIsHamburgerOpen}
           />}
-        <div className="all-pages"></div>
+        <div className={`all-pages ${isHamburgerOpen ? 'single-burger-bar' : ''}`}></div>
         <Routes>
           <Route
             path='/'

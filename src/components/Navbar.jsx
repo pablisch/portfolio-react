@@ -38,7 +38,7 @@ function Navbar({
       setIsHamburgerShowing(true);
     }
     // console.log('screenWidth', screenWidth);
-  }, [screenWidth]);
+  }, [screenWidth, setIsHamburgerShowing, setIsHamburgerOpen]);
 
   const handleNavTitleClick = () => {
     setSelectedProject({});

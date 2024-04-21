@@ -1,39 +1,43 @@
 // import React from 'react'
-import { NavLink } from 'react-router-dom'
+import BurgerLink from './BurgerLink'
 import { projectData } from '../data/projectData'
 import { aboutData } from '../data/aboutData'
 import PropTypes from 'prop-types'
-import './HamburgerBlocks.css'
+import './Hamburger.css'
 
-const HamburgerBlocks = ({section, isAvatarHovered, setFocusAboutId, setFocusProjectId, setSelectedAbout, setSelectedProject}) => {
+const HamburgerBlocks = ({ section, isAvatarHovered, setFocusAboutId, setFocusProjectId, setSelectedAbout, setSelectedProject, setIsHamburgerOpen }) => {
   return (
     <div className='hamburger-blocks-container'>
       {section === 'projects' &&
               projectData.map((project) => (
-                <NavLink
-                  className={`nav-btn-burg nav-link-burg ${
+                <BurgerLink
+                  className={`burger-btn burger-link ${
                     isAvatarHovered ? 'avatar-hovered-nav-link' : ''
                   }`}
                   key={project.id}
                   project={project}
                   setFocusProjectId={setFocusProjectId}
-                  setSelectedProject={setSelectedProject}>
+                  setSelectedProject={setSelectedProject}
+                  setIsHamburgerOpen={setIsHamburgerOpen}
+                >
                   {project.navName || project.name}
-                </NavLink>
+                </BurgerLink>
               ))}
             {/* 👇🏻 ABOUT LINKS */}
             {section === 'about' &&
               aboutData.map((about) => (
-                <NavLink
-                  className={`nav-btn nav-link ${
+                <BurgerLink
+                  className={`burger-btn burger-link ${
                     isAvatarHovered ? 'avatar-hovered-nav-link' : ''
                   }`}
                   key={about.id}
                   project={about}
                   setFocusProjectId={setFocusAboutId}
-                  setSelectedProject={setSelectedAbout}>
+                  setSelectedProject={setSelectedAbout}
+                  setIsHamburgerOpen={setIsHamburgerOpen}
+                >
                   {about.navName || about.name}
-                </NavLink>
+                </BurgerLink>
               ))}
     </div>
   )
@@ -46,6 +50,7 @@ HamburgerBlocks.propTypes = {
   setFocusProjectId: PropTypes.func.isRequired,
   setSelectedAbout: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
+  setIsHamburgerOpen: PropTypes.func.isRequired,
 }
 
 export default HamburgerBlocks

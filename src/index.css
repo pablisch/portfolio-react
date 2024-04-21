@@ -109,6 +109,10 @@ li {
   background-color: var(--turquoise-400);
 }
 
+.single-burger-bar {
+  margin-bottom: 130px;
+}
+
 @media (max-width: 1300px) {
   .nav-container {
     width: 95vw;
