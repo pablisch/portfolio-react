@@ -8,6 +8,7 @@ function AboutPanel({
   setFocusAboutId,
   focusAboutId,
   setSelectedAbout,
+  isAvatarHovered,
 }) {
   const navigate = useNavigate();
 
@@ -35,10 +36,10 @@ function AboutPanel({
         alt={about.name}
         className='about-image'
       />
-      <div className={`about-label ${focusAboutId === about.id && 'hover-fade'}`} >{about.panelName || about.name}</div>
+      <div className={`about-label ${(focusAboutId === about.id || isAvatarHovered) ? 'hover-fade' : ''}`} >{about.panelName || about.name}</div>
       <div
         onClick={() => handleSelectAbout(about)}
-        className={`about-overlay ${focusAboutId === about.id && 'hover-focus'}`}> {/* IF hover-focus is applied then overlay opacity === 1 */}
+        className={`about-overlay ${(focusAboutId === about.id || isAvatarHovered) ? 'hover-focus' : ''}`}> 
         {about.summary}
       </div>
     </li>
@@ -50,6 +51,7 @@ AboutPanel.propTypes = {
   setFocusAboutId: PropTypes.func.isRequired,
   focusAboutId: PropTypes.string.isRequired,
   setSelectedAbout: PropTypes.func.isRequired,
+  isAvatarHovered: PropTypes.bool.isRequired,
 };
 
 export default AboutPanel;

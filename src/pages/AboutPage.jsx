@@ -10,6 +10,7 @@ function AboutPage({
   setSelectedAbout,
   section,
   setSection,
+  isAvatarHovered,
 }) {
   
   useEffect(() => {
@@ -26,6 +27,7 @@ function AboutPage({
           setFocusAboutId={setFocusAboutId}
           focusAboutId={focusAboutId}
           setSelectedAbout={setSelectedAbout}
+          isAvatarHovered={isAvatarHovered}
         />
       ))}
     </ul>
@@ -38,6 +40,7 @@ AboutPage.propTypes = {
   setSelectedAbout: PropTypes.func.isRequired,
   section: PropTypes.string.isRequired,
   setSection: PropTypes.func.isRequired,
+  isAvatarHovered: PropTypes.bool.isRequired,
 };
 
 export default AboutPage;

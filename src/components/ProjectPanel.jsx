@@ -37,10 +37,10 @@ function ProjectPanel({
         alt={project.name}
         className='project-image'
       />
-      <div className={`project-label ${(focusProjectId === project.id || isAvatarHovered) && 'hover-fade'}`} >{project.panelName || project.name}</div>
+      <div className={`project-label ${(focusProjectId === project.id || isAvatarHovered) ? 'hover-fade' : ''}`} >{project.panelName || project.name}</div>
       <div
         onClick={() => handleClick(project)}
-        className={`project-overlay ${(focusProjectId === project.id || isAvatarHovered) && 'hover-focus'}`}>
+        className={`project-overlay ${(focusProjectId === project.id || isAvatarHovered) ? 'hover-focus' : ''}`}>
         {project.summary}
       </div>
     </li>
