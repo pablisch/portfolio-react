@@ -9,6 +9,7 @@ import SingleAboutPage from './pages/SingleAboutPage';
 import axios from 'axios';
 import { projectData } from './data/projectData';
 import { ScreenWidthProvider } from './context/ScreenWidthProvider';
+import HamburgerBlocks from './components/HamburgerBlocks';
 
 const apiUrls = projectData
   .filter((project) => project.apiWakeUpUrl)
@@ -22,6 +23,8 @@ function App() {
   const [selectedAbout, setSelectedAbout] = useState({});
   const [section, setSection] = useState('');
   const [isAvatarHovered, setIsAvatarHovered] = useState(false);
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+  const [isHamburgerShowing, setIsHamburgerShowing] = useState(false);
 
   useEffect(() => {
     const wakeUpDeployedApis = async () => {
@@ -39,8 +42,6 @@ function App() {
 
   return (
     <ScreenWidthProvider>
-
-    
     <div className={`app ${isAvatarHovered ? 'avatar-hovered-app' : ''}`}>
       <BrowserRouter>
         <Navbar
@@ -50,8 +51,19 @@ function App() {
           setSelectedAbout={setSelectedAbout}
           section={section}
           isAvatarHovered={isAvatarHovered}
-          setIsAvatarHovered={setIsAvatarHovered}
-        />
+            setIsAvatarHovered={setIsAvatarHovered}
+            isHamburgerOpen={isHamburgerOpen}
+            setIsHamburgerOpen={setIsHamburgerOpen}
+            setIsHamburgerShowing={setIsHamburgerShowing}
+          />
+          {(isHamburgerOpen && isHamburgerShowing) && <HamburgerBlocks 
+            section={section}
+            isAvatarHovered={isAvatarHovered}
+            setFocusAboutId={setFocusAboutId}
+            setFocusProjectId={setFocusProjectId}
+            setSelectedAbout={setSelectedAbout}
+            setSelectedProject={setSelectedProject}
+          />}
         <div className="all-pages"></div>
         <Routes>
           <Route

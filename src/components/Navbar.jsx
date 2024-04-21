@@ -17,18 +17,27 @@ function Navbar({
   section,
   isAvatarHovered,
   setIsAvatarHovered,
+  isHamburgerOpen,
+  setIsHamburgerOpen,
+  setIsHamburgerShowing,
 }) {
-  const navigate = useNavigate();
   const screenWidth = useScreenWidth();
-  // eslint-disable-next-line no-unused-vars
   const [isHamburgerSize, setIsHamburgerSize] = useState(screenWidth > 950 ? false : true);
+  
+
+  const navigate = useNavigate();
+  // eslint-disable-next-line no-unused-vars
 
   useEffect(() => {
     if (screenWidth > 950) {
       setIsHamburgerSize(false);
+      setIsHamburgerShowing(false);
+      setIsHamburgerOpen(false);
     } else {
       setIsHamburgerSize(true);
+      setIsHamburgerShowing(true);
     }
+    // console.log('screenWidth', screenWidth);
   }, [screenWidth]);
 
   const handleNavTitleClick = () => {
@@ -38,6 +47,7 @@ function Navbar({
 
   const handleBurgerClick = () => {
     console.log('burger clicked');
+    setIsHamburgerOpen(!isHamburgerOpen);
   };
 
   return (
@@ -123,9 +133,9 @@ function Navbar({
             ))}
             {isHamburgerSize && <div className='hamburger-box'>
               <div className='hamburger' onClick={handleBurgerClick}>
-                <span className='burgerBar buntop'></span>
-                <span className='burgerBar pattie'></span>
-                <span className='burgerBar bunbase'></span>
+                <span className={`burgerBar buntop ${isHamburgerOpen ? 'burger-open' : ''}`}></span>
+                <span className={`burgerBar pattie ${isHamburgerOpen ? 'burger-open' : ''}`}></span>
+                <span className={`burgerBar bunbase ${isHamburgerOpen ? 'burger-open' : ''}`}></span>
               </div>
             </div>}
           </div>
@@ -152,6 +162,9 @@ Navbar.propTypes = {
   section: PropTypes.string.isRequired,
   isAvatarHovered: PropTypes.bool.isRequired,
   setIsAvatarHovered: PropTypes.func.isRequired,
+  isHamburgerOpen: PropTypes.bool.isRequired,
+  setIsHamburgerOpen: PropTypes.func.isRequired,
+  setIsHamburgerShowing: PropTypes.func.isRequired,
 };
 
 export default Navbar;

@@ -309,16 +309,31 @@ nav h1 {
   transform: translateY(-9px) rotate(-45deg);
 } */
 
-.hamburger:hover .pattie {
+.hamburger .pattie.burger-open {
   opacity: 0;
 }
 
-.hamburger:hover .buntop {
+.hamburger .buntop.burger-open {
   transform: translateY(9px) rotate(-45deg);
 }
 
-.hamburger:hover .bunbase {
+.hamburger .bunbase.burger-open {
   transform: translateY(-9px) rotate(45deg);
+}
+
+.hamburger:hover .pattie {
+  transform: rotate(90deg);
+  background-color: var(--lime-500);
+}
+
+.hamburger:hover .buntop {
+  transform: translateY(9px) rotate(-30deg);
+  background-color: var(--green-600);
+}
+
+.hamburger:hover .bunbase {
+  transform: translateY(-9px) rotate(30deg);
+  background-color: var(--leaf-700);
 }
 
 
