@@ -56,8 +56,8 @@ function Navbar({
       setIsDoubleBurger(false);
       setIsTripleBurger(false);
     }
-    // setIsHamburgerOpen(false);
-    // scrollToTop();
+    setIsHamburgerOpen(false);
+    scrollToTop();
   }, [
     screenWidth,
     setIsHamburgerShowing,

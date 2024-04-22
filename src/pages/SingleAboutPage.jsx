@@ -5,21 +5,25 @@ import { aboutData } from '../data/aboutData';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import Button from '../components/Button';
-import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
-import { RiArrowGoBackLine } from "react-icons/ri";
+import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
+import { RiArrowGoBackLine } from 'react-icons/ri';
 import { scrollToTop } from '../utils/helpers';
 
 const lastAboutId = aboutData[aboutData.length - 1].id;
 const firstAboutId = aboutData[0].id;
 
-
-const SingleAboutPage = ({ selectedAbout, setSelectedAbout, section, setSection }) => {
+const SingleAboutPage = ({
+  selectedAbout,
+  setSelectedAbout,
+  section,
+  setSection,
+}) => {
   const navigate = useNavigate();
-  
+
   const { id } = useParams();
-  
+
   useEffect(() => {
-    if (section !== 'about') setSection('about')
+    if (section !== 'about') setSection('about');
     document.title = `Pablo - ${selectedAbout.navName || selectedAbout.name}`;
   }, [section, setSection, selectedAbout]);
 
@@ -27,7 +31,7 @@ const SingleAboutPage = ({ selectedAbout, setSelectedAbout, section, setSection 
     if (!id) {
       navigate('/');
     } else {
-      const about = aboutData.find(about => about.id === id);
+      const about = aboutData.find((about) => about.id === id);
       if (!about) {
         navigate('/');
       } else {
@@ -40,20 +44,24 @@ const SingleAboutPage = ({ selectedAbout, setSelectedAbout, section, setSection 
     window.open(selectedAbout.url, '_blank');
   };
 
-  const handleNextSection = () => { 
+  const handleNextSection = () => {
     if (selectedAbout.id === lastAboutId) {
       setSelectedAbout(aboutData[0]);
     } else {
-      setSelectedAbout(aboutData[Number(selectedAbout.id) - (Number(firstAboutId) - 1)]);
+      setSelectedAbout(
+        aboutData[Number(selectedAbout.id) - (Number(firstAboutId) - 1)]
+      );
     }
     scrollToTop();
-  }
+  };
 
-  const handlePreviousSection = () => { 
+  const handlePreviousSection = () => {
     if (selectedAbout.id === firstAboutId) {
       setSelectedAbout(aboutData[aboutData.length - 1]);
     } else {
-      setSelectedAbout(aboutData[Number(selectedAbout.id) - (Number(firstAboutId) + 1)]);
+      setSelectedAbout(
+        aboutData[Number(selectedAbout.id) - (Number(firstAboutId) + 1)]
+      );
     }
     scrollToTop();
   };
@@ -62,7 +70,6 @@ const SingleAboutPage = ({ selectedAbout, setSelectedAbout, section, setSection 
     setSelectedAbout({});
     navigate('/more-about-me');
   };
-
 
   return (
     <div id='single-subject-page'>
@@ -74,7 +81,7 @@ const SingleAboutPage = ({ selectedAbout, setSelectedAbout, section, setSection 
             {selectedAbout.descriptionText1}
           </div>
         </div>
-        
+
         <div id='iframe-container'>
           <iframe
             name={selectedAbout.name}
@@ -90,17 +97,26 @@ const SingleAboutPage = ({ selectedAbout, setSelectedAbout, section, setSection 
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen></iframe>
           <div className='panel-buttons'>
-            <Button className='btn about-iframe-btn space-right' onClick={handlePreviousSection}>
-            <BiSolidLeftArrow className='arrow' /> Previous
+            <Button
+              className='btn about-iframe-btn space-right'
+              onClick={handlePreviousSection}>
+              <BiSolidLeftArrow className='arrow-icon' /> Previous
             </Button>
-            <Button className='btn about-iframe-btn space-right' onClick={handleOpenNewTab}>
+            <Button
+              className='btn about-iframe-btn space-right'
+              onClick={handleOpenNewTab}>
               Open in a new tab
             </Button>
-            <Button className='btn about-iframe-btn space-right' onClick={handleReturnToAboutMes}>
-              Return to selection <RiArrowGoBackLine className='arrow return' />
+            <Button
+              className='btn about-iframe-btn space-right'
+              onClick={handleReturnToAboutMes}>
+              Return to selection{' '}
+              <RiArrowGoBackLine className='arrow-icon return-icon' />
             </Button>
-            <Button className='btn about-iframe-btn' onClick={handleNextSection}>
-            Next <BiSolidRightArrow className='arrow' />
+            <Button
+              className='btn about-iframe-btn'
+              onClick={handleNextSection}>
+              Next <BiSolidRightArrow className='arrow-icon' />
             </Button>
           </div>
         </div>

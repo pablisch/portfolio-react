@@ -75,7 +75,7 @@ export const projectData = [
       </>
     ),
     techBadgesArray: [
-      { scale: '37' },
+      { scale: '33' },
       [
         { src: 'javascript/javascript-original.svg', alt: 'javascript'},
         { src: 'nodejs/nodejs-original.svg', alt: 'nodejs'},
@@ -319,7 +319,7 @@ export const projectData = [
   },
   {
     // Alternative Routes
-    id: '7',
+    id: '5',
     name: 'Alternative Routes',
     navName: 'Alter Native Routes',
     img: 'alternativeRoutes-small.png',
@@ -394,7 +394,7 @@ export const projectData = [
       </>
     ),
     techBadgesArray: [
-      { scale: '35' },
+      { scale: '33' },
       [
         { src: 'javascript/javascript-original.svg', alt: 'javascript' },
         { src: 'nodejs/nodejs-original.svg', alt: 'nodejs', class: 'tech-left-space-2' },
@@ -509,7 +509,7 @@ export const projectData = [
       </>
     ),
     techBadgesArray: [
-      { scale: '37' },
+      { scale: '31' },
       [
         { src: 'javascript/javascript-original.svg', alt: 'javascript' },
         { src: 'react/react-original-wordmark.svg', alt: 'react', class: 'tech-left-space-1' },

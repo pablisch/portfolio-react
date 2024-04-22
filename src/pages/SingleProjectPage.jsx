@@ -8,12 +8,14 @@ import Button from '../components/Button';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 import { scrollToTop } from '../utils/helpers';
+import { useScreenWidth } from '../context/ScreenWidthProvider';
 
 const lastProjectId = projectData[projectData.length - 1].id;
 const firstProjectId = projectData[0].id;
 
 const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
   const navigate = useNavigate();
+  const screenWidth = useScreenWidth();
 
   const { id } = useParams();
 
@@ -80,7 +82,7 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
 
   console.log('tech', selectedProject?.techBadgesArray?.[0]);
 
-  const size = selectedProject?.techBadgesArray?.[0]?.scale || '30';
+  const size = Math.min((selectedProject?.techBadgesArray?.[0]?.scale || '30') * (screenWidth / (1500 - ((1500 - screenWidth) / 2))), (selectedProject?.techBadgesArray?.[0]?.scale || '30'));
 
   return (
     <div id='single-subject-page'>
@@ -115,7 +117,6 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
             id='feature-iframe'
             src={selectedProject.url}
             title='CV link'
-            style={{ width: '100%', height: '600px' }}
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             // frameBorder='0'
             allowFullScreen></iframe>
@@ -123,9 +124,9 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
           <Button
               className='btn space-right project-iframe-btn'
               onClick={handlePreviousSection}>
-              <BiSolidLeftArrow className='arrow' />
+              <BiSolidLeftArrow className='arrow-icon' />
             </Button>
-            <Button className='btn space-right project-iframe-btn'>
+            <Button id='responsiveness-btn' className='btn space-right project-iframe-btn'>
               {selectedProject.responsivenessText}
             </Button>
             <Button
@@ -151,12 +152,12 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
             <Button
               className='btn space-right project-iframe-btn projects-btn'
               onClick={handleReturnToProjects}>
-              Return to Projects <RiArrowGoBackLine className='arrow return' />
+              Return to Projects <RiArrowGoBackLine className='arrow-icon return-icon' />
             </Button>
             <Button
               className='btn project-iframe-btn'
               onClick={handleNextSection}>
-              <BiSolidRightArrow className='arrow' />
+              <BiSolidRightArrow className='arrow-icon' />
             </Button>
           </div>
         </div>
