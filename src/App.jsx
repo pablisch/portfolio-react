@@ -25,7 +25,8 @@ function App() {
   const [isAvatarHovered, setIsAvatarHovered] = useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isHamburgerShowing, setIsHamburgerShowing] = useState(false);
-  const [isDoubleBurger, setIsDoubleBurger] = useState(false);
+  const [isDoubleBurger, setIsDoubleBurger] = useState(false); // isDoubleBurger is true when the screen width is less than 650px and external links move into the hamburger menu
+  const [isTripleBurger, setIsTripleBurger] = useState(false); // isTripleBurger is true when the screen width is less than 390px and section links ('about me' and 'my projects') move into the hamburger menu
 
   useEffect(() => {
     const wakeUpDeployedApis = async () => {
@@ -58,6 +59,8 @@ function App() {
             setIsHamburgerShowing={setIsHamburgerShowing}
             isDoubleBurger={isDoubleBurger}
             setIsDoubleBurger={setIsDoubleBurger}
+            isTripleBurger={isTripleBurger}
+            setIsTripleBurger={setIsTripleBurger}
           />
           {(isHamburgerOpen && isHamburgerShowing) && <HamburgerBlocks 
             section={section}
@@ -68,8 +71,9 @@ function App() {
             setSelectedProject={setSelectedProject}
             setIsHamburgerOpen={setIsHamburgerOpen}
             isDoubleBurger={isDoubleBurger}
+            isTripleBurger={isTripleBurger}
           />}
-        <div className={`all-pages ${isHamburgerOpen ? 'single-burger-bar' : ''}`}></div>
+        <div className={`all-pages ${isHamburgerOpen ? 'burger-open-spacer' : ''}`}></div>
         <Routes>
           <Route
             path='/'

@@ -6,6 +6,7 @@ import { linkData } from '../data/linkData';
 import PropTypes from 'prop-types';
 import ExtNavLink from './ExtNavLink';
 import './Hamburger.css';
+import { Link } from 'react-router-dom';
 
 const HamburgerBlocks = ({
   section,
@@ -16,9 +17,11 @@ const HamburgerBlocks = ({
   setSelectedProject,
   setIsHamburgerOpen,
   isDoubleBurger,
+  isTripleBurger,
 }) => {
   return (
     <div className='hamburger-blocks-container'>
+      {/* 👇🏻 PROJECT LINKS */}
       {section === 'projects' &&
         projectData.map((project) => (
           <BurgerLink
@@ -48,10 +51,36 @@ const HamburgerBlocks = ({
             {about.navName || about.name}
           </BurgerLink>
         ))}
+      {/* 👇🏻 LINK TO PROJECTS SECTION */}
+      {(section === 'about' && isTripleBurger) && (
+        <Link
+          to='/'
+          className={`burger-btn burger-section-link ${
+            isAvatarHovered ? 'avatar-hovered-nav-section-link' : ''
+          }`}>
+          Software Projects
+        </Link>
+      )}
+      {/* 👇🏻 LINK TO ABOUT ME SECTION */}
+      {(section === 'projects' && isTripleBurger) && (
+        <Link
+          to='/more-about-me'
+          className={`burger-btn burger-section-link ${
+            isAvatarHovered ? 'avatar-hovered-nav-section-link' : ''
+          }`}>
+          More About Me
+        </Link>
+      )}
+      {/* 👇🏻 EXTERNAL LINKS */}
       {linkData.length &&
         isDoubleBurger &&
         linkData.map((page) => (
-          <ExtNavLink key={page.name} page={page} target={page.target} context={'hamburger'} />
+          <ExtNavLink
+            key={page.name}
+            page={page}
+            target={page.target}
+            context={'hamburger'}
+          />
         ))}
     </div>
   );
@@ -66,6 +95,7 @@ HamburgerBlocks.propTypes = {
   setSelectedProject: PropTypes.func.isRequired,
   setIsHamburgerOpen: PropTypes.func.isRequired,
   isDoubleBurger: PropTypes.bool.isRequired,
+  isTripleBurger: PropTypes.bool.isRequired,
 };
 
 export default HamburgerBlocks;

@@ -111,19 +111,19 @@ li {
 }
 
 .all-pages {
-  transition: margin 1s ease;
+  transition: padding 1s ease;
 }
 
-.single-burger-bar {
-  transition: margin 0.3s ease;
-  margin-bottom: 130px;
+.burger-open-spacer {
+  transition: padding 0.5s ease;
 }
 
 @media (max-width: 1300px) {
   .nav-container {
     width: 95vw;
   }
-  .project-box, .about-box {
+  .project-box,
+  .about-box {
     width: 94vw;
   }
 }
@@ -166,7 +166,8 @@ li {
   .nav-container {
     height: calc(var(--navbar-height) - 10px);
   }
-  .project-box, .about-box {
+  .project-box,
+  .about-box {
     margin: calc(var(--navbar-height) - 15px) auto 0;
   }
 }
@@ -186,7 +187,8 @@ li {
     min-width: 60px;
     margin: 0 2px;
   }
-  .project-panel, .about-panel {
+  .project-panel,
+  .about-panel {
     margin: 15px;
   }
   .nav-title {
@@ -200,7 +202,8 @@ li {
   .nav-container {
     height: calc(var(--navbar-height) - 12px);
   }
-  .project-box, .about-box {
+  .project-box,
+  .about-box {
     margin: calc(var(--navbar-height) - 17px) auto 0;
   }
 }
@@ -217,19 +220,22 @@ li {
   .nav-container {
     height: calc(var(--navbar-height) - 15px);
   }
-  .project-box, .about-box {
-    margin: calc(var(--navbar-height) - 23px) auto 0;
+  .navlist {
+    justify-content: flex-end;
+  }
+  .burger-open-spacer {
+    padding-top: 70px;
   }
 }
 
 /* HAMBURGER SPLITS INTO TWO ROWS */
 /* EXTERNAL LINKS DROP INTO HAMBURGER MENU */
 @media (max-width: 650px) {
-  .single-burger-bar {
-    margin-bottom: 210px;
-  }
   .nav-section-link {
     height: 52px;
+  }
+  .burger-open-spacer {
+    padding-top: 145px;
   }
 }
 
@@ -243,8 +249,30 @@ li {
   .hamburger-blocks-container {
     width: 300px;
   }
-  .single-burger-bar {
-    margin-bottom: 285px;
+  .burger-open-spacer {
+    padding-top: 220px;
+  }
+}
+
+/* SECTION LINK BUTTON GOES INTO BURGER MENU */
+@media (max-width: 390px) {
+  /* .hamburger-blocks-container {
+    width: 300px;
+  }
+  .burger-open-spacer {
+    padding-top: 220px;
+  } */
+  .hamburger-blocks-container {
+    width: 350px;
+  }
+}
+
+@media (max-width: 330px) {
+  .hamburger-blocks-container {
+    width: 300px;
+  }
+  .burger-open-spacer {
+    padding-top: 290px;
   }
 }
 
@@ -252,7 +280,7 @@ li {
   .hamburger-blocks-container {
     width: 200px;
   }
-  .single-burger-bar {
-    margin-bottom: 430px;
+  .burger-open-spacer {
+    padding-top: 365px;
   }
 }

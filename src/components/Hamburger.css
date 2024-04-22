@@ -23,7 +23,7 @@
   border-radius: 15px;
   padding: 5px 3px;
   font-weight: 500;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,3 +65,16 @@
 .linkedin-burger-btn:hover, .external-burger-btn:hover {
   border: 3px var(--sea-green-800-dull) solid;
 }
+
+.burger-section-link {
+  transition: background-color 0.5s ease;
+  background-color: var(--nav-section-link-background);
+  color: var(--nav-section-link-text);
+  text-decoration: none;
+}
+
+.burger-section-link:hover {
+  background-color: var(--navText-darker);
+  color: var(--lime-300);
+}
+

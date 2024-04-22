@@ -23,6 +23,8 @@ function Navbar({
   setIsHamburgerShowing,
   isDoubleBurger,
   setIsDoubleBurger,
+  isTripleBurger,
+  setIsTripleBurger,
 }) {
   const screenWidth = useScreenWidth();
   const [isHamburgerSize, setIsHamburgerSize] = useState(
@@ -36,25 +38,33 @@ function Navbar({
     if (screenWidth > 950) {
       setIsHamburgerSize(false);
       setIsHamburgerShowing(false);
-      setIsHamburgerOpen(false);
-    } else if (screenWidth <= 650) {
-      setIsDoubleBurger(true);
-      setIsHamburgerSize(true);
-      setIsHamburgerShowing(true);
-      scrollToTop();
-    } else {
       setIsDoubleBurger(false);
+      setIsTripleBurger(false);
+    } else if (screenWidth <= 390) {
       setIsHamburgerSize(true);
       setIsHamburgerShowing(true);
-      scrollToTop();
+      setIsDoubleBurger(true);
+      setIsTripleBurger(true);
+    } else if (screenWidth <= 650) {
+      setIsHamburgerSize(true);
+      setIsHamburgerShowing(true);
+      setIsDoubleBurger(true);
+      setIsTripleBurger(false);
+    } else {
+      setIsHamburgerSize(true);
+      setIsHamburgerShowing(true);
+      setIsDoubleBurger(false);
+      setIsTripleBurger(false);
     }
-    // console.log('screenWidth', screenWidth);
+    // setIsHamburgerOpen(false);
+    // scrollToTop();
   }, [
     screenWidth,
     setIsHamburgerShowing,
     setIsHamburgerOpen,
     setIsHamburgerSize,
     setIsDoubleBurger,
+    setIsTripleBurger,
   ]);
 
   const handleNavTitleClick = () => {
@@ -131,7 +141,7 @@ function Navbar({
           </div>
           <div className='nav-right navlist'>
             {/* 👇🏻 LINK TO PROJECTS SECTION */}
-            {section === 'about' && (
+            {(section === 'about' && !isTripleBurger) && (
               <Link
                 to='/'
                 className={`nav-btn nav-section-link ${
@@ -141,7 +151,7 @@ function Navbar({
               </Link>
             )}
             {/* 👇🏻 LINK TO ABOUT ME SECTION */}
-            {section === 'projects' && (
+            {(section === 'projects' && !isTripleBurger) && (
               <Link
                 to='/more-about-me'
                 className={`nav-btn nav-section-link ${
@@ -203,6 +213,8 @@ Navbar.propTypes = {
   setIsHamburgerShowing: PropTypes.func.isRequired,
   isDoubleBurger: PropTypes.bool.isRequired,
   setIsDoubleBurger: PropTypes.func.isRequired,
+  isTripleBurger: PropTypes.bool.isRequired,
+  setIsTripleBurger: PropTypes.func.isRequired,
 };
 
 export default Navbar;
