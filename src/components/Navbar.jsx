@@ -8,6 +8,7 @@ import { linkData } from '../data/linkData';
 import PropTypes from 'prop-types';
 import ExtNavLink from './ExtNavLink';
 import { useScreenWidth } from '../context/ScreenWidthProvider';
+import { scrollToTop } from '../utils/helpers';
 
 function Navbar({
   setFocusProjectId,
@@ -20,10 +21,13 @@ function Navbar({
   isHamburgerOpen,
   setIsHamburgerOpen,
   setIsHamburgerShowing,
+  isDoubleBurger,
+  setIsDoubleBurger,
 }) {
   const screenWidth = useScreenWidth();
-  const [isHamburgerSize, setIsHamburgerSize] = useState(screenWidth > 950 ? false : true);
-  
+  const [isHamburgerSize, setIsHamburgerSize] = useState(
+    screenWidth > 950 ? false : true
+  );
 
   const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
@@ -33,30 +37,48 @@ function Navbar({
       setIsHamburgerSize(false);
       setIsHamburgerShowing(false);
       setIsHamburgerOpen(false);
-    } else {
+    } else if (screenWidth <= 650) {
+      setIsDoubleBurger(true);
       setIsHamburgerSize(true);
       setIsHamburgerShowing(true);
+      scrollToTop();
+    } else {
+      setIsDoubleBurger(false);
+      setIsHamburgerSize(true);
+      setIsHamburgerShowing(true);
+      scrollToTop();
     }
     // console.log('screenWidth', screenWidth);
-  }, [screenWidth, setIsHamburgerShowing, setIsHamburgerOpen]);
+  }, [
+    screenWidth,
+    setIsHamburgerShowing,
+    setIsHamburgerOpen,
+    setIsHamburgerSize,
+    setIsDoubleBurger,
+  ]);
 
   const handleNavTitleClick = () => {
     setSelectedProject({});
     navigate(section === 'about' ? `/more-about-me` : '/');
+    scrollToTop();
   };
 
   const handleBurgerClick = () => {
     console.log('burger clicked');
     setIsHamburgerOpen(!isHamburgerOpen);
+    scrollToTop();
   };
 
   return (
     <nav>
-      <div className={`navbar ${isAvatarHovered ? 'avatar-hovered-navbar' : ''}`}>
+      <div
+        className={`navbar ${isAvatarHovered ? 'avatar-hovered-navbar' : ''}`}>
         <div className='nav-container'>
           <div className='nav-left'>
             <img
-              className={`logo-image ${isAvatarHovered ? 'avatar-hovered-avatar' : ''}`}
+              className={`logo-image ${
+                isAvatarHovered ? 'avatar-hovered-avatar' : ''
+              }`}
               src='images/pablo-circle-avatar.png'
               alt='icon'
               onMouseEnter={() => setIsAvatarHovered(true)}
@@ -75,35 +97,36 @@ function Navbar({
               </h1>
             </div>
             <div className='navlist'>
-            {/* 👇🏻 PROJECT LINKS */}
-            {(section === 'projects' && !isHamburgerSize) &&
-              projectData.map((project) => (
-                <NavLink
-                  className={`nav-btn nav-link ${
-                    isAvatarHovered ? 'avatar-hovered-nav-link' : ''
-                  }`}
-                  key={project.id}
-                  project={project}
-                  setFocusProjectId={setFocusProjectId}
-                  setSelectedProject={setSelectedProject}>
-                  {project.navName || project.name}
-                </NavLink>
-              ))}
-            {/* 👇🏻 ABOUT LINKS */}
-            {(section === 'about' && !isHamburgerSize) &&
-              aboutData.map((about) => (
-                <NavLink
-                  className={`nav-btn nav-link ${
-                    isAvatarHovered ? 'avatar-hovered-nav-link' : ''
-                  }`}
-                  key={about.id}
-                  project={about}
-                  setFocusProjectId={setFocusAboutId}
-                  setSelectedProject={setSelectedAbout}>
-                  {about.navName || about.name}
-                </NavLink>
-              ))}
-
+              {/* 👇🏻 PROJECT LINKS */}
+              {section === 'projects' &&
+                !isHamburgerSize &&
+                projectData.map((project) => (
+                  <NavLink
+                    className={`nav-btn nav-link ${
+                      isAvatarHovered ? 'avatar-hovered-nav-link' : ''
+                    }`}
+                    key={project.id}
+                    project={project}
+                    setFocusProjectId={setFocusProjectId}
+                    setSelectedProject={setSelectedProject}>
+                    {project.navName || project.name}
+                  </NavLink>
+                ))}
+              {/* 👇🏻 ABOUT LINKS */}
+              {section === 'about' &&
+                !isHamburgerSize &&
+                aboutData.map((about) => (
+                  <NavLink
+                    className={`nav-btn nav-link ${
+                      isAvatarHovered ? 'avatar-hovered-nav-link' : ''
+                    }`}
+                    key={about.id}
+                    project={about}
+                    setFocusProjectId={setFocusAboutId}
+                    setSelectedProject={setSelectedAbout}>
+                    {about.navName || about.name}
+                  </NavLink>
+                ))}
             </div>
           </div>
           <div className='nav-right navlist'>
@@ -128,16 +151,29 @@ function Navbar({
               </Link>
             )}
             {/* 👇🏻 EXTERNAL LINK BUTTONS */}
-            {linkData.length && linkData.map((link) => (
-              <ExtNavLink key={link.name} page={link} target={link.target} />
-            ))}
-            {isHamburgerSize && <div className='hamburger-box'>
-              <div className='hamburger' onClick={handleBurgerClick}>
-                <span className={`burgerBar buntop ${isHamburgerOpen ? 'burger-open' : ''}`}></span>
-                <span className={`burgerBar pattie ${isHamburgerOpen ? 'burger-open' : ''}`}></span>
-                <span className={`burgerBar bunbase ${isHamburgerOpen ? 'burger-open' : ''}`}></span>
+            {(linkData.length && !isDoubleBurger) &&
+              linkData.map((link) => (
+                <ExtNavLink key={link.name} page={link} target={link.target} />
+              ))}
+            {/* 👇🏻 HAMBURGER MENU BARS */}
+            {isHamburgerSize && (
+              <div className='hamburger-box'>
+                <div className='hamburger' onClick={handleBurgerClick}>
+                  <span
+                    className={`burgerBar buntop ${
+                      isHamburgerOpen ? 'burger-open' : ''
+                    }`}></span>
+                  <span
+                    className={`burgerBar pattie ${
+                      isHamburgerOpen ? 'burger-open' : ''
+                    }`}></span>
+                  <span
+                    className={`burgerBar bunbase ${
+                      isHamburgerOpen ? 'burger-open' : ''
+                    }`}></span>
+                </div>
               </div>
-            </div>}
+            )}
           </div>
         </div>
       </div>
@@ -165,6 +201,8 @@ Navbar.propTypes = {
   isHamburgerOpen: PropTypes.bool.isRequired,
   setIsHamburgerOpen: PropTypes.func.isRequired,
   setIsHamburgerShowing: PropTypes.func.isRequired,
+  isDoubleBurger: PropTypes.bool.isRequired,
+  setIsDoubleBurger: PropTypes.func.isRequired,
 };
 
 export default Navbar;

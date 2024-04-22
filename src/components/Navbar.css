@@ -147,7 +147,7 @@ nav h1 {
 
 .navlist {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   /* align-items: center; */
   max-width: 600px;
 }
@@ -294,20 +294,28 @@ nav h1 {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: var(--sea-green-800-dull);
+  border: 1px solid var(--sea-green-800-dull);
   z-index: 1;
 }
 
-/* .hamburger .pattie {
-  opacity: 0;
+.hamburger:hover .pattie {
+  transform: rotate(90deg);
+  background-color: var(--green-600);
 }
 
-.hamburger .buntop {
-  transform: translateY(9px) rotate(45deg);
+.hamburger:hover .buntop {
+  transform: translateY(9px) rotate(-30deg);
+  background-color: var(--green-600);
 }
 
-.hamburger .bunbase {
-  transform: translateY(-9px) rotate(-45deg);
-} */
+.hamburger:hover .bunbase {
+  transform: translateY(-9px) rotate(30deg);
+  background-color: var(--green-600);
+}
+
+.hamburger:hover .burgerBar {
+  background-color: var(--green-600);
+}
 
 .hamburger .pattie.burger-open {
   opacity: 0;
@@ -321,19 +329,7 @@ nav h1 {
   transform: translateY(-9px) rotate(45deg);
 }
 
-.hamburger:hover .pattie {
-  transform: rotate(90deg);
-  background-color: var(--lime-500);
+.hamburger:hover .burgerBar.burger-open {
+  background-color: var(--blue-400);
+  border: 1px solid var(--sea-green-1000-dull);
 }
-
-.hamburger:hover .buntop {
-  transform: translateY(9px) rotate(-30deg);
-  background-color: var(--green-600);
-}
-
-.hamburger:hover .bunbase {
-  transform: translateY(-9px) rotate(30deg);
-  background-color: var(--leaf-700);
-}
-
-

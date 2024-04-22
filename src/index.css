@@ -45,6 +45,7 @@
   --sea-green-400: #8fc0a9;
   --sea-green-600: #7aa490;
   --sea-green-800-dull: #688477;
+  --sea-green-1000-dull: #4f5d57;
 
   --turquoise-200: #b8f2e6;
   --turquoise-200-zero: rgba(184, 242, 230, 0);
@@ -109,7 +110,12 @@ li {
   background-color: var(--turquoise-400);
 }
 
+.all-pages {
+  transition: margin 1s ease;
+}
+
 .single-burger-bar {
+  transition: margin 0.3s ease;
   margin-bottom: 130px;
 }
 
@@ -213,5 +219,40 @@ li {
   }
   .project-box, .about-box {
     margin: calc(var(--navbar-height) - 23px) auto 0;
+  }
+}
+
+/* HAMBURGER SPLITS INTO TWO ROWS */
+/* EXTERNAL LINKS DROP INTO HAMBURGER MENU */
+@media (max-width: 650px) {
+  .single-burger-bar {
+    margin-bottom: 210px;
+  }
+  .nav-section-link {
+    height: 52px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hamburger-blocks-container {
+    width: 400px;
+  }
+}
+
+@media (max-width: 430px) {
+  .hamburger-blocks-container {
+    width: 300px;
+  }
+  .single-burger-bar {
+    margin-bottom: 285px;
+  }
+}
+
+@media (max-width: 260px) {
+  .hamburger-blocks-container {
+    width: 200px;
+  }
+  .single-burger-bar {
+    margin-bottom: 430px;
   }
 }

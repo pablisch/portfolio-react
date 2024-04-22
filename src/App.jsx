@@ -25,6 +25,7 @@ function App() {
   const [isAvatarHovered, setIsAvatarHovered] = useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isHamburgerShowing, setIsHamburgerShowing] = useState(false);
+  const [isDoubleBurger, setIsDoubleBurger] = useState(false);
 
   useEffect(() => {
     const wakeUpDeployedApis = async () => {
@@ -55,6 +56,8 @@ function App() {
             isHamburgerOpen={isHamburgerOpen}
             setIsHamburgerOpen={setIsHamburgerOpen}
             setIsHamburgerShowing={setIsHamburgerShowing}
+            isDoubleBurger={isDoubleBurger}
+            setIsDoubleBurger={setIsDoubleBurger}
           />
           {(isHamburgerOpen && isHamburgerShowing) && <HamburgerBlocks 
             section={section}
@@ -64,6 +67,7 @@ function App() {
             setSelectedAbout={setSelectedAbout}
             setSelectedProject={setSelectedProject}
             setIsHamburgerOpen={setIsHamburgerOpen}
+            isDoubleBurger={isDoubleBurger}
           />}
         <div className={`all-pages ${isHamburgerOpen ? 'single-burger-bar' : ''}`}></div>
         <Routes>

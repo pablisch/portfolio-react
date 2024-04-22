@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import Button from '../components/Button';
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 import { RiArrowGoBackLine } from "react-icons/ri";
+import { scrollToTop } from '../utils/helpers';
 
 const lastAboutId = aboutData[aboutData.length - 1].id;
 const firstAboutId = aboutData[0].id;
@@ -45,6 +46,7 @@ const SingleAboutPage = ({ selectedAbout, setSelectedAbout, section, setSection 
     } else {
       setSelectedAbout(aboutData[Number(selectedAbout.id) - (Number(firstAboutId) - 1)]);
     }
+    scrollToTop();
   }
 
   const handlePreviousSection = () => { 
@@ -53,6 +55,7 @@ const SingleAboutPage = ({ selectedAbout, setSelectedAbout, section, setSection 
     } else {
       setSelectedAbout(aboutData[Number(selectedAbout.id) - (Number(firstAboutId) + 1)]);
     }
+    scrollToTop();
   };
 
   const handleReturnToAboutMes = () => {

@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import Button from '../components/Button';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
+import { scrollToTop } from '../utils/helpers';
 
 const lastProjectId = projectData[projectData.length - 1].id;
 const firstProjectId = projectData[0].id;
@@ -59,6 +60,7 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
     } else {
       setSelectedProject(projectData[Number(selectedProject.id) - (Number(firstProjectId) - 1)]);
     }
+    scrollToTop();
   }
 
   const handlePreviousSection = () => { 
@@ -67,6 +69,7 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
     } else {
       setSelectedProject(projectData[Number(selectedProject.id) - (Number(firstProjectId) + 1)]);
     }
+    scrollToTop();
   };
 
   useEffect(() => {

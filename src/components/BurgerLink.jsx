@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import { scrollToTop } from '../utils/helpers';
 
 function BurgerLink({
   children,
@@ -24,6 +25,7 @@ function BurgerLink({
     setIsHamburgerOpen(false);
     // console.log('project clicked', project);
     navigate(`/${project.id < 10 ? 'project' : 'more-about-me'}/${project.id}`);
+    scrollToTop();
   };
 
   return (

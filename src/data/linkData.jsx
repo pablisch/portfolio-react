@@ -4,6 +4,7 @@ export const linkData = [
     name: 'github',
     url: 'https://github.com/pablisch',
     class: 'nav-btn github-link-btn',
+    burgerClass: 'burger-btn github-link-btn external-burger-btn',
     avatarClass: 'avatar-hovered-github-link',
     img: {
       src: 'github-logo.png',
@@ -17,6 +18,7 @@ export const linkData = [
     name: 'linkedIn',
     url: 'https://www.linkedin.com/in/pablo-joyce/',
     class: 'nav-btn linkedin-link-btn',
+    burgerClass: 'burger-btn linkedin-link-btn linkedin-burger-btn',
     avatarClass: 'avatar-hovered-github-link',
     img: {
       src: 'linkedin-trans.png',
@@ -30,6 +32,7 @@ export const linkData = [
     name: 'settings',
     url: '#',
     class: 'nav-btn github-link-btn settings-btn',
+    burgerClass: 'burger-btn github-link-btn settings-btn external-burger-btn',
     avatarClass: 'avatar-hovered-github-link',
     target: '',
     img: {

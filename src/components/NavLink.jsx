@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import { scrollToTop } from '../utils/helpers';
 
 function NavLink({ children, project, setFocusProjectId, setSelectedProject, className = 'nav-btn nav-link' }) {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ function NavLink({ children, project, setFocusProjectId, setSelectedProject, cla
     setSelectedProject(project);
     console.log('project clicked', project);
     navigate(`/${project.id < 10 ? 'project' : 'more-about-me'}/${project.id}`);
+    scrollToTop();
   };
 
   return (

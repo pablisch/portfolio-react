@@ -1,14 +1,11 @@
 .hamburger-blocks-container {
   position: fixed;
   top: calc(var(--navbar-height) - 10px);
-  /* right: 5vw; */
   left: 50%;
   transform: translateX(-50%);
-  /* margin-top: 100px; */
   width: 490px;
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -19,8 +16,8 @@
 }
 
 .burger-btn {
-  flex: 1 1 70px;
-  max-width: 80px;
+  flex: 1 1 65px;
+  max-width: 65px;
   text-align: center;
   margin: 0 4px 10px;
   border-radius: 15px;
@@ -33,7 +30,7 @@
   transition: border 1s ease;
   border: 3px var(--sea-green-600) solid;
   cursor: pointer;
-  height: 70px;
+  height: 65px;
 }
 
 .burger-link {
@@ -53,4 +50,18 @@
   background-color: var(--grey-blue-1300);
   border: 1px var(--leaf-1100) solid;
   color: var(--lime-500);
+}
+
+.external-burger-btn {
+  background-color: var(--leaf-200);
+  color: #fff;
+}
+
+.linkedin-burger-btn {
+  background-color: var(--sea-green-400);
+  color: #fff;
+}
+
+.linkedin-burger-btn:hover, .external-burger-btn:hover {
+  border: 3px var(--sea-green-800-dull) solid;
 }

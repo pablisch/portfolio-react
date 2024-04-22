@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import ProjectPanel from '../components/ProjectPanel';
 import PropTypes from 'prop-types';
 import '../components/projectAndAboutPanel.css';
+import { scrollToTop } from '../utils/helpers';
 // import { useScreenWidth } from '../context/ScreenWidthProvider';
 
 function ProjectsPage({
@@ -22,6 +23,7 @@ function ProjectsPage({
       setSection('projects');
     }
     document.title = 'Pablo Joyce - Projects';
+    scrollToTop();
   }, [section, setSection]);
 
   return (
