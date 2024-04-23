@@ -13,26 +13,27 @@ import { useScreenWidth } from '../context/ScreenWidthProvider';
 const lastProjectId = projectData[projectData.length - 1].id;
 const firstProjectId = projectData[0].id;
 
-const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
+const SingleProjectPage = ({ selectedProject, setSelectedProject, section, setSection }) => {
   const navigate = useNavigate();
   const screenWidth = useScreenWidth();
 
   const { id } = useParams();
 
-  console.log('selectedProject', selectedProject);
-  console.log('selectedProject.name', selectedProject.name);
+  useEffect(() => {
+    if (section !== 'projects') setSection('projects');
+    document.title = `Pablo - ${
+      selectedProject.navName || selectedProject.name
+    }`;
+  }, [selectedProject, section, setSection]);
 
   useEffect(() => {
     if (!id) {
-      console.log('Project ID not found in URL, redirecting to home');
       navigate('/');
     } else {
       const project = projectData.find(project => project.id === id);
       if (!project) {
-        console.log('Project not found, redirecting to home');
         navigate('/');
       } else {
-        console.log('Setting selected project', project);
         setSelectedProject(project);
       }
     }
@@ -74,11 +75,6 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
     scrollToTop();
   };
 
-  useEffect(() => {
-    document.title = `Pablo - ${
-      selectedProject.navName || selectedProject.name
-    }`;
-  }, [selectedProject]);
 
   console.log('tech', selectedProject?.techBadgesArray?.[0]);
 
@@ -86,14 +82,11 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
 
   return (
     <div id='single-subject-page'>
-      <div id='single-subject-upper-section'>
+      {selectedProject.id && <> <div id='single-subject-upper-section'>
         <div id='single-subject-headers-and-description-1'>
           <h1 id='single-subject-title'>{selectedProject.name}</h1>
           <h2 id='single-subject-subheading'>{selectedProject.subheading}</h2>
           <div id='single-subject-description' className='paragraph'>
-            <div id='single-project-tech-badges'>
-              {selectedProject.techBadges}
-            </div>
             <div id='single-project-tech-badges'>
               {selectedProject?.techBadgesArray?.[1].map((badge) => (
                 <img
@@ -105,7 +98,7 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
                   height={size}
                 />
               ))
-                }
+              }
             </div>
             {selectedProject.descriptionText}
           </div>
@@ -121,7 +114,7 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
             // frameBorder='0'
             allowFullScreen></iframe>
           <div className='panel-buttons'>
-          <Button
+            <Button
               className='btn space-right project-iframe-btn'
               onClick={handlePreviousSection}>
               <BiSolidLeftArrow className='arrow-icon' />
@@ -162,11 +155,12 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
           </div>
         </div>
       </div>
-      <div id='single-subject-lower-section'>
-        <div id='single-project-technologiesText' className='paragraph'>
-          <p className='project-text'>{selectedProject.technologiesText}</p>
+        <div id='single-subject-lower-section'>
+          <div id='single-project-technologiesText' className='paragraph'>
+            <p className='project-text'>{selectedProject.technologiesText}</p>
+          </div>
         </div>
-      </div>
+      </>}
       <div id='bit-at-the-bottom'></div>
     </div>
   );
@@ -175,6 +169,8 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject }) => {
 SingleProjectPage.propTypes = {
   selectedProject: PropTypes.object.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
+  section: PropTypes.string.isRequired,
+  setSection: PropTypes.func.isRequired,
 };
 
 export default SingleProjectPage;

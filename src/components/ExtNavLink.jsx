@@ -18,7 +18,7 @@ const ExtNavLink = ({
       target={target}
       rel='noreferrer'>
       <img
-        src={`images/${page.img.src}`}
+        src={`/images/${page.img.src}`}
         alt={page.img.alt}
         className={`${page.img.class} ${
           isAvatarHovered ? page.img.avatarClass : ''

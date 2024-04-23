@@ -22,7 +22,7 @@ function ProjectPanel({
 
   const handleClick = (project) => {
     setSelectedProject(project);
-    // console.log('project clicked', project);
+    localStorage.setItem('selectedProject', JSON.stringify(project));
     navigate(`/project/${project.id}`);
   };
 

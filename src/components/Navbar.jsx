@@ -70,6 +70,7 @@ function Navbar({
   const handleNavTitleClick = () => {
     setSelectedProject({});
     navigate(section === 'about' ? `/more-about-me` : '/');
+    localStorage.removeItem('selectedProject');
     scrollToTop();
   };
 
@@ -89,8 +90,8 @@ function Navbar({
               className={`logo-image ${
                 isAvatarHovered ? 'avatar-hovered-avatar' : ''
               }`}
-              src='images/pablo-circle-avatar.png'
-              alt='icon'
+              src='/images/pablo-circle-avatar.png'
+              alt='avatar icon'
               onMouseEnter={() => setIsAvatarHovered(true)}
               onMouseLeave={() => setIsAvatarHovered(false)}
             />

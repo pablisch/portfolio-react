@@ -15,6 +15,7 @@ function NavLink({ children, project, setFocusProjectId, setSelectedProject, cla
 
   const handleClick = (project) => {
     setSelectedProject(project);
+    localStorage.setItem('selectedProject', JSON.stringify(project));
     console.log('project clicked', project);
     navigate(`/${project.id < 10 ? 'project' : 'more-about-me'}/${project.id}`);
     scrollToTop();

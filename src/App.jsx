@@ -110,8 +110,9 @@ function App() {
             element={
               <SingleProjectPage
                 selectedProject={selectedProject}
-                isAvatarHovered={isAvatarHovered}
                 setSelectedProject={setSelectedProject}
+                section={section}
+                setSection={setSection}
               />
             }
           />
