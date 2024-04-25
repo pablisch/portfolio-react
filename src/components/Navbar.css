@@ -15,6 +15,15 @@
 .nav-border-bar-1-retro {
   background-color: var(--fawn-400);
 }
+.nav-border-bar-1-light {
+  background-color: var(--fawn-400);
+}
+.nav-border-bar-1-dark {
+  background-color: var(--fawn-400);
+}
+.nav-border-bar-1-simple {
+  background-color: var(--fawn-400);
+}
 
 .nav-border-bar-2 {
   height: 4px;
@@ -22,6 +31,15 @@
 }
 
 .nav-border-bar-2-retro {
+  background-color: var(--fawn-200);
+}
+.nav-border-bar-2-light {
+  background-color: var(--fawn-200);
+}
+.nav-border-bar-2-dark {
+  background-color: var(--fawn-200);
+}
+.nav-border-bar-2-simple {
   background-color: var(--fawn-200);
 }
 
@@ -37,6 +55,27 @@
 }
 
 .nav-border-bar-3-retro {
+  background: linear-gradient(
+    to bottom,
+    rgba(250, 243, 221, 1) 0%,
+    rgba(250, 243, 221, 0) 100%
+  );
+}
+.nav-border-bar-3-light {
+  background: linear-gradient(
+    to bottom,
+    rgba(250, 243, 221, 1) 0%,
+    rgba(250, 243, 221, 0) 100%
+  );
+}
+.nav-border-bar-3-dark {
+  background: linear-gradient(
+    to bottom,
+    rgba(250, 243, 221, 1) 0%,
+    rgba(250, 243, 221, 0) 100%
+  );
+}
+.nav-border-bar-3-simple {
   background: linear-gradient(
     to bottom,
     rgba(250, 243, 221, 1) 0%,
@@ -66,8 +105,15 @@ nav {
   background-color: var(--nav-back-retro);
   transition: background-color 2s ease;
 }
-
 .nav-light {
+  background-color: var(--nav-back-light);
+  transition: background-color 4s ease;
+}
+.nav-dark {
+  background-color: var(--nav-back-light);
+  transition: background-color 4s ease;
+}
+.nav-simple {
   background-color: var(--nav-back-light);
   transition: background-color 4s ease;
 }
@@ -132,6 +178,21 @@ nav {
   color: var(--nav-dark-btn-text-retro);
   border: 1px var(--nav-dark-btn-border-retro) solid;
 }
+.nav-title-light {
+  background-color: var(--nav-dark-btn-back-retro);
+  color: var(--nav-dark-btn-text-retro);
+  border: 1px var(--nav-dark-btn-border-retro) solid;
+}
+.nav-title-dark {
+  background-color: var(--nav-dark-btn-back-retro);
+  color: var(--nav-dark-btn-text-retro);
+  border: 1px var(--nav-dark-btn-border-retro) solid;
+}
+.nav-title-simple {
+  background-color: var(--nav-dark-btn-back-retro);
+  color: var(--nav-dark-btn-text-retro);
+  border: 1px var(--nav-dark-btn-border-retro) solid;
+}
 
 .abouts-title {
   max-width: 195px;
@@ -146,6 +207,21 @@ nav {
 }
 
 .nav-title-retro:hover {
+  background-color: var(--navText-darker);
+  color: var(--lime-300);
+  border: 1px var(--sea-green-400) solid;
+}
+.nav-title-light:hover {
+  background-color: var(--navText-darker);
+  color: var(--lime-300);
+  border: 1px var(--sea-green-400) solid;
+}
+.nav-title-dark:hover {
+  background-color: var(--navText-darker);
+  color: var(--lime-300);
+  border: 1px var(--sea-green-400) solid;
+}
+.nav-title-simple:hover {
   background-color: var(--navText-darker);
   color: var(--lime-300);
   border: 1px var(--sea-green-400) solid;
@@ -198,6 +274,15 @@ nav h1 {
 .nav-btn-retro {
   border: 1px var(--nav-light-btn-border-retro) solid;
 }
+.nav-btn-light {
+  border: 1px var(--nav-light-btn-border-retro) solid;
+}
+.nav-btn-dark {
+  border: 1px var(--nav-light-btn-border-retro) solid;
+}
+.nav-btn-simple {
+  border: 1px var(--nav-light-btn-border-retro) solid;
+}
 
 .nav-link {
   transition: background-color 0.5s ease, color 0.5s ease;
@@ -207,8 +292,35 @@ nav h1 {
   background-color: var(--nav-light-btn-back-retro);
   color: var(--nav-light-btn-text-retro);
 }
+.nav-link-light {
+  background-color: var(--nav-light-btn-back-retro);
+  color: var(--nav-light-btn-text-retro);
+}
+.nav-link-dark {
+  background-color: var(--nav-light-btn-back-retro);
+  color: var(--nav-light-btn-text-retro);
+}
+.nav-link-simple {
+  background-color: var(--nav-light-btn-back-retro);
+  color: var(--nav-light-btn-text-retro);
+}
 
 .nav-link-retro:hover {
+  background-color: var(--nav-light-btn-back-hover-retro);
+  color: var(--nav-light-btn-text-hover-retro);
+  border: 1px var(--nav-light-btn-border-hover-retro) solid;
+}
+.nav-link-light:hover {
+  background-color: var(--nav-light-btn-back-hover-retro);
+  color: var(--nav-light-btn-text-hover-retro);
+  border: 1px var(--nav-light-btn-border-hover-retro) solid;
+}
+.nav-link-dark:hover {
+  background-color: var(--nav-light-btn-back-hover-retro);
+  color: var(--nav-light-btn-text-hover-retro);
+  border: 1px var(--nav-light-btn-border-hover-retro) solid;
+}
+.nav-link-simple:hover {
   background-color: var(--nav-light-btn-back-hover-retro);
   color: var(--nav-light-btn-text-hover-retro);
   border: 1px var(--nav-light-btn-border-hover-retro) solid;
@@ -230,8 +342,32 @@ nav h1 {
   background-color: var(--nav-dark-btn-back-retro);
   color: var(--nav-dark-btn-text-retro);
 }
+.nav-section-link-light {
+  background-color: var(--nav-dark-btn-back-retro);
+  color: var(--nav-dark-btn-text-retro);
+}
+.nav-section-link-dark {
+  background-color: var(--nav-dark-btn-back-retro);
+  color: var(--nav-dark-btn-text-retro);
+}
+.nav-section-link-simple {
+  background-color: var(--nav-dark-btn-back-retro);
+  color: var(--nav-dark-btn-text-retro);
+}
 
 .nav-section-link-retro:hover {
+  background-color: var(--nav-light-btn-text-hover-retro);
+  color: var(--nav-dark-btn-text-hover-retro);
+}
+.nav-section-link-light:hover {
+  background-color: var(--nav-light-btn-text-hover-retro);
+  color: var(--nav-dark-btn-text-hover-retro);
+}
+.nav-section-link-dark:hover {
+  background-color: var(--nav-light-btn-text-hover-retro);
+  color: var(--nav-dark-btn-text-hover-retro);
+}
+.nav-section-link-simple:hover {
   background-color: var(--nav-light-btn-text-hover-retro);
   color: var(--nav-dark-btn-text-hover-retro);
 }
@@ -251,8 +387,29 @@ nav h1 {
 .github-link-btn-retro {
   background-color: var(--nav-light-btn-back-retro);
 }
+.github-link-btn-light {
+  background-color: var(--nav-light-btn-back-retro);
+}
+.github-link-btn-dark {
+  background-color: var(--nav-light-btn-back-retro);
+}
+.github-link-btn-simple {
+  background-color: var(--nav-light-btn-back-retro);
+}
 
 .github-link-btn-retro:hover {
+  background-color: var(--github-back-hover-retro);
+  border: 1px var(--github-border-hover-retro) solid;
+}
+.github-link-btn-light:hover {
+  background-color: var(--github-back-hover-retro);
+  border: 1px var(--github-border-hover-retro) solid;
+}
+.github-link-btn-dark:hover {
+  background-color: var(--github-back-hover-retro);
+  border: 1px var(--github-border-hover-retro) solid;
+}
+.github-link-btn-simple:hover {
   background-color: var(--github-back-hover-retro);
   border: 1px var(--github-border-hover-retro) solid;
 }
@@ -273,12 +430,12 @@ nav h1 {
   cursor: url('./looking-glass.png'), auto;
 }
 
-.linkedin-link-btn-retro {
+.linkedin-link-btn {
   background-color: var(--linkedin-back-retro);
   border: 1px var(--linkedin-border-retro) solid;
 }
 
-.linkedin-link-btn-retro:hover {
+.linkedin-link-btn:hover {
   background-color: var(--linkedin-blue);
   border: 1px var(--navText-darker) solid;
 }
@@ -333,6 +490,18 @@ nav h1 {
   background-color: var(--sea-green-800-dull);
   border: 1px solid var(--sea-green-800-dull);
 }
+.burger-bar-light {
+  background-color: var(--sea-green-800-dull);
+  border: 1px solid var(--sea-green-800-dull);
+}
+.burger-bar-dark {
+  background-color: var(--sea-green-800-dull);
+  border: 1px solid var(--sea-green-800-dull);
+}
+.burger-bar-simple {
+  background-color: var(--sea-green-800-dull);
+  border: 1px solid var(--sea-green-800-dull);
+}
 
 .burger-bar .hamburger:hover .pattie {
   transform: rotate(90deg);
@@ -347,6 +516,18 @@ nav h1 {
 }
 
 .hamburger:hover .burger-bar-retro {
+  background-color: var(--green-600);
+  border: 1px solid var(--green-600);
+}
+.hamburger:hover .burger-bar-light {
+  background-color: var(--green-600);
+  border: 1px solid var(--green-600);
+}
+.hamburger:hover .burger-bar-dark {
+  background-color: var(--green-600);
+  border: 1px solid var(--green-600);
+}
+.hamburger:hover .burger-bar-simple {
   background-color: var(--green-600);
   border: 1px solid var(--green-600);
 }

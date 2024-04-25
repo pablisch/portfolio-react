@@ -102,6 +102,34 @@
   /* LIGHT THEME */
   --nav-back-light: var(--blue-200);
 
+  --nav-light-btn-back-light: var(--leaf-100);
+  --nav-light-btn-text-light: var(--grey-blue-700);
+  --nav-light-btn-border-light: var(--sea-green-200);
+  --nav-light-btn-back-hover-light: #fff;
+  --nav-light-btn-text-hover-light: var(--grey-blue-1300);
+  --nav-light-btn-border-hover-light: var(--sea-green-200);
+
+  --nav-bottom-bar-1-light: var(--fawn-400);
+  --nav-bottom-bar-2-light: var(--fawn-200);
+  --nav-bottom-bar-3-light-pt1: rgba(250, 243, 221, 1);
+  --nav-bottom-bar-3-light-pt2: rgba(250, 243, 221, 0);
+
+  --nav-dark-btn-back-light: var(--leaf-900);
+  --nav-dark-btn-text-light: var(--leaf-100);
+  --nav-dark-btn-border-light: var(--grey-blue-700);
+  --nav-dark-btn-back-hover-light: var(grey-blue-1300);
+  --nav-dark-btn-text-hover-light: var(--lime-300);
+  --nav-dark-btn-border-hover-light: var(var(--sea-green-200));
+
+  --github-back-light: var(--nav-light-btn-back-light);
+  --github-border-light: var(--nav-light-btn-border-light);
+  --github-back-hover-light: #fff;
+  --github-border-hover-light: var(--grey-blue-400);
+  --linkedin-back-light: var(--sea-green-600);
+  --linkedin-border-light: var(--sea-green-800-dull);
+  --linkedin-back-hover-light: var(--linkedin-blue);
+  --linkedin-border-hover-light: var(--grey-blue-1300);
+
 
 
   --navText: var(--grey-blue-700);
