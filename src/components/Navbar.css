@@ -212,18 +212,18 @@ nav {
   border: 1px var(--sea-green-400) solid;
 }
 .nav-title-light:hover {
-  background-color: var(--navText-darker);
-  color: var(--lime-300);
+  background-color: var(--nav-dark-btn-back-hover-light);
+  color: var(--nav-dark-btn-text-hover-light);
   border: 1px var(--sea-green-400) solid;
 }
 .nav-title-dark:hover {
-  background-color: var(--navText-darker);
-  color: var(--lime-300);
+  background-color: var(--nav-dark-btn-back-hover-dark);
+  color: var(--nav-dark-btn-text-hover-dark);
   border: 1px var(--sea-green-400) solid;
 }
 .nav-title-simple:hover {
-  background-color: var(--navText-darker);
-  color: var(--lime-300);
+  background-color: var(--nav-dark-btn-back-hover-simple);
+  color: var(--nav-dark-btn-text-hover-simple);
   border: 1px var(--sea-green-400) solid;
 }
 

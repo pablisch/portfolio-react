@@ -27,6 +27,10 @@
   --blue-200: #d0f1f6;
   --blue-400: #aed9e0;
 
+  --whitish-100: #f0f5f5;
+  --whitish-200: #dde1e1;
+  --whitish-300: #c8d4d6;
+
   --cream-100: #fdfbf5;
   --cream-200: #fbfde3;
   --cream-300: #faf3dd;
@@ -53,6 +57,7 @@
   --turquoise-200-zero: rgba(184, 242, 230, 0);
   --turquoise-400: #68b0ab;
 
+  --grey-blue-200: #9399b0;
   --grey-blue-400: #696d7d;
   --grey-blue-700: #646465;
   --grey-blue-800: #626364;
@@ -118,11 +123,11 @@
   --nav-bottom-bar-3-light-pt1: rgb(228, 243, 245);
   --nav-bottom-bar-3-light-pt2: rgba(243, 252, 253, 0);
 
-  --nav-dark-btn-back-light: #eeeeee;
-  --nav-dark-btn-text-light: #444;
-  --nav-dark-btn-border-light: var(--grey-blue-700);
-  --nav-dark-btn-back-hover-light: var(grey-blue-1300);
-  --nav-dark-btn-text-hover-light: var(--lime-300);
+  --nav-dark-btn-back-light: var(--whitish-100);
+  --nav-dark-btn-text-light: var(--grey-blue-700);
+  --nav-dark-btn-border-light: var(--grey-blue-200);
+  --nav-dark-btn-back-hover-light: var(--whitish-200);
+  --nav-dark-btn-text-hover-light: var(--grey-blue-200);
   --nav-dark-btn-border-hover-light: var(var(--sea-green-200));
 
   --github-back-light: var(--nav-light-btn-back-light);
