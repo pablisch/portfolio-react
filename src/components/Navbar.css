@@ -13,16 +13,16 @@
 }
 
 .nav-border-bar-1-retro {
-  background-color: var(--fawn-400);
+  background-color: var(--nav-bottom-bar-1-retro);
 }
 .nav-border-bar-1-light {
-  background-color: var(--fawn-400);
+  background-color: var(--nav-bottom-bar-1-light);
 }
 .nav-border-bar-1-dark {
-  background-color: var(--fawn-400);
+  background-color: var(--nav-bottom-bar-1-dark);
 }
 .nav-border-bar-1-simple {
-  background-color: var(--fawn-400);
+  background-color: var(--nav-bottom-bar-1-simple);
 }
 
 .nav-border-bar-2 {
@@ -31,16 +31,16 @@
 }
 
 .nav-border-bar-2-retro {
-  background-color: var(--fawn-200);
+  background-color: var(--nav-bottom-bar-2-retro);
 }
 .nav-border-bar-2-light {
-  background-color: var(--fawn-200);
+  background-color: var(--nav-bottom-bar-2-light);
 }
 .nav-border-bar-2-dark {
-  background-color: var(--fawn-200);
+  background-color: var(--nav-bottom-bar-2-dark);
 }
 .nav-border-bar-2-simple {
-  background-color: var(--fawn-200);
+  background-color: var(nav-bottom-bar-2-simple);
 }
 
 .avatar-hovered-nav-border-bar-2 {
@@ -64,8 +64,8 @@
 .nav-border-bar-3-light {
   background: linear-gradient(
     to bottom,
-    rgba(250, 243, 221, 1) 0%,
-    rgba(250, 243, 221, 0) 100%
+    var(--nav-bottom-bar-3-light-pt1) 0%,
+    var(--nav-bottom-bar-3-light-pt2) 100%
   );
 }
 .nav-border-bar-3-dark {
@@ -110,11 +110,11 @@ nav {
   transition: background-color 4s ease;
 }
 .nav-dark {
-  background-color: var(--nav-back-light);
+  background-color: var(--nav-back-dark);
   transition: background-color 4s ease;
 }
 .nav-simple {
-  background-color: var(--nav-back-light);
+  background-color: var(--nav-back-title);
   transition: background-color 4s ease;
 }
 
@@ -179,9 +179,9 @@ nav {
   border: 1px var(--nav-dark-btn-border-retro) solid;
 }
 .nav-title-light {
-  background-color: var(--nav-dark-btn-back-retro);
-  color: var(--nav-dark-btn-text-retro);
-  border: 1px var(--nav-dark-btn-border-retro) solid;
+  background-color: var(--nav-dark-btn-back-light);
+  color: var(--nav-dark-btn-text-light);
+  border: 1px var(--nav-dark-btn-border-light) solid;
 }
 .nav-title-dark {
   background-color: var(--nav-dark-btn-back-retro);

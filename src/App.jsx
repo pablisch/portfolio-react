@@ -45,7 +45,7 @@ function App() {
 
   return (
     <ScreenWidthProvider>
-    <div className={`app ${isAvatarHovered ? 'avatar-hovered-app' : ''}`}>
+    <div className={`app app-${theme} ${isAvatarHovered ? 'avatar-hovered-app' : ''}`}>
       <BrowserRouter>
         <Navbar
           setFocusProjectId={setFocusProjectId}
@@ -88,6 +88,7 @@ function App() {
                 section={section}
                 setSection={setSection}
                 isAvatarHovered={isAvatarHovered}
+                theme={theme}
               />
             }
           />

@@ -22,6 +22,8 @@
   --pink-300: #f0b7b1;
   --pink-500: #ffa69e;
 
+  --blue-50: #eff7fb;
+  --blue-100: #e4fafd;
   --blue-200: #d0f1f6;
   --blue-400: #aed9e0;
 
@@ -64,12 +66,13 @@
 
   /* ELEMENT DECLARATIONS */
 
-  --primary-background: var(--cream-300);
   --primary-background-bar: rgb(250, 243, 221, 1);
   --primary-background-bar-zero: rgb(250, 243, 221, 0);
 
   /* RETRO THEME */
+
   --nav-back-retro: var(--leaf-300);
+  --primary-back-retro: var(--cream-300);
 
   --nav-light-btn-back-retro: var(--leaf-100);
   --nav-light-btn-text-retro: var(--grey-blue-700);
@@ -100,7 +103,8 @@
   --linkedin-border-hover-retro: var(--grey-blue-1300);
 
   /* LIGHT THEME */
-  --nav-back-light: var(--blue-200);
+  --nav-back-light: #fff;
+  --primary-back-light: #fff;
 
   --nav-light-btn-back-light: var(--leaf-100);
   --nav-light-btn-text-light: var(--grey-blue-700);
@@ -109,13 +113,13 @@
   --nav-light-btn-text-hover-light: var(--grey-blue-1300);
   --nav-light-btn-border-hover-light: var(--sea-green-200);
 
-  --nav-bottom-bar-1-light: var(--fawn-400);
-  --nav-bottom-bar-2-light: var(--fawn-200);
-  --nav-bottom-bar-3-light-pt1: rgba(250, 243, 221, 1);
-  --nav-bottom-bar-3-light-pt2: rgba(250, 243, 221, 0);
+  --nav-bottom-bar-1-light: var(--blue-400);
+  --nav-bottom-bar-2-light: var(--blue-100);
+  --nav-bottom-bar-3-light-pt1: rgb(228, 243, 245);
+  --nav-bottom-bar-3-light-pt2: rgba(243, 252, 253, 0);
 
-  --nav-dark-btn-back-light: var(--leaf-900);
-  --nav-dark-btn-text-light: var(--leaf-100);
+  --nav-dark-btn-back-light: #eeeeee;
+  --nav-dark-btn-text-light: #444;
   --nav-dark-btn-border-light: var(--grey-blue-700);
   --nav-dark-btn-back-hover-light: var(grey-blue-1300);
   --nav-dark-btn-text-hover-light: var(--lime-300);
@@ -149,7 +153,6 @@ body {
   font-weight: 300;
   font-size: 1.1rem;
   color: #606060;
-  background-color: var(--primary-background);
 }
 
 li {
@@ -158,8 +161,20 @@ li {
 
 .app {
   transition: background-color 13s ease;
-  background-color: var(--primary-background);
   min-height: calc(100vh - var(--navbar-height));
+}
+
+.app-retro {
+  background-color: var(--primary-back-retro);
+}
+.app-light {
+  background-color: var(--primary-back-light);
+}
+.app-dark {
+  background-color: var(--primary-back-dark);
+}
+.app-simple {
+  background-color: var(--primary-back-simple);
 }
 
 .avatar-hovered-app {
