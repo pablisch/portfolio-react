@@ -27,6 +27,7 @@ function App() {
   const [isHamburgerShowing, setIsHamburgerShowing] = useState(false);
   const [isDoubleBurger, setIsDoubleBurger] = useState(false); // isDoubleBurger is true when the screen width is less than 650px and external links move into the hamburger menu
   const [isTripleBurger, setIsTripleBurger] = useState(false); // isTripleBurger is true when the screen width is less than 390px and section links ('about me' and 'my projects') move into the hamburger menu
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
     const wakeUpDeployedApis = async () => {
@@ -61,6 +62,8 @@ function App() {
             setIsDoubleBurger={setIsDoubleBurger}
             isTripleBurger={isTripleBurger}
             setIsTripleBurger={setIsTripleBurger}
+            theme={theme}
+            setTheme={setTheme}
           />
           {(isHamburgerOpen && isHamburgerShowing) && <HamburgerBlocks 
             section={section}
