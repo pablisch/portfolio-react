@@ -275,13 +275,13 @@ nav h1 {
   border: 1px var(--nav-light-btn-border-retro) solid;
 }
 .nav-btn-light {
-  border: 1px var(--nav-light-btn-border-retro) solid;
+  border: 1px var(--nav-light-btn-border-light) solid;
 }
 .nav-btn-dark {
-  border: 1px var(--nav-light-btn-border-retro) solid;
+  border: 1px var(--nav-light-btn-border-dark) solid;
 }
 .nav-btn-simple {
-  border: 1px var(--nav-light-btn-border-retro) solid;
+  border: 1px var(--nav-light-btn-border-simple) solid;
 }
 
 .nav-link {
@@ -293,16 +293,16 @@ nav h1 {
   color: var(--nav-light-btn-text-retro);
 }
 .nav-link-light {
-  background-color: var(--nav-light-btn-back-retro);
-  color: var(--nav-light-btn-text-retro);
+  background-color: var(--nav-light-btn-back-light);
+  color: var(--nav-light-btn-text-light);
 }
 .nav-link-dark {
-  background-color: var(--nav-light-btn-back-retro);
-  color: var(--nav-light-btn-text-retro);
+  background-color: var(--nav-light-btn-back-dark);
+  color: var(--nav-light-btn-text-dark);
 }
 .nav-link-simple {
-  background-color: var(--nav-light-btn-back-retro);
-  color: var(--nav-light-btn-text-retro);
+  background-color: var(--nav-light-btn-back-simple);
+  color: var(--nav-light-btn-text-simple);
 }
 
 .nav-link-retro:hover {
@@ -343,16 +343,16 @@ nav h1 {
   color: var(--nav-dark-btn-text-retro);
 }
 .nav-section-link-light {
-  background-color: var(--nav-dark-btn-back-retro);
-  color: var(--nav-dark-btn-text-retro);
+  background-color: var(--nav-dark-btn-back-light);
+  color: var(--nav-dark-btn-text-light);
 }
 .nav-section-link-dark {
-  background-color: var(--nav-dark-btn-back-retro);
-  color: var(--nav-dark-btn-text-retro);
+  background-color: var(--nav-dark-btn-back-dark);
+  color: var(--nav-dark-btn-text-dark);
 }
 .nav-section-link-simple {
-  background-color: var(--nav-dark-btn-back-retro);
-  color: var(--nav-dark-btn-text-retro);
+  background-color: var(--nav-dark-btn-back-simple);
+  color: var(--nav-dark-btn-text-simple);
 }
 
 .nav-section-link-retro:hover {
@@ -360,16 +360,16 @@ nav h1 {
   color: var(--nav-dark-btn-text-hover-retro);
 }
 .nav-section-link-light:hover {
-  background-color: var(--nav-light-btn-text-hover-retro);
-  color: var(--nav-dark-btn-text-hover-retro);
+  background-color: var(--nav-light-btn-back-hover-light);
+  color: var(--nav-dark-btn-text-hover-light);
 }
 .nav-section-link-dark:hover {
-  background-color: var(--nav-light-btn-text-hover-retro);
-  color: var(--nav-dark-btn-text-hover-retro);
+  background-color: var(--nav-light-btn-text-hover-dark);
+  color: var(--nav-dark-btn-text-hover-dark);
 }
 .nav-section-link-simple:hover {
-  background-color: var(--nav-light-btn-text-hover-retro);
-  color: var(--nav-dark-btn-text-hover-retro);
+  background-color: var(--nav-light-btn-text-hover-simple);
+  color: var(--nav-dark-btn-text-hover-simple);
 }
 
 .avatar-hovered-nav-section-link {
@@ -388,13 +388,13 @@ nav h1 {
   background-color: var(--nav-light-btn-back-retro);
 }
 .github-link-btn-light {
-  background-color: var(--nav-light-btn-back-retro);
+  background-color: var(--nav-light-btn-back-light);
 }
 .github-link-btn-dark {
-  background-color: var(--nav-light-btn-back-retro);
+  background-color: var(--nav-light-btn-back-dark);
 }
 .github-link-btn-simple {
-  background-color: var(--nav-light-btn-back-retro);
+  background-color: var(--nav-light-btn-back-simple);
 }
 
 .github-link-btn-retro:hover {
@@ -402,16 +402,16 @@ nav h1 {
   border: 1px var(--github-border-hover-retro) solid;
 }
 .github-link-btn-light:hover {
-  background-color: var(--github-back-hover-retro);
-  border: 1px var(--github-border-hover-retro) solid;
+  background-color: var(--github-back-hover-light);
+  border: 1px var(--github-border-hover-light) solid;
 }
 .github-link-btn-dark:hover {
-  background-color: var(--github-back-hover-retro);
-  border: 1px var(--github-border-hover-retro) solid;
+  background-color: var(--github-back-hover-dark);
+  border: 1px var(--github-border-hover-dark) solid;
 }
 .github-link-btn-simple:hover {
-  background-color: var(--github-back-hover-retro);
-  border: 1px var(--github-border-hover-retro) solid;
+  background-color: var(--github-back-hover-simple);
+  border: 1px var(--github-border-hover-simple) solid;
 }
 
 .github-link-btn:hover .github-logo {
@@ -433,6 +433,11 @@ nav h1 {
 .linkedin-link-btn {
   background-color: var(--linkedin-back-retro);
   border: 1px var(--linkedin-border-retro) solid;
+}
+
+.linkedin-link-btn-light {
+  background-color: var(--linkedin-back-light);
+  border: 1px var(--linkedin-border-light) solid;
 }
 
 .linkedin-link-btn:hover {

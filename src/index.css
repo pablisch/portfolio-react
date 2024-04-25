@@ -26,10 +26,11 @@
   --blue-100: #e4fafd;
   --blue-200: #d0f1f6;
   --blue-400: #aed9e0;
+  --blue-500: #a2ccd2;
 
   --whitish-100: #f0f5f5;
-  --whitish-200: #dde1e1;
-  --whitish-300: #c8d4d6;
+  --whitish-200: #e9efef;
+  --whitish-300: #e0e8e8;
 
   --cream-100: #fdfbf5;
   --cream-200: #fbfde3;
@@ -111,7 +112,7 @@
   --nav-back-light: #fff;
   --primary-back-light: #fff;
 
-  --nav-light-btn-back-light: var(--leaf-100);
+  --nav-light-btn-back-light: var(--whitish-100);
   --nav-light-btn-text-light: var(--grey-blue-700);
   --nav-light-btn-border-light: var(--sea-green-200);
   --nav-light-btn-back-hover-light: #fff;
@@ -123,19 +124,19 @@
   --nav-bottom-bar-3-light-pt1: rgb(228, 243, 245);
   --nav-bottom-bar-3-light-pt2: rgba(243, 252, 253, 0);
 
-  --nav-dark-btn-back-light: var(--whitish-100);
+  --nav-dark-btn-back-light: var(--blue-100);
   --nav-dark-btn-text-light: var(--grey-blue-700);
-  --nav-dark-btn-border-light: var(--grey-blue-200);
-  --nav-dark-btn-back-hover-light: var(--whitish-200);
-  --nav-dark-btn-text-hover-light: var(--grey-blue-200);
-  --nav-dark-btn-border-hover-light: var(var(--sea-green-200));
+  --nav-dark-btn-border-light: var(--sea-green-200);
+  --nav-dark-btn-back-hover-light: #fff;
+  --nav-dark-btn-text-hover-light: var(--grey-blue-1300);
+  --nav-dark-btn-border-hover-light: var(var(--sea-green-400));
 
-  --github-back-light: var(--nav-light-btn-back-light);
-  --github-border-light: var(--nav-light-btn-border-light);
+  --github-back-light: var(--whitish-100);
+  --github-border-light: var(--sea-green-200);
   --github-back-hover-light: #fff;
   --github-border-hover-light: var(--grey-blue-400);
-  --linkedin-back-light: var(--sea-green-600);
-  --linkedin-border-light: var(--sea-green-800-dull);
+  --linkedin-back-light: var(--blue-500);
+  --linkedin-border-light: var(--sea-green-600);
   --linkedin-back-hover-light: var(--linkedin-blue);
   --linkedin-border-hover-light: var(--grey-blue-1300);
 
@@ -165,7 +166,7 @@ li {
 }
 
 .app {
-  transition: background-color 13s ease;
+  transition: background-color 7s ease;
   min-height: calc(100vh - var(--navbar-height));
 }
 
