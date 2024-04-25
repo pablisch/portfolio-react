@@ -35,8 +35,8 @@
 
 .burger-link {
   transition: background-color 0.5s ease, color 0.5s ease;
-  background-color: var(--nav-link-background);
-  color: var(--nav-link-text);
+  background-color: var(--nav-link-background-retro);
+  color: var(--nav-link-text-retro);
 }
 
 .burger-link:hover {
@@ -62,14 +62,15 @@
   color: #fff;
 }
 
-.linkedin-burger-btn:hover, .external-burger-btn:hover {
+.linkedin-burger-btn:hover,
+.external-burger-btn:hover {
   border: 3px var(--sea-green-800-dull) solid;
 }
 
 .burger-section-link {
   transition: background-color 0.5s ease;
-  background-color: var(--nav-section-link-background);
-  color: var(--nav-section-link-text);
+  background-color: var(--nav-btn-dark-back-retro);
+  color: var(--nav-btn-dark-text-retro);
   text-decoration: none;
 }
 
@@ -77,4 +78,3 @@
   background-color: var(--navText-darker);
   color: var(--lime-300);
 }
-

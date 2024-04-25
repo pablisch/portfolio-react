@@ -10,6 +10,9 @@ import ExtNavLink from './ExtNavLink';
 import { useScreenWidth } from '../context/ScreenWidthProvider';
 import { scrollToTop } from '../utils/helpers';
 
+const themeStyles = ['retro', 'light'];
+// const themeStyles = ['retro', 'light', 'dark', 'simple'];
+
 function Navbar({
   setFocusProjectId,
   setSelectedProject,
@@ -25,6 +28,8 @@ function Navbar({
   setIsDoubleBurger,
   isTripleBurger,
   setIsTripleBurger,
+  theme,
+  setTheme,
 }) {
   const screenWidth = useScreenWidth();
   const [isHamburgerSize, setIsHamburgerSize] = useState(
@@ -80,10 +85,19 @@ function Navbar({
     scrollToTop();
   };
 
+  const handleSettingsClick = () => {
+    const themeIndex = themeStyles.indexOf(theme);
+    const newThemeIndex =
+      themeIndex === themeStyles.length - 1 ? 0 : themeIndex + 1;
+    setTheme(themeStyles[newThemeIndex]);
+  }
+
   return (
     <nav>
       <div
-        className={`navbar ${isAvatarHovered ? 'avatar-hovered-navbar' : ''}`}>
+        className={`navbar nav-${theme} ${
+          isAvatarHovered ? 'avatar-hovered-navbar' : ''
+        }`}>
         <div className='nav-container'>
           <div className='nav-left'>
             <img
@@ -142,7 +156,7 @@ function Navbar({
           </div>
           <div className='nav-right navlist'>
             {/* 👇🏻 LINK TO PROJECTS SECTION */}
-            {(section === 'about' && !isTripleBurger) && (
+            {section === 'about' && !isTripleBurger && (
               <Link
                 to='/'
                 className={`nav-btn nav-section-link ${
@@ -152,7 +166,7 @@ function Navbar({
               </Link>
             )}
             {/* 👇🏻 LINK TO ABOUT ME SECTION */}
-            {(section === 'projects' && !isTripleBurger) && (
+            {section === 'projects' && !isTripleBurger && (
               <Link
                 to='/more-about-me'
                 className={`nav-btn nav-section-link ${
@@ -162,10 +176,24 @@ function Navbar({
               </Link>
             )}
             {/* 👇🏻 EXTERNAL LINK BUTTONS */}
-            {(linkData.length && !isDoubleBurger) &&
+            {linkData.length &&
+              !isDoubleBurger &&
               linkData.map((link) => (
                 <ExtNavLink key={link.name} page={link} target={link.target} />
               ))}
+            {/* 👇🏻 SETTINGS BUTTON */}
+            <div
+              className='nav-btn github-link-btn settings-btn'
+              onClick={handleSettingsClick}
+              // onMouseOver={handleHoverStart}
+              // onMouseLeave={handleHoverEnd}
+            >
+              <img
+                src='/images/settings-gear.png'
+                alt='settings button'
+                className={`github-logo`}
+              />
+            </div>
             {/* 👇🏻 HAMBURGER MENU BARS */}
             {isHamburgerSize && (
               <div className='hamburger-box'>
@@ -216,6 +244,8 @@ Navbar.propTypes = {
   setIsDoubleBurger: PropTypes.func.isRequired,
   isTripleBurger: PropTypes.bool.isRequired,
   setIsTripleBurger: PropTypes.func.isRequired,
+  theme: PropTypes.string.isRequired,
+  setTheme: PropTypes.func.isRequired,
 };
 
 export default Navbar;

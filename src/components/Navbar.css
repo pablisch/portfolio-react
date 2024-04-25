@@ -53,8 +53,18 @@ nav {
   z-index: 1000;
 }
 
-.navbar {
-  background-color: var(--nav-background);
+/* .navbar {
+  background-color: var(--nav-background-retro);
+  transition: background-color 4s ease;
+} */
+
+.nav-retro {
+  background-color: var(--nav-background-retro);
+  transition: background-color 4s ease;
+}
+
+.nav-light {
+  background-color: var(--nav-back-light);
   transition: background-color 4s ease;
 }
 
@@ -108,8 +118,8 @@ nav {
   border-radius: 15px;
   padding: 5px 15px;
   transition: background-color 3s ease, border 8s ease, color 3s ease;
-  background-color: var(--nav-section-link-background);
-  color: var(--nav-section-link-text);
+  background-color: var(--nav-btn-dark-back-retro);
+  color: var(--nav-btn-dark-text-retro);
   border: 1px var(--sea-green-200) solid;
   cursor: pointer;
   margin-right: 5px;
@@ -178,8 +188,8 @@ nav h1 {
 
 .nav-link {
   transition: background-color 0.5s ease, color 0.5s ease;
-  background-color: var(--nav-link-background);
-  color: var(--nav-link-text);
+  background-color: var(--nav-link-background-retro);
+  color: var(--nav-link-text-retro);
 }
 
 .nav-link:hover {
@@ -197,8 +207,8 @@ nav h1 {
 
 .nav-section-link {
   transition: background-color 0.5s ease;
-  background-color: var(--nav-section-link-background);
-  color: var(--nav-section-link-text);
+  background-color: var(--nav-btn-dark-back-retro);
+  color: var(--nav-btn-dark-text-retro);
   text-decoration: none;
 }
 
@@ -216,7 +226,7 @@ nav h1 {
 
 .github-link-btn {
   transition: background-color 0.5s ease;
-  background-color: var(--nav-link-background);
+  background-color: var(--nav-link-background-retro);
   cursor: url('./looking-glass.png'), auto;
 }
 
