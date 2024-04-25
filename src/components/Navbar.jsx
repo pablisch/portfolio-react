@@ -10,7 +10,7 @@ import ExtNavLink from './ExtNavLink';
 import { useScreenWidth } from '../context/ScreenWidthProvider';
 import { scrollToTop } from '../utils/helpers';
 
-const themeStyles = ['retro', 'light'];
+const themeStyles = ['retro', 'light', 'dark'];
 // const themeStyles = ['retro', 'light', 'dark', 'simple'];
 
 function Navbar({

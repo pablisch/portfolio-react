@@ -184,14 +184,14 @@ nav {
   border: 1px var(--nav-dark-btn-border-light) solid;
 }
 .nav-title-dark {
-  background-color: var(--nav-dark-btn-back-retro);
-  color: var(--nav-dark-btn-text-retro);
-  border: 1px var(--nav-dark-btn-border-retro) solid;
+  background-color: var(--nav-dark-btn-back-dark);
+  color: var(--nav-dark-btn-text-dark);
+  border: 1px var(--nav-dark-btn-border-dark) solid;
 }
 .nav-title-simple {
-  background-color: var(--nav-dark-btn-back-retro);
-  color: var(--nav-dark-btn-text-retro);
-  border: 1px var(--nav-dark-btn-border-retro) solid;
+  background-color: var(--nav-dark-btn-back-simple);
+  color: var(--nav-dark-btn-text-simple);
+  border: 1px var(--nav-dark-btn-border-simple) solid;
 }
 
 .abouts-title {
@@ -438,6 +438,10 @@ nav h1 {
 .linkedin-link-btn-light {
   background-color: var(--linkedin-back-light);
   border: 1px var(--linkedin-border-light) solid;
+}
+.linkedin-link-btn-dark {
+  background-color: var(--linkedin-back-dark);
+  border: 1px var(--linkedin-border-dark) solid;
 }
 
 .linkedin-link-btn:hover {
