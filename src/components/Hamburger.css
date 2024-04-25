@@ -35,8 +35,8 @@
 
 .burger-link {
   transition: background-color 0.5s ease, color 0.5s ease;
-  background-color: var(--nav-link-background-retro);
-  color: var(--nav-link-text-retro);
+  background-color: var(--nav-light-btn-back-retro);
+  color: var(--nav-light-btn-text-retro);
 }
 
 .burger-link:hover {
@@ -69,8 +69,8 @@
 
 .burger-section-link {
   transition: background-color 0.5s ease;
-  background-color: var(--nav-btn-dark-back-retro);
-  color: var(--nav-btn-dark-text-retro);
+  background-color: var(--nav-dark-btn-back-retro);
+  color: var(--nav-dark-btn-text-retro);
   text-decoration: none;
 }
 

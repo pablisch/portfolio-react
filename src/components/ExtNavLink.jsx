@@ -5,11 +5,14 @@ const ExtNavLink = ({
   isAvatarHovered,
   target = '_blank',
   context = 'normal',
+  theme,
 }) => {
 
-  const linkClass = context === 'hamburger' ? page.burgerClass : page.class;
-  // console.log('linkClass', linkClass)
-  // console.log('burgerClass', page.burgerClass)
+  const normalClasses = `${page.class.map((c) => c).join(' ')} ${page.class.map((c) => `${c}-${theme}`).join(' ')}`;
+  const burgerClasses = `${page.burgerClass.map((c) => c).join(' ')} ${page.burgerClass.map((c) => `${c}-${theme}`).join(' ')}`;
+  
+
+  const linkClass = context === 'hamburger' ? burgerClasses : normalClasses;
 
   return (
     <a
@@ -33,6 +36,7 @@ ExtNavLink.propTypes = {
   isAvatarHovered: PropTypes.bool,
   target: PropTypes.string,
   context: PropTypes.string,
+  theme: PropTypes.string,
 };
 
 export default ExtNavLink;

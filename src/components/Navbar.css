@@ -8,14 +8,20 @@
 
 /* UNDER NAVBAR BORDERS inc FADE BORDER */
 
-#nav-border-bar-1 {
+.nav-border-bar-1 {
   height: 1px;
+}
+
+.nav-border-bar-1-retro {
   background-color: var(--fawn-400);
 }
 
 .nav-border-bar-2 {
   height: 4px;
   transition: background-color 4s ease;
+}
+
+.nav-border-bar-2-retro {
   background-color: var(--fawn-200);
 }
 
@@ -27,12 +33,15 @@
 .nav-border-bar-3 {
   height: 25px;
   background-color: rgba(255, 255, 255, 0);
+  background-size: 100% 100%;
+}
+
+.nav-border-bar-3-retro {
   background: linear-gradient(
     to bottom,
     rgba(250, 243, 221, 1) 0%,
     rgba(250, 243, 221, 0) 100%
   );
-  background-size: 100% 100%;
 }
 
 .avatar-hovered-nav-border-bar-3 {
@@ -53,14 +62,9 @@ nav {
   z-index: 1000;
 }
 
-/* .navbar {
-  background-color: var(--nav-background-retro);
-  transition: background-color 4s ease;
-} */
-
 .nav-retro {
-  background-color: var(--nav-background-retro);
-  transition: background-color 4s ease;
+  background-color: var(--nav-back-retro);
+  transition: background-color 2s ease;
 }
 
 .nav-light {
@@ -83,7 +87,7 @@ nav {
     --nav-container-width
   ); /* USE SAME SETTING for .nav-containter, .gallery-container, .focus-container & .footer-container */
   margin: 0 auto;
-  padding: 0 var(--nav-side-padding); /* standard 20px side padding for all outer containers */
+  padding: 0 var(--nav-side-padding);
   overflow: hidden;
   height: var(--navbar-height);
 }
@@ -118,12 +122,15 @@ nav {
   border-radius: 15px;
   padding: 5px 15px;
   transition: background-color 3s ease, border 8s ease, color 3s ease;
-  background-color: var(--nav-btn-dark-back-retro);
-  color: var(--nav-btn-dark-text-retro);
-  border: 1px var(--sea-green-200) solid;
   cursor: pointer;
   margin-right: 5px;
   max-width: 100px;
+}
+
+.nav-title-retro {
+  background-color: var(--nav-dark-btn-back-retro);
+  color: var(--nav-dark-btn-text-retro);
+  border: 1px var(--nav-dark-btn-border-retro) solid;
 }
 
 .abouts-title {
@@ -136,6 +143,9 @@ nav {
 
 .nav-title:hover {
   transition: background-color 1s ease, border 8s ease, color 1s ease;
+}
+
+.nav-title-retro:hover {
   background-color: var(--navText-darker);
   color: var(--lime-300);
   border: 1px var(--sea-green-400) solid;
@@ -182,20 +192,26 @@ nav h1 {
   justify-content: center;
   min-width: 70px;
   transition: border 1s ease;
-  border: 1px var(--sea-green-200) solid;
   cursor: pointer;
+}
+
+.nav-btn-retro {
+  border: 1px var(--nav-light-btn-border-retro) solid;
 }
 
 .nav-link {
   transition: background-color 0.5s ease, color 0.5s ease;
-  background-color: var(--nav-link-background-retro);
-  color: var(--nav-link-text-retro);
 }
 
-.nav-link:hover {
-  background-color: var(--cream-100);
-  background-color: #fff;
-  color: var(--navText-darker);
+.nav-link-retro {
+  background-color: var(--nav-light-btn-back-retro);
+  color: var(--nav-light-btn-text-retro);
+}
+
+.nav-link-retro:hover {
+  background-color: var(--nav-light-btn-back-hover-retro);
+  color: var(--nav-light-btn-text-hover-retro);
+  border: 1px var(--nav-light-btn-border-hover-retro) solid;
 }
 
 .avatar-hovered-nav-link {
@@ -207,14 +223,17 @@ nav h1 {
 
 .nav-section-link {
   transition: background-color 0.5s ease;
-  background-color: var(--nav-btn-dark-back-retro);
-  color: var(--nav-btn-dark-text-retro);
   text-decoration: none;
 }
 
-.nav-section-link:hover {
-  background-color: var(--navText-darker);
-  color: var(--lime-300);
+.nav-section-link-retro {
+  background-color: var(--nav-dark-btn-back-retro);
+  color: var(--nav-dark-btn-text-retro);
+}
+
+.nav-section-link-retro:hover {
+  background-color: var(--nav-light-btn-text-hover-retro);
+  color: var(--nav-dark-btn-text-hover-retro);
 }
 
 .avatar-hovered-nav-section-link {
@@ -226,15 +245,16 @@ nav h1 {
 
 .github-link-btn {
   transition: background-color 0.5s ease;
-  background-color: var(--nav-link-background-retro);
   cursor: url('./looking-glass.png'), auto;
 }
 
-.github-link-btn:hover {
-  background-color: var(--lime-300);
-  background-color: #fff;
-  border: 1px var(--grey-blue-400) solid;
-  /* border: 1px var(--green-600) solid; */
+.github-link-btn-retro {
+  background-color: var(--nav-light-btn-back-retro);
+}
+
+.github-link-btn-retro:hover {
+  background-color: var(--github-back-hover-retro);
+  border: 1px var(--github-border-hover-retro) solid;
 }
 
 .github-link-btn:hover .github-logo {
@@ -250,12 +270,15 @@ nav h1 {
 
 .linkedin-link-btn {
   transition: background-color 1s ease;
-  background-color: var(--turquoise-400);
-  background-color: var(--sea-green-600);
   cursor: url('./looking-glass.png'), auto;
 }
 
-.linkedin-link-btn:hover {
+.linkedin-link-btn-retro {
+  background-color: var(--linkedin-back-retro);
+  border: 1px var(--linkedin-border-retro) solid;
+}
+
+.linkedin-link-btn-retro:hover {
   background-color: var(--linkedin-blue);
   border: 1px var(--navText-darker) solid;
 }
@@ -296,35 +319,36 @@ nav h1 {
   cursor: pointer;
 }
 
-.burgerBar {
+.burger-bar {
   display: block;
   width: 35px;
   height: 4px;
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: var(--sea-green-800-dull);
-  border: 1px solid var(--sea-green-800-dull);
   z-index: 1;
 }
 
-.hamburger:hover .pattie {
+.burger-bar-retro {
+  background-color: var(--sea-green-800-dull);
+  border: 1px solid var(--sea-green-800-dull);
+}
+
+.burger-bar .hamburger:hover .pattie {
   transform: rotate(90deg);
-  background-color: var(--green-600);
 }
 
 .hamburger:hover .buntop {
   transform: translateY(9px) rotate(-30deg);
-  background-color: var(--green-600);
 }
 
 .hamburger:hover .bunbase {
   transform: translateY(-9px) rotate(30deg);
-  background-color: var(--green-600);
 }
 
-.hamburger:hover .burgerBar {
+.hamburger:hover .burger-bar-retro {
   background-color: var(--green-600);
+  border: 1px solid var(--green-600);
 }
 
 .hamburger .pattie.burger-open {
@@ -337,9 +361,4 @@ nav h1 {
 
 .hamburger .bunbase.burger-open {
   transform: translateY(-9px) rotate(45deg);
-}
-
-.hamburger:hover .burgerBar.burger-open {
-  background-color: var(--blue-400);
-  border: 1px solid var(--sea-green-1000-dull);
 }

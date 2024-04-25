@@ -69,36 +69,40 @@
   --primary-background-bar-zero: rgb(250, 243, 221, 0);
 
   /* RETRO THEME */
-  --nav-background-retro: var(--leaf-300);
-  --nav-title-background-retro: var(--leaf-200);
-  --nav-link-background-retro: var(--leaf-100);
-  --nav-link-text-retro: var(--grey-blue-700);
+  --nav-back-retro: var(--leaf-300);
+
+  --nav-light-btn-back-retro: var(--leaf-100);
+  --nav-light-btn-text-retro: var(--grey-blue-700);
+  --nav-light-btn-border-retro: var(--sea-green-200);
+  --nav-light-btn-back-hover-retro: #fff;
+  --nav-light-btn-text-hover-retro: var(--grey-blue-1300);
+  --nav-light-btn-border-hover-retro: var(--sea-green-200);
 
   --nav-bottom-bar-1-retro: var(--fawn-400);
   --nav-bottom-bar-2-retro: var(--fawn-200);
-  --nav-bottom-bar-2-hover-retro: var(--pink-500);
   --nav-bottom-bar-3-retro-pt1: rgba(250, 243, 221, 1);
   --nav-bottom-bar-3-retro-pt2: rgba(250, 243, 221, 0);
 
-  --nav-btn-dark-back-retro: var(--leaf-900);
-  --nav-btn-dark-text-retro: var(--leaf-100);
-  --nav-btn-dark-border-retro: var(var(--sea-green-200))
+  --nav-dark-btn-back-retro: var(--leaf-900);
+  --nav-dark-btn-text-retro: var(--leaf-100);
+  --nav-dark-btn-border-retro: var(--grey-blue-700);
+  --nav-dark-btn-back-hover-retro: var(grey-blue-1300);
+  --nav-dark-btn-text-hover-retro: var(--lime-300);
+  --nav-dark-btn-border-hover-retro: var(var(--sea-green-200));
+
+  --github-back-retro: var(--nav-light-btn-back-retro);
+  --github-border-retro: var(--nav-light-btn-border-retro);
+  --github-back-hover-retro: #fff;
+  --github-border-hover-retro: var(--grey-blue-400);
+  --linkedin-back-retro: var(--sea-green-600);
+  --linkedin-border-retro: var(--sea-green-800-dull);
+  --linkedin-back-hover-retro: var(--linkedin-blue);
+  --linkedin-border-hover-retro: var(--grey-blue-1300);
 
   /* LIGHT THEME */
   --nav-back-light: var(--blue-200);
-  --nav-title-background-light: var(--leaf-200);
-  --nav-link-background-retro: var(--leaf-100);
-  --nav-link-text-retro: var(--grey-blue-700);
 
-  --nav-bottom-bar-1-retro: var(--fawn-400);
-  --nav-bottom-bar-2-retro: var(--fawn-200);
-  --nav-bottom-bar-2-hover-retro: var(--pink-500);
-  --nav-bottom-bar-3-retro-pt1: rgba(250, 243, 221, 1);
-  --nav-bottom-bar-3-retro-pt2: rgba(250, 243, 221, 0);
 
-  --nav-btn-dark-back-retro: var(--leaf-900);
-  --nav-btn-dark-text-retro: var(--leaf-100);
-  --nav-btn-dark-border-retro: var(var(--sea-green-200))
 
   --navText: var(--grey-blue-700);
   --navText-darker: var(--grey-blue-1300);

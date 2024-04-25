@@ -90,7 +90,7 @@ function Navbar({
     const newThemeIndex =
       themeIndex === themeStyles.length - 1 ? 0 : themeIndex + 1;
     setTheme(themeStyles[newThemeIndex]);
-  }
+  };
 
   return (
     <nav>
@@ -110,7 +110,7 @@ function Navbar({
               onMouseLeave={() => setIsAvatarHovered(false)}
             />
             <div
-              className={`nav-title ${
+              className={`nav-title nav-title-${theme} ${
                 isAvatarHovered ? 'avatar-hovered-nav-title' : ''
               } ${section === 'projects' ? 'projects-title' : 'abouts-title'}`}>
               <h1 onClick={handleNavTitleClick}>
@@ -127,7 +127,7 @@ function Navbar({
                 !isHamburgerSize &&
                 projectData.map((project) => (
                   <NavLink
-                    className={`nav-btn nav-link ${
+                    className={`nav-btn nav-btn-${theme} nav-link nav-link-${theme} ${
                       isAvatarHovered ? 'avatar-hovered-nav-link' : ''
                     }`}
                     key={project.id}
@@ -142,7 +142,7 @@ function Navbar({
                 !isHamburgerSize &&
                 aboutData.map((about) => (
                   <NavLink
-                    className={`nav-btn nav-link ${
+                    className={`nav-btn nav-btn-${theme} nav-link nav-link-${theme} ${
                       isAvatarHovered ? 'avatar-hovered-nav-link' : ''
                     }`}
                     key={about.id}
@@ -159,7 +159,7 @@ function Navbar({
             {section === 'about' && !isTripleBurger && (
               <Link
                 to='/'
-                className={`nav-btn nav-section-link ${
+                className={`nav-btn nav-btn-${theme} nav-section-link nav-section-link-${theme} ${
                   isAvatarHovered ? 'avatar-hovered-nav-section-link' : ''
                 }`}>
                 Software Projects
@@ -169,7 +169,7 @@ function Navbar({
             {section === 'projects' && !isTripleBurger && (
               <Link
                 to='/more-about-me'
-                className={`nav-btn nav-section-link ${
+                className={`nav-btn nav-btn-${theme} nav-section-link nav-section-link-${theme} ${
                   isAvatarHovered ? 'avatar-hovered-nav-section-link' : ''
                 }`}>
                 More About Me
@@ -179,11 +179,16 @@ function Navbar({
             {linkData.length &&
               !isDoubleBurger &&
               linkData.map((link) => (
-                <ExtNavLink key={link.name} page={link} target={link.target} />
+                <ExtNavLink
+                  key={link.name}
+                  page={link}
+                  target={link.target}
+                  theme={theme}
+                />
               ))}
             {/* 👇🏻 SETTINGS BUTTON */}
             <div
-              className='nav-btn github-link-btn settings-btn'
+              className={`nav-btn nav-btn-${theme} github-link-btn github-link-btn-${theme} settings-btn`}
               onClick={handleSettingsClick}
               // onMouseOver={handleHoverStart}
               // onMouseLeave={handleHoverEnd}
@@ -191,7 +196,7 @@ function Navbar({
               <img
                 src='/images/settings-gear.png'
                 alt='settings button'
-                className={`github-logo`}
+                className={`github-logo `}
               />
             </div>
             {/* 👇🏻 HAMBURGER MENU BARS */}
@@ -199,15 +204,15 @@ function Navbar({
               <div className='hamburger-box'>
                 <div className='hamburger' onClick={handleBurgerClick}>
                   <span
-                    className={`burgerBar buntop ${
+                    className={`burger-bar burger-bar-${theme} buntop ${
                       isHamburgerOpen ? 'burger-open' : ''
                     }`}></span>
                   <span
-                    className={`burgerBar pattie ${
+                    className={`burger-bar burger-bar-${theme} pattie ${
                       isHamburgerOpen ? 'burger-open' : ''
                     }`}></span>
                   <span
-                    className={`burgerBar bunbase ${
+                    className={`burger-bar burger-bar-${theme} bunbase ${
                       isHamburgerOpen ? 'burger-open' : ''
                     }`}></span>
                 </div>
@@ -216,13 +221,13 @@ function Navbar({
           </div>
         </div>
       </div>
-      <div id='nav-border-bar-1'></div>
+      <div className={`nav-border-bar-1 nav-border-bar-1-${theme}`}></div>
       <div
-        className={`nav-border-bar-2 ${
+        className={`nav-border-bar-2 nav-border-bar-2-${theme} ${
           isAvatarHovered ? 'avatar-hovered-nav-border-bar-2' : ''
         }`}></div>
       <div
-        className={`nav-border-bar-3 ${
+        className={`nav-border-bar-3 nav-border-bar-3-${theme} ${
           isAvatarHovered ? 'avatar-hovered-nav-border-bar-3' : ''
         }`}></div>
     </nav>
