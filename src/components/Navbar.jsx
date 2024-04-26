@@ -188,7 +188,7 @@ function Navbar({
               ))}
             {/* 👇🏻 SETTINGS BUTTON */}
             <div
-              className={`nav-btn nav-btn-${theme} github-link-btn github-link-btn-${theme} settings-btn`}
+              className={`nav-btn nav-btn-${theme} github-link-btn github-link-btn-${theme} settings-btn settings-btn-${theme}`}
               onClick={handleSettingsClick}
               // onMouseOver={handleHoverStart}
               // onMouseLeave={handleHoverEnd}

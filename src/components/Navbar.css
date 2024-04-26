@@ -436,7 +436,7 @@ nav h1 {
   filter: invert(0.7);
 }
 
-.github-logo-dark:hover {
+.github-link-btn:hover .github-logo-dark {
   filter: invert(0);
 }
 
@@ -444,7 +444,7 @@ nav h1 {
   filter: invert(0);
 }
 
-.settings-icon-dark:hover {
+.settings-btn-dark:hover .settings-icon-dark {
   filter: invert(1);
 }
 

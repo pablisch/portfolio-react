@@ -22,7 +22,7 @@ function AboutPage({
   }, [section, setSection]);
 
   return (
-    <ul className='about-box'>
+    <ul className={`about-box about-box-${theme}`}>
       {aboutData.map((about) => (
         <AboutPanel
           key={about.id}
