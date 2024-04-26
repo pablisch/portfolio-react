@@ -17,6 +17,7 @@ const SingleAboutPage = ({
   setSelectedAbout,
   section,
   setSection,
+  theme,
 }) => {
   const navigate = useNavigate();
 
@@ -137,6 +138,7 @@ SingleAboutPage.propTypes = {
   setSelectedAbout: PropTypes.func.isRequired,
   section: PropTypes.string.isRequired,
   setSection: PropTypes.func.isRequired,
+  theme: PropTypes.string.isRequired,
 };
 
 export default SingleAboutPage;

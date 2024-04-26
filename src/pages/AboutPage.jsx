@@ -12,6 +12,7 @@ function AboutPage({
   section,
   setSection,
   isAvatarHovered,
+  theme,
 }) {
   
   useEffect(() => {
@@ -43,6 +44,7 @@ AboutPage.propTypes = {
   section: PropTypes.string.isRequired,
   setSection: PropTypes.func.isRequired,
   isAvatarHovered: PropTypes.bool.isRequired,
+  theme: PropTypes.string.isRequired,
 };
 
 export default AboutPage;

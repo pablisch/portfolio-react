@@ -31,6 +31,8 @@
   --whitish-100: #f0f5f5;
   --whitish-200: #e9efef;
   --whitish-300: #e0e8e8;
+  --whitish-400: #d7dede;
+  --whitish-500: #cad2d2;
 
   --cream-100: #fdfbf5;
   --cream-200: #fbfde3;
@@ -147,25 +149,25 @@
   /* DARK THEME */
   --nav-back-dark: var(--grey-blue-1700);
   --primary-back-dark: var(--grey-blue-1500);
+  
+    --nav-bottom-bar-1-dark: var(--sea-green-400);
+    --nav-bottom-bar-2-dark: var(--leaf-900);
+    --nav-bottom-bar-3-dark-pt1: rgba(50, 50, 51, 1);
+    --nav-bottom-bar-3-dark-pt2: rgba(50, 50, 51, 0);
 
   --nav-light-btn-back-dark: var(--grey-blue-900);
   --nav-light-btn-text-dark: var(--leaf-200);
   --nav-light-btn-border-dark: var(--sea-green-200);
-  --nav-light-btn-back-hover-dark: var(--grey-blue-1100);
-  --nav-light-btn-text-hover-dark: var(--grey-blue-1300);
-  --nav-light-btn-border-hover-dark: var(--sea-green-200);
-
-  --nav-bottom-bar-1-dark: var(--blue-400);
-  --nav-bottom-bar-2-dark: var(--blue-100);
-  --nav-bottom-bar-3-dark-pt1: rgb(228, 243, 245);
-  --nav-bottom-bar-3-dark-pt2: rgba(243, 252, 253, 0);
+  --nav-light-btn-back-hover-dark: var(--whitish-300);
+  --nav-light-btn-text-hover-dark: var(--grey-blue-1500);
+  --nav-light-btn-border-hover-dark: var(--green-600);
 
   --nav-dark-btn-back-dark: var(--grey-blue-1300);
   --nav-dark-btn-text-dark: var(--leaf-200);
   --nav-dark-btn-border-dark: var(--sea-green-200);
   --nav-dark-btn-back-hover-dark: #fff;
-  --nav-dark-btn-text-hover-dark: var(--grey-blue-1300);
-  --nav-dark-btn-border-hover-dark: var(var(--sea-green-400));
+  --nav-dark-btn-text-hover-dark: var(--grey-blue-1700);
+  --nav-dark-btn-border-hover-dark: var(--lime-300);
 
   --github-back-dark: var(--whitish-100);
   --github-border-dark: var(--sea-green-200);
@@ -194,7 +196,6 @@ body {
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   font-size: 1.1rem;
-  color: #606060;
 }
 
 li {
@@ -202,6 +203,7 @@ li {
 }
 
 .app {
+  color: #606060;
   transition: background-color 3s ease;
   min-height: calc(100vh - var(--navbar-height));
 }
@@ -214,6 +216,7 @@ li {
 }
 .app-dark {
   background-color: var(--primary-back-dark);
+  color: var(--nav-light-btn-text-dark);
 }
 .app-simple {
   background-color: var(--primary-back-simple);

@@ -57,8 +57,8 @@
 .nav-border-bar-3-retro {
   background: linear-gradient(
     to bottom,
-    rgba(250, 243, 221, 1) 0%,
-    rgba(250, 243, 221, 0) 100%
+    var(--nav-bottom-bar-3-retro-pt1) 0%,
+    var(--nav-bottom-bar-3-retro-pt2) 100%
   );
 }
 .nav-border-bar-3-light {
@@ -71,15 +71,15 @@
 .nav-border-bar-3-dark {
   background: linear-gradient(
     to bottom,
-    rgba(250, 243, 221, 1) 0%,
-    rgba(250, 243, 221, 0) 100%
+    var(--nav-bottom-bar-3-dark-pt1) 0%,
+    var(--nav-bottom-bar-3-dark-pt2) 100%
   );
 }
 .nav-border-bar-3-simple {
   background: linear-gradient(
     to bottom,
-    rgba(250, 243, 221, 1) 0%,
-    rgba(250, 243, 221, 0) 100%
+    var(--nav-bottom-bar-3-simple-pt1) 0%,
+    var(--nav-bottom-bar-3-simple-pt2) 100%
   );
 }
 
@@ -152,6 +152,12 @@ nav {
   opacity: 0.7;
   transition: opacity 2s ease;
   cursor: none;
+  border-radius: 100%;
+}
+
+.logo-image-dark {
+  border: 1px solid var(--whitish-300);
+  box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.9);
 }
 
 .avatar-hovered-avatar {
@@ -316,9 +322,9 @@ nav h1 {
   border: 1px var(--nav-light-btn-border-hover-retro) solid;
 }
 .nav-link-dark:hover {
-  background-color: var(--nav-light-btn-back-hover-retro);
-  color: var(--nav-light-btn-text-hover-retro);
-  border: 1px var(--nav-light-btn-border-hover-retro) solid;
+  background-color: var(--nav-light-btn-back-hover-dark);
+  color: var(--nav-light-btn-text-hover-dark);
+  border: 1px var(--nav-light-btn-border-hover-dark) solid;
 }
 .nav-link-simple:hover {
   background-color: var(--nav-light-btn-back-hover-retro);
@@ -364,7 +370,7 @@ nav h1 {
   color: var(--nav-dark-btn-text-hover-light);
 }
 .nav-section-link-dark:hover {
-  background-color: var(--nav-light-btn-text-hover-dark);
+  background-color: var(--nav-dark-btn-back-hover-dark);
   color: var(--nav-dark-btn-text-hover-dark);
 }
 .nav-section-link-simple:hover {
@@ -423,6 +429,23 @@ nav h1 {
   max-height: 50px;
   transition: opacity 2s ease;
   opacity: 0.6;
+}
+
+.github-logo-dark {
+  opacity: 1;
+  filter: invert(0.7);
+}
+
+.github-logo-dark:hover {
+  filter: invert(0);
+}
+
+.settings-icon-dark {
+  filter: invert(0);
+}
+
+.settings-icon-dark:hover {
+  filter: invert(1);
 }
 
 .linkedin-link-btn {

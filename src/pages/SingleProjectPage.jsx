@@ -13,7 +13,7 @@ import { useScreenWidth } from '../context/ScreenWidthProvider';
 const lastProjectId = projectData[projectData.length - 1].id;
 const firstProjectId = projectData[0].id;
 
-const SingleProjectPage = ({ selectedProject, setSelectedProject, section, setSection }) => {
+const SingleProjectPage = ({ selectedProject, setSelectedProject, section, setSection, theme }) => {
   const navigate = useNavigate();
   const screenWidth = useScreenWidth();
 
@@ -84,7 +84,7 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject, section, setSe
     <div id='single-subject-page'>
       {selectedProject.id && <> <div id='single-subject-upper-section'>
         <div id='single-subject-headers-and-description-1'>
-          <h1 id='single-subject-title'>{selectedProject.name}</h1>
+          <h1 className={`single-subject-title single-subject-title-${theme}`}>{selectedProject.name}</h1>
           <h2 id='single-subject-subheading'>{selectedProject.subheading}</h2>
           <div id='single-subject-description' className='paragraph'>
             <div id='single-project-tech-badges'>
@@ -171,6 +171,7 @@ SingleProjectPage.propTypes = {
   setSelectedProject: PropTypes.func.isRequired,
   section: PropTypes.string.isRequired,
   setSection: PropTypes.func.isRequired,
+  theme: PropTypes.string.isRequired,
 };
 
 export default SingleProjectPage;

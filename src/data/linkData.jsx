@@ -10,7 +10,7 @@ export const linkData = [
     img: {
       src: 'github-logo.png',
       alt: 'GitHub logo',
-      class: 'github-logo',
+      class: ['github-logo'],
       avatarClass: '',
     },
   },
@@ -24,7 +24,7 @@ export const linkData = [
     img: {
       src: 'linkedin-trans.png',
       alt: 'LinkedIn logo',
-      class: 'linkedin-logo',
+      class: ['linkedin-logo'],
       avatarClass: 'avatar-hovered-linkedin-logo',
     },
   },

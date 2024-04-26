@@ -101,7 +101,7 @@ function Navbar({
         <div className='nav-container'>
           <div className='nav-left'>
             <img
-              className={`logo-image ${
+              className={`logo-image logo-image-${theme} ${
                 isAvatarHovered ? 'avatar-hovered-avatar' : ''
               }`}
               src='/images/pablo-circle-avatar.png'
@@ -196,7 +196,7 @@ function Navbar({
               <img
                 src='/images/settings-gear.png'
                 alt='settings button'
-                className={`github-logo `}
+                className={`github-logo github-logo-${theme} settings-icon settings-icon-${theme}`}
               />
             </div>
             {/* 👇🏻 HAMBURGER MENU BARS */}

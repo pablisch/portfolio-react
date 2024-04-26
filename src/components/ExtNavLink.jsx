@@ -10,6 +10,8 @@ const ExtNavLink = ({
 
   const normalClasses = `${page.class.map((c) => c).join(' ')} ${page.class.map((c) => `${c}-${theme}`).join(' ')}`;
   const burgerClasses = `${page.burgerClass.map((c) => c).join(' ')} ${page.burgerClass.map((c) => `${c}-${theme}`).join(' ')}`;
+
+  const imageClasses = `${page.img.class.map((c) => c).join(' ')} ${page.img.class.map((c) => `${c}-${theme}`).join(' ')}`;
   
 
   const linkClass = context === 'hamburger' ? burgerClasses : normalClasses;
@@ -23,7 +25,7 @@ const ExtNavLink = ({
       <img
         src={`/images/${page.img.src}`}
         alt={page.img.alt}
-        className={`${page.img.class} ${
+        className={`${imageClasses} ${
           isAvatarHovered ? page.img.avatarClass : ''
         }`}
       />

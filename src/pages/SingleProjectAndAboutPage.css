@@ -22,11 +22,15 @@
 
 /* HEADERS & DESCRIPTION 1 SECTION FORMATTING */
 
-#single-subject-title {
+.single-subject-title {
   margin-bottom: 5px;
   font-size: 2.1rem;
   font-weight: 500;
   color: var(--grey-blue-1100);
+}
+
+.single-subject-title-dark {
+  color: var(--whitish-300);
 }
 
 #single-subject-subheading {
@@ -121,9 +125,9 @@
 
 .emphasise {
   font-weight: bold;
-  color: var(--grey-blue-1100);
   font-size: 1.3rem;
 }
+
 
 .bold {
   font-weight: bold;
