@@ -42,6 +42,9 @@
   --lime-500: #84b836;
 
   --green-600: #53a335;
+  --green-700: #4f8e39;
+  --green-800: #467734;
+  --green-900: #325d23;
 
   --leaf-100: #e7f1dd;
   --leaf-200: #d0dcc4;
@@ -155,11 +158,13 @@
     --nav-bottom-bar-3-dark-pt1: rgba(50, 50, 51, 1);
     --nav-bottom-bar-3-dark-pt2: rgba(50, 50, 51, 0);
 
-  --nav-light-btn-back-dark: var(--grey-blue-900);
+  --nav-light-btn-back-dark: #000;
   --nav-light-btn-text-dark: var(--leaf-200);
   --nav-light-btn-border-dark: var(--sea-green-200);
-  --nav-light-btn-back-hover-dark: var(--whitish-300);
-  --nav-light-btn-text-hover-dark: var(--grey-blue-1500);
+  /* --nav-light-btn-back-hover-dark: var(--whitish-300);
+  --nav-light-btn-text-hover-dark: var(--grey-blue-1500); */
+  --nav-light-btn-back-hover-dark: var(--green-900);
+  --nav-light-btn-text-hover-dark: #fff;
   --nav-light-btn-border-hover-dark: var(--green-600);
 
   /* --nav-dark-btn-back-dark: var(--grey-blue-1300);
@@ -169,8 +174,8 @@
   --nav-dark-btn-border-dark: var(--sea-green-200);
   /* --nav-dark-btn-back-hover-dark: #fff;
   --nav-dark-btn-text-hover-dark: var(--grey-blue-1700); */
-  --nav-dark-btn-back-hover-dark: var(--grey-blue-1100);
-  --nav-dark-btn-text-hover-dark: var(--whitish-200);
+  --nav-dark-btn-back-hover-dark: var(--green-900);
+  --nav-dark-btn-text-hover-dark: #fff;
   --nav-dark-btn-border-hover-dark: var(--lime-300);
 
   --github-back-dark: var(--whitish-100);

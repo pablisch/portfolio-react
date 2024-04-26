@@ -173,7 +173,7 @@ nav {
   height: 62px;
   border-radius: 15px;
   padding: 5px 15px;
-  transition: background-color 2s ease, border 2s ease, color 1s ease;
+  transition: all 0.5s ease;
   cursor: pointer;
   margin-right: 5px;
   max-width: 100px;
@@ -209,7 +209,7 @@ nav {
 }
 
 .nav-title:hover {
-  transition: background-color 1s ease, border 2s ease, color 1s ease;
+  transition: all 0.5s ease;
 }
 
 .nav-title-retro:hover {
@@ -291,7 +291,7 @@ nav h1 {
 }
 
 .nav-link {
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .nav-link-retro {
