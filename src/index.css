@@ -162,11 +162,15 @@
   --nav-light-btn-text-hover-dark: var(--grey-blue-1500);
   --nav-light-btn-border-hover-dark: var(--green-600);
 
-  --nav-dark-btn-back-dark: var(--grey-blue-1300);
+  /* --nav-dark-btn-back-dark: var(--grey-blue-1300);
+  --nav-dark-btn-text-dark: var(--leaf-200); */
+  --nav-dark-btn-back-dark: #000;
   --nav-dark-btn-text-dark: var(--leaf-200);
   --nav-dark-btn-border-dark: var(--sea-green-200);
-  --nav-dark-btn-back-hover-dark: #fff;
-  --nav-dark-btn-text-hover-dark: var(--grey-blue-1700);
+  /* --nav-dark-btn-back-hover-dark: #fff;
+  --nav-dark-btn-text-hover-dark: var(--grey-blue-1700); */
+  --nav-dark-btn-back-hover-dark: var(--grey-blue-1100);
+  --nav-dark-btn-text-hover-dark: var(--whitish-200);
   --nav-dark-btn-border-hover-dark: var(--lime-300);
 
   --github-back-dark: var(--whitish-100);

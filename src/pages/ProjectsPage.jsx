@@ -37,6 +37,7 @@ function ProjectsPage({
           focusProjectId={focusProjectId}
           setSelectedProject={setSelectedProject}
           isAvatarHovered={isAvatarHovered}
+          theme={theme}
         />
       ))}
     </ul>

@@ -31,6 +31,7 @@ function AboutPage({
           focusAboutId={focusAboutId}
           setSelectedAbout={setSelectedAbout}
           isAvatarHovered={isAvatarHovered}
+          theme={theme}
         />
       ))}
     </ul>
