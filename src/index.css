@@ -161,7 +161,7 @@
   --nav-bottom-bar-3-dark-pt2: rgba(243, 252, 253, 0);
 
   --nav-dark-btn-back-dark: var(--grey-blue-1300);
-  --nav-dark-btn-text-dark: var(--grey-blue-700);
+  --nav-dark-btn-text-dark: var(--leaf-200);
   --nav-dark-btn-border-dark: var(--sea-green-200);
   --nav-dark-btn-back-hover-dark: #fff;
   --nav-dark-btn-text-hover-dark: var(--grey-blue-1300);
@@ -202,7 +202,7 @@ li {
 }
 
 .app {
-  transition: background-color 7s ease;
+  transition: background-color 3s ease;
   min-height: calc(100vh - var(--navbar-height));
 }
 
@@ -220,7 +220,7 @@ li {
 }
 
 .avatar-hovered-app {
-  transition: background-color 2s ease;
+  transition: background-color 1s ease;
   background-color: var(--turquoise-400);
 }
 
