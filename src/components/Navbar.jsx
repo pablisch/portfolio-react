@@ -31,6 +31,7 @@ function Navbar({
   theme,
   setTheme,
 }) {
+  const [isRotating, setIsRotating] = useState(false);
   const screenWidth = useScreenWidth();
   const [isHamburgerSize, setIsHamburgerSize] = useState(
     screenWidth > 950 ? false : true
@@ -90,6 +91,10 @@ function Navbar({
     const newThemeIndex =
       themeIndex === themeStyles.length - 1 ? 0 : themeIndex + 1;
     setTheme(themeStyles[newThemeIndex]);
+    setIsRotating(true);
+    setTimeout(() => {
+      setIsRotating(false);
+    }, 500);
   };
 
   return (
@@ -196,7 +201,7 @@ function Navbar({
               <img
                 src='/images/settings-gear.png'
                 alt='settings button'
-                className={`github-logo github-logo-${theme} settings-icon settings-icon-${theme}`}
+                className={`github-logo github-logo-${theme} settings-icon settings-icon-${theme} ${isRotating ? 'rotate' : ''}`}
               />
             </div>
             {/* 👇🏻 HAMBURGER MENU BARS */}
