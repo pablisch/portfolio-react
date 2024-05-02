@@ -19,6 +19,7 @@ const ExtNavLink = ({
   return (
     <a
       href={page.url}
+      id={`${page.name}-nav-btn`}
       className={`${linkClass} ${isAvatarHovered ? page.avatarClass : ''}`}
       target={target}
       rel='noreferrer'>

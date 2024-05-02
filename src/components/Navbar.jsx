@@ -106,6 +106,7 @@ function Navbar({
         <div className='nav-container'>
           <div className='nav-left'>
             <img
+              id="nav-logo"
               className={`logo-image logo-image-${theme} ${
                 isAvatarHovered ? 'avatar-hovered-avatar' : ''
               }`}
@@ -118,7 +119,7 @@ function Navbar({
               className={`nav-title nav-title-${theme} ${
                 isAvatarHovered ? 'avatar-hovered-nav-title' : ''
               } ${section === 'projects' ? 'projects-title' : 'abouts-title'}`}>
-              <h1 onClick={handleNavTitleClick}>
+              <h1 id="nav-section-title-text" onClick={handleNavTitleClick}>
                 {section === 'projects'
                   ? 'My Projects'
                   : section === 'about'
@@ -164,6 +165,7 @@ function Navbar({
             {section === 'about' && !isTripleBurger && (
               <Link
                 to='/'
+                id='projects-section-link'
                 className={`nav-btn nav-btn-${theme} nav-section-link nav-section-link-${theme} ${
                   isAvatarHovered ? 'avatar-hovered-nav-section-link' : ''
                 }`}>
@@ -174,6 +176,7 @@ function Navbar({
             {section === 'projects' && !isTripleBurger && (
               <Link
                 to='/more-about-me'
+                id='about-section-link'
                 className={`nav-btn nav-btn-${theme} nav-section-link nav-section-link-${theme} ${
                   isAvatarHovered ? 'avatar-hovered-nav-section-link' : ''
                 }`}>
@@ -193,6 +196,7 @@ function Navbar({
               ))}
             {/* 👇🏻 SETTINGS BUTTON */}
             <div
+              id='settings-nav-btn'
               className={`nav-btn nav-btn-${theme} github-link-btn github-link-btn-${theme} settings-btn settings-btn-${theme}`}
               onClick={handleSettingsClick}
               // onMouseOver={handleHoverStart}
@@ -207,7 +211,7 @@ function Navbar({
             {/* 👇🏻 HAMBURGER MENU BARS */}
             {isHamburgerSize && (
               <div className='hamburger-box'>
-                <div className='hamburger' onClick={handleBurgerClick}>
+                <div id='hamburger' className='hamburger' onClick={handleBurgerClick}>
                   <span
                     className={`burger-bar burger-bar-${theme} buntop ${
                       isHamburgerOpen ? 'burger-open' : ''

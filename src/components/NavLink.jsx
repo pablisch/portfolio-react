@@ -23,6 +23,7 @@ function NavLink({ children, project, setFocusProjectId, setSelectedProject, cla
 
   return (
     <div
+      id={`${project.identifier}-nav-btn`}
       className={className}
       onClick={() => handleClick(project)}
       onMouseOver={handleHoverStart}

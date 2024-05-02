@@ -2,6 +2,7 @@ export const projectData = [
   {
     // LUPO
     id: '1',
+    identifier: 'lupo',
     name: 'London Underground Phony Orchestra',
     navName: 'LUPO',
     panelName: 'LUPO',
@@ -91,6 +92,7 @@ export const projectData = [
   {
     // Gallery
     id: '2',
+    identifier: 'gallery',
     name: 'Gallery App',
     // navName: 'Gallery App',
     img: 'gallery-app-thumb.png',
@@ -164,6 +166,7 @@ export const projectData = [
   {
     // FarceBook
     id: '3',
+    identifier: 'farcebook',
     name: 'FarceBook',
     navName: 'Farce Book',
     panelName: 'FarceBook',
@@ -259,6 +262,7 @@ export const projectData = [
   {
     // Knot Very Useful
     id: '4',
+    identifier: 'knot',
     name: 'Knot Very Useful',
     // navName: 'Knot Very Useful',
     img: 'knot-very-useful-small.png',
@@ -320,6 +324,7 @@ export const projectData = [
   {
     // Alternative Routes
     id: '5',
+    identifier: 'alternative',
     name: 'Alternative Routes',
     navName: 'Alter Native Routes',
     img: 'alternativeRoutes-small.png',
@@ -411,6 +416,7 @@ export const projectData = [
   {
     // Eclipse
     id: '6',
+    identifier: 'eclipse',
     name: 'Eclipse Battle Calculator',
     navName: 'Eclipse Battle Calc',
     img: 'eclipse-combat-small.png',
@@ -525,6 +531,7 @@ export const projectData = [
   // {
   //   // Picture Pad
   //   id: '5',
+  // identifier: 'picturepad',
   //   name: 'Picture Pad',
   //   // navName: 'Picture Pad',
   //   img: 'picture-pad-small.png',
@@ -627,6 +634,7 @@ export const projectData = [
   // {
   //   // Lair BnB
   //   id: '8',
+  // identifier: 'lair',
   //   name: 'Lair BnB',
   //   navName: 'Lair BnB',
   //   img: 'lair-bnb-screen-small.png',
