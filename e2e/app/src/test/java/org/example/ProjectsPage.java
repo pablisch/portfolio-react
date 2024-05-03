@@ -10,28 +10,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ProjectsPage {
     protected WebDriver driver;
     private final By lupoImageBy = By.cssSelector("img[alt='London Underground Phony Orchestra']");
+    private final By galleryImageBy = By.cssSelector("img[alt='Gallery App']");
+    private final By farcebookImageBy = By.cssSelector("img[alt='FarceBook']");
+    private final By knotImageBy = By.cssSelector("img[alt='Knot Very Useful']");
+    private final By alternativeImageBy = By.cssSelector("img[alt='Alternative Routes']");
+    private final By eclipseImageBy = By.cssSelector("img[alt='Eclipse Battle Calculator']");
+
+
 //    private final By girlAndGoatImageBy = By.cssSelector("img[id='image/v1703781467/polmlpk8iugb6lrfndue.jpg']");
-//    private final By legTattoosImageBy = By.cssSelector("img[id='image/v1703781461/s7w8zritrmj5qzj6yays.jpg']");
-//    private final By dustbinImageBy = By.cssSelector("img[id='image/v1703781451/lb2jtrormhzlrhdpdhe7.jpg']");
-//    private final By noviceMonksImageBy = By.cssSelector("img[id='image/v1703781443/moadwvgvunbnhtappmm8.jpg']");
-//    private final By deleteIconContainerBy = By.cssSelector("div[id='delete-icon-container']");
-//    private final By deleteIconBy = By.cssSelector("svg[id='delete-icon']");
-//    private final By deleteBtnContainer = By.cssSelector("div[id='delete-btn-container']");
 //    private final By cancelDeleteImageBtn = By.cssSelector("button[id='cancel-delete-image-btn']");
-//    private final By confirmDeleteImageBtn = By.cssSelector("button[id='confirm-delete-image-btn']");
-//    private final By hoverInfoContainerBy = By.cssSelector("div[id='hover-info-container']");
-//    private final By hoverInfoLeftSideBy = By.cssSelector("div[id='hover-info-left-side']");
-//    private final By hoverInfoRightSideBy = By.cssSelector("div[id='hover-info-right-side']");
 //    private final By hoverInfoAvatarImageBy = By.cssSelector("img[id='hover-info-avatar-image']");
 //    private final By hoverInfoAvatarLetterContainerBy = By.cssSelector("div[id='hover-info-avatar-letter-container']");
-//    private final By hoverInfoAvatarLetterBy = By.cssSelector("h1[id='hover-info-avatar-letter']");
-//    private final By hoverInfoUsernameBy = By.cssSelector("p[id='hover-info-username']");
-//    private final By hoverInfoCommentsNumBy = By.cssSelector("p[id='hover-info-comments-num']");
-//    private final By hoverInfoCommentsIconBy = By.cssSelector("svg[id='hover-info-comments-icon']");
 //    private final By hoverInfoLikesNumBy = By.cssSelector("p[id='hover-info-likes-num']");
-//    private final By hoverInfoLikesIconBy = By.cssSelector("svg[id='hover-info-likes-icon']");
 //    private final By hoverInfoLikesOutlineIconBy = By.cssSelector("svg[id='hover-info-likes-outline-icon']");
-
 
     public ProjectsPage(WebDriver driver) {
         this.driver = driver;
@@ -48,27 +39,12 @@ public class ProjectsPage {
     public By getElementBy(String identifier) {
         return switch (identifier) {
             case "lupoImage" -> lupoImageBy;
-//            case "girlAndGoat" -> girlAndGoatImageBy;
-//            case "legTattoos" -> legTattoosImageBy;
-//            case "indianPublicBin" -> dustbinImageBy;
-//            case "noviceBuddhistMonks" -> noviceMonksImageBy;
-//            case "deleteIconContainer" -> deleteIconContainerBy;
-//            case "deleteIcon" -> deleteIconBy;
-//            case "deleteBtnContainer" -> deleteBtnContainer;
-//            case "cancelDeleteImageBtn" -> cancelDeleteImageBtn;
-//            case "confirmDeleteImageBtn" -> confirmDeleteImageBtn;
-//            case "hoverInfoContainer" -> hoverInfoContainerBy;
-//            case "hoverInfoLeftSide" -> hoverInfoLeftSideBy;
-//            case "hoverInfoRightSide" -> hoverInfoRightSideBy;
-//            case "hoverInfoAvatarImage" -> hoverInfoAvatarImageBy;
-//            case "hoverInfoAvatarLetterContainer" -> hoverInfoAvatarLetterContainerBy;
-//            case "hoverInfoAvatarLetter" -> hoverInfoAvatarLetterBy;
-//            case "hoverInfoUsername" -> hoverInfoUsernameBy;
-//            case "hoverInfoCommentsNum" -> hoverInfoCommentsNumBy;
-//            case "hoverInfoCommentsIcon" -> hoverInfoCommentsIconBy;
-//            case "hoverInfoLikesNum" -> hoverInfoLikesNumBy;
-//            case "hoverInfoLikesIcon" -> hoverInfoLikesIconBy;
-//            case "hoverInfoLikesOutlineIcon" -> hoverInfoLikesOutlineIconBy;
+            case "galleryImage" -> galleryImageBy;
+            case "farcebookImage" -> farcebookImageBy;
+            case "knotImage" -> knotImageBy;
+            case "alternativeImage" -> alternativeImageBy;
+            case "eclipseImage" -> eclipseImageBy;
+//
             default -> throw new IllegalArgumentException("Invalid identifier: " + identifier);
         };
     }

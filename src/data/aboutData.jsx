@@ -2,6 +2,7 @@ export const aboutData = [
   {
     // SPACE
     id: '11',
+    identifier: 'space',
     name: 'Edge of Space Explorer',
     navName: 'Space Explorer',
     panelName: 'Edge of Space Explorer',
@@ -30,6 +31,7 @@ export const aboutData = [
   {
     // FOREST
     id: '12',
+    identifier: 'forest',
     name: 'Forest Creator',
     navName: 'Forest Creator',
     panelName: 'Forest Creator',
@@ -59,6 +61,7 @@ export const aboutData = [
   {
     // STEM
     id: '13',
+    identifier: 'stem',
     name: 'Primary STEM and Computing Lead',
     navName: 'STEM in Schools',
     panelName: 'Primary STEM and Computing Lead',
@@ -88,6 +91,7 @@ export const aboutData = [
   {
     // FOREST SCHOOL LEADER
     id: '14',
+    identifier: 'fs',
     name: 'Forest School Leader',
     navName: 'Forest School',
     panelName: 'Forest School Leader',
@@ -117,6 +121,7 @@ export const aboutData = [
   {
     // FURNITURE
     id: '15',
+    identifier: 'furniture',
     name: 'Furniture Designer & Maker',
     navName: 'Furniture & Craft',
     panelName: 'Furniture Designer & Maker',
@@ -146,6 +151,7 @@ export const aboutData = [
   {
     // LEARNING AND CURIOSITY
     id: '16',
+    identifier: 'curiosity',
     name: 'Lifelong Learning & Curiosity',
     navName: 'Learning & Curiosity',
     panelName: 'Lifelong Learning & Curiosity',
