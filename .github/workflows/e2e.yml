@@ -11,13 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    # - name: Checkout code
-    #   uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
     - name: Run e2e automation tests
       env:
         NODE_ENV: TEST
-      working-directory: /Users/pablo/Documents/Repos/projects/portfolio-react/e2e
+      working-directory: e2e
       run: |
         shell: /bin/bash
         gradle test
