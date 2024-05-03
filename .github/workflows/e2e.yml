@@ -21,9 +21,8 @@ jobs:
         java-version: '17'
 
     - name: Run e2e automation tests
-      env:
-        NODE_ENV: TEST
-      working-directory: e2e
-      shell: bash
-      run: |
-        ./gradlew test
+      # env:
+      #   NODE_ENV: TEST
+      # working-directory: e2e
+      # shell: bash
+      run: ./gradlew test
