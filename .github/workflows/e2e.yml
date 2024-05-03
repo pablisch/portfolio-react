@@ -14,10 +14,10 @@ jobs:
     # - name: Checkout code
     #   uses: actions/checkout@v3
 
-    - name: Server and tests on backend
+    - name: Run e2e automation tests
       env:
         NODE_ENV: TEST
-      working-directory: e2e
+      working-directory: /Users/pablo/Documents/Repos/projects/portfolio-react/e2e
       run: |
         shell: /bin/bash
         gradle test
