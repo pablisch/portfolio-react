@@ -20,4 +20,4 @@ jobs:
       working-directory: e2e
       shell: bash
       run: |
-        gradle test
+        ./gradlew test
