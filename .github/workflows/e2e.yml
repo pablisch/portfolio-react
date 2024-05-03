@@ -1,0 +1,22 @@
+name: e2e automation tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Server and tests on backend
+      env:
+        NODE_ENV: TEST
+      working-directory: e2e
+      run:
+        gradle test
