@@ -382,12 +382,6 @@ li {
 
 /* SECTION LINK BUTTON GOES INTO BURGER MENU */
 @media (max-width: 390px) {
-  /* .hamburger-blocks-container {
-    width: 300px;
-  }
-  .burger-open-spacer {
-    padding-top: 220px;
-  } */
   .hamburger-blocks-container {
     width: 350px;
   }
