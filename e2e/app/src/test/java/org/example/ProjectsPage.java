@@ -29,7 +29,8 @@ public class ProjectsPage {
     }
 
     public void navigate() {
-        driver.get("http://localhost:5173");
+//        driver.get("http://localhost:5173");
+        driver.get("https://pablo-joyce.onrender.com/");
     }
     public String getPageTitle() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
