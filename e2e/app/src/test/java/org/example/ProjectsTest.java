@@ -21,10 +21,10 @@ public class ProjectsTest {
     static void launchBrowser() {
         WebDriverManager.chromedriver().setup();
 
-        ChromeOptions options = new ChromeOptions();
-        options.setCapability("browserVersion", "124.0.6367.60");
+//        ChromeOptions options = new ChromeOptions();
+//        options.setCapability("browserVersion", "124.0.6367.60");
 
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
         System.out.println(driver.getCapabilities().getBrowserVersion());
 
         projectsPage = new ProjectsPage(driver);
