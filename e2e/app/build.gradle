@@ -45,6 +45,12 @@ application {
     mainClass = 'org.example.App'
 }
 
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
+
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
