@@ -6,6 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
@@ -19,8 +20,13 @@ public class ProjectsTest {
     @BeforeAll
     static void launchBrowser() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+
+        ChromeOptions options = new ChromeOptions();
+        options.setCapability("browserVersion", "124.0.6367.60");
+
+        driver = new ChromeDriver(options);
         System.out.println(driver.getCapabilities().getBrowserVersion());
+
         projectsPage = new ProjectsPage(driver);
         navbar = new Navbar(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
