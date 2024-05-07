@@ -62,6 +62,17 @@ public class ProjectsPage {
             return false;
         }
     }
+    public boolean checkPresenceOfExpectedElement(String identifier) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.presenceOfElementLocated(getElementBy(identifier)));
+
+        try {
+            WebElement element = driver.findElement(getElementBy(identifier));
+            return element.isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
     public String getElementText(String identifier) {
         WebElement element = driver.findElement(getElementBy(identifier));
         return element.getText();
