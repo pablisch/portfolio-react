@@ -20,6 +20,7 @@ public class ProjectsTest {
     static void launchBrowser() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        System.out.println(driver.getCapabilities().getBrowserVersion());
         projectsPage = new ProjectsPage(driver);
         navbar = new Navbar(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
