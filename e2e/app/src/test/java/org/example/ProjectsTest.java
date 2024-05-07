@@ -21,10 +21,9 @@ public class ProjectsTest {
     static void launchBrowser() {
         WebDriverManager.chromedriver().setup();
 
-//        ChromeOptions options = new ChromeOptions();
-//        options.setCapability("browserVersion", "124.0.6367.60");
-
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
+        driver = new ChromeDriver(options);
         System.out.println(driver.getCapabilities().getBrowserVersion());
 
         projectsPage = new ProjectsPage(driver);
