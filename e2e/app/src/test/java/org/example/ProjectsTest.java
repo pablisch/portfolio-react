@@ -22,7 +22,7 @@ public class ProjectsTest {
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+        options.addArguments("--remote-debugging-pipe");
         driver = new ChromeDriver(options);
         System.out.println(driver.getCapabilities().getBrowserVersion());
 
