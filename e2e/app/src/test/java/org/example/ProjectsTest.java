@@ -22,7 +22,12 @@ public class ProjectsTest {
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+
+        // Workaround: Chrome only working in GH Actions if running in headless mode
+        if(System.getenv("CI") != null) {
+            options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+        }
+
         driver = new ChromeDriver(options);
         System.out.println(driver.getCapabilities().getBrowserVersion());
 
@@ -36,26 +41,26 @@ public class ProjectsTest {
         projectsPage.navigate();
     }
 
-//    @Test
-//    void testTextOfNavbarProjectSectionLinkButtons() {
-//        assertTrue(true);
-//    }
-//    @DisplayName("Test text of navbar project section link buttons")
-//    @ParameterizedTest(name = "Test text of {0} is {1}")
-//    @CsvSource({
-//            "navLupoBtn, LUPO",
-//            "navGalleryBtn, Gallery App",
-//            "navFarcebookBtn, Farce Book",
-//            "navKnotBtn, Knot Very Useful",
-//            "navAlternativeBtn, Alter Native Routes",
-//            "navEclipseBtn, Eclipse Battle Calc",
-//    })
-//    void testNavElementText(String identifier, String expectedText) {
-//        // Arrange
-//        String element = navbar.getNavElementText(identifier);
-//        // Assert
-//        assertEquals(expectedText, element);
-//    }
+    @Test
+    void pretendTest() {
+        assertTrue(true);
+    }
+    @DisplayName("Test text of navbar project section link buttons")
+    @ParameterizedTest(name = "Test text of {0} is {1}")
+    @CsvSource({
+            "navLupoBtn, LUPO",
+            "navGalleryBtn, Gallery App",
+            "navFarcebookBtn, Farce Book",
+            "navKnotBtn, Knot Very Useful",
+            "navAlternativeBtn, Alter Native Routes",
+            "navEclipseBtn, Eclipse Battle Calc",
+    })
+    void testNavElementText(String identifier, String expectedText) throws InterruptedException {
+        // Arrange
+        String element = navbar.getNavElementText(identifier);
+        // Assert
+        assertEquals(expectedText, element);
+    }
     @DisplayName("Test absence of navbar about section link buttons")
     @ParameterizedTest(name = "Test presence of {0} image")
     @CsvSource({
@@ -81,7 +86,7 @@ public class ProjectsTest {
         assertEquals("My Projects", element);
     }
     @Test
-    void testPresenceOfNavLogo() {
+    void testPresenceOfNavLogo() throws InterruptedException {
         // Arrange
         String identifier = "navLogo";
         boolean isPresent = navbar.checkNavElementPresence(identifier);
