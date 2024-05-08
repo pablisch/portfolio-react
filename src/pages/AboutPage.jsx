@@ -1,9 +1,10 @@
 import { aboutData } from '../data/aboutData';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import AboutPanel from '../components/AboutPanel';
 import PropTypes from 'prop-types';
 import '../components/projectAndAboutPanel.css';
 import { scrollToTop } from '../utils/helpers';
+import { ThemeContext } from '../context/ContextProviders';
 
 function AboutPage({
   setFocusAboutId,
@@ -12,8 +13,8 @@ function AboutPage({
   section,
   setSection,
   isAvatarHovered,
-  theme,
 }) {
+  const { theme } = useContext(ThemeContext);
   
   useEffect(() => {
     if (section !== 'about') setSection('about')
@@ -31,7 +32,6 @@ function AboutPage({
           focusAboutId={focusAboutId}
           setSelectedAbout={setSelectedAbout}
           isAvatarHovered={isAvatarHovered}
-          theme={theme}
         />
       ))}
     </ul>
@@ -45,7 +45,6 @@ AboutPage.propTypes = {
   section: PropTypes.string.isRequired,
   setSection: PropTypes.func.isRequired,
   isAvatarHovered: PropTypes.bool.isRequired,
-  theme: PropTypes.string.isRequired,
 };
 
 export default AboutPage;

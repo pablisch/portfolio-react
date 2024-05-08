@@ -10,6 +10,7 @@ import axios from 'axios';
 import { projectData } from './data/projectData';
 import { ScreenWidthProvider } from './context/ScreenWidthProvider';
 import HamburgerBlocks from './components/HamburgerBlocks';
+import { ThemeContext } from './context/ContextProviders';
 
 const apiUrls = projectData
   .filter((project) => project.apiWakeUpUrl)
@@ -45,15 +46,21 @@ function App() {
 
   return (
     <ScreenWidthProvider>
-    <div className={`app app-${theme} ${isAvatarHovered ? 'avatar-hovered-app' : ''}`}>
-      <BrowserRouter>
-        <Navbar
-          setFocusProjectId={setFocusProjectId}
-          setSelectedProject={setSelectedProject}
-          setFocusAboutId={setFocusAboutId}
-          setSelectedAbout={setSelectedAbout}
-          section={section}
-          isAvatarHovered={isAvatarHovered}
+      <ThemeContext.Provider value={{theme, setTheme}}>
+
+      
+      <div
+        className={`app app-${theme} ${
+          isAvatarHovered ? 'avatar-hovered-app' : ''
+        }`}>
+        <BrowserRouter>
+          <Navbar
+            setFocusProjectId={setFocusProjectId}
+            setSelectedProject={setSelectedProject}
+            setFocusAboutId={setFocusAboutId}
+            setSelectedAbout={setSelectedAbout}
+            section={section}
+            isAvatarHovered={isAvatarHovered}
             setIsAvatarHovered={setIsAvatarHovered}
             isHamburgerOpen={isHamburgerOpen}
             setIsHamburgerOpen={setIsHamburgerOpen}
@@ -62,83 +69,82 @@ function App() {
             setIsDoubleBurger={setIsDoubleBurger}
             isTripleBurger={isTripleBurger}
             setIsTripleBurger={setIsTripleBurger}
-            theme={theme}
-            setTheme={setTheme}
           />
-          {(isHamburgerOpen && isHamburgerShowing) && <HamburgerBlocks 
-            section={section}
-            isAvatarHovered={isAvatarHovered}
-            setFocusAboutId={setFocusAboutId}
-            setFocusProjectId={setFocusProjectId}
-            setSelectedAbout={setSelectedAbout}
-            setSelectedProject={setSelectedProject}
-            setIsHamburgerOpen={setIsHamburgerOpen}
-            isDoubleBurger={isDoubleBurger}
-            isTripleBurger={isTripleBurger}
-          />}
-        <div className={`all-pages ${isHamburgerOpen ? 'burger-open-spacer' : ''}`}></div>
-        <Routes>
-          <Route
-            path='/'
-            element={
-              <ProjectsPage
-                focusProjectId={focusProjectId}
-                setFocusProjectId={setFocusProjectId}
-                setSelectedProject={setSelectedProject}
-                section={section}
-                setSection={setSection}
-                isAvatarHovered={isAvatarHovered}
-                theme={theme}
-              />
-            }
-          />
-          <Route
-            path='/project'
-            element={<Navigate to='/' replace />}
-          />
-          <Route
-            path='/more-about-me'
-            element={
-              <AboutPage
-                setFocusAboutId={setFocusAboutId}
-                focusAboutId={focusAboutId}
-                setSelectedAbout={setSelectedAbout}
-                section={section}
-                setSection={setSection}
-                isAvatarHovered={isAvatarHovered}
-                theme={theme}
-              />
-            }
-          />
-          <Route
-            path='/project/:id'
-            element={
-              <SingleProjectPage
-                selectedProject={selectedProject}
-                setSelectedProject={setSelectedProject}
-                section={section}
-                setSection={setSection}
-                theme={theme}
-              />
-            }
-          />
-          <Route
-            path='/more-about-me/:id'
-            element={
-              <SingleAboutPage
-                selectedAbout={selectedAbout}
-                isAvatarHovered={isAvatarHovered}
-                setSelectedAbout={setSelectedAbout}
-                section={section}
-                setSection={setSection}
-                theme={theme}
-              />
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-      </div>
-      </ScreenWidthProvider>
+          {isHamburgerOpen && isHamburgerShowing && (
+            <HamburgerBlocks
+              section={section}
+              isAvatarHovered={isAvatarHovered}
+              setFocusAboutId={setFocusAboutId}
+              setFocusProjectId={setFocusProjectId}
+              setSelectedAbout={setSelectedAbout}
+              setSelectedProject={setSelectedProject}
+              setIsHamburgerOpen={setIsHamburgerOpen}
+              isDoubleBurger={isDoubleBurger}
+              isTripleBurger={isTripleBurger}
+            />
+          )}
+          <div
+            className={`all-pages ${
+              isHamburgerOpen ? 'burger-open-spacer' : ''
+            }`}></div>
+          <Routes>
+            <Route
+              path='/'
+              element={
+                <ProjectsPage
+                  focusProjectId={focusProjectId}
+                  setFocusProjectId={setFocusProjectId}
+                  setSelectedProject={setSelectedProject}
+                  section={section}
+                  setSection={setSection}
+                  isAvatarHovered={isAvatarHovered}
+                />
+              }
+            />
+            <Route path='/project' element={<Navigate to='/' replace />} />
+            <Route
+              path='/more-about-me'
+              element={
+                <AboutPage
+                  setFocusAboutId={setFocusAboutId}
+                  focusAboutId={focusAboutId}
+                  setSelectedAbout={setSelectedAbout}
+                  section={section}
+                  setSection={setSection}
+                  isAvatarHovered={isAvatarHovered}
+                />
+              }
+            />
+            <Route
+              path='/project/:id'
+              element={
+                <SingleProjectPage
+                  selectedProject={selectedProject}
+                  setSelectedProject={setSelectedProject}
+                  section={section}
+                  setSection={setSection}
+                  theme={theme}
+                />
+              }
+            />
+            <Route
+              path='/more-about-me/:id'
+              element={
+                <SingleAboutPage
+                  selectedAbout={selectedAbout}
+                  isAvatarHovered={isAvatarHovered}
+                  setSelectedAbout={setSelectedAbout}
+                  section={section}
+                  setSection={setSection}
+                  theme={theme}
+                />
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+        </div>
+        </ThemeContext.Provider>
+    </ScreenWidthProvider>
   );
 }
 

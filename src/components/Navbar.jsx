@@ -1,6 +1,6 @@
 import NavLink from './NavLink';
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './Navbar.css';
 import { projectData } from '../data/projectData';
 import { aboutData } from '../data/aboutData';
@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import ExtNavLink from './ExtNavLink';
 import { useScreenWidth } from '../context/ScreenWidthProvider';
 import { scrollToTop } from '../utils/helpers';
+import { ThemeContext } from '../context/ContextProviders';
 
 const themeStyles = ['retro', 'light', 'dark'];
 // const themeStyles = ['retro', 'light', 'dark', 'simple'];
@@ -28,14 +29,13 @@ function Navbar({
   setIsDoubleBurger,
   isTripleBurger,
   setIsTripleBurger,
-  theme,
-  setTheme,
 }) {
   const [isRotating, setIsRotating] = useState(false);
   const screenWidth = useScreenWidth();
   const [isHamburgerSize, setIsHamburgerSize] = useState(
     screenWidth > 950 ? false : true
   );
+  const {theme, setTheme} = useContext(ThemeContext)
 
   const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
@@ -191,7 +191,6 @@ function Navbar({
                   key={link.name}
                   page={link}
                   target={link.target}
-                  theme={theme}
                 />
               ))}
             {/* 👇🏻 SETTINGS BUTTON */}
@@ -258,8 +257,6 @@ Navbar.propTypes = {
   setIsDoubleBurger: PropTypes.func.isRequired,
   isTripleBurger: PropTypes.bool.isRequired,
   setIsTripleBurger: PropTypes.func.isRequired,
-  theme: PropTypes.string.isRequired,
-  setTheme: PropTypes.func.isRequired,
 };
 
 export default Navbar;
