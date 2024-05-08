@@ -9,17 +9,12 @@ import PropTypes from 'prop-types';
 import ExtNavLink from './ExtNavLink';
 import { useScreenWidth } from '../context/ScreenWidthProvider';
 import { scrollToTop } from '../utils/helpers';
-import { ThemeContext } from '../context/ContextProviders';
+import { ThemeContext, ProjectAboutContext } from '../context/ContextProviders';
 
 const themeStyles = ['retro', 'light', 'dark'];
 // const themeStyles = ['retro', 'light', 'dark', 'simple'];
 
 function Navbar({
-  setFocusProjectId,
-  setSelectedProject,
-  setFocusAboutId,
-  setSelectedAbout,
-  section,
   isAvatarHovered,
   setIsAvatarHovered,
   isHamburgerOpen,
@@ -35,7 +30,8 @@ function Navbar({
   const [isHamburgerSize, setIsHamburgerSize] = useState(
     screenWidth > 950 ? false : true
   );
-  const {theme, setTheme} = useContext(ThemeContext)
+  const { theme, setTheme } = useContext(ThemeContext);
+  const { setFocusProjectId, setSelectedProject, setFocusAboutId, setSelectedAbout, section } = useContext(ProjectAboutContext);
 
   const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
@@ -106,7 +102,7 @@ function Navbar({
         <div className='nav-container'>
           <div className='nav-left'>
             <img
-              id="nav-logo"
+              id='nav-logo'
               className={`logo-image logo-image-${theme} ${
                 isAvatarHovered ? 'avatar-hovered-avatar' : ''
               }`}
@@ -119,7 +115,7 @@ function Navbar({
               className={`nav-title nav-title-${theme} ${
                 isAvatarHovered ? 'avatar-hovered-nav-title' : ''
               } ${section === 'projects' ? 'projects-title' : 'abouts-title'}`}>
-              <h1 id="nav-section-title-text" onClick={handleNavTitleClick}>
+              <h1 id='nav-section-title-text' onClick={handleNavTitleClick}>
                 {section === 'projects'
                   ? 'My Projects'
                   : section === 'about'
@@ -187,11 +183,7 @@ function Navbar({
             {linkData.length &&
               !isDoubleBurger &&
               linkData.map((link) => (
-                <ExtNavLink
-                  key={link.name}
-                  page={link}
-                  target={link.target}
-                />
+                <ExtNavLink key={link.name} page={link} target={link.target} />
               ))}
             {/* 👇🏻 SETTINGS BUTTON */}
             <div
@@ -204,13 +196,18 @@ function Navbar({
               <img
                 src='/images/settings-gear.png'
                 alt='settings button'
-                className={`github-logo github-logo-${theme} settings-icon settings-icon-${theme} ${isRotating ? 'rotate' : ''}`}
+                className={`github-logo github-logo-${theme} settings-icon settings-icon-${theme} ${
+                  isRotating ? 'rotate' : ''
+                }`}
               />
             </div>
             {/* 👇🏻 HAMBURGER MENU BARS */}
             {isHamburgerSize && (
               <div className='hamburger-box'>
-                <div id='hamburger' className='hamburger' onClick={handleBurgerClick}>
+                <div
+                  id='hamburger'
+                  className='hamburger'
+                  onClick={handleBurgerClick}>
                   <span
                     className={`burger-bar burger-bar-${theme} buntop ${
                       isHamburgerOpen ? 'burger-open' : ''
@@ -243,11 +240,6 @@ function Navbar({
 }
 
 Navbar.propTypes = {
-  setFocusProjectId: PropTypes.func.isRequired,
-  setSelectedProject: PropTypes.func.isRequired,
-  setFocusAboutId: PropTypes.func.isRequired,
-  setSelectedAbout: PropTypes.func.isRequired,
-  section: PropTypes.string.isRequired,
   isAvatarHovered: PropTypes.bool.isRequired,
   setIsAvatarHovered: PropTypes.func.isRequired,
   isHamburgerOpen: PropTypes.bool.isRequired,
