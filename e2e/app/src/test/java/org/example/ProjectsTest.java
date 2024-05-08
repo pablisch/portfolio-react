@@ -5,31 +5,21 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ProjectsTest {
-    private static ChromeDriver driver;
+    private static FirefoxDriver driver;
     private static ProjectsPage projectsPage;
     private static Navbar navbar;
 
     @BeforeAll
     static void launchBrowser() {
-        WebDriverManager.chromedriver().setup();
-
-        ChromeOptions options = new ChromeOptions();
-
-        // Workaround: Chrome only working in GH Actions if running in headless mode
-        if(System.getenv("CI") != null) {
-            options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
-        }
-
-        driver = new ChromeDriver(options);
-        System.out.println(driver.getCapabilities().getBrowserVersion());
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
 
         projectsPage = new ProjectsPage(driver);
         navbar = new Navbar(driver);
