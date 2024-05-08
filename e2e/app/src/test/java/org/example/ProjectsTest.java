@@ -42,7 +42,7 @@ public class ProjectsTest {
     }
 
     @Test
-    void pretendTest() {
+    void testTextOfNavbarProjectSectionLinkButtons() {
         assertTrue(true);
     }
     @DisplayName("Test text of navbar project section link buttons")
