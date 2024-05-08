@@ -55,8 +55,9 @@ public class ProjectsTest {
             "navAlternativeBtn, Alter Native Routes",
             "navEclipseBtn, Eclipse Battle Calc",
     })
-    void testNavElementText(String identifier, String expectedText) {
+    void testNavElementText(String identifier, String expectedText) throws InterruptedException {
         // Arrange
+        Thread.sleep(2000); // TODO: Replace with a better wait!
         String element = navbar.getNavElementText(identifier);
         // Assert
         assertEquals(expectedText, element);
@@ -86,9 +87,10 @@ public class ProjectsTest {
         assertEquals("My Projects", element);
     }
     @Test
-    void testPresenceOfNavLogo() {
+    void testPresenceOfNavLogo() throws InterruptedException {
         // Arrange
         String identifier = "navLogo";
+        Thread.sleep(2000); // TODO: Replace with a better wait!
         boolean isPresent = navbar.checkNavElementPresence(identifier);
         // Assert
         assertTrue(isPresent);
