@@ -31,7 +31,7 @@ function Navbar({
     screenWidth > 950 ? false : true
   );
   const { theme, setTheme } = useContext(ThemeContext);
-  const { setFocusProjectId, setSelectedProject, setFocusAboutId, setSelectedAbout, section } = useContext(ProjectAboutContext);
+  const { setSelectedProject, section } = useContext(ProjectAboutContext);
 
   const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
@@ -134,8 +134,7 @@ function Navbar({
                     }`}
                     key={project.id}
                     project={project}
-                    setFocusProjectId={setFocusProjectId}
-                    setSelectedProject={setSelectedProject}>
+                    >
                     {project.navName || project.name}
                   </NavLink>
                 ))}
@@ -149,8 +148,7 @@ function Navbar({
                     }`}
                     key={about.id}
                     project={about}
-                    setFocusProjectId={setFocusAboutId}
-                    setSelectedProject={setSelectedAbout}>
+                    >
                     {about.navName || about.name}
                   </NavLink>
                 ))}
