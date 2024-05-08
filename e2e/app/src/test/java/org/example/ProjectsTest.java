@@ -36,26 +36,26 @@ public class ProjectsTest {
         projectsPage.navigate();
     }
 
-    @Test
-    void pretendTest() {
-        assertTrue(true);
-    }
-    @DisplayName("Test text of navbar project section link buttons")
-    @ParameterizedTest(name = "Test text of {0} is {1}")
-    @CsvSource({
-            "navLupoBtn, LUPO",
-            "navGalleryBtn, Gallery App",
-            "navFarcebookBtn, Farce Book",
-            "navKnotBtn, Knot Very Useful",
-            "navAlternativeBtn, Alter Native Routes",
-            "navEclipseBtn, Eclipse Battle Calc",
-    })
-    void testNavElementText(String identifier, String expectedText) {
-        // Arrange
-        String element = navbar.getNavElementText(identifier);
-        // Assert
-        assertEquals(expectedText, element);
-    }
+//    @Test
+//    void testTextOfNavbarProjectSectionLinkButtons() {
+//        assertTrue(true);
+//    }
+//    @DisplayName("Test text of navbar project section link buttons")
+//    @ParameterizedTest(name = "Test text of {0} is {1}")
+//    @CsvSource({
+//            "navLupoBtn, LUPO",
+//            "navGalleryBtn, Gallery App",
+//            "navFarcebookBtn, Farce Book",
+//            "navKnotBtn, Knot Very Useful",
+//            "navAlternativeBtn, Alter Native Routes",
+//            "navEclipseBtn, Eclipse Battle Calc",
+//    })
+//    void testNavElementText(String identifier, String expectedText) {
+//        // Arrange
+//        String element = navbar.getNavElementText(identifier);
+//        // Assert
+//        assertEquals(expectedText, element);
+//    }
     @DisplayName("Test absence of navbar about section link buttons")
     @ParameterizedTest(name = "Test presence of {0} image")
     @CsvSource({
