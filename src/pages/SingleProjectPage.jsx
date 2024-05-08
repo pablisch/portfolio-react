@@ -3,17 +3,19 @@ import './SingleProjectAndAboutPage.css';
 import { projectData } from '../data/projectData';
 import PropTypes from 'prop-types';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import Button from '../components/Button';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 import { scrollToTop } from '../utils/helpers';
 import { useScreenWidth } from '../context/ScreenWidthProvider';
+import { ThemeContext } from '../context/ContextProviders';
 
 const lastProjectId = projectData[projectData.length - 1].id;
 const firstProjectId = projectData[0].id;
 
-const SingleProjectPage = ({ selectedProject, setSelectedProject, section, setSection, theme }) => {
+const SingleProjectPage = ({ selectedProject, setSelectedProject, section, setSection }) => {
+  const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
   const screenWidth = useScreenWidth();
 
@@ -157,7 +159,7 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject, section, setSe
       </div>
         <div id='single-subject-lower-section'>
           <div id='single-project-technologiesText' className='paragraph'>
-            <p className='project-text'>{selectedProject.technologiesText}</p>
+            <div className='project-text'>{selectedProject.technologiesText}</div>
           </div>
         </div>
       </>}
@@ -171,7 +173,6 @@ SingleProjectPage.propTypes = {
   setSelectedProject: PropTypes.func.isRequired,
   section: PropTypes.string.isRequired,
   setSection: PropTypes.func.isRequired,
-  theme: PropTypes.string.isRequired,
 };
 
 export default SingleProjectPage;

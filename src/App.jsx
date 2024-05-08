@@ -123,7 +123,6 @@ function App() {
                   setSelectedProject={setSelectedProject}
                   section={section}
                   setSection={setSection}
-                  theme={theme}
                 />
               }
             />
@@ -136,7 +135,6 @@ function App() {
                   setSelectedAbout={setSelectedAbout}
                   section={section}
                   setSection={setSection}
-                  theme={theme}
                 />
               }
             />
