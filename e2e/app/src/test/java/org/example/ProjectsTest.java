@@ -57,7 +57,6 @@ public class ProjectsTest {
     })
     void testNavElementText(String identifier, String expectedText) throws InterruptedException {
         // Arrange
-        Thread.sleep(5000); // TODO: Replace with a better wait!
         String element = navbar.getNavElementText(identifier);
         // Assert
         assertEquals(expectedText, element);
@@ -90,7 +89,6 @@ public class ProjectsTest {
     void testPresenceOfNavLogo() throws InterruptedException {
         // Arrange
         String identifier = "navLogo";
-        Thread.sleep(5000); // TODO: Replace with a better wait!
         boolean isPresent = navbar.checkNavElementPresence(identifier);
         // Assert
         assertTrue(isPresent);
