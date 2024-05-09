@@ -4,7 +4,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -16,7 +15,7 @@ import org.openqa.selenium.OutputType;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.TakesScreenshot;
 
-public class ProjectsTest {
+public class Projects3ColumnsTest {
     private static ChromeDriver driver;
     private static ProjectsPage projectsPage;
     private static Navbar navbar;
