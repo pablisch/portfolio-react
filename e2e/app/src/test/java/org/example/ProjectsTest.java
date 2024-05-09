@@ -32,8 +32,6 @@ public class ProjectsTest {
         }
 
         driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-
         projectsPage = new ProjectsPage(driver);
         navbar = new Navbar(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
