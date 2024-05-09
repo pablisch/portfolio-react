@@ -1,21 +1,21 @@
 package org.example;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.io.File;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
-import java.io.File;
-import org.openqa.selenium.OutputType;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.TakesScreenshot;
 
-public class Projects3ColumnsTest {
+public class Projects2ColumnsTest {
     private static ChromeDriver driver;
     private static ProjectsPage projectsPage;
     private static Navbar navbar;
@@ -38,35 +38,28 @@ public class Projects3ColumnsTest {
 
     @BeforeEach
     void loadProjectsPage() {
-        projectsPage.navigate("deployed", "threeColumns");
+        projectsPage.navigate("deployed", "twoColumns");
     }
 
-
-    @DisplayName("Test text of navbar project section link buttons")
-    @ParameterizedTest(name = "Test text of {0} is {1}")
-    @CsvSource({
-            "navLupoBtn, LUPO",
-            "navGalleryBtn, Gallery App",
-            "navFarcebookBtn, Farce Book",
-            "navKnotBtn, Knot Very Useful",
-            "navAlternativeBtn, Alter Native Routes",
-            "navEclipseBtn, Eclipse Battle Calc",
-    })
-    void testNavElementText(String identifier, String expectedText) throws Exception {
-        // Arrange
-        takeScreenshot(driver, "screenshots/testNavElementText_" + identifier + ".png");
-        String element = navbar.getNavElementText(identifier);
-        // Assert
-        assertEquals(expectedText, element);
-    }
     @Test
     void testTextOfMoreAboutMeLinkButton() {
         String element = navbar.getNavElementText("navAboutSectionBtn");
         assertEquals("More About Me", element);
     }
-    @DisplayName("Test absence of navbar about section link buttons")
+    @Test
+    void testPresenceOfBurgerBarMenu() {
+        boolean isPresent = navbar.checkPresenceOfExpectedElement("burgerMenu");
+        assertTrue(isPresent);
+    }
+    @DisplayName("Test absence of navbar project & about section link buttons")
     @ParameterizedTest(name = "Test presence of {0} image")
     @CsvSource({
+            "navLupoBtn",
+            "navGalleryBtn",
+            "navFarcebookBtn",
+            "navKnotBtn",
+            "navAlternativeBtn",
+            "navEclipseBtn",
             "navSpaceBtn",
             "navForestBtn",
             "navStemBtn",

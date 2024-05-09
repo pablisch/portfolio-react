@@ -29,20 +29,5 @@ export const linkData = [
       class: ['linkedin-logo'],
       avatarClass: 'avatar-hovered-linkedin-logo',
     },
-  },
-  // {
-  //   // SETTINGS
-  //   name: 'settings',
-  //   url: '#',
-  //   class: 'nav-btn github-link-btn settings-btn',
-  //   burgerClass: 'burger-btn github-link-btn settings-btn external-burger-btn',
-  //   avatarClass: 'avatar-hovered-github-link',
-  //   target: '',
-  //   img: {
-  //     src: 'settings-gear.png',
-  //     alt: 'settings logo',
-  //     class: 'github-logo',
-  //     avatarClass: '',
-  //   },
-  // },
+  }
 ];
