@@ -130,6 +130,7 @@ public class ProjectsTest {
         TakesScreenshot screenshot = ((TakesScreenshot)driver);
         File screenshotFile = screenshot.getScreenshotAs(OutputType.FILE);
         File targetFile = new File(desiredPath);
+        System.out.println("Saving file to " + targetFile.getAbsolutePath());
         FileUtils.copyFile(screenshotFile, targetFile);
     }
 }
