@@ -86,11 +86,19 @@ public class Projects3ColumnsTest {
         // Assert
         assertEquals("My Projects", element);
     }
-    @Test
-    void testPresenceOfNavLogoAndIconImages() throws Exception {
+    @DisplayName("Test presence of nav logo and nav icons")
+    @ParameterizedTest(name = "Test presence of {0} nav image")
+    @CsvSource({
+            "navLogo",
+            "githubBtnLogo",
+            "linkedinBtnLogo",
+            "SettingsBtnLogo",
+    })
+//    @Test
+    void testPresenceOfNavLogoAndIconImages(String identifier) throws Exception {
         // Arrange
-        String identifier = "navLogo";
-        takeScreenshot(driver, "screenshots/testPresenceOfNavLogo.png");
+//        String identifier = "navLogo";
+        takeScreenshot(driver, "testPresenceOfNavIconImage_" + identifier + ".png");
         boolean isPresent = navbar.checkPresenceOfExpectedElement(identifier);
         // Assert
         assertTrue(isPresent);
@@ -123,7 +131,7 @@ public class Projects3ColumnsTest {
     }
 
     // Helper function for taking screenshots using WebDriver
-    public static void takeScreenshot(ChromeDriver driver,String desiredPath) throws Exception{
+    public static void takeScreenshot(ChromeDriver driver, String desiredPath) throws Exception {
         TakesScreenshot screenshot = ((TakesScreenshot)driver);
         File screenshotFile = screenshot.getScreenshotAs(OutputType.FILE);
         File targetFile = new File(desiredPath);
