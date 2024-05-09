@@ -38,6 +38,9 @@ public class ProjectsTest {
         projectsPage = new ProjectsPage(driver);
         navbar = new Navbar(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+
+        // Print working directory
+        System.out.println("Current folder is " + System.getProperty("user.dir"));
     }
 
     @BeforeEach
