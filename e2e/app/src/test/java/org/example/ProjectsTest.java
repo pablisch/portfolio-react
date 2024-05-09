@@ -62,6 +62,7 @@ public class ProjectsTest {
     void testNavElementText(String identifier, String expectedText) throws InterruptedException {
         // Arrange
         String element = navbar.getNavElementText(identifier);
+        takeScreenshot(driver, "screenshots/testNavElementText_" + identifier + ".png");
         // Assert
         assertEquals(expectedText, element);
     }
