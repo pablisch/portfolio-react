@@ -94,8 +94,8 @@ public class Navbar {
         }
     }
     public String getNavElementText(String identifier) {
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-//        wait.until(ExpectedConditions.presenceOfElementLocated(getElementBy(identifier)));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wait.until(ExpectedConditions.presenceOfElementLocated(getElementBy(identifier)));
         WebElement element = driver.findElement(getElementBy(identifier));
         return element.getText();
     }
