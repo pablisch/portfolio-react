@@ -23,10 +23,10 @@ public class ProjectsTest {
 
         ChromeOptions options = new ChromeOptions();
 
-        // Workaround: Chrome only working in GH Actions if running in headless mode
-//        if(System.getenv("CI") != null) {
-//            options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
-//        }
+         Workaround: Chrome only working in GH Actions if running in headless mode
+        if(System.getenv("CI") != null) {
+            options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+        }
 
         driver = new ChromeDriver(options);
         System.out.println(driver.getCapabilities().getBrowserVersion());
