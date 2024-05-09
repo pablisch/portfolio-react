@@ -28,10 +28,29 @@ public class ProjectsPage {
         this.driver = driver;
     }
 
-    public void navigate() {
-//        driver.get("http://localhost:5173");
+    public void navigateFullSizeDeployed() {
         driver.get("https://pablo-joyce.onrender.com/");
         driver.manage().window().setSize(new Dimension(1464, 936));
+    }
+    public void navigateFullSizeLocal() {
+        driver.get("http://localhost:5173");
+        driver.manage().window().setSize(new Dimension(1464, 936));
+    }
+    public void navigate2ColumnBurgerMenuSizeDeployed() {
+        driver.get("https://pablo-joyce.onrender.com/");
+        driver.manage().window().setSize(new Dimension(910, 936));
+    }
+    public void navigate2ColumnBurgerMenuSizeLocal() {
+        driver.get("http://localhost:5173");
+        driver.manage().window().setSize(new Dimension(910, 936));
+    }
+    public void navigate1ColumnBurgerMenuSizeDeployed() {
+        driver.get("https://pablo-joyce.onrender.com/");
+        driver.manage().window().setSize(new Dimension(500, 936));
+    }
+    public void navigate1ColumnBurgerMenuSizeLocal() {
+        driver.get("http://localhost:5173");
+        driver.manage().window().setSize(new Dimension(500, 936));
     }
     public String getPageTitle() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));

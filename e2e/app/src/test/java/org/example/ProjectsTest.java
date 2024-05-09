@@ -39,7 +39,7 @@ public class ProjectsTest {
 
     @BeforeEach
     void loadProjectsPage() {
-        projectsPage.navigate();
+        projectsPage.navigateFullSizeDeployed();
     }
 
     @Test
