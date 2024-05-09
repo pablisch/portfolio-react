@@ -92,7 +92,7 @@ public class ProjectsTest {
         // Arrange
         String identifier = "navLogo";
         takeScreenshot(driver, "screenshots/testPresenceOfNavLogo.png");
-        boolean isPresent = navbar.checkNavElementPresence(identifier);
+        boolean isPresent = navbar.checkPresenceOfExpectedElement(identifier);
         // Assert
         assertTrue(isPresent);
     }
