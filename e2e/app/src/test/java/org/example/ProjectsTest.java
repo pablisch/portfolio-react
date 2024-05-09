@@ -90,7 +90,7 @@ public class ProjectsTest {
         assertEquals("My Projects", element);
     }
     @Test
-    void testPresenceOfNavLogo() throws InterruptedException {
+    void testPresenceOfNavLogo() throws Exception {
         // Arrange
         String identifier = "navLogo";
         takeScreenshot(driver, "screenshots/testPresenceOfNavLogo.png");
@@ -126,8 +126,8 @@ public class ProjectsTest {
     }
 
     // Helper function for taking screenshots using WebDriver
-    public static void takeScreenshot(WebDriver webdriver,String desiredPath) throws Exception{
-        TakesScreenshot screenshot = ((TakesScreenshot)webdriver);
+    public static void takeScreenshot(ChromeDriver driver,String desiredPath) throws Exception{
+        TakesScreenshot screenshot = ((TakesScreenshot)driver);
         File screenshotFile = screenshot.getScreenshotAs(OutputType.FILE);
         File targetFile = new File(desiredPath);
         FileUtils.copyFile(screenshotFile, targetFile);
