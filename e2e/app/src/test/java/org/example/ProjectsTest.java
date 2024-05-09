@@ -11,6 +11,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
+import java.io.File;
+import org.openqa.selenium.OutputType;
+import org.apache.commons.io.FileUtils;
 
 public class ProjectsTest {
     private static ChromeDriver driver;
