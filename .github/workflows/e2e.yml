@@ -35,4 +35,4 @@ jobs:
       if: always()
       with:
         name: screenshots
-        path: screenshots/
+        path: /home/runner/work/portfolio-react/portfolio-react/e2e/app/screenshots/
