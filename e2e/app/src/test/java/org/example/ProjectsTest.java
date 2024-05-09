@@ -61,8 +61,8 @@ public class ProjectsTest {
     })
     void testNavElementText(String identifier, String expectedText) throws Exception {
         // Arrange
-        String element = navbar.getNavElementText(identifier);
         takeScreenshot(driver, "screenshots/testNavElementText_" + identifier + ".png");
+        String element = navbar.getNavElementText(identifier);
         // Assert
         assertEquals(expectedText, element);
     }
