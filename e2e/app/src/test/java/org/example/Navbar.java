@@ -36,7 +36,7 @@ public class Navbar {
     private final By linkedinBtnBy = By.cssSelector("a[id='linkedin-nav-btn']");
     private final By linkedinBtnLogoBy = By.cssSelector("img[alt='LinkedIn logo']");
     private final By settingsBtnBy = By.cssSelector("div[id='settings-nav-btn']");
-    private final By SettingsBtnLogoBy = By.cssSelector("img[id='settings-logo']");
+    private final By SettingsBtnLogoBy = By.cssSelector("img[id='settings-icon']");
     private final By burgerMenuBy = By.cssSelector("a[id='hamburger']");
 
     public Navbar(WebDriver driver) {
