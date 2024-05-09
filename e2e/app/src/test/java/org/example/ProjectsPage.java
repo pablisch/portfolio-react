@@ -31,6 +31,7 @@ public class ProjectsPage {
     public void navigate() {
 //        driver.get("http://localhost:5173");
         driver.get("https://pablo-joyce.onrender.com/");
+        driver.manage().window().setSize(new Dimension(1464, 936));
     }
     public String getPageTitle() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
@@ -63,7 +64,7 @@ public class ProjectsPage {
         }
     }
     public boolean checkPresenceOfExpectedElement(String identifier) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
         wait.until(ExpectedConditions.presenceOfElementLocated(getElementBy(identifier)));
 
         try {
