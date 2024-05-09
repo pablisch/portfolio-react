@@ -87,7 +87,7 @@ public class Projects3ColumnsTest {
         assertEquals("My Projects", element);
     }
     @Test
-    void testPresenceOfNavLogo() throws Exception {
+    void testPresenceOfNavLogoAndIconImages() throws Exception {
         // Arrange
         String identifier = "navLogo";
         takeScreenshot(driver, "screenshots/testPresenceOfNavLogo.png");

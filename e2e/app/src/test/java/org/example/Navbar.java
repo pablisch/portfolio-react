@@ -32,8 +32,11 @@ public class Navbar {
     private final By navAboutSectionBtnBy = By.cssSelector("a[id='about-section-link']");
     private final By navProjectsSectionBtnBy = By.cssSelector("a[id='projects-section-link']");
     private final By githubBtnBy = By.cssSelector("a[id='github-nav-btn']");
+    private final By githubBtnLogoBy = By.cssSelector("img[alt='Github logo']");
     private final By linkedinBtnBy = By.cssSelector("a[id='linkedin-nav-btn']");
+    private final By linkedinBtnLogoBy = By.cssSelector("img[alt='LinkedIn logo']");
     private final By settingsBtnBy = By.cssSelector("div[id='settings-nav-btn']");
+    private final By SettingsBtnLogoBy = By.cssSelector("img[id='settings-logo']");
     private final By burgerMenuBy = By.cssSelector("a[id='hamburger']");
 
     public Navbar(WebDriver driver) {
@@ -44,12 +47,14 @@ public class Navbar {
         return switch (identifier) {
             case "navLogo" -> navLogoBy;
             case "navSectionTitle" -> navSectionTitleBy;
+
             case "navLupoBtn" -> navLupoBtnBy;
             case "navGalleryBtn" -> navGalleryBtnBy;
             case "navFarcebookBtn" -> navFarcebookBtnBy;
             case "navKnotBtn" -> navKnotBtnBy;
             case "navAlternativeBtn" -> navAlternativeBtnBy;
             case "navEclipseBtn" -> navEclipseBtnBy;
+
             case "navSpaceBtn" -> navSpaceBtnBy;
             case "navForestBtn" -> navForestBtnBy;
             case "navStemBtn" -> navStemBtnBy;
@@ -58,9 +63,13 @@ public class Navbar {
             case "navCuriosityBtn" -> navCuriosityBtnBy;
 
             case "navAboutSectionBtn" -> navAboutSectionBtnBy;
+            case "navProjectsSectionBtn" -> navProjectsSectionBtnBy;
             case "githubBtn" -> githubBtnBy;
+            case "githubBtnLogo" -> githubBtnLogoBy;
             case "linkedinBtn" -> linkedinBtnBy;
+            case "linkedinBtnLogo" -> linkedinBtnLogoBy;
             case "settingsBtn" -> settingsBtnBy;
+            case "SettingsBtnLogo" -> SettingsBtnLogoBy;
             case "burgerMenu" -> burgerMenuBy;
 
             default -> throw new IllegalArgumentException("Invalid identifier: " + identifier);

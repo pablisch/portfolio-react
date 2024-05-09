@@ -203,6 +203,7 @@ function Navbar({
               // onMouseLeave={handleHoverEnd}
             >
               <img
+                id='settings-icon'
                 src='/images/settings-gear.png'
                 alt='settings button'
                 className={`github-logo github-logo-${theme} settings-icon settings-icon-${theme} ${isRotating ? 'rotate' : ''}`}
