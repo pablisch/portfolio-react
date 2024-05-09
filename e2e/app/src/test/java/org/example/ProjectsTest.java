@@ -89,6 +89,7 @@ public class ProjectsTest {
     void testPresenceOfNavLogo() throws InterruptedException {
         // Arrange
         String identifier = "navLogo";
+        takeScreenshot(driver, "screenshots/testPresenceOfNavLogo.png");
         boolean isPresent = navbar.checkNavElementPresence(identifier);
         // Assert
         assertTrue(isPresent);
@@ -118,5 +119,13 @@ public class ProjectsTest {
     @AfterAll
     static void closeBrowser() {
         driver.quit();
+    }
+
+    // Helper function for taking screenshots using WebDriver
+    public static void takeScreenshot(WebDriver webdriver,String desiredPath) throws Exception{
+        TakesScreenshot screenshot = ((TakesScreenshot)webdriver);
+        File screenshotFile = screenshot.getScreenshotAs(OutputType.FILE);
+        File targetFile = new File(desiredPath);
+        FileUtils.copyFile(screenshotFile, targetFile);
     }
 }
