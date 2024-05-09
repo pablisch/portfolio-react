@@ -28,29 +28,27 @@ public class ProjectsPage {
         this.driver = driver;
     }
 
-    public void navigateFullSizeDeployed() {
-        driver.get("https://pablo-joyce.onrender.com/");
-        driver.manage().window().setSize(new Dimension(1464, 936));
+    public int getScreenWidth(String numOfColumns) {
+        return switch (numOfColumns) {
+            case "threeColumns" -> 1464;
+            case "twoColumns" -> 910;
+            case "oneColumn" -> 500;
+
+            default -> throw new IllegalArgumentException("Invalid numOfColumns value: " + numOfColumns);
+        };
     }
-    public void navigateFullSizeLocal() {
-        driver.get("http://localhost:5173");
-        driver.manage().window().setSize(new Dimension(1464, 936));
+    public String getPageUrl(String localOrDeployed) {
+        return switch (localOrDeployed) {
+            case "local" -> "http://localhost:5173";
+            case "deployed" -> "https://pablo-joyce.onrender.com/";
+
+            default -> throw new IllegalArgumentException("Invalid localOrDeployed value: " + localOrDeployed);
+        };
     }
-    public void navigate2ColumnBurgerMenuSizeDeployed() {
-        driver.get("https://pablo-joyce.onrender.com/");
-        driver.manage().window().setSize(new Dimension(910, 936));
-    }
-    public void navigate2ColumnBurgerMenuSizeLocal() {
-        driver.get("http://localhost:5173");
-        driver.manage().window().setSize(new Dimension(910, 936));
-    }
-    public void navigate1ColumnBurgerMenuSizeDeployed() {
-        driver.get("https://pablo-joyce.onrender.com/");
-        driver.manage().window().setSize(new Dimension(500, 936));
-    }
-    public void navigate1ColumnBurgerMenuSizeLocal() {
-        driver.get("http://localhost:5173");
-        driver.manage().window().setSize(new Dimension(500, 936));
+
+    public void navigate(String localOrDeployed, String numOfColumns) {
+        driver.get(getPageUrl(localOrDeployed));
+        driver.manage().window().setSize(new Dimension(getScreenWidth(numOfColumns), 936));
     }
     public String getPageTitle() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
@@ -65,7 +63,7 @@ public class ProjectsPage {
             case "knotImage" -> knotImageBy;
             case "alternativeImage" -> alternativeImageBy;
             case "eclipseImage" -> eclipseImageBy;
-//
+
             default -> throw new IllegalArgumentException("Invalid identifier: " + identifier);
         };
     }

@@ -38,7 +38,7 @@ public class Projects3ColumnsTest {
 
     @BeforeEach
     void loadProjectsPage() {
-        projectsPage.navigateFullSizeDeployed();
+        projectsPage.navigate("deployed", "threeColumns");
     }
 
     @Test
