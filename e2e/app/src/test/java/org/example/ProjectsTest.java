@@ -24,7 +24,6 @@ public class ProjectsTest {
     @BeforeAll
     static void launchBrowser() {
         WebDriverManager.chromedriver().setup();
-
         ChromeOptions options = new ChromeOptions();
 
         // Workaround: Chrome only working in GH Actions if running in headless mode
@@ -33,14 +32,11 @@ public class ProjectsTest {
         }
 
         driver = new ChromeDriver(options);
-        System.out.println(driver.getCapabilities().getBrowserVersion());
+        driver.manage().window().maximize();
 
         projectsPage = new ProjectsPage(driver);
         navbar = new Navbar(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-
-        // Print working directory
-        System.out.println("Current folder is " + System.getProperty("user.dir"));
     }
 
     @BeforeEach
@@ -134,7 +130,6 @@ public class ProjectsTest {
         TakesScreenshot screenshot = ((TakesScreenshot)driver);
         File screenshotFile = screenshot.getScreenshotAs(OutputType.FILE);
         File targetFile = new File(desiredPath);
-        System.out.println("Saving file to " + targetFile.getAbsolutePath());
         FileUtils.copyFile(screenshotFile, targetFile);
     }
 }
