@@ -59,7 +59,7 @@ public class ProjectsTest {
             "navAlternativeBtn, Alter Native Routes",
             "navEclipseBtn, Eclipse Battle Calc",
     })
-    void testNavElementText(String identifier, String expectedText) throws InterruptedException {
+    void testNavElementText(String identifier, String expectedText) throws Exception {
         // Arrange
         String element = navbar.getNavElementText(identifier);
         takeScreenshot(driver, "screenshots/testNavElementText_" + identifier + ".png");
