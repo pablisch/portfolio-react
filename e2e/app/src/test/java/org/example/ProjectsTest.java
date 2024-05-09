@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.io.File;
 import org.openqa.selenium.OutputType;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.TakesScreenshot;
 
 public class ProjectsTest {
     private static ChromeDriver driver;
