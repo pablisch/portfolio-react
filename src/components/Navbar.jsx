@@ -12,7 +12,6 @@ import { scrollToTop } from '../utils/helpers';
 import { ThemeContext, ProjectAboutContext } from '../context/ContextProviders';
 
 const themeStyles = ['retro', 'light', 'dark'];
-// const themeStyles = ['retro', 'light', 'dark', 'simple'];
 
 function Navbar({
   isAvatarHovered,
