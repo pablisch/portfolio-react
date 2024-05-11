@@ -17,7 +17,7 @@ const firstProjectId = projectData[0].id;
 const SingleProjectPage = ({ selectedProject, setSelectedProject, section, setSection }) => {
   const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
-  const screenWidth = useScreenWidth();
+  const {screenWidth} = useScreenWidth();
 
   const { id } = useParams();
 
@@ -81,13 +81,12 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject, section, setSe
     scrollToTop();
   };
 
-  console.log('tech', selectedProject?.techBadgesArray?.[0]);
+  console.log('tech', selectedProject?.techBadgesArray?.[0]?.scale);
 
   const size = Math.min(
     (selectedProject?.techBadgesArray?.[0]?.scale || '30') *
-      (screenWidth / (1500 - (1500 - screenWidth) / 2)),
-    selectedProject?.techBadgesArray?.[0]?.scale || '30'
-  );
+    Math.ceil(screenWidth / (1500 - (1500 - screenWidth) / 2)),
+    selectedProject?.techBadgesArray?.[0]?.scale || '30');
 
   return (
     <div id='single-subject-page'>
@@ -111,8 +110,8 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject, section, setSe
                       src={`https://raw.githubusercontent.com/devicons/devicon/master/icons/${badge.src}`}
                       alt={badge.alt}
                       className={badge.class || ''}
-                      width={size || 23}
-                      height={size || 23}
+                      width={size}
+                      height={size}
                     />
                   ))}
                 </div>
