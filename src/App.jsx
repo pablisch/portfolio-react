@@ -63,11 +63,11 @@ function App() {
             }`}>
             <BrowserRouter>
               <Navbar
-                setFocusProjectId={setFocusProjectId}
-                setSelectedProject={setSelectedProject}
-                setFocusAboutId={setFocusAboutId}
-                setSelectedAbout={setSelectedAbout}
-                section={section}
+                // setFocusProjectId={setFocusProjectId}
+                // setSelectedProject={setSelectedProject}
+                // setFocusAboutId={setFocusAboutId}
+                // setSelectedAbout={setSelectedAbout}
+                // section={section}
                 isAvatarHovered={isAvatarHovered}
                 setIsAvatarHovered={setIsAvatarHovered}
                 isBurgerMenuOpen={isBurgerMenuOpen}
@@ -85,9 +85,7 @@ function App() {
               />
 
               <div
-                className={`all-pages ${
-                  isBurgerMenuOpen ? 'burger-open-spacer' : ''
-                }`}></div>
+                className={`all-pages ${isBurgerMenuOpen ? 'burger-open-spacer' : ''}`}></div>
               <Routes>
                 <Route
                   path='/'
@@ -107,8 +105,8 @@ function App() {
                   path='/more-about-me'
                   element={
                     <AboutPage
-                      setFocusAboutId={setFocusAboutId}
                       focusAboutId={focusAboutId}
+                      setFocusAboutId={setFocusAboutId}
                       setSelectedAbout={setSelectedAbout}
                       section={section}
                       setSection={setSection}

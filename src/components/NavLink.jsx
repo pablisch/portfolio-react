@@ -4,31 +4,32 @@ import { scrollToTop } from '../utils/helpers';
 import { ProjectAboutContext } from '../context/ContextProviders';
 import { useContext } from 'react';
 
-function NavLink({ children, project, className = 'nav-btn nav-link' }) {
+function NavLink({ children, subject, className = 'nav-btn nav-link' }) {
+  // const { setFocusProjectId, setSelectedProject, setFocusAboutId, setSelectedAbout } = useContext(ProjectAboutContext);
   const { setFocusProjectId, setSelectedProject } = useContext(ProjectAboutContext);
   const navigate = useNavigate();
 
   const handleHoverStart = () => {
-    setFocusProjectId(project.id);
+    setFocusProjectId(subject.id);
   };
 
   const handleHoverEnd = () => {
     setFocusProjectId('');
   };
 
-  const handleClick = (project) => {
-    setSelectedProject(project);
-    localStorage.setItem('selectedProject', JSON.stringify(project));
-    console.log('project clicked', project);
-    navigate(`/${project.id < 10 ? 'project' : 'more-about-me'}/${project.id}`);
+  const handleClick = (subject) => {
+    setSelectedProject(subject);
+    localStorage.setItem('selectedProject', JSON.stringify(subject));
+    console.log('subject clicked', subject);
+    navigate(`/${subject.id < 10 ? 'project' : 'more-about-me'}/${subject.id}`);
     scrollToTop();
   };
 
   return (
     <div
-      id={`${project.identifier}-nav-btn`}
+      id={`${subject.identifier}-nav-btn`}
       className={className}
-      onClick={() => handleClick(project)}
+      onClick={() => handleClick(subject)}
       onMouseOver={handleHoverStart}
       onMouseLeave={handleHoverEnd}>
       {children}
@@ -38,7 +39,7 @@ function NavLink({ children, project, className = 'nav-btn nav-link' }) {
 
 NavLink.propTypes = {
   children: PropTypes.node.isRequired,
-  project: PropTypes.object.isRequired,
+  subject: PropTypes.object.isRequired,
   className: PropTypes.string,
 };
 

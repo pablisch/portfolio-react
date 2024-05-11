@@ -25,12 +25,15 @@ function Navbar({
     burgerMenuStage,
   } = useScreenWidth();
   const { theme, setTheme } = useContext(ThemeContext);
-  const { setSelectedProject, section } = useContext(ProjectAboutContext);
+  const { section,
+    setSelectedProject,
+    setSelectedAbout  } = useContext(ProjectAboutContext);
 
   const navigate = useNavigate();
 
   const handleNavTitleClick = () => {
     setSelectedProject({});
+    setSelectedAbout({});
     navigate(section === 'about' ? `/more-about-me` : '/');
     localStorage.removeItem('selectedProject');
     scrollToTop();
@@ -93,7 +96,7 @@ function Navbar({
                       isAvatarHovered ? 'avatar-hovered-nav-link' : ''
                     }`}
                     key={project.id}
-                    project={project}>
+                    subject={project}>
                     {project.navName || project.name}
                   </NavLink>
                 ))}
@@ -106,7 +109,7 @@ function Navbar({
                       isAvatarHovered ? 'avatar-hovered-nav-link' : ''
                     }`}
                     key={about.id}
-                    project={about}>
+                    subject={about}>
                     {about.navName || about.name}
                   </NavLink>
                 ))}
