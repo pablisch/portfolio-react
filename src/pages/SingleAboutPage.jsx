@@ -3,11 +3,12 @@ import './SingleProjectAndAboutPage.css';
 import PropTypes from 'prop-types';
 import { aboutData } from '../data/aboutData';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import Button from '../components/Button';
 import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 import { scrollToTop } from '../utils/helpers';
+import { ThemeContext } from '../context/ContextProviders';
 
 const lastAboutId = aboutData[aboutData.length - 1].id;
 const firstAboutId = aboutData[0].id;
@@ -17,8 +18,8 @@ const SingleAboutPage = ({
   setSelectedAbout,
   section,
   setSection,
-  theme,
 }) => {
+  const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
 
   const { id } = useParams();
@@ -125,7 +126,7 @@ const SingleAboutPage = ({
 
       <div id='single-subject-lower-section'>
         <div id='single-about-description-text-2' className='paragraph'>
-          <p className='project-text'>{selectedAbout.descriptionText2}</p>
+          <div className='project-text'>{selectedAbout.descriptionText2}</div>
         </div>
       </div>
       <div id='bit-at-the-bottom'></div>
@@ -138,7 +139,6 @@ SingleAboutPage.propTypes = {
   setSelectedAbout: PropTypes.func.isRequired,
   section: PropTypes.string.isRequired,
   setSection: PropTypes.func.isRequired,
-  theme: PropTypes.string.isRequired,
 };
 
 export default SingleAboutPage;

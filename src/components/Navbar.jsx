@@ -1,6 +1,6 @@
 import NavLink from './NavLink';
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './Navbar.css';
 import { projectData } from '../data/projectData';
 import { aboutData } from '../data/aboutData';
@@ -9,16 +9,12 @@ import PropTypes from 'prop-types';
 import ExtNavLink from './ExtNavLink';
 import { useScreenWidth } from '../context/ScreenWidthProvider';
 import { scrollToTop } from '../utils/helpers';
+import { ThemeContext, ProjectAboutContext } from '../context/ContextProviders';
 
 const themeStyles = ['retro', 'light', 'dark'];
 // const themeStyles = ['retro', 'light', 'dark', 'simple'];
 
 function Navbar({
-  setFocusProjectId,
-  setSelectedProject,
-  setFocusAboutId,
-  setSelectedAbout,
-  section,
   isAvatarHovered,
   setIsAvatarHovered,
   isHamburgerOpen,
@@ -28,14 +24,14 @@ function Navbar({
   setIsDoubleBurger,
   isTripleBurger,
   setIsTripleBurger,
-  theme,
-  setTheme,
 }) {
   const [isRotating, setIsRotating] = useState(false);
   const screenWidth = useScreenWidth();
   const [isHamburgerSize, setIsHamburgerSize] = useState(
     screenWidth > 950 ? false : true
   );
+  const { theme, setTheme } = useContext(ThemeContext);
+  const { setSelectedProject, section } = useContext(ProjectAboutContext);
 
   const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
@@ -138,8 +134,7 @@ function Navbar({
                     }`}
                     key={project.id}
                     project={project}
-                    setFocusProjectId={setFocusProjectId}
-                    setSelectedProject={setSelectedProject}>
+                    >
                     {project.navName || project.name}
                   </NavLink>
                 ))}
@@ -153,8 +148,7 @@ function Navbar({
                     }`}
                     key={about.id}
                     project={about}
-                    setFocusProjectId={setFocusAboutId}
-                    setSelectedProject={setSelectedAbout}>
+                    >
                     {about.navName || about.name}
                   </NavLink>
                 ))}
@@ -187,12 +181,7 @@ function Navbar({
             {linkData.length &&
               !isDoubleBurger &&
               linkData.map((link) => (
-                <ExtNavLink
-                  key={link.name}
-                  page={link}
-                  target={link.target}
-                  theme={theme}
-                />
+                <ExtNavLink key={link.name} page={link} target={link.target} />
               ))}
             {/* 👇🏻 SETTINGS BUTTON */}
             <div
@@ -250,11 +239,6 @@ function Navbar({
 }
 
 Navbar.propTypes = {
-  setFocusProjectId: PropTypes.func.isRequired,
-  setSelectedProject: PropTypes.func.isRequired,
-  setFocusAboutId: PropTypes.func.isRequired,
-  setSelectedAbout: PropTypes.func.isRequired,
-  section: PropTypes.string.isRequired,
   isAvatarHovered: PropTypes.bool.isRequired,
   setIsAvatarHovered: PropTypes.func.isRequired,
   isHamburgerOpen: PropTypes.bool.isRequired,
@@ -264,8 +248,6 @@ Navbar.propTypes = {
   setIsDoubleBurger: PropTypes.func.isRequired,
   isTripleBurger: PropTypes.bool.isRequired,
   setIsTripleBurger: PropTypes.func.isRequired,
-  theme: PropTypes.string.isRequired,
-  setTheme: PropTypes.func.isRequired,
 };
 
 export default Navbar;

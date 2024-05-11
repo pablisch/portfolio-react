@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './projectAndAboutPanel.css';
-// import { useState } from 'react';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ContextProviders';
 
 function AboutPanel({
   about,
@@ -9,8 +10,8 @@ function AboutPanel({
   focusAboutId,
   setSelectedAbout,
   isAvatarHovered,
-  theme,
 }) {
+  const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
 
   const handleHoverStart = (id) => {
@@ -53,7 +54,6 @@ AboutPanel.propTypes = {
   focusAboutId: PropTypes.string.isRequired,
   setSelectedAbout: PropTypes.func.isRequired,
   isAvatarHovered: PropTypes.bool.isRequired,
-  theme: PropTypes.string.isRequired,
 };
 
 export default AboutPanel;
