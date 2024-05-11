@@ -16,13 +16,10 @@ const HamburgerBlocks = ({
   setFocusProjectId,
   setSelectedAbout,
   setSelectedProject,
-  setIsHamburgerOpen,
   isBurgerMenuOpen,
+  setIsBurgerMenuOpen,
 }) => {
-  const {
-    isBurgerMenuVisible,
-    burgerMenuStage,
-  } = useScreenWidth();
+  const { burgerMenuStage } = useScreenWidth();
   console.log('isBurgerMenuOpen', isBurgerMenuOpen);
 
   return (
@@ -39,7 +36,8 @@ const HamburgerBlocks = ({
               project={project}
               setFocusProjectId={setFocusProjectId}
               setSelectedProject={setSelectedProject}
-              setIsHamburgerOpen={setIsHamburgerOpen}>
+              setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+            >
               {project.navName || project.name}
             </BurgerLink>
           ))}
@@ -54,7 +52,8 @@ const HamburgerBlocks = ({
               project={about}
               setFocusProjectId={setFocusAboutId}
               setSelectedProject={setSelectedAbout}
-              setIsHamburgerOpen={setIsHamburgerOpen}>
+              setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+            >
               {about.navName || about.name}
             </BurgerLink>
           ))}
@@ -101,8 +100,8 @@ HamburgerBlocks.propTypes = {
   setFocusProjectId: PropTypes.func.isRequired,
   setSelectedAbout: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
-  setIsHamburgerOpen: PropTypes.func.isRequired,
   isBurgerMenuOpen: PropTypes.bool.isRequired,
+  setIsBurgerMenuOpen: PropTypes.func.isRequired,
 };
 
 export default HamburgerBlocks;

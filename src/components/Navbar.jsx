@@ -16,8 +16,6 @@ const themeStyles = ['retro', 'light', 'dark'];
 function Navbar({
   isAvatarHovered,
   setIsAvatarHovered,
-  isHamburgerOpen,
-  setIsHamburgerOpen,
   isBurgerMenuOpen,
   setIsBurgerMenuOpen,
 }) {
@@ -40,7 +38,6 @@ function Navbar({
 
   const handleBurgerClick = () => {
     console.log('burger clicked');
-    // setIsHamburgerOpen(!isHamburgerOpen);
     setIsBurgerMenuOpen(!isBurgerMenuOpen);
     scrollToTop();
   };
@@ -170,15 +167,15 @@ function Navbar({
                   onClick={handleBurgerClick}>
                   <span
                     className={`burger-bar burger-bar-${theme} buntop ${
-                      isHamburgerOpen ? 'burger-open' : ''
+                      isBurgerMenuOpen ? 'burger-open' : ''
                     }`}></span>
                   <span
                     className={`burger-bar burger-bar-${theme} pattie ${
-                      isHamburgerOpen ? 'burger-open' : ''
+                      isBurgerMenuOpen ? 'burger-open' : ''
                     }`}></span>
                   <span
                     className={`burger-bar burger-bar-${theme} bunbase ${
-                      isHamburgerOpen ? 'burger-open' : ''
+                      isBurgerMenuOpen ? 'burger-open' : ''
                     }`}></span>
                 </div>
               </div>
@@ -202,8 +199,6 @@ function Navbar({
 Navbar.propTypes = {
   isAvatarHovered: PropTypes.bool.isRequired,
   setIsAvatarHovered: PropTypes.func.isRequired,
-  isHamburgerOpen: PropTypes.bool.isRequired,
-  setIsHamburgerOpen: PropTypes.func.isRequired,
   isBurgerMenuOpen: PropTypes.bool.isRequired,
   setIsBurgerMenuOpen: PropTypes.func.isRequired,
 };

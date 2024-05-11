@@ -24,7 +24,6 @@ function App() {
   const [selectedAbout, setSelectedAbout] = useState({});
   const [section, setSection] = useState('');
   const [isAvatarHovered, setIsAvatarHovered] = useState(false);
-  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
   const [theme, setTheme] = useState('light');
 
@@ -71,8 +70,6 @@ function App() {
                 section={section}
                 isAvatarHovered={isAvatarHovered}
                 setIsAvatarHovered={setIsAvatarHovered}
-                isHamburgerOpen={isHamburgerOpen}
-                setIsHamburgerOpen={setIsHamburgerOpen}
                 isBurgerMenuOpen={isBurgerMenuOpen}
                 setIsBurgerMenuOpen={setIsBurgerMenuOpen}
               />
@@ -83,8 +80,8 @@ function App() {
                 setFocusProjectId={setFocusProjectId}
                 setSelectedAbout={setSelectedAbout}
                 setSelectedProject={setSelectedProject}
-                setIsHamburgerOpen={setIsHamburgerOpen}
                 isBurgerMenuOpen={isBurgerMenuOpen}
+                setIsBurgerMenuOpen={setIsBurgerMenuOpen}
               />
 
               <div
