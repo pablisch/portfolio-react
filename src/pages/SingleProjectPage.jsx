@@ -111,8 +111,8 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject, section, setSe
                       src={`https://raw.githubusercontent.com/devicons/devicon/master/icons/${badge.src}`}
                       alt={badge.alt}
                       className={badge.class || ''}
-                      width={size}
-                      height={size}
+                      width={size || 23}
+                      height={size || 23}
                     />
                   ))}
                 </div>
