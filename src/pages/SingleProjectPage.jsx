@@ -1,7 +1,7 @@
 // import React from 'react';
 import './SingleProjectAndAboutPage.css';
 import { projectData } from '../data/projectData';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useContext } from 'react';
 import Button from '../components/Button';
@@ -10,17 +10,14 @@ import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
 import { scrollToTop } from '../utils/helpers';
 import { useScreenWidth } from '../context/ScreenWidthProvider';
 import ThemeContext from '../context/ThemeContext';
+import { useProjectAboutContext } from '../context/ProjectAboutContext';
 
 const lastProjectId = projectData[projectData.length - 1].id;
 const firstProjectId = projectData[0].id;
 
-const SingleProjectPage = ({
-  selectedProject,
-  setSelectedProject,
-  section,
-  setSection,
-}) => {
+const SingleProjectPage = () => {
   const { theme } = useContext(ThemeContext);
+  const { section, setSection, selectedProject, setSelectedProject } =  useProjectAboutContext();
   const navigate = useNavigate();
   const { screenWidth } = useScreenWidth();
 
@@ -191,13 +188,6 @@ const SingleProjectPage = ({
       <div id='bit-at-the-bottom'></div>
     </div>
   );
-};
-
-SingleProjectPage.propTypes = {
-  selectedProject: PropTypes.object.isRequired,
-  setSelectedProject: PropTypes.func.isRequired,
-  section: PropTypes.string.isRequired,
-  setSection: PropTypes.func.isRequired,
 };
 
 export default SingleProjectPage;

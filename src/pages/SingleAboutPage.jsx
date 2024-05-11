@@ -1,6 +1,5 @@
 // import React from 'react';
 import './SingleProjectAndAboutPage.css';
-import PropTypes from 'prop-types';
 import { aboutData } from '../data/aboutData';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useContext } from 'react';
@@ -9,17 +8,14 @@ import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 import { scrollToTop } from '../utils/helpers';
 import ThemeContext from '../context/ThemeContext';
+import { useProjectAboutContext } from '../context/ProjectAboutContext';
 
 const lastAboutId = aboutData[aboutData.length - 1].id;
 const firstAboutId = aboutData[0].id;
 
-const SingleAboutPage = ({
-  selectedAbout,
-  setSelectedAbout,
-  section,
-  setSection,
-}) => {
+const SingleAboutPage = () => {
   const { theme } = useContext(ThemeContext);
+  const { section, setSection, selectedAbout, setSelectedAbout } =  useProjectAboutContext();
   const navigate = useNavigate();
 
   const { id } = useParams();
@@ -134,13 +130,6 @@ const SingleAboutPage = ({
       <div id='bit-at-the-bottom'></div>
     </div>
   );
-};
-
-SingleAboutPage.propTypes = {
-  selectedAbout: PropTypes.object.isRequired,
-  setSelectedAbout: PropTypes.func.isRequired,
-  section: PropTypes.string.isRequired,
-  setSection: PropTypes.func.isRequired,
 };
 
 export default SingleAboutPage;
