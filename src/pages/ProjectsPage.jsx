@@ -4,21 +4,18 @@ import ProjectPanel from '../components/ProjectPanel';
 import PropTypes from 'prop-types';
 import '../components/projectAndAboutPanel.css';
 import { scrollToTop } from '../utils/helpers';
-// import { useScreenWidth } from '../context/ScreenWidthProvider';
 import ThemeContext from '../context/ThemeContext';
+import { useProjectAboutContext } from '../context/ProjectAboutContext';
 
-function ProjectsPage({
-  setFocusProjectId,
-  focusProjectId,
-  setSelectedProject,
-  setSection,
-  section,
-  isAvatarHovered,
-}) {
+function ProjectsPage({ isAvatarHovered }) {
   const { theme } = useContext(ThemeContext);
-
-  // const screenWidth = useScreenWidth();
-  // console.log('screenWidth', screenWidth);
+  const {
+    section,
+    setSection,
+    focusProjectId,
+    setFocusProjectId,
+    setSelectedProject,
+  } = useProjectAboutContext();
 
   useEffect(() => {
     if (section !== 'projects') {
@@ -45,11 +42,6 @@ function ProjectsPage({
 }
 
 ProjectsPage.propTypes = {
-  setFocusProjectId: PropTypes.func.isRequired,
-  focusProjectId: PropTypes.string,
-  setSelectedProject: PropTypes.func.isRequired,
-  setSection: PropTypes.func.isRequired,
-  section: PropTypes.string.isRequired,
   isAvatarHovered: PropTypes.bool.isRequired,
 };
 

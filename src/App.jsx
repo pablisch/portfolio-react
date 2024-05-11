@@ -11,7 +11,7 @@ import { projectData } from './data/projectData';
 import { ScreenWidthProvider } from './context/ScreenWidthProvider';
 import HamburgerBlocks from './components/HamburgerBlocks';
 import ThemeContext from './context/ThemeContext';
-import ProjectAboutContext from './context/ProjectAboutContext';
+import {ProjectAboutProvider} from './context/ProjectAboutContext';
 
 const apiUrls = projectData
   .filter((project) => project.apiWakeUpUrl)
@@ -19,11 +19,6 @@ const apiUrls = projectData
 
 function App() {
   // This app has two main sections: projects and abouts - abouts refers to the 'about me' section.
-  const [focusProjectId, setFocusProjectId] = useState('');
-  const [focusAboutId, setFocusAboutId] = useState('');
-  const [selectedProject, setSelectedProject] = useState({});
-  const [selectedAbout, setSelectedAbout] = useState({});
-  const [section, setSection] = useState('');
   const [isAvatarHovered, setIsAvatarHovered] = useState(false);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
   const [theme, setTheme] = useState('light');
@@ -45,19 +40,7 @@ function App() {
   return (
     <ScreenWidthProvider setIsBurgerMenuOpen={setIsBurgerMenuOpen}>
       <ThemeContext.Provider value={{ theme, setTheme }}>
-        <ProjectAboutContext.Provider
-          value={{
-            section,
-            setSection,
-            focusProjectId,
-            setFocusProjectId,
-            focusAboutId,
-            setFocusAboutId,
-            selectedProject,
-            setSelectedProject,
-            selectedAbout,
-            setSelectedAbout,
-          }}>
+        <ProjectAboutProvider>
           <div
             className={`app app-${theme} ${
               isAvatarHovered ? 'avatar-hovered-app' : ''
@@ -70,12 +53,7 @@ function App() {
                 setIsBurgerMenuOpen={setIsBurgerMenuOpen}
               />
               <HamburgerBlocks
-                section={section}
                 isAvatarHovered={isAvatarHovered}
-                setFocusAboutId={setFocusAboutId}
-                setFocusProjectId={setFocusProjectId}
-                setSelectedAbout={setSelectedAbout}
-                setSelectedProject={setSelectedProject}
                 isBurgerMenuOpen={isBurgerMenuOpen}
                 setIsBurgerMenuOpen={setIsBurgerMenuOpen}
               />
@@ -89,11 +67,6 @@ function App() {
                   path='/'
                   element={
                     <ProjectsPage
-                      focusProjectId={focusProjectId}
-                      setFocusProjectId={setFocusProjectId}
-                      setSelectedProject={setSelectedProject}
-                      section={section}
-                      setSection={setSection}
                       isAvatarHovered={isAvatarHovered}
                     />
                   }
@@ -103,11 +76,6 @@ function App() {
                   path='/more-about-me'
                   element={
                     <AboutPage
-                      focusAboutId={focusAboutId}
-                      setFocusAboutId={setFocusAboutId}
-                      setSelectedAbout={setSelectedAbout}
-                      section={section}
-                      setSection={setSection}
                       isAvatarHovered={isAvatarHovered}
                     />
                   }
@@ -116,10 +84,6 @@ function App() {
                   path='/project/:id'
                   element={
                     <SingleProjectPage
-                      selectedProject={selectedProject}
-                      setSelectedProject={setSelectedProject}
-                      section={section}
-                      setSection={setSection}
                     />
                   }
                 />
@@ -127,18 +91,14 @@ function App() {
                   path='/more-about-me/:id'
                   element={
                     <SingleAboutPage
-                      selectedAbout={selectedAbout}
                       isAvatarHovered={isAvatarHovered}
-                      setSelectedAbout={setSelectedAbout}
-                      section={section}
-                      setSection={setSection}
                     />
                   }
                 />
               </Routes>
             </BrowserRouter>
           </div>
-        </ProjectAboutContext.Provider>
+        </ProjectAboutProvider>
       </ThemeContext.Provider>
     </ScreenWidthProvider>
   );

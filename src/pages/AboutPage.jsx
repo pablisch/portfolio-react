@@ -5,16 +5,13 @@ import PropTypes from 'prop-types';
 import '../components/projectAndAboutPanel.css';
 import { scrollToTop } from '../utils/helpers';
 import ThemeContext from '../context/ThemeContext';
+import { useProjectAboutContext } from '../context/ProjectAboutContext';
 
 function AboutPage({
-  setFocusAboutId,
-  focusAboutId,
-  setSelectedAbout,
-  section,
-  setSection,
   isAvatarHovered,
 }) {
   const { theme } = useContext(ThemeContext);
+  const { section, setSection, setFocusAboutId, focusAboutId, setSelectedAbout } = useProjectAboutContext(); 
 
   useEffect(() => {
     if (section !== 'about') setSection('about');
@@ -39,11 +36,6 @@ function AboutPage({
 }
 
 AboutPage.propTypes = {
-  setFocusAboutId: PropTypes.func.isRequired,
-  focusAboutId: PropTypes.string,
-  setSelectedAbout: PropTypes.func.isRequired,
-  section: PropTypes.string.isRequired,
-  setSection: PropTypes.func.isRequired,
   isAvatarHovered: PropTypes.bool.isRequired,
 };
 
