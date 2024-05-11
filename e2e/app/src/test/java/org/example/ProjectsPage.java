@@ -39,7 +39,7 @@ public class ProjectsPage {
     }
     public String getPageUrl(String localOrDeployed) {
         return switch (localOrDeployed) {
-            case "local" -> "http://localhost:5173";
+            case "local" -> "http://localhost:5173/";
             case "deployed" -> "https://pablo-joyce.onrender.com/";
 
             default -> throw new IllegalArgumentException("Invalid localOrDeployed value: " + localOrDeployed);
