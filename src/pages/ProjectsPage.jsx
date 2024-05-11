@@ -29,7 +29,7 @@ function ProjectsPage({
   }, [section, setSection]);
 
   return (
-    <ul className={`project-box project-box-${theme}`} >
+    <ul className={`project-box project-box-${theme}`}>
       {projectData.map((project) => (
         <ProjectPanel
           key={project.id}

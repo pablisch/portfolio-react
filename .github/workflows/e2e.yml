@@ -29,3 +29,10 @@ jobs:
     - name: Run e2e automation tests
       working-directory: e2e
       run: ./gradlew build
+
+    - name: Upload Selenium screenshots
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: screenshots
+        path: /home/runner/work/portfolio-react/portfolio-react/e2e/app/screenshots/

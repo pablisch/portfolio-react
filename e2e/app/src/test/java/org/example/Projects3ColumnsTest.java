@@ -4,15 +4,18 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
+import java.io.File;
+import org.openqa.selenium.OutputType;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.TakesScreenshot;
 
-public class ProjectsTest {
+public class Projects3ColumnsTest {
     private static ChromeDriver driver;
     private static ProjectsPage projectsPage;
     private static Navbar navbar;
@@ -20,7 +23,6 @@ public class ProjectsTest {
     @BeforeAll
     static void launchBrowser() {
         WebDriverManager.chromedriver().setup();
-
         ChromeOptions options = new ChromeOptions();
 
         // Workaround: Chrome only working in GH Actions if running in headless mode
@@ -29,8 +31,6 @@ public class ProjectsTest {
         }
 
         driver = new ChromeDriver(options);
-        System.out.println(driver.getCapabilities().getBrowserVersion());
-
         projectsPage = new ProjectsPage(driver);
         navbar = new Navbar(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -38,13 +38,10 @@ public class ProjectsTest {
 
     @BeforeEach
     void loadProjectsPage() {
-        projectsPage.navigate();
+        projectsPage.navigate("local", "threeColumns");
     }
 
-    @Test
-    void testTextOfNavbarProjectSectionLinkButtons() {
-        assertTrue(true);
-    }
+
     @DisplayName("Test text of navbar project section link buttons")
     @ParameterizedTest(name = "Test text of {0} is {1}")
     @CsvSource({
@@ -55,11 +52,17 @@ public class ProjectsTest {
             "navAlternativeBtn, Alter Native Routes",
             "navEclipseBtn, Eclipse Battle Calc",
     })
-    void testNavElementText(String identifier, String expectedText) throws InterruptedException {
+    void testNavElementText(String identifier, String expectedText) throws Exception {
         // Arrange
+        takeScreenshot(driver, "screenshots/testNavElementText_" + identifier + ".png");
         String element = navbar.getNavElementText(identifier);
         // Assert
         assertEquals(expectedText, element);
+    }
+    @Test
+    void testTextOfMoreAboutMeLinkButton() {
+        String element = navbar.getNavElementText("navAboutSectionBtn");
+        assertEquals("More About Me", element);
     }
     @DisplayName("Test absence of navbar about section link buttons")
     @ParameterizedTest(name = "Test presence of {0} image")
@@ -85,11 +88,20 @@ public class ProjectsTest {
         // Assert
         assertEquals("My Projects", element);
     }
-    @Test
-    void testPresenceOfNavLogo() throws InterruptedException {
+    @DisplayName("Test presence of nav logo and nav icons")
+    @ParameterizedTest(name = "Test presence of {0} nav image")
+    @CsvSource({
+            "navLogo",
+            "githubBtnLogo",
+            "linkedinBtnLogo",
+            "SettingsBtnLogo",
+    })
+//    @Test
+    void testPresenceOfNavLogoAndIconImages(String identifier) throws Exception {
         // Arrange
-        String identifier = "navLogo";
-        boolean isPresent = navbar.checkNavElementPresence(identifier);
+//        String identifier = "navLogo";
+        takeScreenshot(driver, "testPresenceOfNavIconImage_" + identifier + ".png");
+        boolean isPresent = navbar.checkPresenceOfExpectedElement(identifier);
         // Assert
         assertTrue(isPresent);
     }
@@ -118,5 +130,13 @@ public class ProjectsTest {
     @AfterAll
     static void closeBrowser() {
         driver.quit();
+    }
+
+    // Helper function for taking screenshots using WebDriver
+    public static void takeScreenshot(ChromeDriver driver, String desiredPath) throws Exception {
+        TakesScreenshot screenshot = ((TakesScreenshot)driver);
+        File screenshotFile = screenshot.getScreenshotAs(OutputType.FILE);
+        File targetFile = new File(desiredPath);
+        FileUtils.copyFile(screenshotFile, targetFile);
     }
 }
