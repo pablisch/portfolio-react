@@ -40,7 +40,6 @@ function Navbar({
   };
 
   const handleBurgerClick = () => {
-    console.log('burger clicked');
     setIsBurgerMenuOpen(!isBurgerMenuOpen);
     scrollToTop();
   };

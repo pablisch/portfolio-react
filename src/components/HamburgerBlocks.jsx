@@ -20,7 +20,6 @@ const HamburgerBlocks = ({
   setIsBurgerMenuOpen,
 }) => {
   const { burgerMenuStage } = useScreenWidth();
-  console.log('isBurgerMenuOpen', isBurgerMenuOpen);
 
   return (
     isBurgerMenuOpen && (<>

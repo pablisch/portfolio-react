@@ -5,22 +5,23 @@ import { ProjectAboutContext } from '../context/ContextProviders';
 import { useContext } from 'react';
 
 function NavLink({ children, subject, className = 'nav-btn nav-link' }) {
-  // const { setFocusProjectId, setSelectedProject, setFocusAboutId, setSelectedAbout } = useContext(ProjectAboutContext);
-  const { setFocusProjectId, setSelectedProject } = useContext(ProjectAboutContext);
+  const { section, setFocusProjectId, setSelectedProject, setFocusAboutId, setSelectedAbout } = useContext(ProjectAboutContext);
+  // const { section, setFocusProjectId, setSelectedProject } = useContext(ProjectAboutContext);
   const navigate = useNavigate();
 
   const handleHoverStart = () => {
-    setFocusProjectId(subject.id);
+    if (section === 'projects') setFocusProjectId(subject.id);
+    if (section === 'about') setFocusAboutId(subject.id);
   };
 
   const handleHoverEnd = () => {
     setFocusProjectId('');
+    setFocusAboutId('');
   };
 
   const handleClick = (subject) => {
     setSelectedProject(subject);
     localStorage.setItem('selectedProject', JSON.stringify(subject));
-    console.log('subject clicked', subject);
     navigate(`/${subject.id < 10 ? 'project' : 'more-about-me'}/${subject.id}`);
     scrollToTop();
   };
