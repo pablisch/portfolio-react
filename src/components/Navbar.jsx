@@ -1,6 +1,6 @@
 import NavLink from './NavLink';
 import { Link, useNavigate } from 'react-router-dom';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import './Navbar.css';
 import { projectData } from '../data/projectData';
 import { aboutData } from '../data/aboutData';
@@ -12,56 +12,22 @@ import { scrollToTop } from '../utils/helpers';
 import { ThemeContext, ProjectAboutContext } from '../context/ContextProviders';
 
 const themeStyles = ['retro', 'light', 'dark'];
-// const themeStyles = ['retro', 'light', 'dark', 'simple'];
 
 function Navbar({
   isAvatarHovered,
   setIsAvatarHovered,
-  isHamburgerOpen,
-  setIsHamburgerOpen,
-  isDoubleBurger,
-  setIsDoubleBurger,
-  isTripleBurger,
-  setIsTripleBurger,
+  isBurgerMenuOpen,
+  setIsBurgerMenuOpen,
 }) {
   const [isRotating, setIsRotating] = useState(false);
-  const screenWidth = useScreenWidth();
-  const [isHamburgerSize, setIsHamburgerSize] = useState(
-    screenWidth > 950 ? false : true
-  );
+  const {
+    isBurgerMenuVisible,
+    burgerMenuStage,
+  } = useScreenWidth();
   const { theme, setTheme } = useContext(ThemeContext);
   const { setSelectedProject, section } = useContext(ProjectAboutContext);
 
   const navigate = useNavigate();
-  // eslint-disable-next-line no-unused-vars
-
-  useEffect(() => {
-    if (screenWidth > 950) {
-      setIsHamburgerSize(false);
-      setIsDoubleBurger(false);
-      setIsTripleBurger(false);
-    } else if (screenWidth <= 390) {
-      setIsHamburgerSize(true);
-      setIsDoubleBurger(true);
-      setIsTripleBurger(true);
-    } else if (screenWidth <= 650) {
-      setIsHamburgerSize(true);
-      setIsDoubleBurger(true);
-      setIsTripleBurger(false);
-    } else {
-      setIsHamburgerSize(true);
-      setIsDoubleBurger(false);
-      setIsTripleBurger(false);
-    }
-    setIsHamburgerOpen(false);
-    scrollToTop();
-  }, [
-    screenWidth,
-    setIsHamburgerOpen,
-    setIsHamburgerSize,
-    setIsDoubleBurger,
-    setIsTripleBurger,
-  ]);
 
   const handleNavTitleClick = () => {
     setSelectedProject({});
@@ -72,7 +38,7 @@ function Navbar({
 
   const handleBurgerClick = () => {
     console.log('burger clicked');
-    setIsHamburgerOpen(!isHamburgerOpen);
+    setIsBurgerMenuOpen(!isBurgerMenuOpen);
     scrollToTop();
   };
 
@@ -120,29 +86,27 @@ function Navbar({
             <div className='navlist'>
               {/* 👇🏻 PROJECT LINKS */}
               {section === 'projects' &&
-                !isHamburgerSize &&
+                !isBurgerMenuVisible &&
                 projectData.map((project) => (
                   <NavLink
                     className={`nav-btn nav-btn-${theme} nav-link nav-link-${theme} ${
                       isAvatarHovered ? 'avatar-hovered-nav-link' : ''
                     }`}
                     key={project.id}
-                    project={project}
-                    >
+                    project={project}>
                     {project.navName || project.name}
                   </NavLink>
                 ))}
               {/* 👇🏻 ABOUT LINKS */}
               {section === 'about' &&
-                !isHamburgerSize &&
+                !isBurgerMenuVisible &&
                 aboutData.map((about) => (
                   <NavLink
                     className={`nav-btn nav-btn-${theme} nav-link nav-link-${theme} ${
                       isAvatarHovered ? 'avatar-hovered-nav-link' : ''
                     }`}
                     key={about.id}
-                    project={about}
-                    >
+                    project={about}>
                     {about.navName || about.name}
                   </NavLink>
                 ))}
@@ -150,7 +114,7 @@ function Navbar({
           </div>
           <div className='nav-right navlist'>
             {/* 👇🏻 LINK TO PROJECTS SECTION */}
-            {section === 'about' && !isTripleBurger && (
+            {section === 'about' && burgerMenuStage < 3 && (
               <Link
                 to='/'
                 id='projects-section-link'
@@ -161,7 +125,7 @@ function Navbar({
               </Link>
             )}
             {/* 👇🏻 LINK TO ABOUT ME SECTION */}
-            {section === 'projects' && !isTripleBurger && (
+            {section === 'projects' && burgerMenuStage < 3 && (
               <Link
                 to='/more-about-me'
                 id='about-section-link'
@@ -173,7 +137,7 @@ function Navbar({
             )}
             {/* 👇🏻 EXTERNAL LINK BUTTONS */}
             {linkData.length &&
-              !isDoubleBurger &&
+              burgerMenuStage < 2 &&
               linkData.map((link) => (
                 <ExtNavLink key={link.name} page={link} target={link.target} />
               ))}
@@ -195,7 +159,7 @@ function Navbar({
               />
             </div>
             {/* 👇🏻 HAMBURGER MENU BARS */}
-            {isHamburgerSize && (
+            {isBurgerMenuVisible && (
               <div className='hamburger-box'>
                 <div
                   id='hamburger'
@@ -203,15 +167,15 @@ function Navbar({
                   onClick={handleBurgerClick}>
                   <span
                     className={`burger-bar burger-bar-${theme} buntop ${
-                      isHamburgerOpen ? 'burger-open' : ''
+                      isBurgerMenuOpen ? 'burger-open' : ''
                     }`}></span>
                   <span
                     className={`burger-bar burger-bar-${theme} pattie ${
-                      isHamburgerOpen ? 'burger-open' : ''
+                      isBurgerMenuOpen ? 'burger-open' : ''
                     }`}></span>
                   <span
                     className={`burger-bar burger-bar-${theme} bunbase ${
-                      isHamburgerOpen ? 'burger-open' : ''
+                      isBurgerMenuOpen ? 'burger-open' : ''
                     }`}></span>
                 </div>
               </div>
@@ -235,12 +199,8 @@ function Navbar({
 Navbar.propTypes = {
   isAvatarHovered: PropTypes.bool.isRequired,
   setIsAvatarHovered: PropTypes.func.isRequired,
-  isHamburgerOpen: PropTypes.bool.isRequired,
-  setIsHamburgerOpen: PropTypes.func.isRequired,
-  isDoubleBurger: PropTypes.bool.isRequired,
-  setIsDoubleBurger: PropTypes.func.isRequired,
-  isTripleBurger: PropTypes.bool.isRequired,
-  setIsTripleBurger: PropTypes.func.isRequired,
+  isBurgerMenuOpen: PropTypes.bool.isRequired,
+  setIsBurgerMenuOpen: PropTypes.func.isRequired,
 };
 
 export default Navbar;

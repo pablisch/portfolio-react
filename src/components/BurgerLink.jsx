@@ -7,7 +7,7 @@ function BurgerLink({
   project,
   setFocusProjectId,
   setSelectedProject,
-  setIsHamburgerOpen,
+  setIsBurgerMenuOpen,
   className = 'nav-btn nav-link',
 }) {
   const navigate = useNavigate();
@@ -22,8 +22,7 @@ function BurgerLink({
 
   const handleClick = (project) => {
     setSelectedProject(project);
-    setIsHamburgerOpen(false);
-    // console.log('project clicked', project);
+    setIsBurgerMenuOpen(false);
     navigate(`/${project.id < 10 ? 'project' : 'more-about-me'}/${project.id}`);
     scrollToTop();
   };
@@ -45,7 +44,7 @@ BurgerLink.propTypes = {
   setFocusProjectId: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
   className: PropTypes.string,
-  setIsHamburgerOpen: PropTypes.func,
+  setIsBurgerMenuOpen: PropTypes.func,
 };
 
 export default BurgerLink;
