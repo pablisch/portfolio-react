@@ -106,7 +106,7 @@ function Navbar({
         <div className='nav-container'>
           <div className='nav-left'>
             <img
-              id="nav-logo"
+              id='nav-logo'
               className={`logo-image logo-image-${theme} ${
                 isAvatarHovered ? 'avatar-hovered-avatar' : ''
               }`}
@@ -119,7 +119,7 @@ function Navbar({
               className={`nav-title nav-title-${theme} ${
                 isAvatarHovered ? 'avatar-hovered-nav-title' : ''
               } ${section === 'projects' ? 'projects-title' : 'abouts-title'}`}>
-              <h1 id="nav-section-title-text" onClick={handleNavTitleClick}>
+              <h1 id='nav-section-title-text' onClick={handleNavTitleClick}>
                 {section === 'projects'
                   ? 'My Projects'
                   : section === 'about'
@@ -206,13 +206,18 @@ function Navbar({
                 id='settings-icon'
                 src='/images/settings-gear.png'
                 alt='settings button'
-                className={`github-logo github-logo-${theme} settings-icon settings-icon-${theme} ${isRotating ? 'rotate' : ''}`}
+                className={`github-logo github-logo-${theme} settings-icon settings-icon-${theme} ${
+                  isRotating ? 'rotate' : ''
+                }`}
               />
             </div>
             {/* 👇🏻 HAMBURGER MENU BARS */}
             {isHamburgerSize && (
               <div className='hamburger-box'>
-                <div id='hamburger' className='hamburger' onClick={handleBurgerClick}>
+                <div
+                  id='hamburger'
+                  className='hamburger'
+                  onClick={handleBurgerClick}>
                   <span
                     className={`burger-bar burger-bar-${theme} buntop ${
                       isHamburgerOpen ? 'burger-open' : ''
