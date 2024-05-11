@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import '../components/projectAndAboutPanel.css';
 import { scrollToTop } from '../utils/helpers';
 // import { useScreenWidth } from '../context/ScreenWidthProvider';
-import { ThemeContext } from '../context/ContextProviders';
+import ThemeContext from '../context/ThemeContext';
 
 function ProjectsPage({
   setFocusProjectId,

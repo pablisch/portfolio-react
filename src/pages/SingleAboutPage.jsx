@@ -8,7 +8,7 @@ import Button from '../components/Button';
 import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 import { scrollToTop } from '../utils/helpers';
-import { ThemeContext } from '../context/ContextProviders';
+import ThemeContext from '../context/ThemeContext';
 
 const lastAboutId = aboutData[aboutData.length - 1].id;
 const firstAboutId = aboutData[0].id;
@@ -77,7 +77,9 @@ const SingleAboutPage = ({
     <div id='single-subject-page'>
       <div id='single-subject-upper-section'>
         <div id='single-subject-headers-and-description-1'>
-        <h1 className={`single-subject-title single-subject-title-${theme}`}>{selectedAbout.name}</h1>
+          <h1 className={`single-subject-title single-subject-title-${theme}`}>
+            {selectedAbout.name}
+          </h1>
           <h2 id='single-subject-subheading'>{selectedAbout.subheading}</h2>
           <div id='single-subject-description' className='paragraph'>
             {selectedAbout.descriptionText1}

@@ -4,7 +4,7 @@ import AboutPanel from '../components/AboutPanel';
 import PropTypes from 'prop-types';
 import '../components/projectAndAboutPanel.css';
 import { scrollToTop } from '../utils/helpers';
-import { ThemeContext } from '../context/ContextProviders';
+import ThemeContext from '../context/ThemeContext';
 
 function AboutPage({
   setFocusAboutId,
@@ -15,9 +15,9 @@ function AboutPage({
   isAvatarHovered,
 }) {
   const { theme } = useContext(ThemeContext);
-  
+
   useEffect(() => {
-    if (section !== 'about') setSection('about')
+    if (section !== 'about') setSection('about');
     document.title = 'Pablo Joyce - About Me';
     scrollToTop();
   }, [section, setSection]);
