@@ -83,7 +83,7 @@ const SingleProjectPage = () => {
     scrollToTop();
   };
 
-  console.log('tech', selectedProject?.techBadgesArray?.[0]?.scale);
+  // console.log('tech', selectedProject?.techBadgesArray?.[0]?.scale);
 
   const size = Math.min(
     (selectedProject?.techBadgesArray?.[0]?.scale || '30') *
