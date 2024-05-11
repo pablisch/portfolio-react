@@ -10,7 +10,8 @@ import axios from 'axios';
 import { projectData } from './data/projectData';
 import { ScreenWidthProvider } from './context/ScreenWidthProvider';
 import HamburgerBlocks from './components/HamburgerBlocks';
-import { ThemeContext, ProjectAboutContext } from './context/ContextProviders';
+import ThemeContext from './context/ThemeContext';
+import ProjectAboutContext from './context/ProjectAboutContext';
 
 const apiUrls = projectData
   .filter((project) => project.apiWakeUpUrl)
@@ -63,11 +64,6 @@ function App() {
             }`}>
             <BrowserRouter>
               <Navbar
-                // setFocusProjectId={setFocusProjectId}
-                // setSelectedProject={setSelectedProject}
-                // setFocusAboutId={setFocusAboutId}
-                // setSelectedAbout={setSelectedAbout}
-                // section={section}
                 isAvatarHovered={isAvatarHovered}
                 setIsAvatarHovered={setIsAvatarHovered}
                 isBurgerMenuOpen={isBurgerMenuOpen}
@@ -85,7 +81,9 @@ function App() {
               />
 
               <div
-                className={`all-pages ${isBurgerMenuOpen ? 'burger-open-spacer' : ''}`}></div>
+                className={`all-pages ${
+                  isBurgerMenuOpen ? 'burger-open-spacer' : ''
+                }`}></div>
               <Routes>
                 <Route
                   path='/'

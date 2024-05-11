@@ -9,7 +9,8 @@ import PropTypes from 'prop-types';
 import ExtNavLink from './ExtNavLink';
 import { useScreenWidth } from '../context/ScreenWidthProvider';
 import { scrollToTop } from '../utils/helpers';
-import { ThemeContext, ProjectAboutContext } from '../context/ContextProviders';
+import ThemeContext from '../context/ThemeContext';
+import ProjectAboutContext from '../context/ProjectAboutContext';
 
 const themeStyles = ['retro', 'light', 'dark'];
 
@@ -20,14 +21,10 @@ function Navbar({
   setIsBurgerMenuOpen,
 }) {
   const [isRotating, setIsRotating] = useState(false);
-  const {
-    isBurgerMenuVisible,
-    burgerMenuStage,
-  } = useScreenWidth();
+  const { isBurgerMenuVisible, burgerMenuStage } = useScreenWidth();
   const { theme, setTheme } = useContext(ThemeContext);
-  const { section,
-    setSelectedProject,
-    setSelectedAbout  } = useContext(ProjectAboutContext);
+  const { section, setSelectedProject, setSelectedAbout } =
+    useContext(ProjectAboutContext);
 
   const navigate = useNavigate();
 

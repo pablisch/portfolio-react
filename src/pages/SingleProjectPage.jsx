@@ -9,15 +9,20 @@ import { RiArrowGoBackLine } from 'react-icons/ri';
 import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
 import { scrollToTop } from '../utils/helpers';
 import { useScreenWidth } from '../context/ScreenWidthProvider';
-import { ThemeContext } from '../context/ContextProviders';
+import ThemeContext from '../context/ThemeContext';
 
 const lastProjectId = projectData[projectData.length - 1].id;
 const firstProjectId = projectData[0].id;
 
-const SingleProjectPage = ({ selectedProject, setSelectedProject, section, setSection }) => {
+const SingleProjectPage = ({
+  selectedProject,
+  setSelectedProject,
+  section,
+  setSection,
+}) => {
   const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
-  const {screenWidth} = useScreenWidth();
+  const { screenWidth } = useScreenWidth();
 
   const { id } = useParams();
 
@@ -85,8 +90,9 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject, section, setSe
 
   const size = Math.min(
     (selectedProject?.techBadgesArray?.[0]?.scale || '30') *
-    Math.ceil(screenWidth / (1500 - (1500 - screenWidth) / 2)),
-    selectedProject?.techBadgesArray?.[0]?.scale || '30');
+      Math.ceil(screenWidth / (1500 - (1500 - screenWidth) / 2)),
+    selectedProject?.techBadgesArray?.[0]?.scale || '30'
+  );
 
   return (
     <div id='single-subject-page'>
@@ -175,7 +181,9 @@ const SingleProjectPage = ({ selectedProject, setSelectedProject, section, setSe
           </div>
           <div id='single-subject-lower-section'>
             <div id='single-project-technologiesText' className='paragraph'>
-              <div className='project-text'>{selectedProject.technologiesText}</div>
+              <div className='project-text'>
+                {selectedProject.technologiesText}
+              </div>
             </div>
           </div>
         </>

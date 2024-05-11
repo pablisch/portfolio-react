@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './projectAndAboutPanel.css';
 import { useContext } from 'react';
-import { ThemeContext } from '../context/ContextProviders';
+import ThemeContext from '../context/ThemeContext';
 
 function AboutPanel({
   about,
@@ -38,10 +38,17 @@ function AboutPanel({
         alt={about.name}
         className='about-image'
       />
-      <div className={`about-label about-label-${theme} ${(focusAboutId === about.id || isAvatarHovered) ? 'hover-fade' : ''}`} >{about.panelName || about.name}</div>
+      <div
+        className={`about-label about-label-${theme} ${
+          focusAboutId === about.id || isAvatarHovered ? 'hover-fade' : ''
+        }`}>
+        {about.panelName || about.name}
+      </div>
       <div
         onClick={() => handleSelectAbout(about)}
-        className={`about-overlay about-overlay-${theme} ${(focusAboutId === about.id || isAvatarHovered) ? 'hover-focus' : ''}`}> 
+        className={`about-overlay about-overlay-${theme} ${
+          focusAboutId === about.id || isAvatarHovered ? 'hover-focus' : ''
+        }`}>
         {about.summary}
       </div>
     </li>

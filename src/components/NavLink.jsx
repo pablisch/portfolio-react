@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { scrollToTop } from '../utils/helpers';
-import { ProjectAboutContext } from '../context/ContextProviders';
+import ProjectAboutContext from '../context/ProjectAboutContext';
 import { useContext } from 'react';
 
 function NavLink({ children, subject, className = 'nav-btn nav-link' }) {
   const { section, setFocusProjectId, setSelectedProject, setFocusAboutId, setSelectedAbout } = useContext(ProjectAboutContext);
-  // const { section, setFocusProjectId, setSelectedProject } = useContext(ProjectAboutContext);
   const navigate = useNavigate();
 
   const handleHoverStart = () => {
@@ -20,7 +19,8 @@ function NavLink({ children, subject, className = 'nav-btn nav-link' }) {
   };
 
   const handleClick = (subject) => {
-    setSelectedProject(subject);
+    if (section === 'projects') setSelectedProject(subject);
+    if (section === 'about') setSelectedAbout(subject);
     localStorage.setItem('selectedProject', JSON.stringify(subject));
     navigate(`/${subject.id < 10 ? 'project' : 'more-about-me'}/${subject.id}`);
     scrollToTop();

@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './projectAndAboutPanel.css';
 import { useContext } from 'react';
-import { ThemeContext } from '../context/ContextProviders';
+import ThemeContext from '../context/ThemeContext';
 
 function ProjectPanel({
   project,
