@@ -25,8 +25,7 @@ function App() {
   const [section, setSection] = useState('');
   const [isAvatarHovered, setIsAvatarHovered] = useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-  const [isDoubleBurger, setIsDoubleBurger] = useState(false); // isDoubleBurger is true when the screen width is less than 650px and external links move into the hamburger menu
-  const [isTripleBurger, setIsTripleBurger] = useState(false); // isTripleBurger is true when the screen width is less than 390px and section links ('about me' and 'my projects') move into the hamburger menu
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
   const [theme, setTheme] = useState('light');
 
   useEffect(() => {
@@ -44,7 +43,7 @@ function App() {
   }, []);
 
   return (
-    <ScreenWidthProvider>
+    <ScreenWidthProvider setIsBurgerMenuOpen={setIsBurgerMenuOpen}>
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <ProjectAboutContext.Provider
           value={{
@@ -74,27 +73,23 @@ function App() {
                 setIsAvatarHovered={setIsAvatarHovered}
                 isHamburgerOpen={isHamburgerOpen}
                 setIsHamburgerOpen={setIsHamburgerOpen}
-                isDoubleBurger={isDoubleBurger}
-                setIsDoubleBurger={setIsDoubleBurger}
-                isTripleBurger={isTripleBurger}
-                setIsTripleBurger={setIsTripleBurger}
+                isBurgerMenuOpen={isBurgerMenuOpen}
+                setIsBurgerMenuOpen={setIsBurgerMenuOpen}
               />
-              {isHamburgerOpen && isHamburgerShowing && (
-                <HamburgerBlocks
-                  section={section}
-                  isAvatarHovered={isAvatarHovered}
-                  setFocusAboutId={setFocusAboutId}
-                  setFocusProjectId={setFocusProjectId}
-                  setSelectedAbout={setSelectedAbout}
-                  setSelectedProject={setSelectedProject}
-                  setIsHamburgerOpen={setIsHamburgerOpen}
-                  isDoubleBurger={isDoubleBurger}
-                  isTripleBurger={isTripleBurger}
-                />
-              )}
+              <HamburgerBlocks
+                section={section}
+                isAvatarHovered={isAvatarHovered}
+                setFocusAboutId={setFocusAboutId}
+                setFocusProjectId={setFocusProjectId}
+                setSelectedAbout={setSelectedAbout}
+                setSelectedProject={setSelectedProject}
+                setIsHamburgerOpen={setIsHamburgerOpen}
+                isBurgerMenuOpen={isBurgerMenuOpen}
+              />
+
               <div
                 className={`all-pages ${
-                  isHamburgerOpen ? 'burger-open-spacer' : ''
+                  isBurgerMenuOpen ? 'burger-open-spacer' : ''
                 }`}></div>
               <Routes>
                 <Route
