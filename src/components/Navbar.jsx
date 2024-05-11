@@ -19,7 +19,6 @@ function Navbar({
   setIsAvatarHovered,
   isHamburgerOpen,
   setIsHamburgerOpen,
-  setIsHamburgerShowing,
   isDoubleBurger,
   setIsDoubleBurger,
   isTripleBurger,
@@ -39,22 +38,18 @@ function Navbar({
   useEffect(() => {
     if (screenWidth > 950) {
       setIsHamburgerSize(false);
-      setIsHamburgerShowing(false);
       setIsDoubleBurger(false);
       setIsTripleBurger(false);
     } else if (screenWidth <= 390) {
       setIsHamburgerSize(true);
-      setIsHamburgerShowing(true);
       setIsDoubleBurger(true);
       setIsTripleBurger(true);
     } else if (screenWidth <= 650) {
       setIsHamburgerSize(true);
-      setIsHamburgerShowing(true);
       setIsDoubleBurger(true);
       setIsTripleBurger(false);
     } else {
       setIsHamburgerSize(true);
-      setIsHamburgerShowing(true);
       setIsDoubleBurger(false);
       setIsTripleBurger(false);
     }
@@ -62,7 +57,6 @@ function Navbar({
     scrollToTop();
   }, [
     screenWidth,
-    setIsHamburgerShowing,
     setIsHamburgerOpen,
     setIsHamburgerSize,
     setIsDoubleBurger,
@@ -243,7 +237,6 @@ Navbar.propTypes = {
   setIsAvatarHovered: PropTypes.func.isRequired,
   isHamburgerOpen: PropTypes.bool.isRequired,
   setIsHamburgerOpen: PropTypes.func.isRequired,
-  setIsHamburgerShowing: PropTypes.func.isRequired,
   isDoubleBurger: PropTypes.bool.isRequired,
   setIsDoubleBurger: PropTypes.func.isRequired,
   isTripleBurger: PropTypes.bool.isRequired,

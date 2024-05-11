@@ -8,7 +8,7 @@ const ScreenWidthContext = createContext();
 // The provider is a component that will wrap every part of the app that needs this context.
 export const ScreenWidthProvider = ({ children }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
+  
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);

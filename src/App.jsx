@@ -25,7 +25,6 @@ function App() {
   const [section, setSection] = useState('');
   const [isAvatarHovered, setIsAvatarHovered] = useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-  const [isHamburgerShowing, setIsHamburgerShowing] = useState(false);
   const [isDoubleBurger, setIsDoubleBurger] = useState(false); // isDoubleBurger is true when the screen width is less than 650px and external links move into the hamburger menu
   const [isTripleBurger, setIsTripleBurger] = useState(false); // isTripleBurger is true when the screen width is less than 390px and section links ('about me' and 'my projects') move into the hamburger menu
   const [theme, setTheme] = useState('light');
@@ -75,7 +74,6 @@ function App() {
                 setIsAvatarHovered={setIsAvatarHovered}
                 isHamburgerOpen={isHamburgerOpen}
                 setIsHamburgerOpen={setIsHamburgerOpen}
-                setIsHamburgerShowing={setIsHamburgerShowing}
                 isDoubleBurger={isDoubleBurger}
                 setIsDoubleBurger={setIsDoubleBurger}
                 isTripleBurger={isTripleBurger}
