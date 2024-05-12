@@ -10,9 +10,8 @@ import axios from 'axios';
 import { projectData } from './data/projectData';
 import { ScreenWidthProvider } from './context/ScreenWidthProvider';
 import HamburgerBlocks from './components/HamburgerBlocks';
-import {ThemeProvider} from './context/ThemeContext';
 import { ProjectAboutProvider } from './context/ProjectAboutContext';
-import AppWrapper from './pages/AppWrapper';
+import { useTheme } from './context/ThemeContext';
 
 const apiUrls = projectData
   .filter((project) => project.apiWakeUpUrl)
@@ -22,6 +21,7 @@ function App() {
   // This app has two main sections: projects and abouts - abouts refers to the 'about me' section.
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
   const [isAvatarHovered, setIsAvatarHovered] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const wakeUpDeployedApis = async () => {
@@ -39,64 +39,47 @@ function App() {
 
   return (
     <ScreenWidthProvider setIsBurgerMenuOpen={setIsBurgerMenuOpen}>
-      <ThemeProvider>
-        <ProjectAboutProvider>
-          <AppWrapper isAvatarHovered={isAvatarHovered} >
-            <BrowserRouter>
-              <Navbar
-                isAvatarHovered={isAvatarHovered}
-                setIsAvatarHovered={setIsAvatarHovered}
-                isBurgerMenuOpen={isBurgerMenuOpen}
-                setIsBurgerMenuOpen={setIsBurgerMenuOpen}
-              />
-              <HamburgerBlocks
-                isAvatarHovered={isAvatarHovered}
-                isBurgerMenuOpen={isBurgerMenuOpen}
-                setIsBurgerMenuOpen={setIsBurgerMenuOpen}
-              />
+      <ProjectAboutProvider>
+        <div
+          className={`app app-${theme} ${
+            isAvatarHovered ? 'avatar-hovered-app' : ''
+          }`}>
+          <BrowserRouter>
+            <Navbar
+              isAvatarHovered={isAvatarHovered}
+              setIsAvatarHovered={setIsAvatarHovered}
+              isBurgerMenuOpen={isBurgerMenuOpen}
+              setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+            />
+            <HamburgerBlocks
+              isAvatarHovered={isAvatarHovered}
+              isBurgerMenuOpen={isBurgerMenuOpen}
+              setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+            />
 
-              <div
-                className={`all-pages ${
-                  isBurgerMenuOpen ? 'burger-open-spacer' : ''
-                }`}></div>
-              <Routes>
-                <Route
-                  path='/'
-                  element={
-                    <ProjectsPage
-                      isAvatarHovered={isAvatarHovered}
-                    />
-                  }
-                />
-                <Route path='/project' element={<Navigate to='/' replace />} />
-                <Route
-                  path='/more-about-me'
-                  element={
-                    <AboutPage
-                      isAvatarHovered={isAvatarHovered}
-                    />
-                  }
-                />
-                <Route
-                  path='/project/:id'
-                  element={
-                    <SingleProjectPage
-                    />
-                  }
-                />
-                <Route
-                  path='/more-about-me/:id'
-                  element={
-                    <SingleAboutPage
-                      isAvatarHovered={isAvatarHovered}
-                    />
-                  }
-                />
-              </Routes>
-            </BrowserRouter>
-          </AppWrapper>
-        </ProjectAboutProvider>
-      </ThemeProvider>
+            <div
+              className={`all-pages ${
+                isBurgerMenuOpen ? 'burger-open-spacer' : ''
+              }`}></div>
+            <Routes>
+              <Route
+                path='/'
+                element={<ProjectsPage isAvatarHovered={isAvatarHovered} />}
+              />
+              <Route path='/project' element={<Navigate to='/' replace />} />
+              <Route
+                path='/more-about-me'
+                element={<AboutPage isAvatarHovered={isAvatarHovered} />}
+              />
+              <Route path='/project/:id' element={<SingleProjectPage />} />
+              <Route
+                path='/more-about-me/:id'
+                element={<SingleAboutPage isAvatarHovered={isAvatarHovered} />}
+              />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </ProjectAboutProvider>
     </ScreenWidthProvider>
   );
 }
