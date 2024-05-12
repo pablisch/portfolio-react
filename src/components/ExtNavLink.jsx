@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
-import { useContext } from 'react';
-import ThemeContext from '../context/ThemeContext';
+import {useTheme} from '../context/ThemeContext';
 
 const ExtNavLink = ({
   page,
@@ -8,7 +7,7 @@ const ExtNavLink = ({
   target = '_blank',
   context = 'normal',
 }) => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   const normalClasses = `${page.class.map((c) => c).join(' ')} ${page.class
     .map((c) => `${c}-${theme}`)
