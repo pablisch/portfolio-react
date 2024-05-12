@@ -1,6 +1,5 @@
 import NavLink from './NavLink';
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import './Navbar.css';
 import { projectData } from '../data/projectData';
 import { aboutData } from '../data/aboutData';
@@ -12,17 +11,14 @@ import { scrollToTop } from '../utils/helpers';
 import { useTheme } from '../context/ThemeContext';
 import { useProjectAboutContext } from '../context/ProjectAboutContext';
 
-const themeStyles = ['retro', 'light', 'dark'];
-
 function Navbar({
   isAvatarHovered,
   setIsAvatarHovered,
   isBurgerMenuOpen,
   setIsBurgerMenuOpen,
 }) {
-  const [isRotating, setIsRotating] = useState(false);
   const { isBurgerMenuVisible, burgerMenuStage } = useScreenWidth();
-  const { theme, setTheme } = useTheme();
+  const { theme, onThemeChange, isIconRotating } = useTheme();
   const { section, setSelectedProject, setSelectedAbout } =
     useProjectAboutContext();
 
@@ -39,17 +35,6 @@ function Navbar({
   const handleBurgerClick = () => {
     setIsBurgerMenuOpen(!isBurgerMenuOpen);
     scrollToTop();
-  };
-
-  const handleSettingsClick = () => {
-    const themeIndex = themeStyles.indexOf(theme);
-    const newThemeIndex =
-      themeIndex === themeStyles.length - 1 ? 0 : themeIndex + 1;
-    setTheme(themeStyles[newThemeIndex]);
-    setIsRotating(true);
-    setTimeout(() => {
-      setIsRotating(false);
-    }, 500);
   };
 
   return (
@@ -144,7 +129,7 @@ function Navbar({
             <div
               id='settings-nav-btn'
               className={`nav-btn nav-btn-${theme} github-link-btn github-link-btn-${theme} settings-btn settings-btn-${theme}`}
-              onClick={handleSettingsClick}
+              onClick={onThemeChange}
               // onMouseOver={handleHoverStart}
               // onMouseLeave={handleHoverEnd}
             >
@@ -153,7 +138,7 @@ function Navbar({
                 src='/images/settings-gear.png'
                 alt='settings button'
                 className={`github-logo github-logo-${theme} settings-icon settings-icon-${theme} ${
-                  isRotating ? 'rotate' : ''
+                  isIconRotating ? 'rotate' : ''
                 }`}
               />
             </div>
