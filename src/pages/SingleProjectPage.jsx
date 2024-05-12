@@ -3,21 +3,22 @@ import './SingleProjectAndAboutPage.css';
 import { projectData } from '../data/projectData';
 // import PropTypes from 'prop-types';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useEffect, useContext } from 'react';
+import { useEffect } from 'react';
 import Button from '../components/Button';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
 import { scrollToTop } from '../utils/helpers';
 import { useScreenWidth } from '../context/ScreenWidthProvider';
-import ThemeContext from '../context/ThemeContext';
+import { useTheme } from '../context/ThemeContext';
 import { useProjectAboutContext } from '../context/ProjectAboutContext';
 
 const lastProjectId = projectData[projectData.length - 1].id;
 const firstProjectId = projectData[0].id;
 
 const SingleProjectPage = () => {
-  const { theme } = useContext(ThemeContext);
-  const { section, setSection, selectedProject, setSelectedProject } =  useProjectAboutContext();
+  const { theme } = useTheme();
+  const { section, setSection, selectedProject, setSelectedProject } =
+    useProjectAboutContext();
   const navigate = useNavigate();
   const { screenWidth } = useScreenWidth();
 
@@ -83,7 +84,7 @@ const SingleProjectPage = () => {
     scrollToTop();
   };
 
-  // console.log('tech', selectedProject?.techBadgesArray?.[0]?.scale);
+  console.log('tech', selectedProject?.techBadgesArray?.[0]?.scale);
 
   const size = Math.min(
     (selectedProject?.techBadgesArray?.[0]?.scale || '30') *

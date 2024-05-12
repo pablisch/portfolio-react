@@ -1,7 +1,7 @@
 import { createContext, useState, useContext } from "react";
 import PropTypes from "prop-types";
 
-export const ProjectAboutContext = createContext();
+const ProjectAboutContext = createContext();
 
 export const ProjectAboutProvider = ({ children }) => {
   const [focusProjectId, setFocusProjectId] = useState('');
@@ -40,4 +40,4 @@ export const useProjectAboutContext = () => {
   return context;
 }
 
-export default ProjectAboutContext;
+// export default ProjectAboutContext;

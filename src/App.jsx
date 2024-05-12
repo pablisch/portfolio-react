@@ -10,8 +10,9 @@ import axios from 'axios';
 import { projectData } from './data/projectData';
 import { ScreenWidthProvider } from './context/ScreenWidthProvider';
 import HamburgerBlocks from './components/HamburgerBlocks';
-import ThemeContext from './context/ThemeContext';
-import {ProjectAboutProvider} from './context/ProjectAboutContext';
+import {ThemeProvider} from './context/ThemeContext';
+import { ProjectAboutProvider } from './context/ProjectAboutContext';
+import AppWrapper from './pages/AppWrapper';
 
 const apiUrls = projectData
   .filter((project) => project.apiWakeUpUrl)
@@ -19,9 +20,8 @@ const apiUrls = projectData
 
 function App() {
   // This app has two main sections: projects and abouts - abouts refers to the 'about me' section.
-  const [isAvatarHovered, setIsAvatarHovered] = useState(false);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
-  const [theme, setTheme] = useState('light');
+  const [isAvatarHovered, setIsAvatarHovered] = useState(false);
 
   useEffect(() => {
     const wakeUpDeployedApis = async () => {
@@ -39,12 +39,9 @@ function App() {
 
   return (
     <ScreenWidthProvider setIsBurgerMenuOpen={setIsBurgerMenuOpen}>
-      <ThemeContext.Provider value={{ theme, setTheme }}>
+      <ThemeProvider>
         <ProjectAboutProvider>
-          <div
-            className={`app app-${theme} ${
-              isAvatarHovered ? 'avatar-hovered-app' : ''
-            }`}>
+          <AppWrapper isAvatarHovered={isAvatarHovered} >
             <BrowserRouter>
               <Navbar
                 isAvatarHovered={isAvatarHovered}
@@ -97,9 +94,9 @@ function App() {
                 />
               </Routes>
             </BrowserRouter>
-          </div>
+          </AppWrapper>
         </ProjectAboutProvider>
-      </ThemeContext.Provider>
+      </ThemeProvider>
     </ScreenWidthProvider>
   );
 }

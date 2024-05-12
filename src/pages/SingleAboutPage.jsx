@@ -2,20 +2,21 @@
 import './SingleProjectAndAboutPage.css';
 import { aboutData } from '../data/aboutData';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useEffect, useContext } from 'react';
+import { useEffect } from 'react';
 import Button from '../components/Button';
 import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 import { scrollToTop } from '../utils/helpers';
-import ThemeContext from '../context/ThemeContext';
+import { useTheme } from '../context/ThemeContext';
 import { useProjectAboutContext } from '../context/ProjectAboutContext';
 
 const lastAboutId = aboutData[aboutData.length - 1].id;
 const firstAboutId = aboutData[0].id;
 
 const SingleAboutPage = () => {
-  const { theme } = useContext(ThemeContext);
-  const { section, setSection, selectedAbout, setSelectedAbout } =  useProjectAboutContext();
+  const { theme } = useTheme();
+  const { section, setSection, selectedAbout, setSelectedAbout } =
+    useProjectAboutContext();
   const navigate = useNavigate();
 
   const { id } = useParams();

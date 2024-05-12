@@ -1,14 +1,14 @@
 import { projectData } from '../data/projectData';
-import { useEffect, useContext } from 'react';
+import { useEffect } from 'react';
 import ProjectPanel from '../components/ProjectPanel';
 import PropTypes from 'prop-types';
 import '../components/projectAndAboutPanel.css';
 import { scrollToTop } from '../utils/helpers';
-import ThemeContext from '../context/ThemeContext';
+import {useTheme} from '../context/ThemeContext';
 import { useProjectAboutContext } from '../context/ProjectAboutContext';
 
 function ProjectsPage({ isAvatarHovered }) {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
   const {
     section,
     setSection,

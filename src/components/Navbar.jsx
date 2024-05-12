@@ -1,6 +1,6 @@
 import NavLink from './NavLink';
 import { Link, useNavigate } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import './Navbar.css';
 import { projectData } from '../data/projectData';
 import { aboutData } from '../data/aboutData';
@@ -9,8 +9,8 @@ import PropTypes from 'prop-types';
 import ExtNavLink from './ExtNavLink';
 import { useScreenWidth } from '../context/ScreenWidthProvider';
 import { scrollToTop } from '../utils/helpers';
-import ThemeContext from '../context/ThemeContext';
-import {useProjectAboutContext} from '../context/ProjectAboutContext';
+import { useTheme } from '../context/ThemeContext';
+import { useProjectAboutContext } from '../context/ProjectAboutContext';
 
 const themeStyles = ['retro', 'light', 'dark'];
 
@@ -22,7 +22,7 @@ function Navbar({
 }) {
   const [isRotating, setIsRotating] = useState(false);
   const { isBurgerMenuVisible, burgerMenuStage } = useScreenWidth();
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useTheme();
   const { section, setSelectedProject, setSelectedAbout } =
     useProjectAboutContext();
 
