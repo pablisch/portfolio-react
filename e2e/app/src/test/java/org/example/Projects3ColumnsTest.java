@@ -29,7 +29,7 @@ public class Projects3ColumnsTest {
         if(System.getenv("CI") != null) {
             options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
         }
-
+        http://192.168.1.200:5173/
         driver = new ChromeDriver(options);
         projectsPage = new ProjectsPage(driver);
         navbar = new Navbar(driver);
