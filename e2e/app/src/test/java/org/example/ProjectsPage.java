@@ -16,14 +16,6 @@ public class ProjectsPage {
     private final By alternativeImageBy = By.cssSelector("img[alt='Alternative Routes']");
     private final By eclipseImageBy = By.cssSelector("img[alt='Eclipse Battle Calculator']");
 
-
-//    private final By girlAndGoatImageBy = By.cssSelector("img[id='image/v1703781467/polmlpk8iugb6lrfndue.jpg']");
-//    private final By cancelDeleteImageBtn = By.cssSelector("button[id='cancel-delete-image-btn']");
-//    private final By hoverInfoAvatarImageBy = By.cssSelector("img[id='hover-info-avatar-image']");
-//    private final By hoverInfoAvatarLetterContainerBy = By.cssSelector("div[id='hover-info-avatar-letter-container']");
-//    private final By hoverInfoLikesNumBy = By.cssSelector("p[id='hover-info-likes-num']");
-//    private final By hoverInfoLikesOutlineIconBy = By.cssSelector("svg[id='hover-info-likes-outline-icon']");
-
     public ProjectsPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -57,7 +49,8 @@ public class ProjectsPage {
     }
     public By getElementBy(String identifier) {
         return switch (identifier) {
-            case "lupoImage" -> lupoImageBy;
+            case "lupoImage" -> By.cssSelector("img[alt='London Underground Phony Orchestra']");
+//            case "lupoImage" -> lupoImageBy;
             case "galleryImage" -> galleryImageBy;
             case "farcebookImage" -> farcebookImageBy;
             case "knotImage" -> knotImageBy;
