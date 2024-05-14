@@ -58,15 +58,14 @@ public class Projects3ColumnsTest {
             "navAlternativeBtn, Alter Native Routes",
             "navEclipseBtn, Eclipse Battle Calc",
     })
-    void testNavElementText(String identifier, String expectedText) throws Exception {
+    void testNavIndividualProjectLinkText(String identifier, String expectedText) throws Exception {
         // Arrange
-        takeScreenshot(driver, "screenshots/testNavElementText_" + identifier + ".png");
         String element = navbar.getNavElementText(identifier);
         // Assert
         assertEquals(expectedText, element);
     }
     @Test
-    void testTextOfMoreAboutMeLinkButton() {
+    void testAbsenceOfMoreAboutMeLinkButton() {
         String element = navbar.getNavElementText("navAboutSectionBtn");
         assertEquals("More About Me", element);
     }
@@ -105,8 +104,7 @@ public class Projects3ColumnsTest {
 //    @Test
     void testPresenceOfNavLogoAndIconImages(String identifier) throws Exception {
         // Arrange
-//        String identifier = "navLogo";
-        takeScreenshot(driver, "testPresenceOfNavIconImage_" + identifier + ".png");
+//        takeScreenshot(driver, "testPresenceOfNavIconImage_" + identifier + ".png");
         boolean isPresent = navbar.checkPresenceOfExpectedElement(identifier);
         // Assert
         assertTrue(isPresent);

@@ -15,43 +15,61 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class Projects2ColumnsTest {
+public class Abouts3ColumnsTest {
     private static ChromeDriver driver;
-    private static ProjectsPage projectsPage;
+    private static AboutsPage aboutsPage;
     private static Navbar navbar;
+    private static String siteLocation;
 
     @BeforeAll
     static void launchBrowser() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
 
+
         // Workaround: Chrome only working in GH Actions if running in headless mode
         if(System.getenv("CI") != null) {
             options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+            siteLocation = "deployed";
+        } else {
+            siteLocation = "local";
         }
-
+//        http://192.168.1.200:5173/
         driver = new ChromeDriver(options);
-        projectsPage = new ProjectsPage(driver);
+        aboutsPage = new AboutsPage(driver);
         navbar = new Navbar(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
     }
 
     @BeforeEach
+    // "local" or "deployed" : "threeColumns", "twoColumns" or "omeColumn"
     void loadProjectsPage() {
-        projectsPage.navigate("deployed", "twoColumns");
+        aboutsPage.navigate(siteLocation, "threeColumns");
     }
 
-    @Test
-    void testTextOfMoreAboutMeLinkButton() {
-        String element = navbar.getNavElementText("navAboutSectionBtn");
-        assertEquals("More About Me", element);
+
+    @DisplayName("Test text of navbar project section link buttons")
+    @ParameterizedTest(name = "Test text of {0} is {1}")
+    @CsvSource({
+            "navSpaceBtn, Space Explorer",
+            "navForestBtn, Forest Creator",
+            "navStemBtn, STEM in Schools",
+            "navFsBtn, Forest School",
+            "navFurnitureBtn, Furniture & Craft",
+            "navCuriosityBtn, Learning & Curiosity"
+    })
+    void testNavElementText(String identifier, String expectedText) throws Exception {
+        // Arrange
+        String element = navbar.getNavElementText(identifier);
+        // Assert
+        assertEquals(expectedText, element);
     }
     @Test
-    void testPresenceOfBurgerBarMenu() {
-        boolean isPresent = navbar.checkPresenceOfExpectedElement("burgerMenu");
-        assertTrue(isPresent);
+    void testAbsenceOfMoreAboutMeLinkButton() {
+        String element = navbar.getNavElementText("navProjectsSectionBtn");
+        assertEquals("Software Projects", element);
     }
-    @DisplayName("Test absence of navbar project & about section link buttons")
+    @DisplayName("Test absence of navbar about section link buttons")
     @ParameterizedTest(name = "Test presence of {0} image")
     @CsvSource({
             "navLupoBtn",
@@ -60,14 +78,8 @@ public class Projects2ColumnsTest {
             "navKnotBtn",
             "navAlternativeBtn",
             "navEclipseBtn",
-            "navSpaceBtn",
-            "navForestBtn",
-            "navStemBtn",
-            "navFsBtn",
-            "navFurnitureBtn",
-            "navCuriosityBtn"
     })
-    void testAbsenceOfProjectAndAboutSectionLinks(String identifier) {
+    void testAbsenceOfAboutSectionLinks(String identifier) {
         // Arrange
         boolean isPresent = navbar.checkPresenceOfElement(identifier);
         // Assert
@@ -79,7 +91,7 @@ public class Projects2ColumnsTest {
         String identifier = "navSectionTitle";
         String element = navbar.getNavElementText(identifier);
         // Assert
-        assertEquals("My Projects", element);
+        assertEquals("About Me", element);
     }
     @DisplayName("Test presence of nav logo and nav icons")
     @ParameterizedTest(name = "Test presence of {0} nav image")
@@ -99,16 +111,16 @@ public class Projects2ColumnsTest {
     @DisplayName("Test presence of main project image")
     @ParameterizedTest(name = "Test presence of {0} image")
     @CsvSource({
-            "lupoImage",
-            "galleryImage",
-            "farcebookImage",
-            "knotImage",
-            "alternativeImage",
-            "eclipseImage"
+            "spaceImage",
+            "forestImage",
+            "stemImage",
+            "fsImage",
+            "furnitureImage",
+            "curiosityImage"
     })
     void testPresenceOfProjectMainImage(String identifier) {
         // Arrange
-        boolean isPresent = projectsPage.checkPresenceOfElement(identifier);
+        boolean isPresent = aboutsPage.checkPresenceOfElement(identifier);
         // Assert
         assertTrue(isPresent);
     }
