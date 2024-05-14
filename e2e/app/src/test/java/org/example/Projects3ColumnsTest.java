@@ -39,7 +39,7 @@ public class Projects3ColumnsTest {
     @BeforeEach
     // "local" or "deployed" : "threeColumns", "twoColumns" or "omeColumn"
     void loadProjectsPage() {
-        projectsPage.navigate("deployed", "threeColumns");
+        projectsPage.navigate("local", "threeColumns");
     }
 
 
