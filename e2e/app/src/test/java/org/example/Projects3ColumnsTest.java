@@ -19,15 +19,20 @@ public class Projects3ColumnsTest {
     private static ChromeDriver driver;
     private static ProjectsPage projectsPage;
     private static Navbar navbar;
+    private static String siteLocation;
 
     @BeforeAll
     static void launchBrowser() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
 
+
         // Workaround: Chrome only working in GH Actions if running in headless mode
         if(System.getenv("CI") != null) {
             options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+            siteLocation = "deployed";
+        } else {
+            siteLocation = "local";
         }
 //        http://192.168.1.200:5173/
         driver = new ChromeDriver(options);
@@ -39,7 +44,7 @@ public class Projects3ColumnsTest {
     @BeforeEach
     // "local" or "deployed" : "threeColumns", "twoColumns" or "omeColumn"
     void loadProjectsPage() {
-        projectsPage.navigate("deployed", "threeColumns");
+        projectsPage.navigate(siteLocation, "threeColumns");
     }
 
 
