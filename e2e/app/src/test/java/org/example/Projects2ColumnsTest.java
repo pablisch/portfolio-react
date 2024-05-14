@@ -38,7 +38,7 @@ public class Projects2ColumnsTest {
 
     @BeforeEach
     void loadProjectsPage() {
-        projectsPage.navigate("deployed", "twoColumns");
+        projectsPage.navigate("local", "twoColumns");
     }
 
     @Test
