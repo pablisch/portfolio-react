@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './feature/Navbar/Navbar';
 import ProjectsPage from './pages/ProjectsPage';
 import AboutPage from './pages/AboutPage';
 import SingleProjectPage from './pages/SingleProjectPage';
@@ -9,7 +9,7 @@ import SingleAboutPage from './pages/SingleAboutPage';
 import axios from 'axios';
 import { projectData } from './data/projectData';
 import { ScreenWidthProvider } from './context/ScreenWidthProvider';
-import HamburgerBlocks from './components/HamburgerBlocks';
+import HamburgerBlocks from './feature/BurgerMenu/HamburgerBlocks';
 import { ProjectAboutProvider } from './context/ProjectAboutContext';
 import { useTheme } from './context/ThemeContext';
 

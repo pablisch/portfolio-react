@@ -1,14 +1,14 @@
 // child of App - conditional on if burgerMenu is open and visible
 import BurgerLink from './BurgerLink';
-import { projectData } from '../data/projectData';
-import { aboutData } from '../data/aboutData';
-import { linkData } from '../data/linkData';
+import { projectData } from '../../data/projectData';
+import { aboutData } from '../../data/aboutData';
+import { linkData } from '../../data/linkData';
 import PropTypes from 'prop-types';
-import ExtNavLink from './ExtNavLink';
+import ExtNavLink from '../Navbar/ExtNavLink';
 import './Hamburger.css';
 import { Link } from 'react-router-dom';
-import { useScreenWidth } from '../context/ScreenWidthProvider';
-import { useProjectAboutContext } from '../context/ProjectAboutContext';
+import { useScreenWidth } from '../../context/ScreenWidthProvider';
+import { useProjectAboutContext } from '../../context/ProjectAboutContext';
 
 const HamburgerBlocks = ({
   isAvatarHovered,

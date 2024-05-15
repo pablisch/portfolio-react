@@ -1,10 +1,16 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { scrollToTop } from '../utils/helpers';
-import {useProjectAboutContext} from '../context/ProjectAboutContext';
+import { scrollToTop } from '../../utils/helpers';
+import { useProjectAboutContext } from '../../context/ProjectAboutContext';
 
 function NavLink({ children, subject, className = 'nav-btn nav-link' }) {
-  const { section, setFocusProjectId, setSelectedProject, setFocusAboutId, setSelectedAbout } = useProjectAboutContext();
+  const {
+    section,
+    setFocusProjectId,
+    setSelectedProject,
+    setFocusAboutId,
+    setSelectedAbout,
+  } = useProjectAboutContext();
   const navigate = useNavigate();
 
   const handleHoverStart = () => {

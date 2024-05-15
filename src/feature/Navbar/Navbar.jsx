@@ -1,15 +1,15 @@
 import NavLink from './NavLink';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
-import { projectData } from '../data/projectData';
-import { aboutData } from '../data/aboutData';
-import { linkData } from '../data/linkData';
+import { projectData } from '../../data/projectData';
+import { aboutData } from '../../data/aboutData';
+import { linkData } from '../../data/linkData';
 import PropTypes from 'prop-types';
 import ExtNavLink from './ExtNavLink';
-import { useScreenWidth } from '../context/ScreenWidthProvider';
-import { scrollToTop } from '../utils/helpers';
-import { useTheme } from '../context/ThemeContext';
-import { useProjectAboutContext } from '../context/ProjectAboutContext';
+import { useScreenWidth } from '../../context/ScreenWidthProvider';
+import { scrollToTop } from '../../utils/helpers';
+import { useTheme } from '../../context/ThemeContext';
+import { useProjectAboutContext } from '../../context/ProjectAboutContext';
 
 function Navbar({
   isAvatarHovered,

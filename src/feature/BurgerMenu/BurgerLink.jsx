@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { scrollToTop } from '../utils/helpers';
+import { scrollToTop } from '../../utils/helpers';
 
 function BurgerLink({
   children,
