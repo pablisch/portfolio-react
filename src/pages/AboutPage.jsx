@@ -1,8 +1,8 @@
 import { aboutData } from '../data/aboutData';
 import { useEffect } from 'react';
-import AboutPanel from '../components/AboutPanel';
+import AboutPanel from '..//features/SubjectPanels/AboutPanel';
 import PropTypes from 'prop-types';
-import '../components/projectAndAboutPanel.css';
+import '../features/SubjectPanels/projectAndAboutPanel.css';
 import { scrollToTop } from '../utils/helpers';
 import { useTheme } from '../context/ThemeContext';
 import { useProjectAboutContext } from '../context/ProjectAboutContext';
