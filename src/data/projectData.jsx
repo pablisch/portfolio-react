@@ -693,3 +693,5 @@ export const projectData = [
   //   ]
   // },
 ];
+
+export default projectData;

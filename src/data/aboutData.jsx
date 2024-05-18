@@ -179,3 +179,5 @@ export const aboutData = [
     ),
   },
 ];
+
+export default aboutData;
