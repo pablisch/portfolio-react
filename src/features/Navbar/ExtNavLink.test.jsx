@@ -1,7 +1,6 @@
 import { render, screen } from '../../../tests/testUtils'; // Import the custom render function
 import ExtNavLink from './ExtNavLink';
-import { describe, test, expect, vi } from 'vitest';
-import userEvent from '@testing-library/user-event';
+import { describe, test, expect } from 'vitest';
 import linkData from '../../data/linkData';
 
 const renderComponent = (name) => {
@@ -30,3 +29,4 @@ describe('ExtNavLink', () => {
   });
 });
   
+
