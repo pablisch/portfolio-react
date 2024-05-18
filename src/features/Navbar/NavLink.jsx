@@ -33,6 +33,7 @@ function NavLink({ children, subject, className = 'nav-btn nav-link' }) {
 
   return (
     <div
+      role='button'
       id={`${subject.identifier}-nav-btn`}
       className={className}
       onClick={() => handleClick(subject)}
