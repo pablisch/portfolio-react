@@ -1,18 +1,11 @@
 import { render } from '@testing-library/react';
 import { ThemeProvider } from '../src/context/ThemeContext';
-import { BrowserRouter } from 'react-router-dom';
-import { ProjectAboutProvider } from '../src/context/ProjectAboutContext';
-// import { ScreenWidthProvider } from '../src/context/ScreenWidthProvider';
 
 // Custom render function to include ThemeProvider and BrowserRouter
 const customRender = (ui, options) => {
   return render(
     <ThemeProvider>
-      {/* <ScreenWidthProvider> */}
-        <ProjectAboutProvider>
-          <BrowserRouter>{ui}</BrowserRouter>
-        </ProjectAboutProvider>
-      {/* </ScreenWidthProvider> */}
+        {ui}
     </ThemeProvider>,
     options
   );
