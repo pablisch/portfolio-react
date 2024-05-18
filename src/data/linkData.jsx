@@ -31,3 +31,5 @@ export const linkData = [
     },
   }
 ];
+
+export default linkData;
