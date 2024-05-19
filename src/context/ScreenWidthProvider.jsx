@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { scrollToTop } from '../utils/helpers';
 
 // Step 1: Create the context
-const ScreenWidthContext = createContext();
+export const ScreenWidthContext = createContext();
 
 // Step 2: Create the provider
 // The provider is a component that will wrap every part of the app that needs this context.
@@ -31,6 +31,7 @@ export const ScreenWidthProvider = ({ children, setIsBurgerMenuOpen }) => {
   useEffect(() => { 
     if (screenWidth > 950) {
       setIsBurgerMenuVisible(false);
+      setBurgerMenuStage(0);
     } else if (screenWidth > 650) {
       setIsBurgerMenuVisible(true);
       setBurgerMenuStage(1);

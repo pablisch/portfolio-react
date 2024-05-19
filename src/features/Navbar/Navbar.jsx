@@ -45,6 +45,7 @@ function Navbar({
         }`}>
         <div className='nav-container'>
           <div className='nav-left'>
+            <p>section = {section}</p>
             <img
               id='nav-logo'
               className={`logo-image logo-image-${theme} ${

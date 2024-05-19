@@ -9,9 +9,9 @@ const customRender = (ui) => {
   return render(
     <ThemeProvider>
       <ScreenWidthProvider>
-      <ProjectAboutProvider>
-      <BrowserRouter>{ui}</BrowserRouter>
-      </ProjectAboutProvider>
+        <ProjectAboutProvider>
+          <BrowserRouter>{ui}</BrowserRouter>
+        </ProjectAboutProvider>
       </ScreenWidthProvider>
     </ThemeProvider>
   );

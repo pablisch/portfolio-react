@@ -1,7 +1,7 @@
 import { createContext, useState, useContext } from "react";
 import PropTypes from "prop-types";
 
-const ProjectAboutContext = createContext();
+export const ProjectAboutContext = createContext();
 
 export const ProjectAboutProvider = ({ children }) => {
   const [focusProjectId, setFocusProjectId] = useState('');
