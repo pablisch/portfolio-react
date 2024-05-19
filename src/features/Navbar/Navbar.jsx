@@ -45,7 +45,6 @@ function Navbar({
         }`}>
         <div className='nav-container'>
           <div className='nav-left'>
-            <p>section = {section}</p>
             <img
               id='nav-logo'
               className={`logo-image logo-image-${theme} ${
@@ -57,6 +56,7 @@ function Navbar({
               onMouseLeave={() => setIsAvatarHovered(false)}
             />
             <div
+              role='button'
               className={`nav-title nav-title-${theme} ${
                 isAvatarHovered ? 'avatar-hovered-nav-title' : ''
               } ${section === 'projects' ? 'projects-title' : 'abouts-title'}`}>
@@ -128,6 +128,7 @@ function Navbar({
               ))}
             {/* 👇🏻 SETTINGS BUTTON */}
             <div
+              role='button'
               id='settings-nav-btn'
               className={`nav-btn nav-btn-${theme} github-link-btn github-link-btn-${theme} settings-btn settings-btn-${theme}`}
               onClick={onThemeChange}
