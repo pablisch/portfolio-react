@@ -1,5 +1,5 @@
-import { render, screen } from '../../../tests/testUtils'; // Import the custom render function
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '../../../test-setup/testUtils-theme'; // Import the custom render function
+import user from '@testing-library/user-event';
 import AboutPanel from './AboutPanel';
 import { describe, test, expect, vi } from 'vitest';
 
@@ -57,33 +57,32 @@ describe('AboutPanel', () => {
     const panel = screen.getByRole('listitem');
 
     // Act
-    await userEvent.hover(panel);
+    await user.hover(panel);
 
     // Assert
     expect(mockSetFocusAboutId).toHaveBeenCalledTimes(1);
     expect(mockSetFocusAboutId).toHaveBeenCalledWith('11');
 
     // Act
-    await userEvent.unhover(panel);
+    await user.unhover(panel);
 
     // Assert
     expect(mockSetFocusAboutId).toHaveBeenCalledTimes(2);
     expect(mockSetFocusAboutId).toHaveBeenCalledWith('');
   });
 
-  test('setSelectedAbout is called when panel is clicked', async () => {
+  test('setSelectedAbout and navigate are called when panel is clicked', async () => {
     // Arrange
     renderComponent();
     const panel = screen.getByRole('listitem');
 
     // Act
-    await userEvent.click(panel);
+    await user.click(panel);
 
     // Assert
     expect(mockSetSelectedAbout).toHaveBeenCalledTimes(1);
     expect(mockSetSelectedAbout).toHaveBeenCalledWith(about1);
+    expect(mockNavigate).toHaveBeenCalledTimes(1);
     expect(mockNavigate).toHaveBeenCalledWith(`/more-about-me/${about1.id}`);
   });
 });
-
-

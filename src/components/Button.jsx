@@ -2,23 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.css';
 
-const Button = React.forwardRef(
-  function Button({
-  children,
-  ariaLabel = 'button',
-  className = 'btn',
-  onClick,
+const Button = React.forwardRef(function Button(
+  {
+    children,
+    ariaLabel = 'button',
+    className = 'btn',
+    onClick,
     id = '',
-  disabled = false,
-}, ref) {
-
+    disabled = false,
+  },
+  ref
+) {
   return (
-    <button id={id} aria-label={ariaLabel} className={className} onClick={onClick} disabled={disabled} ref={ref} >
+    <button
+      id={id}
+      aria-label={ariaLabel}
+      className={className}
+      onClick={() => {
+        console.log('Button clicked');
+        onClick();
+      }}
+      disabled={disabled}
+      ref={ref}>
       <span>{children}</span>
     </button>
   );
-}
-);
+});
 
 Button.propTypes = {
   children: PropTypes.node,
