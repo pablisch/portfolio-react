@@ -57,10 +57,11 @@ function Navbar({
             />
             <div
               role='button'
+              onClick={handleNavTitleClick}
               className={`nav-title nav-title-${theme} ${
                 isAvatarHovered ? 'avatar-hovered-nav-title' : ''
               } ${section === 'projects' ? 'projects-title' : 'abouts-title'}`}>
-              <h1 id='nav-section-title-text' onClick={handleNavTitleClick}>
+              <h1 id='nav-section-title-text'>
                 {section === 'projects'
                   ? 'My Projects'
                   : section === 'about'
