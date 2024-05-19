@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const themeStyles = ['retro', 'light', 'dark'];
 
-const ThemeContext = createContext()
+export const ThemeContext = createContext()
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('light');

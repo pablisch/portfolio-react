@@ -21,7 +21,6 @@ const renderComponent = (id) => {
 
   render(
     <NavLink subject={project} className='nav-link'>
-      
       {project.identifier}
     </NavLink>
   );
