@@ -1,36 +1,29 @@
-import { render, screen } from '../../../tests/testUtils'; // Import the custom render function
+import { render, screen } from '../../../test-setup/testUtils-theme'; // Import the custom render function
 import NavLink from './NavLink';
 import { describe, test, expect, vi } from 'vitest';
-import userEvent from '@testing-library/user-event';
+import user from '@testing-library/user-event';
 import projectData from '../../data/projectData';
 
-const mockSetFocusProjectId = vi.fn();
-const mockSetSelectedProject = vi.fn();
-const mockSetFocusAboutId = vi.fn();
-const mockSetSelectedAbout = vi.fn();
+const mockContext = {
+  section: 'projects',
+  setFocusProjectId: vi.fn(),
+  setSelectedProject: vi.fn(),
+  setFocusAboutId: vi.fn(),
+  setSelectedAbout: vi.fn(),
+};
 
 vi.mock('../../context/ProjectAboutContext', () => ({
-  useProjectAboutContext: vi.fn(),
-}));
-
-vi.mock('../../context/ProjectAboutContext', () => ({
-  useProjectAboutContext: () => ({
-    section: 'projects',
-    setFocusProjectId: mockSetFocusProjectId,
-    setSelectedProject: mockSetSelectedProject,
-    setFocusAboutId: mockSetFocusAboutId,
-    setSelectedAbout: mockSetSelectedAbout,
-  }),
+  useProjectAboutContext: () => mockContext,
 }));
 
 const renderComponent = (id) => {
-  const project = projectData.find(project => project.id === id);
+  const project = projectData.find((project) => project.id === id);
 
   render(
-    <NavLink
-      subject={project}
-      className='nav-link'
-    >{project.identifier}</NavLink>
+    <NavLink subject={project} className='nav-link'>
+      
+      {project.identifier}
+    </NavLink>
   );
 };
 
@@ -42,12 +35,11 @@ describe('NavLink', () => {
   ])('renders the NavLink component', (id, identifier) => {
     // Arrange
     renderComponent(id);
-    // screen.logTestingPlaygroundURL();
     const navLinkTextRegex = new RegExp(identifier, 'i');
     const navLink = screen.getByRole('button', {
       name: navLinkTextRegex,
     });
-    
+
     // Assert
     expect(navLink).toBeInTheDocument();
   });
@@ -56,52 +48,58 @@ describe('NavLink', () => {
     ['1', 'lupo'],
     ['2', 'gallery'],
     ['3', 'farce'],
-  ])('handleHoverStart is called when navLink is hovered over', async (id, identifier) => {
-    // Arrange
-    vi.resetAllMocks();
-    renderComponent(id);
-    const navLinkTextRegex = new RegExp(identifier, 'i');
-    const navLink = screen.getByRole('button', {
-      name: navLinkTextRegex,
-    });
+  ])(
+    'handleHoverStart is called when navLink is hovered over',
+    async (id, identifier) => {
+      // Arrange
+      vi.resetAllMocks();
+      renderComponent(id);
+      const navLinkTextRegex = new RegExp(identifier, 'i');
+      const navLink = screen.getByRole('button', {
+        name: navLinkTextRegex,
+      });
 
-    // Act
-    await userEvent.hover(navLink);
+      // Act
+      await user.hover(navLink);
 
-    // Assert
-    expect(mockSetFocusProjectId).toHaveBeenCalledTimes(1);
-    expect(mockSetFocusProjectId).toHaveBeenCalledWith(id);
+      // Assert
+      expect(mockContext.setFocusProjectId).toHaveBeenCalledTimes(1);
+      expect(mockContext.setFocusProjectId).toHaveBeenCalledWith(id);
 
-    // Act
-    await userEvent.unhover(navLink);
+      // Act
+      await user.unhover(navLink);
 
-    // Assert
-    expect(mockSetFocusProjectId).toHaveBeenCalledTimes(2);
-    expect(mockSetFocusProjectId).toHaveBeenCalledWith('');
-    expect(mockSetFocusAboutId).toHaveBeenCalledTimes(1);
-    expect(mockSetFocusAboutId).toHaveBeenCalledWith('');
-  });
+      // Assert
+      expect(mockContext.setFocusProjectId).toHaveBeenCalledTimes(2);
+      expect(mockContext.setFocusProjectId).toHaveBeenCalledWith('');
+      expect(mockContext.setFocusAboutId).toHaveBeenCalledTimes(1);
+      expect(mockContext.setFocusAboutId).toHaveBeenCalledWith('');
+    }
+  );
 
   test.each([
     ['1', 'lupo'],
     ['2', 'gallery'],
     ['3', 'farce'],
-  ])('setSelectedProject is called when navLink is clicked', async (id, identifier) => {
-    // Arrange
-    vi.resetAllMocks();
-    renderComponent(id);
-    const navLinkTextRegex = new RegExp(identifier, 'i');
-    const navLink = screen.getByRole('button', {
-      name: navLinkTextRegex,
-    });
+  ])(
+    'setSelectedProject is called when navLink is clicked',
+    async (id, identifier) => {
+      // Arrange
+      vi.resetAllMocks();
+      renderComponent(id);
+      const navLinkTextRegex = new RegExp(identifier, 'i');
+      const navLink = screen.getByRole('button', {
+        name: navLinkTextRegex,
+      });
 
-    // Act
-    await userEvent.click(navLink);
+      // Act
+      await user.click(navLink);
 
-    // Assert
-    expect(mockSetSelectedProject).toHaveBeenCalledTimes(1);
-    expect(mockSetSelectedProject).toHaveBeenCalledWith(projectData.find(project => project.id === id));
-  });
+      // Assert
+      expect(mockContext.setSelectedProject).toHaveBeenCalledTimes(1);
+      expect(mockContext.setSelectedProject).toHaveBeenCalledWith(
+        projectData.find((project) => project.id === id)
+      );
+    }
+  );
 });
-
-

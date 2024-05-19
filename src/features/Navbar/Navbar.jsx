@@ -123,7 +123,7 @@ function Navbar({
             {linkData.length &&
               burgerMenuStage < 2 &&
               linkData.map((link) => (
-                <ExtNavLink key={link.name} page={link} target={link.target} />
+                <ExtNavLink key={link.name} extLink={link} />
               ))}
             {/* 👇🏻 SETTINGS BUTTON */}
             <div
