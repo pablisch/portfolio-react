@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import MockProjectAboutContextProvider from './mockContextProviders/MockProjectAboutProvider';
 import MockScreenWidthProvider from './mockContextProviders/MockScreenWidthProvider';
 import MockThemeContextProvider from './mockContextProviders/MockThemeProvider';
+import { vi } from 'vitest';
 
 // Custom render function to include ThemeProvider and BrowserRouter
 const customRender = (
@@ -31,13 +32,11 @@ const customRender = (
     <MockThemeContextProvider
       theme={theme}
       onThemeChange={onThemeChange}
-      isIconRotating={isIconRotating}
-    >
+      isIconRotating={isIconRotating}>
       <MockScreenWidthProvider
         screenWidth={screenWidth}
         isBurgerMenuVisible={isBurgerMenuVisible}
-        burgerMenuStage={burgerMenuStage}
-      >
+        burgerMenuStage={burgerMenuStage}>
         <MockProjectAboutContextProvider
           section={section}
           setSection={setSection}
@@ -48,8 +47,7 @@ const customRender = (
           selectedProject={selectedProject}
           setSelectedProject={setSelectedProject}
           selectedAbout={selectedAbout}
-          setSelectedAbout={setSelectedAbout}
-        >
+          setSelectedAbout={setSelectedAbout}>
           <BrowserRouter>{ui}</BrowserRouter>
         </MockProjectAboutContextProvider>
       </MockScreenWidthProvider>
