@@ -69,7 +69,7 @@ function Navbar({
                   : ''}
               </h1>
             </div>
-            <div className='navlist'>
+            <div id='section-links' className='navlist'>
               {/* 👇🏻 PROJECT LINKS */}
               {section === 'projects' &&
                 !isBurgerMenuVisible &&
@@ -148,7 +148,7 @@ function Navbar({
             {/* 👇🏻 HAMBURGER MENU BARS */}
             {isBurgerMenuVisible && (
               <div className='hamburger-box'>
-                <div
+                <div role='button' aria-label='menu'
                   id='hamburger'
                   className='hamburger'
                   onClick={handleBurgerClick}>
