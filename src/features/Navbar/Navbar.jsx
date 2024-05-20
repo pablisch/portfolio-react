@@ -50,7 +50,8 @@ function Navbar({
               className={`logo-image logo-image-${theme} ${
                 isAvatarHovered ? 'avatar-hovered-avatar' : ''
               }`}
-              src='/images/pablo-circle-avatar.png'
+              // src='/images/pablo-circle-avatar.png'
+              src='/images/avatar-square-small4.png'
               alt='avatar icon'
               onMouseEnter={() => setIsAvatarHovered(true)}
               onMouseLeave={() => setIsAvatarHovered(false)}
@@ -69,7 +70,7 @@ function Navbar({
                   : ''}
               </h1>
             </div>
-            <div id='section-links' className='navlist'>
+            <div className='navlist'>
               {/* 👇🏻 PROJECT LINKS */}
               {section === 'projects' &&
                 !isBurgerMenuVisible &&
@@ -148,7 +149,7 @@ function Navbar({
             {/* 👇🏻 HAMBURGER MENU BARS */}
             {isBurgerMenuVisible && (
               <div className='hamburger-box'>
-                <div role='button' aria-label='menu'
+                <div
                   id='hamburger'
                   className='hamburger'
                   onClick={handleBurgerClick}>
