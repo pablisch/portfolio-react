@@ -160,13 +160,9 @@ describe('Navbar', () => {
   test('it does not show the middle hambuger menu bar when the menu is open', () => {
     // Arrange
     const { container } = renderComponent('projects', true, true);
-    const hamburgerMenu = screen.getByRole('button', { name: /menu/i });
     const HamburgerMenuMiddleBar = container.querySelector('.pattie');
-    screen.debug();
 
     // Assert
-    expect(HamburgerMenuMiddleBar).toBeInTheDocument();
-    expect(mockSetIsBurgerMenuOpen).toHaveBeenCalledTimes(1);
-    expect(mockSetIsBurgerMenuOpen).toHaveBeenCalledWith(true);
+    expect(HamburgerMenuMiddleBar).toHaveClass('burger-open');
   });
 });
