@@ -3,7 +3,6 @@ import { BrowserRouter } from 'react-router-dom';
 import MockProjectAboutContextProvider from './mockContextProviders/MockProjectAboutProvider';
 import MockScreenWidthProvider from './mockContextProviders/MockScreenWidthProvider';
 import MockThemeContextProvider from './mockContextProviders/MockThemeProvider';
-import { vi } from 'vitest';
 
 // Custom render function to include ThemeProvider and BrowserRouter
 const customRender = (

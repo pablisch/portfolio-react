@@ -84,7 +84,7 @@ const HamburgerBlocks = ({
             linkData.map((page) => (
               <ExtNavLink
                 key={page.name}
-                page={page}
+                extLink={page}
                 target={page.target}
                 context={'hamburger'}
               />
