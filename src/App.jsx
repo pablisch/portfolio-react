@@ -24,17 +24,18 @@ function App() {
   const { theme } = useTheme();
 
   useEffect(() => {
-    const wakeUpDeployedApis = async () => {
-      apiUrls.forEach(async (url) => {
+    (async () => {
+      const wakeUpDeployedApis = async () => {
         try {
-          await axios.get(url);
+          const requests = apiUrls.map((url) => axios.get(url));
+          await Promise.all(requests);
         } catch (error) {
-          console.log('Api is sleeping', url, error);
+          console.log('One or more APIs are sleeping', error);
         }
-      });
-    };
+      };
 
-    wakeUpDeployedApis();
+      await wakeUpDeployedApis();
+    })();
   }, []);
 
   return (
