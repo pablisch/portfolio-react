@@ -1,3 +1,3 @@
 # Portfolio React
 
-A portfolio of Software Engineerig apps created using React.js Vite build.
+A portfolio of Software Engineering apps created using React.js Vite build.

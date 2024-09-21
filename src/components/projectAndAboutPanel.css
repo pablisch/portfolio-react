@@ -30,27 +30,6 @@
   text-align: center;
 }
 
-/* .overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 15px 20px;
-  border-radius: var(--project-outline-radius);
-  background-color: rgba(50, 50, 50, 0.95);
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: 200;
-  transition: opacity 0.6s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-} */
-
 .about-overlay, .project-overlay {
   width: 100%;
   height: 100%;
