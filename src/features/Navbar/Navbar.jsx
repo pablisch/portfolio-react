@@ -1,100 +1,40 @@
 import NavLink from './NavLink';
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import './Navbar.css';
-import { projectData } from '../data/projectData';
-import { aboutData } from '../data/aboutData';
-import { linkData } from '../data/linkData';
+import { projectData } from '../../data/projectData';
+import { aboutData } from '../../data/aboutData';
+import { linkData } from '../../data/linkData';
 import PropTypes from 'prop-types';
 import ExtNavLink from './ExtNavLink';
-import { useScreenWidth } from '../context/ScreenWidthProvider';
-import { scrollToTop } from '../utils/helpers';
-
-const themeStyles = ['retro', 'light', 'dark'];
-// const themeStyles = ['retro', 'light', 'dark', 'simple'];
+import { useScreenWidth } from '../../context/ScreenWidthProvider';
+import { scrollToTop } from '../../utils/helpers';
+import { useTheme } from '../../context/ThemeContext';
+import { useProjectAboutContext } from '../../context/ProjectAboutContext';
 
 function Navbar({
-  setFocusProjectId,
-  setSelectedProject,
-  setFocusAboutId,
-  setSelectedAbout,
-  section,
   isAvatarHovered,
   setIsAvatarHovered,
-  isHamburgerOpen,
-  setIsHamburgerOpen,
-  setIsHamburgerShowing,
-  isDoubleBurger,
-  setIsDoubleBurger,
-  isTripleBurger,
-  setIsTripleBurger,
-  theme,
-  setTheme,
+  isBurgerMenuOpen,
+  setIsBurgerMenuOpen,
 }) {
-  const [isRotating, setIsRotating] = useState(false);
-  const screenWidth = useScreenWidth();
-  const [isHamburgerSize, setIsHamburgerSize] = useState(
-    screenWidth > 950 ? false : true
-  );
+  const { isBurgerMenuVisible, burgerMenuStage } = useScreenWidth();
+  const { theme, onThemeChange, isIconRotating } = useTheme();
+  const { section, setSelectedProject, setSelectedAbout } =
+    useProjectAboutContext();
 
   const navigate = useNavigate();
-  // eslint-disable-next-line no-unused-vars
-
-  useEffect(() => {
-    if (screenWidth > 950) {
-      setIsHamburgerSize(false);
-      setIsHamburgerShowing(false);
-      setIsDoubleBurger(false);
-      setIsTripleBurger(false);
-    } else if (screenWidth <= 390) {
-      setIsHamburgerSize(true);
-      setIsHamburgerShowing(true);
-      setIsDoubleBurger(true);
-      setIsTripleBurger(true);
-    } else if (screenWidth <= 650) {
-      setIsHamburgerSize(true);
-      setIsHamburgerShowing(true);
-      setIsDoubleBurger(true);
-      setIsTripleBurger(false);
-    } else {
-      setIsHamburgerSize(true);
-      setIsHamburgerShowing(true);
-      setIsDoubleBurger(false);
-      setIsTripleBurger(false);
-    }
-    setIsHamburgerOpen(false);
-    scrollToTop();
-  }, [
-    screenWidth,
-    setIsHamburgerShowing,
-    setIsHamburgerOpen,
-    setIsHamburgerSize,
-    setIsDoubleBurger,
-    setIsTripleBurger,
-  ]);
 
   const handleNavTitleClick = () => {
     setSelectedProject({});
+    setSelectedAbout({});
     navigate(section === 'about' ? `/more-about-me` : '/');
     localStorage.removeItem('selectedProject');
     scrollToTop();
   };
 
   const handleBurgerClick = () => {
-    console.log('burger clicked');
-    setIsHamburgerOpen(!isHamburgerOpen);
+    setIsBurgerMenuOpen(!isBurgerMenuOpen);
     scrollToTop();
-  };
-
-  const handleSettingsClick = () => {
-    const themeIndex = themeStyles.indexOf(theme);
-    const newThemeIndex =
-      themeIndex === themeStyles.length - 1 ? 0 : themeIndex + 1;
-    setTheme(themeStyles[newThemeIndex]);
-    setIsRotating(true);
-    setTimeout(() => {
-      setIsRotating(false);
-    }, 500);
   };
 
   return (
@@ -106,19 +46,23 @@ function Navbar({
         <div className='nav-container'>
           <div className='nav-left'>
             <img
+              id='nav-logo'
               className={`logo-image logo-image-${theme} ${
                 isAvatarHovered ? 'avatar-hovered-avatar' : ''
               }`}
-              src='/images/pablo-circle-avatar.png'
+              // src='/images/pablo-circle-avatar.png'
+              src='/images/avatar-square-small4.png'
               alt='avatar icon'
               onMouseEnter={() => setIsAvatarHovered(true)}
               onMouseLeave={() => setIsAvatarHovered(false)}
             />
             <div
+              role='button'
+              onClick={handleNavTitleClick}
               className={`nav-title nav-title-${theme} ${
                 isAvatarHovered ? 'avatar-hovered-nav-title' : ''
               } ${section === 'projects' ? 'projects-title' : 'abouts-title'}`}>
-              <h1 onClick={handleNavTitleClick}>
+              <h1 id='nav-section-title-text'>
                 {section === 'projects'
                   ? 'My Projects'
                   : section === 'about'
@@ -129,31 +73,27 @@ function Navbar({
             <div className='navlist'>
               {/* 👇🏻 PROJECT LINKS */}
               {section === 'projects' &&
-                !isHamburgerSize &&
+                !isBurgerMenuVisible &&
                 projectData.map((project) => (
                   <NavLink
                     className={`nav-btn nav-btn-${theme} nav-link nav-link-${theme} ${
                       isAvatarHovered ? 'avatar-hovered-nav-link' : ''
                     }`}
                     key={project.id}
-                    project={project}
-                    setFocusProjectId={setFocusProjectId}
-                    setSelectedProject={setSelectedProject}>
+                    subject={project}>
                     {project.navName || project.name}
                   </NavLink>
                 ))}
               {/* 👇🏻 ABOUT LINKS */}
               {section === 'about' &&
-                !isHamburgerSize &&
+                !isBurgerMenuVisible &&
                 aboutData.map((about) => (
                   <NavLink
                     className={`nav-btn nav-btn-${theme} nav-link nav-link-${theme} ${
                       isAvatarHovered ? 'avatar-hovered-nav-link' : ''
                     }`}
                     key={about.id}
-                    project={about}
-                    setFocusProjectId={setFocusAboutId}
-                    setSelectedProject={setSelectedAbout}>
+                    subject={about}>
                     {about.navName || about.name}
                   </NavLink>
                 ))}
@@ -161,9 +101,10 @@ function Navbar({
           </div>
           <div className='nav-right navlist'>
             {/* 👇🏻 LINK TO PROJECTS SECTION */}
-            {section === 'about' && !isTripleBurger && (
+            {section === 'about' && burgerMenuStage < 3 && (
               <Link
                 to='/'
+                id='projects-section-link'
                 className={`nav-btn nav-btn-${theme} nav-section-link nav-section-link-${theme} ${
                   isAvatarHovered ? 'avatar-hovered-nav-section-link' : ''
                 }`}>
@@ -171,9 +112,10 @@ function Navbar({
               </Link>
             )}
             {/* 👇🏻 LINK TO ABOUT ME SECTION */}
-            {section === 'projects' && !isTripleBurger && (
+            {section === 'projects' && burgerMenuStage < 3 && (
               <Link
                 to='/more-about-me'
+                id='about-section-link'
                 className={`nav-btn nav-btn-${theme} nav-section-link nav-section-link-${theme} ${
                   isAvatarHovered ? 'avatar-hovered-nav-section-link' : ''
                 }`}>
@@ -182,43 +124,46 @@ function Navbar({
             )}
             {/* 👇🏻 EXTERNAL LINK BUTTONS */}
             {linkData.length &&
-              !isDoubleBurger &&
+              burgerMenuStage < 2 &&
               linkData.map((link) => (
-                <ExtNavLink
-                  key={link.name}
-                  page={link}
-                  target={link.target}
-                  theme={theme}
-                />
+                <ExtNavLink key={link.name} extLink={link} />
               ))}
             {/* 👇🏻 SETTINGS BUTTON */}
             <div
+              role='button'
+              id='settings-nav-btn'
               className={`nav-btn nav-btn-${theme} github-link-btn github-link-btn-${theme} settings-btn settings-btn-${theme}`}
-              onClick={handleSettingsClick}
+              onClick={onThemeChange}
               // onMouseOver={handleHoverStart}
               // onMouseLeave={handleHoverEnd}
             >
               <img
+                id='settings-icon'
                 src='/images/settings-gear.png'
                 alt='settings button'
-                className={`github-logo github-logo-${theme} settings-icon settings-icon-${theme} ${isRotating ? 'rotate' : ''}`}
+                className={`github-logo github-logo-${theme} settings-icon settings-icon-${theme} ${
+                  isIconRotating ? 'rotate' : ''
+                }`}
               />
             </div>
             {/* 👇🏻 HAMBURGER MENU BARS */}
-            {isHamburgerSize && (
+            {isBurgerMenuVisible && (
               <div className='hamburger-box'>
-                <div className='hamburger' onClick={handleBurgerClick}>
+                <div
+                  id='hamburger'
+                  className='hamburger'
+                  onClick={handleBurgerClick}>
                   <span
                     className={`burger-bar burger-bar-${theme} buntop ${
-                      isHamburgerOpen ? 'burger-open' : ''
+                      isBurgerMenuOpen ? 'burger-open' : ''
                     }`}></span>
                   <span
                     className={`burger-bar burger-bar-${theme} pattie ${
-                      isHamburgerOpen ? 'burger-open' : ''
+                      isBurgerMenuOpen ? 'burger-open' : ''
                     }`}></span>
                   <span
                     className={`burger-bar burger-bar-${theme} bunbase ${
-                      isHamburgerOpen ? 'burger-open' : ''
+                      isBurgerMenuOpen ? 'burger-open' : ''
                     }`}></span>
                 </div>
               </div>
@@ -240,22 +185,10 @@ function Navbar({
 }
 
 Navbar.propTypes = {
-  setFocusProjectId: PropTypes.func.isRequired,
-  setSelectedProject: PropTypes.func.isRequired,
-  setFocusAboutId: PropTypes.func.isRequired,
-  setSelectedAbout: PropTypes.func.isRequired,
-  section: PropTypes.string.isRequired,
   isAvatarHovered: PropTypes.bool.isRequired,
   setIsAvatarHovered: PropTypes.func.isRequired,
-  isHamburgerOpen: PropTypes.bool.isRequired,
-  setIsHamburgerOpen: PropTypes.func.isRequired,
-  setIsHamburgerShowing: PropTypes.func.isRequired,
-  isDoubleBurger: PropTypes.bool.isRequired,
-  setIsDoubleBurger: PropTypes.func.isRequired,
-  isTripleBurger: PropTypes.bool.isRequired,
-  setIsTripleBurger: PropTypes.func.isRequired,
-  theme: PropTypes.string.isRequired,
-  setTheme: PropTypes.func.isRequired,
+  isBurgerMenuOpen: PropTypes.bool.isRequired,
+  setIsBurgerMenuOpen: PropTypes.func.isRequired,
 };
 
 export default Navbar;

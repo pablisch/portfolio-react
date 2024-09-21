@@ -1,23 +1,21 @@
 import { projectData } from '../data/projectData';
 import { useEffect } from 'react';
-import ProjectPanel from '../components/ProjectPanel';
+import ProjectPanel from '../features/SubjectPanels/ProjectPanel';
 import PropTypes from 'prop-types';
-import '../components/projectAndAboutPanel.css';
+import '../features/SubjectPanels/projectAndAboutPanel.css';
 import { scrollToTop } from '../utils/helpers';
-// import { useScreenWidth } from '../context/ScreenWidthProvider';
+import {useTheme} from '../context/ThemeContext';
+import { useProjectAboutContext } from '../context/ProjectAboutContext';
 
-function ProjectsPage({
-  setFocusProjectId,
-  focusProjectId,
-  setSelectedProject,
-  setSection,
-  section,
-  isAvatarHovered,
-  theme,
-}) {
-
-  // const screenWidth = useScreenWidth();
-  // console.log('screenWidth', screenWidth);
+function ProjectsPage({ isAvatarHovered }) {
+  const { theme } = useTheme();
+  const {
+    section,
+    setSection,
+    focusProjectId,
+    setFocusProjectId,
+    setSelectedProject,
+  } = useProjectAboutContext();
 
   useEffect(() => {
     if (section !== 'projects') {
@@ -28,7 +26,7 @@ function ProjectsPage({
   }, [section, setSection]);
 
   return (
-    <ul className={`project-box project-box-${theme}`} >
+    <ul className={`project-box project-box-${theme}`}>
       {projectData.map((project) => (
         <ProjectPanel
           key={project.id}
@@ -37,7 +35,6 @@ function ProjectsPage({
           focusProjectId={focusProjectId}
           setSelectedProject={setSelectedProject}
           isAvatarHovered={isAvatarHovered}
-          theme={theme}
         />
       ))}
     </ul>
@@ -45,13 +42,7 @@ function ProjectsPage({
 }
 
 ProjectsPage.propTypes = {
-  setFocusProjectId: PropTypes.func.isRequired,
-  focusProjectId: PropTypes.string,
-  setSelectedProject: PropTypes.func.isRequired,
-  setSection: PropTypes.func.isRequired,
-  section: PropTypes.string.isRequired,
   isAvatarHovered: PropTypes.bool.isRequired,
-  theme: PropTypes.string.isRequired,
 };
 
 export default ProjectsPage;

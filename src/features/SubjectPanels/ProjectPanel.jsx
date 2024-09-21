@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './projectAndAboutPanel.css';
-// import { useState } from 'react';
+import { useTheme } from '../../context/ThemeContext';
 
 function ProjectPanel({
   project,
@@ -9,8 +9,8 @@ function ProjectPanel({
   focusProjectId,
   setSelectedProject,
   isAvatarHovered,
-  theme,
 }) {
+  const { theme } = useTheme();
   const navigate = useNavigate();
 
   const handleHoverStart = (id) => {
@@ -61,7 +61,6 @@ ProjectPanel.propTypes = {
   focusProjectId: PropTypes.string.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
   isAvatarHovered: PropTypes.bool.isRequired,
-  theme: PropTypes.string.isRequired,
 };
 
 export default ProjectPanel;

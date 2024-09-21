@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './features/Navbar/Navbar';
 import ProjectsPage from './pages/ProjectsPage';
 import AboutPage from './pages/AboutPage';
 import SingleProjectPage from './pages/SingleProjectPage';
@@ -9,7 +9,9 @@ import SingleAboutPage from './pages/SingleAboutPage';
 import axios from 'axios';
 import { projectData } from './data/projectData';
 import { ScreenWidthProvider } from './context/ScreenWidthProvider';
-import HamburgerBlocks from './components/HamburgerBlocks';
+import HamburgerBlocks from './features/BurgerMenu/HamburgerBlocks';
+import { ProjectAboutProvider } from './context/ProjectAboutContext';
+import { useTheme } from './context/ThemeContext';
 
 const apiUrls = projectData
   .filter((project) => project.apiWakeUpUrl)
@@ -17,128 +19,69 @@ const apiUrls = projectData
 
 function App() {
   // This app has two main sections: projects and abouts - abouts refers to the 'about me' section.
-  const [focusProjectId, setFocusProjectId] = useState('');
-  const [focusAboutId, setFocusAboutId] = useState('');
-  const [selectedProject, setSelectedProject] = useState({});
-  const [selectedAbout, setSelectedAbout] = useState({});
-  const [section, setSection] = useState('');
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
   const [isAvatarHovered, setIsAvatarHovered] = useState(false);
-  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-  const [isHamburgerShowing, setIsHamburgerShowing] = useState(false);
-  const [isDoubleBurger, setIsDoubleBurger] = useState(false); // isDoubleBurger is true when the screen width is less than 650px and external links move into the hamburger menu
-  const [isTripleBurger, setIsTripleBurger] = useState(false); // isTripleBurger is true when the screen width is less than 390px and section links ('about me' and 'my projects') move into the hamburger menu
-  const [theme, setTheme] = useState('retro');
+  const { theme } = useTheme();
 
   useEffect(() => {
-    const wakeUpDeployedApis = async () => {
-      apiUrls.forEach(async (url) => {
+    (async () => {
+      const wakeUpDeployedApis = async () => {
         try {
-          await axios.get(url);
+          const requests = apiUrls.map((url) => axios.get(url));
+          await Promise.all(requests);
         } catch (error) {
-          console.log('Api is sleeping', url, error);
+          console.log('One or more APIs are sleeping', error);
         }
-      });
-    };
+      };
 
-    wakeUpDeployedApis();
+      await wakeUpDeployedApis();
+    })();
   }, []);
 
   return (
-    <ScreenWidthProvider>
-    <div className={`app app-${theme} ${isAvatarHovered ? 'avatar-hovered-app' : ''}`}>
-      <BrowserRouter>
-        <Navbar
-          setFocusProjectId={setFocusProjectId}
-          setSelectedProject={setSelectedProject}
-          setFocusAboutId={setFocusAboutId}
-          setSelectedAbout={setSelectedAbout}
-          section={section}
-          isAvatarHovered={isAvatarHovered}
-            setIsAvatarHovered={setIsAvatarHovered}
-            isHamburgerOpen={isHamburgerOpen}
-            setIsHamburgerOpen={setIsHamburgerOpen}
-            setIsHamburgerShowing={setIsHamburgerShowing}
-            isDoubleBurger={isDoubleBurger}
-            setIsDoubleBurger={setIsDoubleBurger}
-            isTripleBurger={isTripleBurger}
-            setIsTripleBurger={setIsTripleBurger}
-            theme={theme}
-            setTheme={setTheme}
-          />
-          {(isHamburgerOpen && isHamburgerShowing) && <HamburgerBlocks 
-            section={section}
-            isAvatarHovered={isAvatarHovered}
-            setFocusAboutId={setFocusAboutId}
-            setFocusProjectId={setFocusProjectId}
-            setSelectedAbout={setSelectedAbout}
-            setSelectedProject={setSelectedProject}
-            setIsHamburgerOpen={setIsHamburgerOpen}
-            isDoubleBurger={isDoubleBurger}
-            isTripleBurger={isTripleBurger}
-          />}
-        <div className={`all-pages ${isHamburgerOpen ? 'burger-open-spacer' : ''}`}></div>
-        <Routes>
-          <Route
-            path='/'
-            element={
-              <ProjectsPage
-                focusProjectId={focusProjectId}
-                setFocusProjectId={setFocusProjectId}
-                setSelectedProject={setSelectedProject}
-                section={section}
-                setSection={setSection}
-                isAvatarHovered={isAvatarHovered}
-                theme={theme}
+    <ScreenWidthProvider setIsBurgerMenuOpen={setIsBurgerMenuOpen}>
+      <ProjectAboutProvider>
+        <div
+          className={`app app-${theme} ${
+            isAvatarHovered ? 'avatar-hovered-app' : ''
+          }`}>
+          <BrowserRouter>
+            <Navbar
+              isAvatarHovered={isAvatarHovered}
+              setIsAvatarHovered={setIsAvatarHovered}
+              isBurgerMenuOpen={isBurgerMenuOpen}
+              setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+            />
+            <HamburgerBlocks
+              isAvatarHovered={isAvatarHovered}
+              isBurgerMenuOpen={isBurgerMenuOpen}
+              setIsBurgerMenuOpen={setIsBurgerMenuOpen}
+            />
+
+            <div
+              className={`all-pages ${
+                isBurgerMenuOpen ? 'burger-open-spacer' : ''
+              }`}></div>
+            <Routes>
+              <Route
+                path='/'
+                element={<ProjectsPage isAvatarHovered={isAvatarHovered} />}
               />
-            }
-          />
-          <Route
-            path='/project'
-            element={<Navigate to='/' replace />}
-          />
-          <Route
-            path='/more-about-me'
-            element={
-              <AboutPage
-                setFocusAboutId={setFocusAboutId}
-                focusAboutId={focusAboutId}
-                setSelectedAbout={setSelectedAbout}
-                section={section}
-                setSection={setSection}
-                isAvatarHovered={isAvatarHovered}
-                theme={theme}
+              <Route path='/project' element={<Navigate to='/' replace />} />
+              <Route
+                path='/more-about-me'
+                element={<AboutPage isAvatarHovered={isAvatarHovered} />}
               />
-            }
-          />
-          <Route
-            path='/project/:id'
-            element={
-              <SingleProjectPage
-                selectedProject={selectedProject}
-                setSelectedProject={setSelectedProject}
-                section={section}
-                setSection={setSection}
-                theme={theme}
+              <Route path='/project/:id' element={<SingleProjectPage />} />
+              <Route
+                path='/more-about-me/:id'
+                element={<SingleAboutPage isAvatarHovered={isAvatarHovered} />}
               />
-            }
-          />
-          <Route
-            path='/more-about-me/:id'
-            element={
-              <SingleAboutPage
-                selectedAbout={selectedAbout}
-                isAvatarHovered={isAvatarHovered}
-                setSelectedAbout={setSelectedAbout}
-                section={section}
-                setSection={setSection}
-                theme={theme}
-              />
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-      </div>
-      </ScreenWidthProvider>
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </ProjectAboutProvider>
+    </ScreenWidthProvider>
   );
 }
 

@@ -1,6 +1,5 @@
 // import React from 'react';
 import './SingleProjectAndAboutPage.css';
-import PropTypes from 'prop-types';
 import { aboutData } from '../data/aboutData';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -8,17 +7,16 @@ import Button from '../components/Button';
 import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 import { scrollToTop } from '../utils/helpers';
+import { useTheme } from '../context/ThemeContext';
+import { useProjectAboutContext } from '../context/ProjectAboutContext';
 
 const lastAboutId = aboutData[aboutData.length - 1].id;
 const firstAboutId = aboutData[0].id;
 
-const SingleAboutPage = ({
-  selectedAbout,
-  setSelectedAbout,
-  section,
-  setSection,
-  theme,
-}) => {
+const SingleAboutPage = () => {
+  const { theme } = useTheme();
+  const { section, setSection, selectedAbout, setSelectedAbout } =
+    useProjectAboutContext();
   const navigate = useNavigate();
 
   const { id } = useParams();
@@ -76,7 +74,9 @@ const SingleAboutPage = ({
     <div id='single-subject-page'>
       <div id='single-subject-upper-section'>
         <div id='single-subject-headers-and-description-1'>
-        <h1 className={`single-subject-title single-subject-title-${theme}`}>{selectedAbout.name}</h1>
+          <h1 className={`single-subject-title single-subject-title-${theme}`}>
+            {selectedAbout.name}
+          </h1>
           <h2 id='single-subject-subheading'>{selectedAbout.subheading}</h2>
           <div id='single-subject-description' className='paragraph'>
             {selectedAbout.descriptionText1}
@@ -125,20 +125,12 @@ const SingleAboutPage = ({
 
       <div id='single-subject-lower-section'>
         <div id='single-about-description-text-2' className='paragraph'>
-          <p className='project-text'>{selectedAbout.descriptionText2}</p>
+          <div className='project-text'>{selectedAbout.descriptionText2}</div>
         </div>
       </div>
       <div id='bit-at-the-bottom'></div>
     </div>
   );
-};
-
-SingleAboutPage.propTypes = {
-  selectedAbout: PropTypes.object.isRequired,
-  setSelectedAbout: PropTypes.func.isRequired,
-  section: PropTypes.string.isRequired,
-  setSection: PropTypes.func.isRequired,
-  theme: PropTypes.string.isRequired,
 };
 
 export default SingleAboutPage;

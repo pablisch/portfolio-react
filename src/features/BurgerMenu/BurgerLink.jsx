@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { scrollToTop } from '../utils/helpers';
+import { scrollToTop } from '../../utils/helpers';
 
 function BurgerLink({
   children,
   project,
   setFocusProjectId,
   setSelectedProject,
-  setIsHamburgerOpen,
+  setIsBurgerMenuOpen,
   className = 'nav-btn nav-link',
 }) {
   const navigate = useNavigate();
@@ -22,8 +22,7 @@ function BurgerLink({
 
   const handleClick = (project) => {
     setSelectedProject(project);
-    setIsHamburgerOpen(false);
-    // console.log('project clicked', project);
+    setIsBurgerMenuOpen(false);
     navigate(`/${project.id < 10 ? 'project' : 'more-about-me'}/${project.id}`);
     scrollToTop();
   };
@@ -45,7 +44,7 @@ BurgerLink.propTypes = {
   setFocusProjectId: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
   className: PropTypes.string,
-  setIsHamburgerOpen: PropTypes.func,
+  setIsBurgerMenuOpen: PropTypes.func,
 };
 
 export default BurgerLink;

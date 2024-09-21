@@ -5,7 +5,7 @@
   --both-project-side-margin: calc(2 * var(--project-side-margin));
   --fake-side-margin: 0.1px;
   --project-box-width: calc(85vw + var(--both-project-side-margin));
-  --num-of-cols: 4;
+  --num-of-cols: 3;
   --project-panel-width: calc(
     (100% / var(--num-of-cols)) - var(--both-project-side-margin)
   );
@@ -17,6 +17,7 @@
   flex-wrap: wrap;
   justify-content: center;
   width: calc(85vw + var(--both-project-side-margin));
+  max-width: 1600px;
   margin: var(--navbar-height) auto 0;
   padding-top: var(--project-side-margin);
 }
